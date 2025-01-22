@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { PiTabs } from '../tabs/tabs';
+import { PiDemoTabs } from '../tabs/demoTabs';
 
 export class ComponentsPreview extends LitElement {
 
@@ -17,7 +17,7 @@ export class ComponentsPreview extends LitElement {
         return html`
             <h4>Tabs</h4>
 
-
+            <pi-demo-tabs></pi-demo-tabs>
         `;
     }
 
