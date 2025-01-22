@@ -1,6 +1,8 @@
 import { LitElement, css, html } from 'lit'
-import { PiTab } from './tab';
-import { PiTabButton } from './tabButton';
+
+/*
+Main component for this feature
+*/
 
 export class PiTabs extends LitElement {
 
@@ -28,12 +30,7 @@ export class PiTabs extends LitElement {
 
     render() {
         return html`
-            <div class="tab-header">
-                <slot name="tab-option" @slotchange=${this._updateTabOptions}></slot>
-            </div>
-            <div class="tab-content">
-                <slot name="tab-panel" @slotchange=${this._updateTabPanels}></slot>
-            </div>
+            <slot></slot>
         `;
     }
 
@@ -104,17 +101,8 @@ export class PiTabs extends LitElement {
             :host {
                 display: block;
             }
-
-            .tab-header {
-                display: flex;
-                border: var(--tabbed-box-tab-header-border, none);
-                border-top: var(--tabbed-box-tab-header-border-top, none);
-                border-right: var(--tabbed-box-tab-header-border-right, none);
-                border-bottom: var(--tabbed-box-tab-header-border-bottom, 1px solid #ddd);
-                border-left: var(--tabbed-box-tab-header-border-left, none);
-            }
         `
     ]
-    
+
 }
 customElements.define('pi-tabs', PiTabs);
