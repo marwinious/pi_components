@@ -16,7 +16,7 @@ export class CodeDisplaySample extends LitElement {
         super()
         this.code = '';
         this.prettyCode = '';
-        this.showCode = true;
+        this.showCode = false;
     }
 
     async firstUpdated() {

@@ -23,7 +23,11 @@ export class ComponentsPreview extends LitElement {
 
     static styles = [
         css`
-            
+            :host {
+                display: block;
+                max-width: 1000px;
+                box-sizing: border-box;
+            }
         `
     ]
     
