@@ -22,9 +22,7 @@ export class PiTabList extends LitElement {
     }
 
     handleTabClick(tab) {
-        console.log('clicked tab:', tab);
         this.selectedTab = tab.getAttribute('value');
-
         this.updateSelectedTab()
     }
 
