@@ -19,7 +19,7 @@ export class CodeDisplaySample extends LitElement {
         this.showCode = false;
     }
 
-    async firstUpdated() {
+    async updated() {
 
         // Only `javascript` and `nord` will be loaded when calling `codeToHtml`
         const html = await codeToHtml(this.code, {
@@ -66,7 +66,7 @@ export class CodeDisplaySample extends LitElement {
             }
 
             pre {
-                padding: 0 1rem;
+                padding: 1rem;
             }
         `
     ]

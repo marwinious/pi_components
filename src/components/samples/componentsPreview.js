@@ -15,8 +15,6 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
-            <h4>Tabs</h4>
-
             <pi-demo-tabs></pi-demo-tabs>
         `;
     }
