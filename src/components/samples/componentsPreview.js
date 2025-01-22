@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiDemoTabs } from '../tabs/demoTabs';
+import { PiDemoButtons } from '../buttons/demoButtons';
 
 export class ComponentsPreview extends LitElement {
 
@@ -16,6 +17,7 @@ export class ComponentsPreview extends LitElement {
     render() {
         return html`
             <pi-demo-tabs></pi-demo-tabs>
+            <pi-demo-buttons></pi-demo-buttons>
         `;
     }
 

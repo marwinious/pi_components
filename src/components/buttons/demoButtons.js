@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiButton } from './button';
-import { CodeDisplaySample } from '../samples/codeSampleDisplay';
+import { PiDemoContainer } from '../samples/demoContainer';
 
 export class PiDemoButtons extends LitElement {
 
@@ -15,35 +15,30 @@ export class PiDemoButtons extends LitElement {
     }
 
     render() {
-
-        const codeSample = `
-<pi-tabs>
-    <pi-tab-list>
-        <pi-tab value="tab1">Tab 1</pi-tab>
-        <pi-tab value="tab2">Tab 2</pi-tab>
-        <pi-tab value="tab3">Tab 3</pi-tab>
-    </pi-tab-list>
-    <pi-tab-panels>
-        <pi-tab-panel value="tab1">
-            <p>Content for tab 1</p>
-        </pi-tab-panel>
-        <pi-tab-panel value="tab2">
-            <ul>
-                <li>Content</li>
-                <li>for</li>
-                <li>tab</li>
-                <li>2</li>
-            </ul>
-        </pi-tab-panel>
-        <pi-tab-panel value="tab3">
-            <h5>Content for tab 3</h5>
-        </pi-tab-panel>
-    </pi-tab-panels>
-</pi-tabs>
-        `
-
         return html`
-            
+
+            <pi-demo-container
+            title="Buttons"
+            >
+
+                <h5>Severities</h5>
+
+                <pi-button>Primary</pi-button>
+
+                <pi-button
+                severity="secondary"
+                >Secondary</pi-button>
+
+                <pi-button
+                severity="success"
+                >Success</pi-button>
+
+                <pi-button
+                severity="info"
+                >Info</pi-button>
+
+            </pi-demo-container>
+
         `;
     }
 

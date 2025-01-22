@@ -4,7 +4,6 @@ import { PiTabList } from './tabList';
 import { PiTab } from './tab';
 import { PiTabPanels } from './tabPanels';
 import { PiTabPanel } from './tabPanel';
-import { CodeDisplaySample } from '../samples/codeSampleDisplay';
 import { PiDemoContainer } from '../samples/demoContainer';
 
 export class PiDemoTabs extends LitElement {
