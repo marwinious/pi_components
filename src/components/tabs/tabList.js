@@ -24,7 +24,7 @@ export class PiTabList extends LitElement {
     handleTabClick(tab) {
         console.log('clicked tab:', tab);
         this.selectedTab = tab.getAttribute('value');
-        
+
         this.updateSelectedTab()
     }
 
@@ -70,14 +70,17 @@ export class PiTabList extends LitElement {
                 this.assignTabListener(el);
             }
         })
-        
+
+        this.initSelectedTab();
     }
 
     initSelectedTab() {
         // Check for no selected tab but a non-empty tab list
-        if(!this.selectedTab && this.tabList.length >0) {
+        if(!this.selectedTab && this.tabList.length > 0) {
             // Default selected tab to the first tab in the list
-            this.selectedTab = tabList[0].getAttribute('value');
+            this.selectedTab = this.tabList[0].getAttribute('value');
+
+            // Update selected tab
             this.updateSelectedTab();
         }
     }
