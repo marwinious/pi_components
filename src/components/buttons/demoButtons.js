@@ -21,82 +21,86 @@ export class PiDemoButtons extends LitElement {
             title="Buttons"
             >
 
-                <h5>Severities</h5>
+                <div>
 
-                <pi-button>Primary</pi-button>
-                <pi-button severity="secondary">Secondary</pi-button>
-                <pi-button severity="success">Success</pi-button>
-                <pi-button severity="info">Info</pi-button>
-                <pi-button severity="warn">Warn</pi-button>
-                <pi-button severity="help">Help</pi-button>
-                <pi-button severity="danger">Danger</pi-button>
-                <pi-button disabled>Disabled</pi-button>
+                    <h5>Severities</h5>
 
-                <h5>Raised</h5>
+                    <pi-button>Primary</pi-button>
+                    <pi-button severity="secondary">Secondary</pi-button>
+                    <pi-button severity="success">Success</pi-button>
+                    <pi-button severity="info">Info</pi-button>
+                    <pi-button severity="warn">Warn</pi-button>
+                    <pi-button severity="help">Help</pi-button>
+                    <pi-button severity="danger">Danger</pi-button>
+                    <pi-button disabled>Disabled</pi-button>
 
-                <pi-button raised>Primary</pi-button>
-                <pi-button severity="secondary" raised>Secondary</pi-button>
-                <pi-button severity="success" raised>Success</pi-button>
-                <pi-button severity="info" raised>Info</pi-button>
-                <pi-button severity="warn" raised>Warn</pi-button>
-                <pi-button severity="help" raised>Help</pi-button>
-                <pi-button severity="danger" raised>Danger</pi-button>
-                <pi-button disabled raised>Disabled</pi-button>
+                    <h5>Raised</h5>
 
-                <h5>Rounded</h5>
+                    <pi-button raised>Primary</pi-button>
+                    <pi-button severity="secondary" raised>Secondary</pi-button>
+                    <pi-button severity="success" raised>Success</pi-button>
+                    <pi-button severity="info" raised>Info</pi-button>
+                    <pi-button severity="warn" raised>Warn</pi-button>
+                    <pi-button severity="help" raised>Help</pi-button>
+                    <pi-button severity="danger" raised>Danger</pi-button>
+                    <pi-button disabled raised>Disabled</pi-button>
 
-                <pi-button rounded>Primary</pi-button>
-                <pi-button severity="secondary" rounded>Secondary</pi-button>
-                <pi-button severity="success" rounded>Success</pi-button>
-                <pi-button severity="info" rounded>Info</pi-button>
-                <pi-button severity="warn" rounded>Warn</pi-button>
-                <pi-button severity="help" rounded>Help</pi-button>
-                <pi-button severity="danger" rounded>Danger</pi-button>
-                <pi-button disabled rounded>Disabled</pi-button>
+                    <h5>Rounded</h5>
 
-                <h5>Text</h5>
+                    <pi-button rounded>Primary</pi-button>
+                    <pi-button severity="secondary" rounded>Secondary</pi-button>
+                    <pi-button severity="success" rounded>Success</pi-button>
+                    <pi-button severity="info" rounded>Info</pi-button>
+                    <pi-button severity="warn" rounded>Warn</pi-button>
+                    <pi-button severity="help" rounded>Help</pi-button>
+                    <pi-button severity="danger" rounded>Danger</pi-button>
+                    <pi-button disabled rounded>Disabled</pi-button>
 
-                <pi-button variant="text">Primary</pi-button>
-                <pi-button severity="secondary" variant="text">Secondary</pi-button>
-                <pi-button severity="success" variant="text">Success</pi-button>
-                <pi-button severity="info" variant="text">Info</pi-button>
-                <pi-button severity="warn" variant="text">Warn</pi-button>
-                <pi-button severity="help" variant="text">Help</pi-button>
-                <pi-button severity="danger" variant="text">Danger</pi-button>
-                <pi-button disabled variant="text">Disabled</pi-button>
+                    <h5>Text</h5>
 
-                <h5>Raised Text</h5>
+                    <pi-button variant="text">Primary</pi-button>
+                    <pi-button severity="secondary" variant="text">Secondary</pi-button>
+                    <pi-button severity="success" variant="text">Success</pi-button>
+                    <pi-button severity="info" variant="text">Info</pi-button>
+                    <pi-button severity="warn" variant="text">Warn</pi-button>
+                    <pi-button severity="help" variant="text">Help</pi-button>
+                    <pi-button severity="danger" variant="text">Danger</pi-button>
+                    <pi-button disabled variant="text">Disabled</pi-button>
 
-                <pi-button variant="text" raised>Primary</pi-button>
-                <pi-button severity="secondary" variant="text" raised>Secondary</pi-button>
-                <pi-button severity="success" variant="text" raised>Success</pi-button>
-                <pi-button severity="info" variant="text" raised>Info</pi-button>
-                <pi-button severity="warn" variant="text" raised>Warn</pi-button>
-                <pi-button severity="help" variant="text" raised>Help</pi-button>
-                <pi-button severity="danger" variant="text" raised>Danger</pi-button>
-                <pi-button disabled variant="text" raised>Disabled</pi-button>
+                    <h5>Raised Text</h5>
 
-                <h5>Outlined</h5>
+                    <pi-button variant="text" raised>Primary</pi-button>
+                    <pi-button severity="secondary" variant="text" raised>Secondary</pi-button>
+                    <pi-button severity="success" variant="text" raised>Success</pi-button>
+                    <pi-button severity="info" variant="text" raised>Info</pi-button>
+                    <pi-button severity="warn" variant="text" raised>Warn</pi-button>
+                    <pi-button severity="help" variant="text" raised>Help</pi-button>
+                    <pi-button severity="danger" variant="text" raised>Danger</pi-button>
+                    <pi-button disabled variant="text" raised>Disabled</pi-button>
 
-                <pi-button variant="outlined">Primary</pi-button>
-                <pi-button severity="secondary" variant="outlined">Secondary</pi-button>
-                <pi-button severity="success" variant="outlined">Success</pi-button>
-                <pi-button severity="info" variant="outlined">Info</pi-button>
-                <pi-button severity="warn" variant="outlined">Warn</pi-button>
-                <pi-button severity="help" variant="outlined">Help</pi-button>
-                <pi-button severity="danger" variant="outlined">Danger</pi-button>
-                <pi-button disabled variant="outlined">Disabled</pi-button>
+                    <h5>Outlined</h5>
 
-                <h5>Other</h5>
+                    <pi-button variant="outlined">Primary</pi-button>
+                    <pi-button severity="secondary" variant="outlined">Secondary</pi-button>
+                    <pi-button severity="success" variant="outlined">Success</pi-button>
+                    <pi-button severity="info" variant="outlined">Info</pi-button>
+                    <pi-button severity="warn" variant="outlined">Warn</pi-button>
+                    <pi-button severity="help" variant="outlined">Help</pi-button>
+                    <pi-button severity="danger" variant="outlined">Danger</pi-button>
+                    <pi-button disabled variant="outlined">Disabled</pi-button>
 
-                <pi-button raised>Primary</pi-button>
-                <pi-button severity="secondary" variant="text">Secondary</pi-button>
-                <pi-button severity="success" variant="text" raised>Success</pi-button>
-                <pi-button severity="info" variant="outlined">Info</pi-button>
-                <pi-button severity="warn" variant="iconOnly">Warn</pi-button>
-                <pi-button severity="help" badge="2">Help</pi-button>
-                <pi-button severity="danger" size="small">Danger</pi-button>
-                <pi-button disabled>Disabled</pi-button>
+                    <h5>Other</h5>
+
+                    <pi-button raised>Primary</pi-button>
+                    <pi-button severity="secondary" variant="text">Secondary</pi-button>
+                    <pi-button severity="success" variant="text" raised>Success</pi-button>
+                    <pi-button severity="info" variant="outlined">Info</pi-button>
+                    <pi-button severity="warn" variant="iconOnly">Warn</pi-button>
+                    <pi-button severity="help" badge="2">Help</pi-button>
+                    <pi-button severity="danger" size="small">Danger</pi-button>
+                    <pi-button disabled>Disabled</pi-button>
+
+                </div>
 
             </pi-demo-container>
 
