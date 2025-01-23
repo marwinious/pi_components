@@ -2,6 +2,11 @@ import { css } from "lit";
 
 export default css`
 
+    .btn_variant_iconOnly.rounded {
+        border-radius: 50%;
+        padding: 0.5rem;
+    }
+
     .btn_severity_primary {
         .button_icon_container {
             fill: var(--pi-button-text-color-primary);
@@ -37,7 +42,7 @@ export default css`
             fill: var(--pi-button-text-color-help);
         }
     }
-    
+
     .btn_severity_danger {
         .button_icon_container {
             fill: var(--pi-button-text-color-danger);
