@@ -51,22 +51,23 @@ export class PiDemoContainer extends LitElement {
         // Step 1: Find the last non-empty line and calculate its leading whitespace
         const lastNonEmptyLine = [...lines].reverse().find(line => line.trim() !== '');
         const lastLineIndentation = lastNonEmptyLine ? lastNonEmptyLine.match(/^(\s*)/) : null;
-        
-        // If we find indentation in the last non-empty line, we proceed
-        if (lastLineIndentation) {
-            const lastWhitespaceToRemove = lastLineIndentation[1].length;  // Count the number of tabs or spaces
 
-            // Step 2: Adjust the indentation by removing the same amount of whitespace
-            const adjustedLines = lines.map((line, index) => {
-                // Only remove indentation from lines that are not empty
+        if (lastLineIndentation) {
+            const lastWhitespaceToRemove = lastLineIndentation[1].length; // Count the number of tabs or spaces
+
+            // Step 2: Adjust the indentation and filter out lines with only whitespace
+            const adjustedLines = lines.map(line => {
                 if (line.trim() !== '') {
+                    // Remove up to the detected leading whitespace
                     return line.replace(new RegExp(`^\\s{0,${lastWhitespaceToRemove}}`), '');
                 }
-                return line; // Keep empty lines unchanged
+                return ''; // Normalize whitespace-only lines to empty strings
             });
 
-            // Step 3: Rebuild the code string with the adjusted lines
-            return adjustedLines.join('\n');
+            // Step 3: Rebuild the code string, preserving meaningful line breaks
+            return adjustedLines
+                .filter((line, index, arr) => line !== '' || (index > 0 && arr[index - 1] !== ''))
+                .join('\n');
         }
 
         // If no indentation is found, return the original code string
