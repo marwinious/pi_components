@@ -70,7 +70,8 @@ export class PiButton extends LitElement {
                     ` : null}
                     
 
-                    <!-- TODO: Optional Badge -->
+                    <!-- Optional Badge -->
+                    <span class="button_badge">${this.badge}</span>
                     ${this.badge ? html`
                         <!-- <span class="button_badge">${this.badge}</span> -->
                     ` : null}
@@ -134,7 +135,8 @@ export class PiButton extends LitElement {
                 padding: var(--pi-button-padding, 7px 12px);
             }
 
-            :host([icon]:not([variant="iconOnly"])) .button_content_container {
+            :host([icon]:not([variant="iconOnly"])) .button_content_container,
+            :host([badge]:not([variant="iconOnly"])) .button_content_container {
                 gap: 5px;
             }
 
@@ -160,11 +162,19 @@ export class PiButton extends LitElement {
             }
 
             .button_badge {
-                display: inline-block;
+                display: none;
                 width: 10px;
                 height: 10px;
-                font-size: 10px;
+                font-size: 0.75rem;
                 border-radius: 50%;
+                background: rgba(0,0,0,0.25);
+                padding: 0.27rem;
+            }
+
+            :host([badge]) .button_badge {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
             }
 
         `
