@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { classMap } from 'lit/directives/class-map.js';
 import severityCss from './css/buttonSeverityCss'
+import variantCss from './css/buttonVariantCss'
 
 export class PiButton extends LitElement {
 
@@ -8,7 +9,8 @@ export class PiButton extends LitElement {
         return {
             disabled: { type: Boolean },
             icon: { type: String },
-            severity: { type: String }
+            severity: { type: String },
+            raised: { type: Boolean }
         }
     }
 
@@ -17,18 +19,21 @@ export class PiButton extends LitElement {
         this.disabled = false;
         this.icon = '';
         this.severity = 'primary';
+        this.raised = false;
     }
 
     render() {
 
         const buttonClasses = {
-            'btn_severity_primary': this.severity === 'primary',
+            [`btn_severity_${this.severity}`]: true,
+            'raised': this.raised === true,
+            /* 'btn_severity_primary': this.severity === 'primary',
             'btn_severity_secondary': this.severity === 'secondary',
             'btn_severity_success': this.severity === 'success',
             'btn_severity_info': this.severity === 'info',
             'btn_severity_warn': this.severity === 'warn',
             'btn_severity_help': this.severity === 'help',
-            'btn_severity_danger': this.severity === 'danger',
+            'btn_severity_danger': this.severity === 'danger', */
         }
 
         return html`
@@ -51,6 +56,7 @@ export class PiButton extends LitElement {
 
     static styles = [
         severityCss,
+        variantCss,
         css`
             button {
                 display: inline-block;
@@ -64,6 +70,17 @@ export class PiButton extends LitElement {
                 background: var(--pi-button-bg-color, #117ab4);
                 border: var(--pi-button-border, solid 1px #117ab4);
                 color: var(--pi-button-text-color, #FFF);
+
+                &:hover {
+                    background: var(--pi-button-hover-bg-color, #0a486a);
+                    border-color: var(--pi-button-hover-border-color, #0a486a);
+                }
+
+                &:active {
+                    background: var(--pi-button-active-bg-color, #FFF);
+                    color: var(--pi-button-active-text-color, #0a486a);
+                    border-color: var(--pi-button-active-border-color, #0a486a);
+                }
 
                 &:disabled, &[disabled] {
                     background: var(--pi-button-disabled-bg-color, #bbb);
