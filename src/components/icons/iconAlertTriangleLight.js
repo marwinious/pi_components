@@ -1,0 +1,39 @@
+import { LitElement, css, html } from 'lit'
+
+const iconData = {
+    iconLabel: 'icon-alert-triangle-light',
+    className: 'IconAlertTriangleLight'
+}
+
+export class IconAlertTriangleLight extends LitElement {
+
+    static get properties() {
+        return {
+            pathData: {
+                type: String
+            }
+        }
+    }
+
+    constructor() {
+        super()
+        this.pathData = "M12 5.177l8.631 15.823h-17.262l8.631-15.823zm0-4.177l-12 22h24l-12-22zm-1 9h2v6h-2v-6zm1 9.75c-.689 0-1.25-.56-1.25-1.25s.561-1.25 1.25-1.25 1.25.56 1.25 1.25-.561 1.25-1.25 1.25z"
+    }
+
+    render() {
+        return html`
+            <icon-base 
+            pathData=${this.pathData}
+            ></icon-base>
+        `;
+    }
+
+    static styles = [
+        css`
+            
+        `
+    ]
+}
+customElements.define(iconData.iconLabel, IconAlertTriangleLight);
+
+export { iconData }

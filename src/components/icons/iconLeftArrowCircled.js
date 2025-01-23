@@ -2,10 +2,10 @@ import { LitElement, css, html } from 'lit'
 
 const iconData = {
     iconLabel: 'icon-left-arrow-circled',
-    className: 'LeftArrowCircled'
+    className: 'IconLeftArrowCircled'
 }
 
-export class LeftArrowCircled extends LitElement {
+export class IconLeftArrowCircled extends LitElement {
 
     static get properties() {
         return {
@@ -39,6 +39,6 @@ export class LeftArrowCircled extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, LeftArrowCircled);
+customElements.define(iconData.iconLabel, IconLeftArrowCircled);
 
 export { iconData }
