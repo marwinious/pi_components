@@ -100,6 +100,28 @@ export class PiDemoButtons extends LitElement {
                     <pi-button severity="danger" icon="alert-triangle-light">Danger</pi-button>
                     <pi-button disabled icon="alert-triangle-light">Disabled</pi-button>
 
+                    <h5>Icon Only</h5>
+
+                    <pi-button icon="alert-triangle-light" variant="iconOnly">Primary</pi-button>
+                    <pi-button severity="secondary" icon="alert-triangle-light" variant="iconOnly">Secondary</pi-button>
+                    <pi-button severity="success" icon="alert-triangle-light" variant="iconOnly">Success</pi-button>
+                    <pi-button severity="info" icon="alert-triangle-light" variant="iconOnly">Info</pi-button>
+                    <pi-button severity="warn" icon="alert-triangle-light" variant="iconOnly">Warn</pi-button>
+                    <pi-button severity="help" icon="alert-triangle-light" variant="iconOnly">Help</pi-button>
+                    <pi-button severity="danger" icon="alert-triangle-light" variant="iconOnly">Danger</pi-button>
+                    <pi-button disabled icon="alert-triangle-light" variant="iconOnly">Disabled</pi-button>
+
+                    <h5>Icon Only + Rounded</h5>
+
+                    <pi-button icon="alert-triangle-light" variant="iconOnly" rounded>Primary</pi-button>
+                    <pi-button severity="secondary" icon="alert-triangle-light" variant="iconOnly" rounded>Secondary</pi-button>
+                    <pi-button severity="success" icon="alert-triangle-light" variant="iconOnly" rounded>Success</pi-button>
+                    <pi-button severity="info" icon="alert-triangle-light" variant="iconOnly" rounded>Info</pi-button>
+                    <pi-button severity="warn" icon="alert-triangle-light" variant="iconOnly" rounded>Warn</pi-button>
+                    <pi-button severity="help" icon="alert-triangle-light" variant="iconOnly" rounded>Help</pi-button>
+                    <pi-button severity="danger" icon="alert-triangle-light" variant="iconOnly" rounded>Danger</pi-button>
+                    <pi-button disabled icon="alert-triangle-light" variant="iconOnly" rounded>Disabled</pi-button>
+
                     <h5>Other</h5>
 
                     <pi-button raised>Primary</pi-button>
