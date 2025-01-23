@@ -39,7 +39,7 @@ export class PiTabs extends LitElement {
         const slot = this.shadowRoot.querySelector('slot');
         const assignedElements = slot.assignedElements({ flatten: true });
 
-        console.log('assignedElements tabs: ', assignedElements);
+        // console.log('assignedElements tabs: ', assignedElements);
         assignedElements.forEach((el) => {
             // Check for tab list el
             if(el.tagName == 'PI-TAB-LIST') {
