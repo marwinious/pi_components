@@ -61,9 +61,9 @@ export class IconBase extends LitElement {
     static styles = [
         css`
             :host {
-                display: block;
-                width: 100%;
-                height: 100%;
+                display: inline-flex;
+                /* width: 100%;
+                height: 100%; */
             }
 
             svg {

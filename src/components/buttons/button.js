@@ -1,9 +1,12 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, unsafeCSS } from 'lit'
+import commonCss from '../../css/common.css?inline'
 import { classMap } from 'lit/directives/class-map.js';
 import severityCss from './css/buttonSeverityCss'
 import variantCss from './css/buttonVariantCss'
 import iconsCss from './css/buttonIconsCss'
 import { IconHandler } from '../icons/base/iconHandler';
+
+// commonCss = css`${unsafeCSS(commonCss)}`;
 
 export class PiButton extends LitElement {
 
@@ -15,6 +18,7 @@ export class PiButton extends LitElement {
             raised: { type: Boolean },
             rounded: { type: Boolean },
             variant: { type: String },
+            badge: { type: [Number, String] },
         }
     }
 
@@ -26,6 +30,7 @@ export class PiButton extends LitElement {
         this.raised = false;
         this.rounded = false;
         this.variant = false;
+        this.badge = null;
     }
 
     /* <div class="icon">${unsafeHTML(this.icon)}</div> */
@@ -55,11 +60,9 @@ export class PiButton extends LitElement {
 
                 <span class="button_content_container">
                     <!-- Optional icon -->
-                    ${this.icon != '' ? html`
-                        <span class="button_icon_container">
-                            <icon-handler .icon=${this.icon}></icon-handler>
-                        </span>
-                    ` : null}
+                    <span class="button_icon_container">
+                        <icon-handler .icon=${this.icon}></icon-handler>
+                    </span>
 
                     <!-- Button text -->
                     ${this.variant != 'iconOnly' ? html`
@@ -68,6 +71,9 @@ export class PiButton extends LitElement {
                     
 
                     <!-- TODO: Optional Badge -->
+                    ${this.badge ? html`
+                        <!-- <span class="button_badge">${this.badge}</span> -->
+                    ` : null}
                 </span>
                 
             </button>
@@ -78,11 +84,20 @@ export class PiButton extends LitElement {
         severityCss,
         variantCss,
         iconsCss,
+        unsafeCSS(commonCss),
         css`
+            :host {
+                display: inline-flex;
+                align-items: flex-start;
+                justify-content: center;
+            }
+
             button {
-                display: inline-block;
+                display: block;
+                height: 100%;
+                width: 100%;
+                padding: 0;
                 border-radius: var(--pi-button-border-radius, 5px);
-                padding: var(--pi-button-padding, 7px 12px);
                 font-weight: var(--pi-button-font-weight, bold);
                 font-size: var(--pi-button-font-size, 16px);
                 cursor: var(--pi-button-cursor, pointer);
@@ -115,14 +130,41 @@ export class PiButton extends LitElement {
             .button_content_container {
                 display: flex;
                 align-items: center;
-                width: 100%;
+                gap: 0;
+                padding: var(--pi-button-padding, 7px 12px);
+            }
+
+            :host([icon]:not([variant="iconOnly"])) .button_content_container {
                 gap: 5px;
             }
 
+            :host([icon][variant="iconOnly"]) .button_content_container {
+                padding: 0.5rem;
+            }
+
+            :host([icon][variant="iconOnly"][rounded]) .button_content_container {
+                padding: 0.14rem;
+            }
+
             .button_icon_container {
-                width: var(--pi-button-icon-width, 17px);
-                height: var(--pi-button-icon-height, 17px);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 0;
+                height: var(--pi-button-icon-height, 15px);
                 fill: var(--pi-button-icon-fill-color, #FFF);
+            }
+
+            :host([icon]) .button_icon_container {
+                width: var(--pi-button-icon-width, 15px);
+            }
+
+            .button_badge {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                font-size: 10px;
+                border-radius: 50%;
             }
 
         `
