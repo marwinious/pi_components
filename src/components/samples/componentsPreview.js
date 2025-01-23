@@ -27,6 +27,7 @@ export class ComponentsPreview extends LitElement {
                 display: block;
                 max-width: 1000px;
                 box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif
             }
         `
     ]
