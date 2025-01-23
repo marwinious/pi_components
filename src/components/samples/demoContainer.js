@@ -53,15 +53,14 @@ export class PiDemoContainer extends LitElement {
 
         // Step 1: Find the last non-empty line and calculate its leading whitespace
         const lastNonEmptyLine = [...lines].reverse().find(line => line.trim() !== '');
-        console.log('lastNonEmptyLine: ', lastNonEmptyLine);
+        // console.log('lastNonEmptyLine: ', lastNonEmptyLine);
         
         const lastLineIndentation = lastNonEmptyLine ? lastNonEmptyLine.match(/^(\s*)/) : null;
-        console.log('lastLineIndentation: ', lastLineIndentation);
-        
+        // console.log('lastLineIndentation: ', lastLineIndentation);
 
         if (lastLineIndentation) {
             const lastWhitespaceToRemove = lastLineIndentation[1].length; // Count the number of tabs or spaces
-            console.log('lastWhitespaceToRemove: ', lastWhitespaceToRemove);
+            // console.log('lastWhitespaceToRemove: ', lastWhitespaceToRemove);
             
             // Step 2: Adjust the indentation and filter out lines with only whitespace
             const adjustedLines = lines.map(line => {
