@@ -2,6 +2,8 @@ import { LitElement, css, html } from 'lit'
 import { classMap } from 'lit/directives/class-map.js';
 import severityCss from './css/buttonSeverityCss'
 import variantCss from './css/buttonVariantCss'
+import iconsCss from './css/buttonIconsCss'
+import { IconHandler } from '../icons/base/iconHandler';
 
 export class PiButton extends LitElement {
 
@@ -25,6 +27,8 @@ export class PiButton extends LitElement {
         this.rounded = false;
         this.variant = false;
     }
+
+    /* <div class="icon">${unsafeHTML(this.icon)}</div> */
 
     render() {
 
@@ -50,10 +54,17 @@ export class PiButton extends LitElement {
             >
 
                 <span class="button_content_container">
+                    <!-- Optional icon -->
                     ${this.icon != '' ? html`
-                        <div class="icon">${unsafeHTML(this.icon)}</div>
+                        <span class="button_icon_container">
+                            <icon-handler .icon=${this.icon}></icon-handler>
+                        </span>
                     ` : null}
+
+                    <!-- Button text -->
                     <slot></slot>
+
+                    <!-- TODO: Optional Badge -->
                 </span>
                 
             </button>
@@ -63,6 +74,7 @@ export class PiButton extends LitElement {
     static styles = [
         severityCss,
         variantCss,
+        iconsCss,
         css`
             button {
                 display: inline-block;
@@ -104,7 +116,7 @@ export class PiButton extends LitElement {
                 gap: 5px;
             }
 
-            .icon {
+            .button_icon_container {
                 width: var(--pi-button-icon-width, 17px);
                 height: var(--pi-button-icon-height, 17px);
                 fill: var(--pi-button-icon-fill-color, #FFF);
