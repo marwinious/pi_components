@@ -10,7 +10,9 @@ export class PiButton extends LitElement {
             disabled: { type: Boolean },
             icon: { type: String },
             severity: { type: String },
-            raised: { type: Boolean }
+            raised: { type: Boolean },
+            rounded: { type: Boolean },
+            variant: { type: String },
         }
     }
 
@@ -20,13 +22,17 @@ export class PiButton extends LitElement {
         this.icon = '';
         this.severity = 'primary';
         this.raised = false;
+        this.rounded = false;
+        this.variant = false;
     }
 
     render() {
 
         const buttonClasses = {
             [`btn_severity_${this.severity}`]: true,
+            [`btn_variant_${this.variant}`]: true,
             'raised': this.raised === true,
+            'rounded': this.rounded === true,
             /* 'btn_severity_primary': this.severity === 'primary',
             'btn_severity_secondary': this.severity === 'secondary',
             'btn_severity_success': this.severity === 'success',
@@ -85,6 +91,7 @@ export class PiButton extends LitElement {
                 &:disabled, &[disabled] {
                     background: var(--pi-button-disabled-bg-color, #bbb);
                     border-color: var(--pi-button-disabled-border-color, #bbb);
+                    color: var(--pi-button-disabled-text-color, #fff);
                     cursor: not-allowed;
                     pointer-events: none;
                 }
