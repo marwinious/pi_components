@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { classMap } from 'lit/directives/class-map.js';
+import severityCss from './css/buttonSeverityCss'
 
 export class PiButton extends LitElement {
 
@@ -25,6 +26,9 @@ export class PiButton extends LitElement {
             'btn_severity_secondary': this.severity === 'secondary',
             'btn_severity_success': this.severity === 'success',
             'btn_severity_info': this.severity === 'info',
+            'btn_severity_warn': this.severity === 'warn',
+            'btn_severity_help': this.severity === 'help',
+            'btn_severity_danger': this.severity === 'danger',
         }
 
         return html`
@@ -46,6 +50,7 @@ export class PiButton extends LitElement {
     }
 
     static styles = [
+        severityCss,
         css`
             button {
                 display: inline-block;
@@ -56,6 +61,16 @@ export class PiButton extends LitElement {
                 cursor: var(--pi-button-cursor, pointer);
                 user-select: none; 
                 transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+                background: var(--pi-button-bg-color, #117ab4);
+                border: var(--pi-button-border, solid 1px #117ab4);
+                color: var(--pi-button-text-color, #FFF);
+
+                &:disabled, &[disabled] {
+                    background: var(--pi-button-disabled-bg-color, #bbb);
+                    border-color: var(--pi-button-disabled-border-color, #bbb);
+                    cursor: not-allowed;
+                    pointer-events: none;
+                }
             }
 
             .button_content_container {
@@ -69,102 +84,6 @@ export class PiButton extends LitElement {
                 width: var(--pi-button-icon-width, 17px);
                 height: var(--pi-button-icon-height, 17px);
                 fill: var(--pi-button-icon-fill-color, #FFF);
-            }
-
-            .btn_severity_primary {
-                background: var(--pi-button-bg-color, #117ab4);
-                border: var(--pi-button-border, solid 1px #117ab4);
-                color: var(--pi-button-text-color, #FFF);
-
-                &:hover {
-                    background: var(--pi-button-hover-bg-color, #0a486a);
-                    border-color: var(--pi-button-hover-border-color, #0a486a);
-                }
-
-                &:active {
-                    background: var(--pi-button-active-bg-color, #FFF);
-                    color: var(--pi-button-active-text-color, #0a486a);
-                    border-color: var(--pi-button-active-border-color, #0a486a);
-                }
-
-                &:disabled, &[disabled] {
-                    background: var(--pi-button-disabled-bg-color, #bbb);
-                    border-color: var(--pi-button-disabled-border-color, #bbb);
-                    cursor: not-allowed;
-                    pointer-events: none;
-                }
-            }
-
-            .btn_severity_secondary {
-                background: var(--pi-button-bg-color, #ccc);
-                border: var(--pi-button-border, solid 1px #aaa);
-                color: var(--pi-button-text-color, #333);
-
-                &:hover {
-                    background: var(--pi-button-hover-bg-color, #0a486a);
-                    border-color: var(--pi-button-hover-border-color, #0a486a);
-                }
-
-                &:active {
-                    background: var(--pi-button-active-bg-color, #FFF);
-                    color: var(--pi-button-active-text-color, #0a486a);
-                    border-color: var(--pi-button-active-border-color, #0a486a);
-                }
-
-                &:disabled, &[disabled] {
-                    background: var(--pi-button-disabled-bg-color, #bbb);
-                    border-color: var(--pi-button-disabled-border-color, #bbb);
-                    cursor: not-allowed;
-                    pointer-events: none;
-                }
-            }
-
-            .btn_severity_success {
-                background: var(--pi-button-bg-color, #208c39);
-                border: var(--pi-button-border, solid 1px #208c39);
-                color: var(--pi-button-text-color, #FFF);
-
-                &:hover {
-                    background: var(--pi-button-hover-bg-color, #0a486a);
-                    border-color: var(--pi-button-hover-border-color, #0a486a);
-                }
-
-                &:active {
-                    background: var(--pi-button-active-bg-color, #FFF);
-                    color: var(--pi-button-active-text-color, #0a486a);
-                    border-color: var(--pi-button-active-border-color, #0a486a);
-                }
-
-                &:disabled, &[disabled] {
-                    background: var(--pi-button-disabled-bg-color, #bbb);
-                    border-color: var(--pi-button-disabled-border-color, #bbb);
-                    cursor: not-allowed;
-                    pointer-events: none;
-                }
-            }
-
-            .btn_severity_info {
-                background: var(--pi-button-bg-color, #17A2B9);
-                border: var(--pi-button-border, solid 1px #17A2B9);
-                color: var(--pi-button-text-color, #FFF);
-
-                &:hover {
-                    background: var(--pi-button-hover-bg-color, #0a486a);
-                    border-color: var(--pi-button-hover-border-color, #0a486a);
-                }
-
-                &:active {
-                    background: var(--pi-button-active-bg-color, #FFF);
-                    color: var(--pi-button-active-text-color, #0a486a);
-                    border-color: var(--pi-button-active-border-color, #0a486a);
-                }
-
-                &:disabled, &[disabled] {
-                    background: var(--pi-button-disabled-bg-color, #bbb);
-                    border-color: var(--pi-button-disabled-border-color, #bbb);
-                    cursor: not-allowed;
-                    pointer-events: none;
-                }
             }
 
         `
