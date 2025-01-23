@@ -62,7 +62,10 @@ export class PiButton extends LitElement {
                     ` : null}
 
                     <!-- Button text -->
-                    <slot></slot>
+                    ${this.variant != 'iconOnly' ? html`
+                        <slot></slot>
+                    ` : null}
+                    
 
                     <!-- TODO: Optional Badge -->
                 </span>
