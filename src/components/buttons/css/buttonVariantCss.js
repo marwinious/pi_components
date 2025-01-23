@@ -2,18 +2,10 @@ import { css } from "lit";
 
 export default css`
 
-    .raised {
-        box-shadow: 0px 1px 2px 1px #aaa;
-    }
-
-    .rounded {
-        border-radius: 2rem;
-    }
-
     /**
     TEXT VARIANT
      */
-    .btn_variant_text{
+    .btn_variant_text {
         --pi-button-bg-color: transparent;
         --pi-button-border: none;
         --pi-button-hover-bg-color: #eee;
