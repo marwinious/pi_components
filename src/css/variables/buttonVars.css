@@ -1,0 +1,93 @@
+:root {
+    /* Primary Severity */
+    --pi-button-bg-color-primary: #117ab4;
+    --pi-button-border-primary: solid 1px #117ab4;
+    --pi-button-text-color-primary: #FFF;
+    --pi-button-hover-bg-color-primary: #0a486a;
+    --pi-button-hover-text-color-primary: #FFF;
+    --pi-button-hover-border-color-primary: #0a486a;
+    --pi-button-active-bg-color-primary: #FFF;
+    --pi-button-active-text-color-primary: #0a486a;
+    --pi-button-active-border-color-primary: #0a486a;
+
+    /* Secondary Severity */
+    --pi-button-bg-color-secondary: #ccc;
+    --pi-button-border-secondary: solid 1px #aaa;
+    --pi-button-text-color-secondary: #333;
+    --pi-button-hover-bg-color-secondary: #0a486a;
+    --pi-button-hover-text-color-secondary: #333;
+    --pi-button-hover-border-color-secondary: #0a486a;
+    --pi-button-active-bg-color-secondary: #FFF;
+    --pi-button-active-text-color-secondary: #0a486a;
+    --pi-button-active-border-color-secondary: #0a486a;
+
+    /* Success Severity */
+    --pi-button-bg-color-success: #208c39;
+    --pi-button-border-success: solid 1px #208c39;
+    --pi-button-text-color-success: #FFF;
+    --pi-button-hover-bg-color-success: #0a486a;
+    --pi-button-hover-text-color-success: #FFF;
+    --pi-button-hover-border-color-success: #0a486a;
+    --pi-button-active-bg-color-success: #FFF;
+    --pi-button-active-text-color-success: #0a486a;
+    --pi-button-active-border-color-success: #0a486a;
+
+    /* Info Severity */
+    --pi-button-bg-color-info: #17A2B9;
+    --pi-button-border-info: solid 1px #17A2B9;
+    --pi-button-text-color-info: #FFF;
+    --pi-button-hover-bg-color-info: #0a486a;
+    --pi-button-hover-text-color-info: #FFF;
+    --pi-button-hover-border-color-info: #0a486a;
+    --pi-button-active-bg-color-info: #FFF;
+    --pi-button-active-text-color-info: #0a486a;
+    --pi-button-active-border-color-info: #0a486a;
+
+    /* Warn Severity */
+    --pi-button-bg-color-warn: #d28809;
+    --pi-button-border-warn: solid 1px #d28809;
+    --pi-button-text-color-warn: #FFF;
+    --pi-button-hover-bg-color-warn: #0a486a;
+    --pi-button-hover-text-color-warn: #FFF;
+    --pi-button-hover-border-color-warn: #0a486a;
+    --pi-button-active-bg-color-warn: #FFF;
+    --pi-button-active-text-color-warn: #0a486a;
+    --pi-button-active-border-color-warn: #0a486a;
+
+    /* Help Severity */
+    --pi-button-bg-color-help: #A855F8;
+    --pi-button-border-help: solid 1px #A855F8;
+    --pi-button-text-color-help: #FFF;
+    --pi-button-hover-bg-color-help: #0a486a;
+    --pi-button-hover-text-color-help: #FFF;
+    --pi-button-hover-border-color-help: #0a486a;
+    --pi-button-active-bg-color-help: #FFF;
+    --pi-button-active-text-color-help: #0a486a;
+    --pi-button-active-border-color-help: #0a486a;
+
+    /* Danger Severity */
+    --pi-button-bg-color-danger: #F04544;
+    --pi-button-border-danger: solid 1px #F04544;
+    --pi-button-text-color-danger: #FFF;
+    --pi-button-hover-bg-color-danger: #0a486a;
+    --pi-button-hover-text-color-danger: #FFF;
+    --pi-button-hover-border-color-danger: #0a486a;
+    --pi-button-active-bg-color-danger: #FFF;
+    --pi-button-active-text-color-danger: #0a486a;
+    --pi-button-active-border-color-danger: #0a486a;
+
+    /* Disabled */
+    --pi-button-bg-color-disabled: #bbb;
+    --pi-button-border-disabled: solid 1px #bbb;
+    --pi-button-text-color-disabled: #FFF;
+    --pi-button-hover-bg-color-disabled: #0a486a;
+    --pi-button-hover-text-color-disabled: #FFF;
+    --pi-button-hover-border-color-disabled: #0a486a;
+    --pi-button-active-bg-color-disabled: #FFF;
+    --pi-button-active-text-color-disabled: #0a486a;
+    --pi-button-active-border-color-disabled: #0a486a;
+
+    --pi-button-disabled-bg-color: #bbb;
+    --pi-button-disabled-border-color: #bbb;
+    --pi-button-disabled-text-color: #fff;
+}
