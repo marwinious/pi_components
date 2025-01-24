@@ -31,7 +31,19 @@ export default defineConfig({
                 'lit',
                 'lit-html',
                 'lit-element',
-                'lit/directives/class-map.js'
+                /* 'lit/directives/class-map.js',
+                'lit/directives/ref.js',
+                'lit/directives/unsafe-html.js',
+                'lit/directives/class-map.js',
+                'lit/directives/style-map.js',
+                'lit/directives/repeat.js',
+                'lit/directives/if-defined.js',
+                'lit/directives/live.js',
+                'lit/decorators.js',
+                'lit/decorators/custom-element.js',
+                'lit/decorators/property.js',
+                'lit/decorators/state.js',
+                'lit/decorators/query.js', */
             ],
             output: {
                 globals: {
