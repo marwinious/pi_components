@@ -39,6 +39,11 @@ export class PiPaginatorNavItem extends LitElement {
                 pointer-events: none;
                 opacity: 0.6;
             }
+
+            :host([active]) {
+                color: var(--standard-table-pager-number-color-active, #000);
+                font-weight: bold;
+            }
         `
     ]
     
