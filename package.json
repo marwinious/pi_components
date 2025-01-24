@@ -6,6 +6,15 @@
     "directories": {
         "test": "tests"
     },
+    "main": "dist/pi_components.umd.js",
+    "module": "dist/pi_components.js",
+    "files": ["dist"],
+    "exports": {
+        ".": {
+            "import": "./dist/pi_components.js",
+            "require": "./dist/pi_components.umd.js"
+        }
+    },
     "scripts": {
         "dev": "vite",
         "build": "vite build",
@@ -14,11 +23,11 @@
         "testui": "vitest --ui"
     },
     "devDependencies": {
-        "@vitest/ui": "^2.1.8",
+        "@vitest/ui": "^3.0.4",
         "lit": "^3.2.1",
         "shiki": "^2.1.0",
-        "vite": "^6.0.5",
-        "vitest": "^2.1.8"
+        "vite": "^6.0.11",
+        "vitest": "^3.0.4"
     },
     "peerDependencies": {
         "lit": "^3.2.1"

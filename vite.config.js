@@ -5,43 +5,50 @@ export default defineConfig({
     plugins: [
         
     ],
+    /* resolve: {
+        alias: {
+            '@package-name': 'pi_components'
+        }
+    }, */
     build: {
-        format: 'es',
+        // format: 'es',
         outDir: 'dist',
         lib: {
             entry: resolve(__dirname, 'src/main.js'),
-            name: "Pi",
-            type: "module",
+            name: "PiComponents",
+            // type: "module",
             filename: (format) => `pi_components.${format}.js`,
             // filename: "pi",
-            formats: ['es'], // Ensure it is an ES module format
+            formats: ['es', 'umd'], // Ensure it is an ES module format
         },
-        sourcemap: false,
+        sourcemap: true,
         target: 'esnext',
         minify: false,
         // minify: terser, // Enable minification using Terser (default minifier)
         rollupOptions: {
+            external: [
+                /^lit\/.*/,
+                'lit',
+                'lit-html',
+                'lit-element',
+                'lit/directives/class-map.js'
+            ],
             output: {
                 globals: {
                     lit: 'lit',
                 },
                 // You can further customize how the file is named
                 // For example, if you want to ensure it's myModule.js:
-                entryFileNames: 'pi_components.js', // Output filename
+                /* entryFileNames: 'pi_components.js', // Output filename
                 chunkFileNames: '[name].js', // Name for any code-split chunks
-                assetFileNames: '[name][extname]', // Asset filenames
+                assetFileNames: '[name][extname]', // Asset filenames */
                 // Ensure that minification is applied
                 /* plugins: [
                     // Use Terser plugin for minification
                     terser
                 ], */
-            },
-            external: [
-                /^lit\/.*/,
-                'lit',
-                'lit-html',
-                'lit-element',
-            ]
+            }
+            
         }
     }
 })
