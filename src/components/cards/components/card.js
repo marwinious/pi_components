@@ -94,6 +94,11 @@ export class PiCard extends LitElement {
                 border-radius: var(--pi-card-border-radius, 4px);
                 box-shadow: var(--pi-card-box-shadow, 1px 1px 1px #ddd);
                 overflow: hidden;
+                margin: 0.5rem 0;
+            }
+
+            slot {
+                display: block;
             }
 
             .header {
@@ -127,7 +132,11 @@ export class PiCard extends LitElement {
             }
 
             .footer {
-                padding: var(--pi-card-footer-padding, 0.5rem 1rem 1rem 1rem);
+                width: 100%;
+                display: block;
+                box-sizing: border-box;
+                overflow: hidden;
+                /* padding: var(--pi-card-footer-padding, 0.5rem 1rem 1rem 1rem); */
             }
         `
     ]
