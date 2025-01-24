@@ -28,6 +28,9 @@ export class PiPaginator extends LitElement {
     TODO: Add nav item type to paginatorNavItem?
         - We might want to support custom styling of numbers vs. other nav items
         - This isn't supported in the current component
+    TODO: Add specific button that was clicked to the emit
+        - It currently shows pageNumber and index clicked
+        - Should also show "button: 1" or "button: FirstItem" or "button: NextPage", etc.
     */
 
     constructor() {
