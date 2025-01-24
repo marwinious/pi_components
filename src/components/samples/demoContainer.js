@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { CodeDisplaySample } from '../samples/codeSampleDisplay';
+import { PiCard } from '../cards/components/card';
 
 export class PiDemoContainer extends LitElement {
 
@@ -36,10 +37,13 @@ export class PiDemoContainer extends LitElement {
 
     render() {
         return html`
-            <h4>${this.title}</h4>
+            <!-- <h4>${this.title}</h4> -->
 
             <div class="demo_code">
-                <slot></slot>
+                <pi-card>
+                    <span slot="header" class="feature_title">${this.title}</span>
+                    <slot></slot>
+                </pi-card>
             </div>
 
             <code-display-sample
@@ -96,6 +100,19 @@ export class PiDemoContainer extends LitElement {
                 border: solid 1px #777;
                 box-shadow: 1px 1px 2px #aaa;
                 border-radius: 2px;
+            }
+
+            .demo_code {
+                /* border: solid 1px #ccc;
+                padding: 1rem; */
+            }
+
+            .feature_title {
+                display: block;
+                background: #444;
+                color: #eee;
+                padding: 0.5rem;
+                font-weight: bold;
             }
         `
     ]
