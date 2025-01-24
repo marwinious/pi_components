@@ -6,10 +6,15 @@ import './components/icons/base/iconBase'
 import './components/icons/base/iconHandler'
 import './components/icons/base/iconImports'
 
-import { ComponentsPreview } from "./components/samples/componentsPreview";
+/* DEV MODE ONLY */
+if (import.meta.env.MODE === 'development') {
+  import('./components/samples/componentsPreview').then((module) => {
+    // Use the imported module
+    console.log('Development-only module loaded:', module);
+  });
+}
 
+// import { ComponentsPreview } from "./components/samples/componentsPreview";
 
-import { PiTabs } from "./components/tabs/tabs";
-
-import { PiDemoTabs } from "./components/tabs/demoTabs";
-
+export * from './components/icons/index'
+export * from './components/buttons/index'
