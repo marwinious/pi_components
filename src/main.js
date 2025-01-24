@@ -2,9 +2,9 @@
 import './css/variables/buttonVars.css'
 
 /* Icon Imports */
-import './components/icons/base/iconBase'
+/* import './components/icons/base/iconBase'
 import './components/icons/base/iconHandler'
-import './components/icons/base/iconImports'
+import './components/icons/base/iconImports' */
 
 /* DEV MODE ONLY */
 if (import.meta.env.MODE === 'development') {
