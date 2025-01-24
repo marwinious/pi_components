@@ -8,7 +8,9 @@
     },
     "main": "dist/pi_components.umd.js",
     "module": "dist/pi_components.js",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "exports": {
         ".": {
             "import": "./dist/pi_components.js",

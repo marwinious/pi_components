@@ -1,4 +1,4 @@
-import { LitElement, css, html, unsafeCSS } from 'lit'
+import { LitElement, css, html } from 'lit'
 
 const iconData = {
     iconLabel: 'icon-close-square-dark',

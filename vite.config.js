@@ -36,6 +36,8 @@ export default defineConfig({
             output: {
                 globals: {
                     lit: 'lit',
+                    litElement: 'lit-element',
+                    classMap: 'lit/directives/class-map.js'
                 },
                 // You can further customize how the file is named
                 // For example, if you want to ensure it's myModule.js:
