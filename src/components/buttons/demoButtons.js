@@ -25,7 +25,8 @@ export class PiDemoButtons extends LitElement {
 
                     <h5>Severities</h5>
 
-                    <pi-button>Primary</pi-button>
+                    <pi-button>Default</pi-button>
+                    <pi-button severity="primary">Primary</pi-button>
                     <pi-button severity="secondary">Secondary</pi-button>
                     <pi-button severity="success">Success</pi-button>
                     <pi-button severity="info">Info</pi-button>
@@ -36,7 +37,8 @@ export class PiDemoButtons extends LitElement {
 
                     <h5>Raised</h5>
 
-                    <pi-button raised>Primary</pi-button>
+                    <pi-button raised>Default</pi-button>
+                    <pi-button severity="primary" raised>Primary</pi-button>
                     <pi-button severity="secondary" raised>Secondary</pi-button>
                     <pi-button severity="success" raised>Success</pi-button>
                     <pi-button severity="info" raised>Info</pi-button>
@@ -47,7 +49,8 @@ export class PiDemoButtons extends LitElement {
 
                     <h5>Rounded</h5>
 
-                    <pi-button rounded>Primary</pi-button>
+                    <pi-button rounded>Default</pi-button>
+                    <pi-button severity="primary" rounded>Primary</pi-button>
                     <pi-button severity="secondary" rounded>Secondary</pi-button>
                     <pi-button severity="success" rounded>Success</pi-button>
                     <pi-button severity="info" rounded>Info</pi-button>
@@ -58,7 +61,8 @@ export class PiDemoButtons extends LitElement {
 
                     <h5>Text</h5>
 
-                    <pi-button variant="text">Primary</pi-button>
+                    <pi-button variant="text">Default</pi-button>
+                    <pi-button severity="primary" variant="text">Primary</pi-button>
                     <pi-button severity="secondary" variant="text">Secondary</pi-button>
                     <pi-button severity="success" variant="text">Success</pi-button>
                     <pi-button severity="info" variant="text">Info</pi-button>
@@ -69,7 +73,8 @@ export class PiDemoButtons extends LitElement {
 
                     <h5>Raised Text</h5>
 
-                    <pi-button variant="text" raised>Primary</pi-button>
+                    <pi-button variant="text" raised>Default</pi-button>
+                    <pi-button severity="primary" variant="text" raised>Primary</pi-button>
                     <pi-button severity="secondary" variant="text" raised>Secondary</pi-button>
                     <pi-button severity="success" variant="text" raised>Success</pi-button>
                     <pi-button severity="info" variant="text" raised>Info</pi-button>
@@ -80,7 +85,8 @@ export class PiDemoButtons extends LitElement {
 
                     <h5>Outlined</h5>
 
-                    <pi-button variant="outlined">Primary</pi-button>
+                    <pi-button variant="outlined">Default</pi-button>
+                    <pi-button severity="primary" variant="outlined">Primary</pi-button>
                     <pi-button severity="secondary" variant="outlined">Secondary</pi-button>
                     <pi-button severity="success" variant="outlined">Success</pi-button>
                     <pi-button severity="info" variant="outlined">Info</pi-button>
@@ -91,7 +97,8 @@ export class PiDemoButtons extends LitElement {
 
                     <h5>Icons</h5>
 
-                    <pi-button icon="alert-triangle-light">Primary</pi-button>
+                    <pi-button icon="alert-triangle-light">Default</pi-button>
+                    <pi-button severity="primary" icon="alert-triangle-light">Primary</pi-button>
                     <pi-button severity="secondary" icon="alert-triangle-light">Secondary</pi-button>
                     <pi-button severity="success" icon="alert-triangle-light">Success</pi-button>
                     <pi-button severity="info" icon="alert-triangle-light">Info</pi-button>
@@ -102,7 +109,8 @@ export class PiDemoButtons extends LitElement {
 
                     <h5>Icon Only</h5>
 
-                    <pi-button icon="alert-triangle-light" variant="iconOnly">Primary</pi-button>
+                    <pi-button icon="alert-triangle-light" variant="iconOnly">Default</pi-button>
+                    <pi-button severity="primary" icon="alert-triangle-light" variant="iconOnly">Primary</pi-button>
                     <pi-button severity="secondary" icon="alert-triangle-light" variant="iconOnly">Secondary</pi-button>
                     <pi-button severity="success" icon="alert-triangle-light" variant="iconOnly">Success</pi-button>
                     <pi-button severity="info" icon="alert-triangle-light" variant="iconOnly">Info</pi-button>
@@ -113,7 +121,8 @@ export class PiDemoButtons extends LitElement {
 
                     <h5>Icon Only + Rounded</h5>
 
-                    <pi-button icon="alert-triangle-light" variant="iconOnly" rounded>Primary</pi-button>
+                    <pi-button icon="alert-triangle-light" variant="iconOnly" rounded>Default</pi-button>
+                    <pi-button severity="primary" icon="alert-triangle-light" variant="iconOnly" rounded>Primary</pi-button>
                     <pi-button severity="secondary" icon="alert-triangle-light" variant="iconOnly" rounded>Secondary</pi-button>
                     <pi-button severity="success" icon="alert-triangle-light" variant="iconOnly" rounded>Success</pi-button>
                     <pi-button severity="info" icon="alert-triangle-light" variant="iconOnly" rounded>Info</pi-button>
@@ -124,8 +133,9 @@ export class PiDemoButtons extends LitElement {
 
                     <h5>Badges</h5>
 
-                    <pi-button badge=2>Primary</pi-button>
-                    <pi-button icon="alert-triangle-light" badge=2>Icon</pi-button>
+                    <pi-button badge=2>Default</pi-button>
+                    <pi-button severity="primary" badge=2>Primary</pi-button>
+                    <pi-button severity="primary" icon="alert-triangle-light" badge=2>Icon</pi-button>
                     <pi-button severity="secondary" badge=2>Secondary</pi-button>
                     <pi-button severity="success" badge=2>Success</pi-button>
                     <pi-button severity="info" badge=2>Info</pi-button>

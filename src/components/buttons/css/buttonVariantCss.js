@@ -9,6 +9,7 @@ export default css`
         --pi-button-bg-color: transparent;
         --pi-button-border: none;
         --pi-button-hover-bg-color: #eee;
+        --pi-button-text-color: var(--pi-button-bg-color-default);
     }
 
     .btn_variant_text.btn_severity_primary {
@@ -16,7 +17,7 @@ export default css`
     }
 
     .btn_variant_text.btn_severity_secondary {
-        /* --pi-button-text-color: var(--pi-button-bg-color-secondary); */
+        --pi-button-text-color: var(--pi-button-text-color-secondary);
     }
 
     .btn_variant_text.btn_severity_success {
@@ -50,6 +51,7 @@ export default css`
     .btn_variant_outlined{
         --pi-button-bg-color: transparent;
         --pi-button-hover-bg-color: #eee;
+        --pi-button-text-color: var(--pi-button-bg-color-default);
     }
 
     .btn_variant_outlined.btn_severity_primary {
@@ -57,7 +59,7 @@ export default css`
     }
 
     .btn_variant_outlined.btn_severity_secondary {
-        /* --pi-button-text-color: var(--pi-button-bg-color-secondary); */
+        --pi-button-text-color: var(--pi-button-text-color-secondary);
     }
 
     .btn_variant_outlined.btn_severity_success {

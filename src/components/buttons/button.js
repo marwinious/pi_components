@@ -26,7 +26,7 @@ export class PiButton extends LitElement {
         super()
         this.disabled = false;
         this.icon = '';
-        this.severity = 'primary';
+        this.severity = '';
         this.raised = false;
         this.rounded = false;
         this.variant = false;
@@ -104,8 +104,8 @@ export class PiButton extends LitElement {
                 cursor: var(--pi-button-cursor, pointer);
                 user-select: none; 
                 transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
-                background: var(--pi-button-bg-color, #117ab4);
-                border: var(--pi-button-border, solid 1px #117ab4);
+                background: var(--pi-button-bg-color, #333);
+                border: var(--pi-button-border, solid 1px #333);
                 color: var(--pi-button-text-color, #FFF);
 
                 &:hover {
