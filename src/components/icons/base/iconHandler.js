@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import {unsafeHTML} from 'lit-html/directives/unsafe-html.js';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 export class IconHandler extends LitElement {
 

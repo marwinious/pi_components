@@ -19,7 +19,7 @@ export default defineConfig({
             // type: "module",
             filename: (format) => `pi_components.${format}.js`,
             // filename: "pi",
-            formats: ['es', 'umd'], // Ensure it is an ES module format
+            formats: ['es'], // Ensure it is an ES module format
         },
         sourcemap: true,
         target: 'esnext',
@@ -47,9 +47,7 @@ export default defineConfig({
             ],
             output: {
                 globals: {
-                    lit: 'lit',
-                    litElement: 'lit-element',
-                    classMap: 'lit/directives/class-map.js'
+                    lit: 'lit'
                 },
                 // You can further customize how the file is named
                 // For example, if you want to ensure it's myModule.js:
