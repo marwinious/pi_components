@@ -36,7 +36,12 @@ export default defineConfig({
                     terser
                 ], */
             },
-            external: ['lit']
+            external: [
+                /^lit\/.*/,
+                'lit',
+                'lit-html',
+                'lit-element',
+            ]
         }
     }
 })
