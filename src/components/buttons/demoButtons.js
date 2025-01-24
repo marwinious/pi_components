@@ -133,17 +133,6 @@ export class PiDemoButtons extends LitElement {
                     <pi-button severity="help" badge=2>Help</pi-button>
                     <pi-button severity="danger" badge=2>Danger</pi-button>
 
-                    <h5>Other</h5>
-
-                    <pi-button raised>Primary</pi-button>
-                    <pi-button severity="secondary" variant="text">Secondary</pi-button>
-                    <pi-button severity="success" variant="text" raised>Success</pi-button>
-                    <pi-button severity="info" variant="outlined">Info</pi-button>
-                    <pi-button severity="warn" variant="iconOnly">Warn</pi-button>
-                    <pi-button severity="help" badge="2">Help</pi-button>
-                    <pi-button severity="danger" size="small">Danger</pi-button>
-                    <pi-button disabled>Disabled</pi-button>
-
                 </div>
 
             </pi-demo-container>
