@@ -1,3 +1,5 @@
+export * from './base/iconBase'
+export * from './base/iconHandler'
 export * from './components/iconLeftArrowCircled'
 export * from './components/iconChainLink'
 export * from './components/iconAlertTriangleDark'
