@@ -87,7 +87,16 @@ export class PiDemoContainer extends LitElement {
 
     static styles = [
         css`
-            
+            h4 {
+                display: block;
+                background: #ccc;
+                padding: 0.5rem;
+                text-transform: uppercase;
+                color: #444;
+                border: solid 1px #777;
+                box-shadow: 1px 1px 2px #aaa;
+                border-radius: 2px;
+            }
         `
     ]
     
