@@ -1,4 +1,4 @@
-import { LitElement, css, html, svg } from 'lit'
+import { LitElement, css, html } from 'lit'
 
 export class IconBase extends LitElement {
 
