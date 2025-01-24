@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiDemoTabs } from '../tabs/demoTabs';
+import { PiDemoButtons } from '../buttons/demoButtons';
 
 export class ComponentsPreview extends LitElement {
 
@@ -15,9 +16,8 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
-            <h4>Tabs</h4>
-
             <pi-demo-tabs></pi-demo-tabs>
+            <pi-demo-buttons></pi-demo-buttons>
         `;
     }
 
@@ -27,6 +27,7 @@ export class ComponentsPreview extends LitElement {
                 display: block;
                 max-width: 1000px;
                 box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif
             }
         `
     ]
