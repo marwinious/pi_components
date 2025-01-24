@@ -28,7 +28,7 @@ export class ComponentsPreview extends LitElement {
         css`
             :host {
                 display: block;
-                max-width: 1000px;
+                max-width: 1100px;
                 box-sizing: border-box;
                 font-family: Arial, Helvetica, sans-serif
             }
