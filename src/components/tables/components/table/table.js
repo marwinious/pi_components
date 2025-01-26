@@ -14,13 +14,23 @@ export class PiTable extends LitElement {
 
     render() {
         return html`
-            
+            <table><slot></slot></table>
         `;
     }
 
     static styles = [
         css`
-            
+            :host {
+                display: block;
+                overflow-x: auto;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                text-align: left;
+                white-space: nowrap;
+            }
         `
     ]
     
