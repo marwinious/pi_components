@@ -14,13 +14,14 @@ export class PiTableTd extends LitElement {
 
     render() {
         return html`
-            <td><slot></slot></td>
+            <slot></slot>
         `;
     }
 
     static styles = [
         css`
-            td {
+            :host {
+                display: table-cell;
                 padding: var(--pi-table-cell-padding, 0.75em);
                 border: var(--pi-table-cell-border, 1px solid #ddd);
                 transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
@@ -36,7 +37,7 @@ export class PiTableTd extends LitElement {
             }
 
             @media (max-width: 768px) {
-                td {
+                :host {
                     font-size: 0.9em;
                     font-size: var(--pi-table-small-cell-font-size, 0.9em);
                 }

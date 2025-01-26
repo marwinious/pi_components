@@ -14,13 +14,15 @@ export class PiTableTbody extends LitElement {
 
     render() {
         return html`
-            <tbody><slot></slot></tbody>
+            <slot></slot>
         `;
     }
 
     static styles = [
         css`
-            tbody {
+            :host {
+                display: table-row-group;
+
                 &.striped {
                     tr:nth-child(even) {
                         background-color: #eee;

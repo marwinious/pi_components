@@ -14,13 +14,15 @@ export class PiTableTr extends LitElement {
 
     render() {
         return html`
-            <tr><slot></slot></tr>
+            <slot></slot>
         `;
     }
 
     static styles = [
         css`
-            
+            :host {
+                display: table-row;
+            }
         `
     ]
     

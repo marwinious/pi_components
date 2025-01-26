@@ -14,13 +14,15 @@ export class PiTableTfoot extends LitElement {
 
     render() {
         return html`
-            <tfoot><slot></slot></tfoot>
+            <slot></slot>
         `;
     }
 
     static styles = [
         css`
-            
+            :host {
+                display: table-footer-group;
+            }
         `
     ]
     

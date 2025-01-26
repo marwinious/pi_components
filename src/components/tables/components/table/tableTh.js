@@ -14,17 +14,14 @@ export class PiTableTh extends LitElement {
 
     render() {
         return html`
-            <th><slot></slot></th>
+            <slot></slot>
         `;
     }
 
     static styles = [
         css`
             :host {
-                
-            }
-
-            th {
+                display: table-cell;
                 padding: var(--pi-table-cell-padding, 0.75em);
                 border: var(--pi-table-cell-border, 1px solid #ddd);
                 background-color: var(--pi-table-th-bg-color, #f4f4f4);
@@ -48,11 +45,10 @@ export class PiTableTh extends LitElement {
                         color: var(--standard-table-sort-icon-active-color, #000);
                     }
                 }
-
             }
 
             @media (max-width: 768px) {
-                th {
+                :host {
                     font-size: 0.9em;
                     font-size: var(--pi-table-small-cell-font-size, 0.9em);
                 }
