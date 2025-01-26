@@ -47,17 +47,61 @@ export class PiDemoTable extends LitElement {
     render() {
         return html`
             <pi-demo-container
-            title="Paginators"
+            title="Basic Table"
             >
 
                 <div>
                     
                     <pi-card>
+                        <div slot="title">Default table</div>
+                        <pi-basic-table
+                        .columns=${this.sampleColumns}
+                        .rows=${this.sampleRows}
+                        ></pi-basic-table>
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Striped table</div>
                         <pi-basic-table
                         .columns=${this.sampleColumns}
                         .rows=${this.sampleRows}
                         striped
                         ></pi-basic-table>
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Sample data</div>
+                        <pre>
+this.sampleColumns = [
+    { label: 'Name', key: 'name' },
+    { label: 'Age', key: 'age' },
+    { label: 'Country', key: 'country' },
+    { label: 'Income', key: 'income' },
+]
+
+this.sampleRows = [
+    { name: 'Alice', age: 30, country: 'USA', income: '$100,000', rawIncome: '100000' },
+    { name: 'Bob', age: 25, country: 'UK', income: '$50,000', rawIncome: '50000' },
+    { name: 'Charlie', age: 35, country: 'Canada', income: '$200,000', rawIncome: '200000' },
+]
+                        </pre>
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Sample usage</div>
+                        <pre>
+&lt;pi-basic-table
+.columns=${this.sampleColumns}
+.rows=${this.sampleRows}
+&gt;&lt;/pi-basic-table&gt;
+                        </pre>
+                        <pre>
+&lt;pi-basic-table
+.columns=${this.sampleColumns}
+.rows=${this.sampleRows}
+striped
+&gt;&lt;/pi-basic-table&gt;
+                        </pre>
                     </pi-card>
 
                 </div>
