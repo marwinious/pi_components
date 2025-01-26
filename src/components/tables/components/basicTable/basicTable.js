@@ -27,14 +27,10 @@ export class PiBasicTable extends LitElement {
     render() {
         return html`
             <pi-table>
-            
-                <pi-table-thead>
-                    <pi-table-tr>
-                        ${this.columns.map((col) => html`
-                            <pi-table-th>${col.label}</pi-table-th>
-                        `)}
-                    </pi-table-tr>
-                </pi-table-thead>
+
+                <pi-table-thead
+                .columns=${this.columns}
+                ></pi-table-thead>
 
                 <pi-table-tbody
                 ?striped=${this.striped}
