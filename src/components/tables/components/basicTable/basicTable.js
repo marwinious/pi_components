@@ -13,6 +13,7 @@ export class PiBasicTable extends LitElement {
         return {
             columns: { type: Array },
             rows: { type: Array },
+            striped: { type: Boolean },
         }
     }
 
@@ -20,11 +21,13 @@ export class PiBasicTable extends LitElement {
         super()
         this.columns = [];
         this.rows = [];
+        this.striped = false;
     }
 
     render() {
         return html`
             <pi-table>
+            
                 <pi-table-thead>
                     <pi-table-tr>
                         ${this.columns.map((col) => html`
@@ -32,15 +35,13 @@ export class PiBasicTable extends LitElement {
                         `)}
                     </pi-table-tr>
                 </pi-table-thead>
-                <pi-table-tbody>
-                    ${this.rows.map((row) => html`
-                        <pi-table-tr>
-                            ${this.columns.map((col) => html`
-                                <pi-table-td>${row[col.key]}</pi-table-td>
-                            `)}
-                        </pi-table-tr>
-                    `)}
-                </pi-table-tbody>
+
+                <pi-table-tbody
+                ?striped=${this.striped}
+                .rows=${this.rows}
+                .columns=${this.columns}
+                ></pi-table-tbody>
+
             </pi-table>
         `;
     }

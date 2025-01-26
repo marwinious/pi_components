@@ -56,6 +56,7 @@ export class PiDemoTable extends LitElement {
                         <pi-basic-table
                         .columns=${this.sampleColumns}
                         .rows=${this.sampleRows}
+                        striped
                         ></pi-basic-table>
                     </pi-card>
 
