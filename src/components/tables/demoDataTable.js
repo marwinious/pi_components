@@ -9,6 +9,7 @@ import { PiTableTbody } from './components/table/tableTbody';
 import { PiTableTd } from './components/table/tableTd';
 import { PiTableTfoot } from './components/table/tableTfoot';
 import { PiBasicTable } from './components/basicTable/basicTable';
+import { PiDataTable } from './components/dataTable/dataTable';
 
 /*
 <pi-card>
@@ -47,18 +48,18 @@ export class PiDemoDataTable extends LitElement {
     render() {
         return html`
             <pi-demo-container
-            title="Basic Table"
+            title="Data Table"
             >
 
                 <div>
                     
                     <pi-card>
                         <div slot="title">Sortable data table</div>
-                        <pi-basic-table
+                        <pi-data-table
                         .columns=${this.sampleColumns}
                         .rows=${this.sampleRows}
                         sortable
-                        ></pi-basic-table>
+                        ></pi-data-table>
                     </pi-card>
 
                     <pi-card>

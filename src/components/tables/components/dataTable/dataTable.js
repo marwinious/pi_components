@@ -6,6 +6,7 @@ import { PiTableTh } from '../table/tableTh';
 import { PiTableTbody } from '../table/tableTbody';
 import { PiTableTd } from '../table/tableTd';
 import { PiTableTfoot } from '../table/tableTfoot';
+import { PiTableSortIcon } from '../table/tableSortIcon';
 
 export class PiDataTable extends LitElement {
 
@@ -28,11 +29,16 @@ export class PiDataTable extends LitElement {
 
     render() {
         return html`
+            <p>Is sortable: ${this.sortable}</p>
             <pi-table>
 
-                <pi-table-thead
-                .columns=${this.columns}
-                ></pi-table-thead>
+                <pi-table-thead>
+                    ${this.columns.map((col) => html`
+                        <pi-table-th
+                        ?sortable=${this.sortable}
+                        >${col.label}</pi-table-th>
+                    `)}
+                </pi-table-thead>
 
                 <pi-table-tbody
                 ?striped=${this.striped}
