@@ -38,6 +38,10 @@ export class PiBasicTable extends LitElement {
                 .columns=${this.columns}
                 ></pi-table-tbody>
 
+                <pi-table-tfoot>
+                    <slot name="tfoot"></slot>
+                </pi-table-tfoot>
+
             </pi-table>
         `;
     }

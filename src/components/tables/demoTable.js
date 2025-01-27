@@ -70,6 +70,16 @@ export class PiDemoTable extends LitElement {
                     </pi-card>
 
                     <pi-card>
+                        <div slot="title">Table w/Tfoot</div>
+                        <pi-basic-table
+                        .columns=${this.sampleColumns}
+                        .rows=${this.sampleRows}
+                        >
+                            <div slot="tfoot">Some footer content here</div>
+                        </pi-basic-table>
+                    </pi-card>
+
+                    <pi-card>
                         <div slot="title">Sample data</div>
                         <pre>
 this.sampleColumns = [
@@ -91,16 +101,24 @@ this.sampleRows = [
                         <div slot="title">Sample usage</div>
                         <pre>
 &lt;pi-basic-table
-.columns=${this.sampleColumns}
-.rows=${this.sampleRows}
+.columns=\${this.sampleColumns}
+.rows=\${this.sampleRows}
 &gt;&lt;/pi-basic-table&gt;
                         </pre>
                         <pre>
 &lt;pi-basic-table
-.columns=${this.sampleColumns}
-.rows=${this.sampleRows}
+.columns=\${this.sampleColumns}
+.rows=\${this.sampleRows}
 striped
 &gt;&lt;/pi-basic-table&gt;
+                        </pre>
+                        <pre>
+&lt;pi-basic-table
+.columns=\${this.sampleColumns}
+.rows=\${this.sampleRows}
+&gt;
+    &lt;div slot=&quot;tfoot&quot;&gt;Some footer content here&lt;/div&gt;
+&lt;/pi-basic-table&gt;
                         </pre>
                     </pi-card>
 

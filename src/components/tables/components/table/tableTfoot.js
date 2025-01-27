@@ -14,7 +14,7 @@ export class PiTableTfoot extends LitElement {
 
     render() {
         return html`
-            <slot></slot>
+            <div class="table_tfoot"><slot></slot></div>
         `;
     }
 
@@ -22,6 +22,12 @@ export class PiTableTfoot extends LitElement {
         css`
             :host {
                 display: table-footer-group;
+                
+            }
+
+            .table_tfoot {
+                display: block;
+                padding: 0.5rem 0 0.5rem 0;
             }
         `
     ]
