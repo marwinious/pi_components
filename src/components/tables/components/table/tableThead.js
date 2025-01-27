@@ -7,20 +7,26 @@ export class PiTableThead extends LitElement {
     static get properties() {
         return {
             columns: { type: Array },
+            sortable: { type: Boolean },
         }
     }
 
     constructor() {
         super()
         this.columns = [];
+        this.sortable = false;
     }
 
     render() {
         return html`
             <pi-table-tr>
-                ${this.columns.map((col) => html`
-                    <pi-table-th>${col.label}</pi-table-th>
-                `)}
+                <slot>
+                    ${this.columns.map((col) => html`
+                        <pi-table-th
+                        ?sortable=${this.sortable && col.sortKey}
+                        >${col.label}</pi-table-th>
+                    `)}
+                </slot>
             </pi-table-tr>
         `;
     }

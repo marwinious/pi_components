@@ -4,17 +4,21 @@ export class PiTableTh extends LitElement {
 
     static get properties() {
         return {
-            
+            sortable: { type: Boolean },
         }
     }
 
     constructor() {
         super()
+        this.sortable = false;
     }
 
     render() {
         return html`
-            <slot></slot>
+            <div class="table_th">
+                <slot></slot>
+            </div>
+            
         `;
     }
 

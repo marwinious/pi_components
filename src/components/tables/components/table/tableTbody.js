@@ -10,6 +10,7 @@ export class PiTableTbody extends LitElement {
             columns: { type: Array },
             rows: { type: Array },
             striped: { type: Boolean },
+            sortable: { type: Boolean },
         }
     }
 
@@ -18,6 +19,7 @@ export class PiTableTbody extends LitElement {
         this.columns = [];
         this.rows = [];
         this.striped = false;
+        this.sortable = false;
     }
 
     render() {
