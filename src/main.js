@@ -1,5 +1,7 @@
 /* CSS Imports */
+import './css/variables/globalVars.css'
 import './css/variables/buttonVars.css'
+import './css/variables/tableVars.css'
 
 /* Icon Imports */
 /* import './components/icons/base/iconBase'
