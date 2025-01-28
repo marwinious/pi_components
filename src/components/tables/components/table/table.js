@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import { sortArrayOfObjects } from '../../../../lib/utility/sorters';
 import { PiTableThead } from './tableThead';
 import { PiTableTbody } from './tableTbody';
 import { PiTableTfoot } from './tableTfoot';
@@ -11,7 +12,9 @@ export class PiTable extends LitElement {
             columns: { type: Array, attribute: false },
             rows: { type: Array },
             striped: { type: Boolean },
-            gridlines: { type: Boolean }
+            gridlines: { type: Boolean },
+            sortKey: { type: String },
+            sortDirection: { type: String }
         }
     }
 
@@ -21,10 +24,14 @@ export class PiTable extends LitElement {
         this.rows = [];
         this.striped = false;
         this.gridlines = false;
+        this.sortKey = '';
+        this.sortDirection = 'asc';
+        this.activeRows = [];
     }
 
     firstUpdated() {
         this.captureColumnData();
+        this.checkDefaultSort();
     }
 
     willUpdate(changedProperties) {
@@ -45,7 +52,7 @@ export class PiTable extends LitElement {
                 <pi-table-tbody
                 ?striped=${this.striped}
                 ?gridlines=${this.gridlines}
-                .rows=${this.rows}
+                .rows=${this.activeRows}
                 .columns=${this.columns}
                 ></pi-table-tbody>
 
@@ -54,6 +61,16 @@ export class PiTable extends LitElement {
                 </pi-table-tfoot>
             </pi-base-table>
         `;
+    }
+
+    checkDefaultSort() {
+        if(this.sortKey != '') {
+            // Sort initial data
+            this.activeRows = sortArrayOfObjects(this.rows, this.sortKey, this.sortDirection);
+        }
+        else {
+            this.activeRows = this.rows;
+        }
     }
 
     captureColumnData() {
