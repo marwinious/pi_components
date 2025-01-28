@@ -9,7 +9,9 @@ export class PiTableThead extends LitElement {
         return {
             columns: { type: Array },
             sortable: { type: Boolean },
-            gridlines: { type: Boolean }
+            gridlines: { type: Boolean },
+            sortKey: { type: String },
+            sortDirection: { type: String }
         }
     }
 
@@ -18,18 +20,19 @@ export class PiTableThead extends LitElement {
         this.columns = [];
         this.sortable = false;
         this.gridlines = false;
+        this.sortKey = '';
+        this.sortDirection = '';
     }
 
     render() {
         // Define dynamic classes
-        const tbodyClasses = {
-            striped: this.striped,
+        const theadClasses = {
             gridlines: this.gridlines
         }
 
         return html`
             <pi-table-tr
-            class=${classMap(tbodyClasses)}
+            class=${classMap(theadClasses)}
             >
                 <slot>
                     ${this.columns.map((col) => html`
@@ -41,6 +44,8 @@ export class PiTableThead extends LitElement {
             </pi-table-tr>
         `;
     }
+
+    
 
     static styles = [
         css`

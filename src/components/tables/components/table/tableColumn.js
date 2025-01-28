@@ -43,16 +43,24 @@ export class PiTableColumn extends LitElement {
     }
 
     handleSortClick(e) {
+        const currentSortDirection = this.sortDirection;
+        const newSortDirection = currentSortDirection == 'asc' ? 'desc' : 'asc';
+
         // Emit event with selected tab
-        const event = new CustomEvent('tableSortIconClicked', {
+        const event = new CustomEvent('sortRequested', {
             detail: {
-                currentSortDirection: this.sortDirection
+                key: this.key,
+                label: this.label,
+                currentSortDirection: currentSortDirection,
+                newSortDirection: newSortDirection
             },
             bubbles: true,
             composed: true
         })
 
         this.dispatchEvent(event);
+
+        this.sortDirection = newSortDirection;
     }
 
     static styles = [

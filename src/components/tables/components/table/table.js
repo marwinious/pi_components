@@ -14,7 +14,8 @@ export class PiTable extends LitElement {
             striped: { type: Boolean },
             gridlines: { type: Boolean },
             sortKey: { type: String },
-            sortDirection: { type: String }
+            sortDirection: { type: String },
+            activeRows: { type: Array }
         }
     }
 
@@ -25,8 +26,18 @@ export class PiTable extends LitElement {
         this.striped = false;
         this.gridlines = false;
         this.sortKey = '';
-        this.sortDirection = 'asc';
+        this.sortDirection = '';
         this.activeRows = [];
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.addEventListener('sortRequested', (e) => this.handleSortRequest(e))
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.removeEventListener('sortRequested')
     }
 
     firstUpdated() {
@@ -45,6 +56,8 @@ export class PiTable extends LitElement {
             <pi-base-table>
                 <pi-table-thead
                 ?gridlines=${this.gridlines}
+                .sortKey=${this.sortKey}
+                .sortDirection=${this.sortDirection}
                 >
                     <slot></slot>
                 </pi-table-thead>
@@ -63,14 +76,23 @@ export class PiTable extends LitElement {
         `;
     }
 
+    handleSortRequest(e) {
+        console.log('e', e.detail);
+        this.activeRows = this.sortRows(this.activeRows, e.detail.key, e.detail.newSortDirection);
+    }
+
     checkDefaultSort() {
-        if(this.sortKey != '') {
+        if(this.sortKey != '' && this.sortDirection != '') {
             // Sort initial data
             this.activeRows = sortArrayOfObjects(this.rows, this.sortKey, this.sortDirection);
         }
         else {
             this.activeRows = this.rows;
         }
+    }
+
+    sortRows(rowData, sortKey, sortDirection) {
+        return sortArrayOfObjects(rowData, sortKey, sortDirection);
     }
 
     captureColumnData() {
