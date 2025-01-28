@@ -10,6 +10,7 @@ import { PiTableTd } from './components/table/tableTd';
 import { PiTableTfoot } from './components/table/tableTfoot';
 import { PiBasicTable } from './components/basicTable/basicTable';
 import { PiDataTable } from './components/dataTable/dataTable';
+import { PiTableColumn } from './components/table/tableColumn';
 
 /*
 <pi-card>
@@ -54,55 +55,13 @@ export class PiDemoDataTable extends LitElement {
                 <div>
                     
                     <pi-card>
-                        <div slot="title">Sortable data table</div>
-                        <pi-data-table
-                        .columns=${this.sampleColumns}
-                        .rows=${this.sampleRows}
-                        sortable
-                        ></pi-data-table>
-                    </pi-card>
-
-                    <pi-card>
-                        <div slot="title">Sample data</div>
-                        <pre>
-this.sampleColumns = [
-    { label: 'Name', key: 'name' },
-    { label: 'Age', key: 'age' },
-    { label: 'Country', key: 'country' },
-    { label: 'Income', key: 'income' },
-]
-
-this.sampleRows = [
-    { name: 'Alice', age: 30, country: 'USA', income: '$100,000', rawIncome: '100000' },
-    { name: 'Bob', age: 25, country: 'UK', income: '$50,000', rawIncome: '50000' },
-    { name: 'Charlie', age: 35, country: 'Canada', income: '$200,000', rawIncome: '200000' },
-]
-                        </pre>
-                    </pi-card>
-
-                    <pi-card>
-                        <div slot="title">Sample usage</div>
-                        <pre>
-&lt;pi-basic-table
-.columns=\${this.sampleColumns}
-.rows=\${this.sampleRows}
-&gt;&lt;/pi-basic-table&gt;
-                        </pre>
-                        <pre>
-&lt;pi-basic-table
-.columns=\${this.sampleColumns}
-.rows=\${this.sampleRows}
-striped
-&gt;&lt;/pi-basic-table&gt;
-                        </pre>
-                        <pre>
-&lt;pi-basic-table
-.columns=\${this.sampleColumns}
-.rows=\${this.sampleRows}
-&gt;
-    &lt;div slot=&quot;tfoot&quot;&gt;Some footer content here&lt;/div&gt;
-&lt;/pi-basic-table&gt;
-                        </pre>
+                        <div slot="title">Column Table</div>
+                        <pi-table .rows=${this.sampleRows}>
+                            <pi-table-column key="name" label="Name"></pi-table-column>
+                            <pi-table-column key="age" label="Age"></pi-table-column>
+                            <pi-table-column key="country" label="Country"></pi-table-column>
+                            <pi-table-column key="income" label="Income"></pi-table-column>
+                        </pi-table>
                     </pi-card>
 
                 </div>
