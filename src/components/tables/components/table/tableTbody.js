@@ -31,7 +31,7 @@ export class PiTableTbody extends LitElement {
         return html`
             ${this.rows.map((row) => html`
                 <pi-table-tr
-                class=${classMap(tbodyClasses)}
+                class="${classMap(tbodyClasses)}"
                 >
                     ${this.columns.map((col) => html`
                         <pi-table-td>${row[col.key]}</pi-table-td>
@@ -45,6 +45,12 @@ export class PiTableTbody extends LitElement {
         css`
             :host {
                 display: table-row-group;
+                
+            }
+
+            .test {
+                --pi-table-cell-border-right: none;
+                --pi-table-cell-border-left: none;
             }
 
             pi-table-tr.striped:nth-child(even) {
