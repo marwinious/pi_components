@@ -1,0 +1,15 @@
+:root {
+    /* Table Root */
+    --pi-table-border-collapse: collapse;
+    --pi-table-text-align: left;
+    --pi-table-white-space: nowrap;
+    --pi-table-width: 100%;
+    --pi-table-overflow-x: auto;
+    --pi-table-overflow-y: visible;
+
+    /* Sort Icons */
+    --pi-table-sort-icon-font-size: 0.8em;
+    --pi-table-sort-icon-color: #666;
+    --pi-table-sort-icon-margin: 0 0 0 0.5em;
+    --pi-table-sort-icon-active-color: #000;
+}
