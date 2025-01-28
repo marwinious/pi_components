@@ -11,6 +11,7 @@ export class PiTableTbody extends LitElement {
             rows: { type: Array },
             striped: { type: Boolean },
             sortable: { type: Boolean },
+            gridlines: { type: Boolean }
         }
     }
 
@@ -20,18 +21,20 @@ export class PiTableTbody extends LitElement {
         this.rows = [];
         this.striped = false;
         this.sortable = false;
+        this.gridlines = false;
     }
 
     render() {
         // Define dynamic classes
         const tbodyClasses = {
-            striped: this.striped
+            striped: this.striped,
+            gridlines: this.gridlines
         }
 
         return html`
             ${this.rows.map((row) => html`
                 <pi-table-tr
-                class="${classMap(tbodyClasses)}"
+                class=${classMap(tbodyClasses)}
                 >
                     ${this.columns.map((col) => html`
                         <pi-table-td>${row[col.key]}</pi-table-td>
@@ -48,17 +51,17 @@ export class PiTableTbody extends LitElement {
                 
             }
 
-            .test {
-                --pi-table-cell-border-right: none;
-                --pi-table-cell-border-left: none;
+            .gridlines {
+                --pi-table-cell-border-right: var(--pi-table-cell-border-top, 1px solid #ddd);
+                --pi-table-cell-border-left: var(--pi-table-cell-border-top, 1px solid #ddd);
             }
 
             pi-table-tr.striped:nth-child(even) {
-                background-color: #eee;
+                background-color: var(--pi-table-row-bg-color-striped-even, #f8f8f8);
             }
 
             pi-table-tr.striped:nth-child(odd) {
-                background-color: #fff;
+                background-color: var(--pi-table-row-bg-color-striped-odd, #fff);
             }
         `
     ]

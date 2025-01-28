@@ -36,6 +36,7 @@ export class PiTable extends LitElement {
             columns: { type: Array, attribute: false },
             rows: { type: Array },
             striped: { type: Boolean },
+            gridlines: { type: Boolean }
         }
     }
 
@@ -44,6 +45,7 @@ export class PiTable extends LitElement {
         this.columns = [];
         this.rows = [];
         this.striped = false;
+        this.gridlines = false;
     }
 
     firstUpdated() {
@@ -66,6 +68,7 @@ export class PiTable extends LitElement {
 
                 <pi-table-tbody
                 ?striped=${this.striped}
+                ?gridlines=${this.gridlines}
                 .rows=${this.rows}
                 .columns=${this.columns}
                 ></pi-table-tbody>
