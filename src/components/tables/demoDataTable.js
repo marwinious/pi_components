@@ -43,6 +43,8 @@ export class PiDemoDataTable extends LitElement {
             { name: 'Alice', age: 30, country: 'USA', income: '$100,000', rawIncome: '100000' },
             { name: 'Bob', age: 25, country: 'UK', income: '$50,000', rawIncome: '50000' },
             { name: 'Charlie', age: 35, country: 'Canada', income: '$200,000', rawIncome: '200000' },
+            { name: 'David', age: 32, country: 'Spain', income: '$70,000', rawIncome: '70000' },
+            { name: 'Edward', age: 27, country: 'New Zealand', income: '$150,000', rawIncome: '150000' },
         ]
     }
 
@@ -55,8 +57,18 @@ export class PiDemoDataTable extends LitElement {
                 <div>
                     
                     <pi-card>
-                        <div slot="title">Column Table</div>
+                        <div slot="title">Simple Table</div>
                         <pi-table .rows=${this.sampleRows}>
+                            <pi-table-column key="name" label="Name"></pi-table-column>
+                            <pi-table-column key="age" label="Age"></pi-table-column>
+                            <pi-table-column key="country" label="Country"></pi-table-column>
+                            <pi-table-column key="income" label="Income"></pi-table-column>
+                        </pi-table>
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Striped Table</div>
+                        <pi-table .rows=${this.sampleRows} striped>
                             <pi-table-column key="name" label="Name"></pi-table-column>
                             <pi-table-column key="age" label="Age"></pi-table-column>
                             <pi-table-column key="country" label="Country"></pi-table-column>
