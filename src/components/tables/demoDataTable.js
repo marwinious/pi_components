@@ -76,6 +76,16 @@ export class PiDemoDataTable extends LitElement {
                         </pi-table>
                     </pi-card>
 
+                    <pi-card>
+                        <div slot="title">Gridlines Table</div>
+                        <pi-table .rows=${this.sampleRows} gridlines>
+                            <pi-table-column key="name" label="Name"></pi-table-column>
+                            <pi-table-column key="age" label="Age"></pi-table-column>
+                            <pi-table-column key="country" label="Country"></pi-table-column>
+                            <pi-table-column key="income" label="Income"></pi-table-column>
+                        </pi-table>
+                    </pi-card>
+
                 </div>
 
             </pi-demo-container>
