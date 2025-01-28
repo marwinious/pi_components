@@ -1,33 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { PiTableThead } from './tableThead';
-import { PiTableTr } from './tableTr';
-import { PiTableTh } from './tableTh';
 import { PiTableTbody } from './tableTbody';
-import { PiTableTd } from './tableTd';
 import { PiTableTfoot } from './tableTfoot';
 import { PiBaseTable } from './baseTable';
-
-/*
-<table>
-                <pi-table-thead>
-                    <pi-table-tr>
-                        ${this.columns.map((col) => html`
-                            <pi-table-th>${col.label}</pi-table-th>
-                        `)}
-                    </pi-table-tr>
-                </pi-table-thead>
-                <pi-table-tbody>
-                    ${this.rows.map((row) => html`
-                        <pi-table-tr>
-                            ${this.columns.map((col) => html`
-                                <pi-table-td>${row[col.key]}</pi-table-td>
-                            `)}
-                        </pi-table-tr>
-                    `)}
-                </pi-table-tbody>
-                <pi-table-tfoot></pi-table-tfoot>
-            </table>
-*/
 
 export class PiTable extends LitElement {
 
@@ -54,7 +29,6 @@ export class PiTable extends LitElement {
 
     willUpdate(changedProperties) {
         if(changedProperties.has('rows')) {
-            // console.log('this.rows: ', this.rows);
             this.captureColumnData();
         }
     }
@@ -94,29 +68,22 @@ export class PiTable extends LitElement {
 
         // Get slot elements
         const assignedElements = columnsSlot.assignedElements({ flatten: true});
-        // console.log('assignedElements: ', assignedElements);
 
         // Check if slot elements are p-table-columns
         if(assignedElements[0].nodeName == "PI-TABLE-COLUMN") {
-            // console.log('assignedElements: ', assignedElements);
             // Loop through elements
             assignedElements.forEach((el) => {
                 const columnDataItem = {};
 
                 // Translate each element's attributes to key->value objects
                 Array.from(el.attributes).forEach((attr) => {
-                    // console.log('Attribute: ', attr.name, attr.value);
                     // Add this attribute's name and corresponding label to our data item
                     columnDataItem[attr.name] = attr.value;
-                    // Add to column data
-                    // columnData.push({ key: attr.key, label: attr.value})
                 })
 
                 // Add to column data
                 columnData.push(columnDataItem);
             })
-
-            // console.log('columnData: ', columnData);
             
             // Update this.columns with new columnData
             this.columns = columnData
