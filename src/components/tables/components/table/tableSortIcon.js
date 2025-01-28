@@ -25,13 +25,13 @@ export class PiTableSortIcon extends LitElement {
     static styles = [
         css`
             :host {
-                margin: var(--standard-table-sort-icon-margin, 0 0 0 0.5em);
-                font-size: var(--standard-table-sort-icon-font-size, 0.8em);
-                color: var(--standard-table-sort-icon-color, #666);
+                margin: var(--pi-table-sort-icon-margin, 0 0 0 0.5em);
+                font-size: var(--pi-table-sort-icon-font-size, 0.8em);
+                color: var(--pi-table-sort-icon-color, #666);
             }
 
             :host([data-active="true"]) {
-                color: var(--standard-table-sort-icon-active-color, #000);
+                color: var(--pi-table-sort-icon-active-color, #000);
             }
         `
     ]
