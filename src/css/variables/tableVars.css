@@ -16,11 +16,11 @@
     --pi-table-th-text-color: #555;
     --pi-table-th-text-align: left;
     --pi-table-th-padding: 0.5em;
-    --pi-table-th-border-all: none;
-    --pi-table-th-border-top: var(--pi-table-th-border-all);
-    --pi-table-th-border-right: var(--pi-table-th-border-all);
+    --pi-table-th-border-all: 1px solid #ddd;
+    --pi-table-th-border-top: none;
+    --pi-table-th-border-right: none;
     --pi-table-th-border-bottom: var(--pi-table-th-border-all);
-    --pi-table-th-border-left: var(--pi-table-th-border-all);
+    --pi-table-th-border-left: none;
     --pi-table-th-bg-color: #fff;
     --pi-table-th-bg-color-active: color-mix(in srgb, var(--pi-table-th-bg-color, #f4f4f4), black 20%);
     --pi-table-th-transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
