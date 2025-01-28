@@ -59,24 +59,20 @@ export class PiTableColumn extends LitElement {
         css`
             :host {
                 display: table-cell;
-                padding: var(--pi-table-cell-padding, 0.75em);
-                border: var(--pi-table-cell-border, 1px solid #ddd);
+                padding: var(--pi-table-th-padding, 0.75em);
+                border-top: var(--pi-table-th-border-top, 1px solid #ddd);
+                border-right: var(--pi-table-th-border-right, 1px solid #ddd);
+                border-bottom: var(--pi-table-th-border-bottom, 1px solid #ddd);
+                border-left: var(--pi-table-th-border-left, 1px solid #ddd);
                 background-color: var(--pi-table-th-bg-color, #f4f4f4);
+                color: var(--pi-table-th-text-color, #555);
+                text-align: var(--pi-table-th-text-align, left);
                 position: relative;
-                transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+                font-weight: var(--pi-table-th-font-weight, bold);
+                transition: var(--pi-table-th-transition, background-color 0.5s ease, border 0.5s ease, color 0.5s ease);
 
                 &[data-active="true"] {
-                    background-color: var(--pi-table-th-active-bg-color, color-mix(in srgb, var(--pi-table-th-bg-color, #f4f4f4), black 20%));
-                }
-
-                .sort-icon {
-                    margin: var(--pi-table-sort-icon-margin, 0 0 0 0.5em);
-                    font-size: var(--pi-table-sort-icon-font-size, 0.8em);
-                    color: var(--pi-table-sort-icon-color, #666);
-
-                    &[data-active="true"] {
-                        color: var(--standard-table-sort-icon-active-color, #000);
-                    }
+                    background-color: var(--pi-table-th-bg-color-active, color-mix(in srgb, var(--pi-table-th-bg-color, #f4f4f4), black 20%));
                 }
             }
 
@@ -88,8 +84,7 @@ export class PiTableColumn extends LitElement {
 
             @media (max-width: 768px) {
                 :host {
-                    font-size: 0.9em;
-                    font-size: var(--pi-table-small-cell-font-size, 0.9em);
+                    font-size: var(--pi-table-th-font-size-sm, 0.9em);
                 }
             }
         `
