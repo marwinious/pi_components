@@ -15,7 +15,8 @@ export class PiTable extends LitElement {
             gridlines: { type: Boolean },
             sortKey: { type: String },
             sortDirection: { type: String },
-            activeRows: { type: Array }
+            activeRows: { type: Array, attribute: false },
+            slottedColumns: { type: Array, attribute: false }
         }
     }
 
@@ -28,6 +29,7 @@ export class PiTable extends LitElement {
         this.sortKey = '';
         this.sortDirection = '';
         this.activeRows = [];
+        this.slottedColumns = [];
     }
 
     connectedCallback() {
@@ -77,8 +79,18 @@ export class PiTable extends LitElement {
     }
 
     handleSortRequest(e) {
-        console.log('e', e.detail);
         this.activeRows = this.sortRows(this.activeRows, e.detail.key, e.detail.newSortDirection);
+        this.updateColumnSorters(e.detail.key)
+    }
+
+    updateColumnSorters(sortKey) {
+        this.slottedColumns.forEach(el => {
+            el.dispatchEvent(new CustomEvent('updateSorter', { 
+                detail: sortKey,
+                bubbles: true,
+                composed: true
+            }));
+        })
     }
 
     checkDefaultSort() {
@@ -98,6 +110,7 @@ export class PiTable extends LitElement {
     captureColumnData() {
         // Init column data
         const columnData = [];
+        const columnElements = [];
 
         // Get slot
         const columnsSlot = this.shadowRoot.querySelector('slot');
@@ -108,11 +121,12 @@ export class PiTable extends LitElement {
         // Get slot elements
         const assignedElements = columnsSlot.assignedElements({ flatten: true});
 
-        // Check if slot elements are p-table-columns
-        if(assignedElements[0].nodeName == "PI-TABLE-COLUMN") {
-            // Loop through elements
-            assignedElements.forEach((el) => {
+        // Loop through elements
+        assignedElements.forEach((el) => {
+            // Check if slot element is p-table-column
+            if(el.nodeName == "PI-TABLE-COLUMN") {
                 const columnDataItem = {};
+                columnElements.push(el);
 
                 // Translate each element's attributes to key->value objects
                 Array.from(el.attributes).forEach((attr) => {
@@ -122,12 +136,17 @@ export class PiTable extends LitElement {
 
                 // Add to column data
                 columnData.push(columnDataItem);
-            })
-            
-            // Update this.columns with new columnData
-            this.columns = columnData
+            }
+        })
+        
+        // Update this.columns with new columnData
+        this.columns = columnData
 
+        // Update this.slottedColumns with capture elements
+        if(columnElements.length > 0 ) {
+            this.slottedColumns = columnElements;
         }
+
     }
 
     static styles = [

@@ -21,6 +21,16 @@ export class PiTableColumn extends LitElement {
         this.label = '';
     }
 
+    connectedCallback() {
+        super.connectedCallback();
+        this.addEventListener('updateSorter', (e) => this.handleUpdateSorter(e.detail))
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.removeEventListener('updateSorter');
+    }
+
     render() {
         const dynamicClasses = {
             'isSortable': this.sortable
@@ -40,6 +50,12 @@ export class PiTableColumn extends LitElement {
             </div>
             
         `;
+    }
+
+    handleUpdateSorter(updatedSortKey) {
+        if(updatedSortKey != this.key) {
+            this.sortDirection = '';
+        }
     }
 
     handleSortClick(e) {
