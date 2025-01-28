@@ -33,8 +33,9 @@ export class PiTable extends LitElement {
 
     static get properties() {
         return {
-            columns: { type: Array },
+            columns: { type: Array, attribute: false },
             rows: { type: Array },
+            striped: { type: Boolean },
         }
     }
 
@@ -42,6 +43,7 @@ export class PiTable extends LitElement {
         super()
         this.columns = [];
         this.rows = [];
+        this.striped = false;
     }
 
     firstUpdated() {
@@ -50,7 +52,8 @@ export class PiTable extends LitElement {
 
     willUpdate(changedProperties) {
         if(changedProperties.has('rows')) {
-
+            // console.log('this.rows: ', this.rows);
+            this.captureColumnData();
         }
     }
 
@@ -81,8 +84,12 @@ export class PiTable extends LitElement {
         // Get slot
         const columnsSlot = this.shadowRoot.querySelector('slot');
 
+        // Check for slotted items
+        if(columnsSlot == null) { return false; }
+
         // Get slot elements
         const assignedElements = columnsSlot.assignedElements({ flatten: true});
+        // console.log('assignedElements: ', assignedElements);
 
         // Check if slot elements are p-table-columns
         if(assignedElements[0].nodeName == "PI-TABLE-COLUMN") {
@@ -116,11 +123,12 @@ export class PiTable extends LitElement {
         css`
             :host {
                 display: table;
-                overflow-x: auto;
-                width: 100%;
-                border-collapse: collapse;
-                text-align: left;
-                white-space: nowrap;
+                overflow-x: var(--pi-table-overflow-x, auto);
+                overflow-y: var(--pi-table-overflow-y, visible);
+                width: var(--pi-table-width, 100%);
+                border-collapse: var(--pi-table-border-collapse, collapse);
+                text-align: var(--pi-table-text-align, left);
+                white-space: var(--pi-table-white-space, nowrap);
             }
         `
     ]
