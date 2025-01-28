@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import { classMap } from 'lit/directives/class-map.js';
 import { PiTableTr } from './tableTr';
 import { PiTableTh } from './tableTh';
 
@@ -8,6 +9,7 @@ export class PiTableThead extends LitElement {
         return {
             columns: { type: Array },
             sortable: { type: Boolean },
+            gridlines: { type: Boolean }
         }
     }
 
@@ -15,11 +17,20 @@ export class PiTableThead extends LitElement {
         super()
         this.columns = [];
         this.sortable = false;
+        this.gridlines = false;
     }
 
     render() {
+        // Define dynamic classes
+        const tbodyClasses = {
+            striped: this.striped,
+            gridlines: this.gridlines
+        }
+
         return html`
-            <pi-table-tr>
+            <pi-table-tr
+            class=${classMap(tbodyClasses)}
+            >
                 <slot>
                     ${this.columns.map((col) => html`
                         <pi-table-th
@@ -35,6 +46,12 @@ export class PiTableThead extends LitElement {
         css`
             :host {
                 display: table-row-group;
+            }
+
+            .gridlines {
+                --pi-table-th-border-right: var(--pi-table-th-border-bottom, 1px solid #ddd);
+                --pi-table-th-border-left: var(--pi-table-th-border-bottom, 1px solid #ddd);
+                --pi-table-th-border-top: var(--pi-table-th-border-bottom, 1px solid #ddd);
             }
         `
     ]

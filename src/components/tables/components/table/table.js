@@ -62,7 +62,9 @@ export class PiTable extends LitElement {
     render() {
         return html`
             <pi-base-table>
-                <pi-table-thead>
+                <pi-table-thead
+                ?gridlines=${this.gridlines}
+                >
                     <slot></slot>
                 </pi-table-thead>
 
