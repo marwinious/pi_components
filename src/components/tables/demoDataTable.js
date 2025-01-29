@@ -57,6 +57,16 @@ export class PiDemoDataTable extends LitElement {
                 <div>
                     
                     <pi-card>
+                        <div slot="title">Paginated Table</div>
+                        <pi-table .rows=${this.sampleRows} paginate .rowsPerPage="3">
+                            <pi-table-column key="name" label="Name"></pi-table-column>
+                            <pi-table-column key="age" label="Age"></pi-table-column>
+                            <pi-table-column key="country" label="Country"></pi-table-column>
+                            <pi-table-column key="income" label="Income"></pi-table-column>
+                        </pi-table>
+                    </pi-card>
+
+                    <pi-card>
                         <div slot="title">Simple Table</div>
                         <pi-table .rows=${this.sampleRows}>
                             <pi-table-column key="name" label="Name"></pi-table-column>
