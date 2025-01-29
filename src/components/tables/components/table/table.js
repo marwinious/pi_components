@@ -20,7 +20,8 @@ export class PiTable extends LitElement {
             activeRows: { type: Array, attribute: false },
             slottedColumns: { type: Array, attribute: false },
             paginate: { type: Boolean },
-            rowsPerPage: { type: [Number, String] }
+            rowsPerPage: { type: [Number, String] },
+            sortedRows: { type: Array, attribute: false }
         }
     }
 
@@ -36,6 +37,7 @@ export class PiTable extends LitElement {
         this.slottedColumns = [];
         this.paginate = false;
         this.rowsPerPage = -1;
+        this.sortedRows = [];
     }
 
     connectedCallback() {
@@ -85,7 +87,7 @@ export class PiTable extends LitElement {
 
             ${this.paginate ? html`
                 <pi-table-paginator
-                .rows=${this.rows}
+                .rows=${this.sortedRows}
                 .rowsPerPage=${this.rowsPerPage}
                 @updatedPageRows=${(e) => this.handleUpdatedPageRows(e.detail.rows)}
                 ></pi-table-paginator>
@@ -98,8 +100,14 @@ export class PiTable extends LitElement {
     }
 
     handleSortRequest(sortKey, sortDirection) {
-        this.activeRows = sortArrayOfObjects(this.rows, sortKey, sortDirection);
+        this.sortedRows = sortArrayOfObjects(this.rows, sortKey, sortDirection);
         this.updateColumnSorters(sortKey, sortDirection)
+
+        // If paginator is not enabled
+        if(!this.paginate) {
+            // Update activeRows (otherwise the paginator handles that)
+            this.activeRows = [...this.sortedRows];
+        }
     }
 
     updateColumnSorters(sortKey, sortDirection) {
@@ -163,6 +171,7 @@ export class PiTable extends LitElement {
     initTable() {
         // Copy rows prop to activeRows for manipulation
         this.activeRows = [...this.rows];
+        this.sortedRows = [...this.rows];
     }
 
     static styles = [
