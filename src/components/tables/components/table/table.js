@@ -85,7 +85,7 @@ export class PiTable extends LitElement {
 
             ${this.paginate ? html`
                 <pi-table-paginator
-                .rawRows=${this.rows}
+                .rows=${this.rows}
                 .rowsPerPage=${this.rowsPerPage}
                 @updatedPageRows=${(e) => this.handleUpdatedPageRows(e.detail.rows)}
                 ></pi-table-paginator>
