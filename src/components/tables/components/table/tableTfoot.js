@@ -1,4 +1,6 @@
 import { LitElement, css, html } from 'lit'
+import { PiTableTr } from './tableTr';
+import { PiTableTd } from './tableTd';
 
 export class PiTableTfoot extends LitElement {
 
@@ -14,7 +16,7 @@ export class PiTableTfoot extends LitElement {
 
     render() {
         return html`
-            <div class="table_tfoot"><slot></slot></div>
+            <slot></slot>
         `;
     }
 
@@ -25,10 +27,10 @@ export class PiTableTfoot extends LitElement {
                 
             }
 
-            .table_tfoot {
+            /* .table_tfoot {
                 display: block;
                 padding: 0.5rem 0 0.5rem 0;
-            }
+            } */
         `
     ]
     
