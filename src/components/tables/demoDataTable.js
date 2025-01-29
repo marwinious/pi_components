@@ -3,7 +3,11 @@ import { CodeDisplaySample } from '../samples/codeSampleDisplay';
 import { 
     simpleTableCode, 
     stripedTableCode, 
-    gridlinesTableCode } from './codeSamples/tableCodeSamples';
+    gridlinesTableCode,
+    sortableTableCode,
+    preSortedTableCode,
+    paginatedTableCode
+} from './codeSamples/tableCodeSamples';
 import { PiCard } from '../cards/components/card';
 import { PiDemoContainer } from '../samples/demoContainer';
 import { PiTable } from './components/table/table';
@@ -106,32 +110,44 @@ export class PiDemoDataTable extends LitElement {
 
                     <pi-card>
                         <div slot="title">Sortable Table</div>
-                        <pi-table .rows=${this.sampleRows} gridlines>
+                        <pi-table .rows=${this.sampleRows}>
                             <pi-table-column key="name" label="Name" sortable sortKey="name"></pi-table-column>
                             <pi-table-column key="age" label="Age"></pi-table-column>
                             <pi-table-column key="country" label="Country"></pi-table-column>
                             <pi-table-column key="income" label="Income"></pi-table-column>
                         </pi-table>
+
+                        <code-display-sample
+                        .code=${sortableTableCode}
+                        ></code-display-sample>
                     </pi-card>
 
                     <pi-card>
                         <div slot="title">Pre-sorted Table (by age, ascending)</div>
                         <pi-table .rows=${this.sampleRows} sortKey="age" sortDirection="asc">
                             <pi-table-column key="name" label="Name" sortable sortKey="name"></pi-table-column>
-                            <pi-table-column key="age" label="Age" sortable sortKey="name"></pi-table-column>
-                            <pi-table-column key="country" label="Country" sortable sortKey="name"></pi-table-column>
+                            <pi-table-column key="age" label="Age" sortable sortKey="age"></pi-table-column>
+                            <pi-table-column key="country" label="Country" sortable sortKey="country"></pi-table-column>
                             <pi-table-column key="income" label="Income" sortable sortKey="rawIncome"></pi-table-column>
                         </pi-table>
+
+                        <code-display-sample
+                        .code=${preSortedTableCode}
+                        ></code-display-sample>
                     </pi-card>
 
                     <pi-card>
                         <div slot="title">Paginated Table</div>
                         <pi-table .rows=${this.sampleRows} paginate rowsPerPage="3">
                             <pi-table-column key="name" label="Name"></pi-table-column>
-                            <pi-table-column key="age" label="Age"></pi-table-column>
+                            <pi-table-column key="age" label="Age" sortable sortKey="age"></pi-table-column>
                             <pi-table-column key="country" label="Country"></pi-table-column>
                             <pi-table-column key="income" label="Income"></pi-table-column>
                         </pi-table>
+
+                        <code-display-sample
+                        .code=${paginatedTableCode}
+                        ></code-display-sample>
                     </pi-card>
 
                 </div>
