@@ -52,9 +52,12 @@ export class PiTableColumn extends LitElement {
         `;
     }
 
-    handleUpdateSorter(updatedSortKey) {
-        if(updatedSortKey != this.key) {
+    handleUpdateSorter(sortSettings) {
+        if(sortSettings.sortKey != this.key) {
             this.sortDirection = '';
+        }
+        else {
+            this.sortDirection = sortSettings.sortDirection;
         }
     }
 

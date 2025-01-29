@@ -83,10 +83,10 @@ export class PiTable extends LitElement {
         this.updateColumnSorters(e.detail.key)
     }
 
-    updateColumnSorters(sortKey) {
+    updateColumnSorters(sortKey, sortDirection) {
         this.slottedColumns.forEach(el => {
             el.dispatchEvent(new CustomEvent('updateSorter', { 
-                detail: sortKey,
+                detail: { sortKey, sortDirection },
                 bubbles: true,
                 composed: true
             }));
@@ -97,6 +97,9 @@ export class PiTable extends LitElement {
         if(this.sortKey != '' && this.sortDirection != '') {
             // Sort initial data
             this.activeRows = sortArrayOfObjects(this.rows, this.sortKey, this.sortDirection);
+
+            // Update sorters
+            this.updateColumnSorters(this.sortKey, this.sortDirection);
         }
         else {
             this.activeRows = this.rows;
