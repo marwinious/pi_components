@@ -4,6 +4,7 @@ import { PiTableThead } from './tableThead';
 import { PiTableTbody } from './tableTbody';
 import { PiTableTfoot } from './tableTfoot';
 import { PiBaseTable } from './baseTable';
+import { PiPaginator } from '../../../paginators/components/paginator';
 
 export class PiTable extends LitElement {
 
@@ -16,7 +17,9 @@ export class PiTable extends LitElement {
             sortKey: { type: String },
             sortDirection: { type: String },
             activeRows: { type: Array, attribute: false },
-            slottedColumns: { type: Array, attribute: false }
+            slottedColumns: { type: Array, attribute: false },
+            paginate: { type: Boolean },
+            rowsPerPage: { type: [Number, String] }
         }
     }
 
@@ -30,11 +33,13 @@ export class PiTable extends LitElement {
         this.sortDirection = '';
         this.activeRows = [];
         this.slottedColumns = [];
+        this.paginate = false;
+        this.rowsPerPage = -1;
     }
 
     connectedCallback() {
         super.connectedCallback();
-        this.addEventListener('sortRequested', (e) => this.handleSortRequest(e))
+        this.addEventListener('sortRequested', (e) => this.handleSortRequest(e.detail.key, e.detail.newSortDirection))
     }
 
     disconnectedCallback() {
@@ -44,7 +49,7 @@ export class PiTable extends LitElement {
 
     firstUpdated() {
         this.captureColumnData();
-        this.checkDefaultSort();
+        this.handleDefaultSort();
     }
 
     willUpdate(changedProperties) {
@@ -75,12 +80,19 @@ export class PiTable extends LitElement {
                     <slot name="tfoot"></slot>
                 </pi-table-tfoot>
             </pi-base-table>
+
+            ${this.paginate ? html`
+                <pi-paginator
+                .rows=3
+                .totalRecords=${this.rows.length}
+                ></pi-paginator>
+            ` : null}
         `;
     }
 
-    handleSortRequest(e) {
-        this.activeRows = this.sortRows(this.activeRows, e.detail.key, e.detail.newSortDirection);
-        this.updateColumnSorters(e.detail.key)
+    handleSortRequest(sortKey, sortDirection) {
+        this.activeRows = sortArrayOfObjects(this.rows, sortKey, sortDirection);
+        this.updateColumnSorters(sortKey, sortDirection)
     }
 
     updateColumnSorters(sortKey, sortDirection) {
@@ -93,21 +105,14 @@ export class PiTable extends LitElement {
         })
     }
 
-    checkDefaultSort() {
+    handleDefaultSort() {
         if(this.sortKey != '' && this.sortDirection != '') {
-            // Sort initial data
-            this.activeRows = sortArrayOfObjects(this.rows, this.sortKey, this.sortDirection);
-
-            // Update sorters
-            this.updateColumnSorters(this.sortKey, this.sortDirection);
+            this.handleSortRequest(this.sortKey, this.sortDirection);
         }
         else {
+            // If no default sort settings, use prop as activeRows
             this.activeRows = this.rows;
         }
-    }
-
-    sortRows(rowData, sortKey, sortDirection) {
-        return sortArrayOfObjects(rowData, sortKey, sortDirection);
     }
 
     captureColumnData() {
