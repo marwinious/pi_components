@@ -108,7 +108,7 @@ export class PiDemoDataTable extends LitElement {
 
                     <pi-card>
                         <div slot="title">Pre-sorted Table (by age, ascending)</div>
-                        <pi-table .rows=${this.sampleRows} sortKey="age" sortDirection="asc">
+                        <pi-table .rows=${this.sampleRows} sortKey="age" sortDirection="asc" paginate rowsPerPage="3">
                             <pi-table-column key="name" label="Name" sortable sortKey="name"></pi-table-column>
                             <pi-table-column key="age" label="Age" sortable sortKey="name"></pi-table-column>
                             <pi-table-column key="country" label="Country" sortable sortKey="name"></pi-table-column>
