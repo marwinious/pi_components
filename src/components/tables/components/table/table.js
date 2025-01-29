@@ -94,10 +94,7 @@ export class PiTable extends LitElement {
     }
 
     handleUpdatedPageRows(updatedRows) {
-        console.log('updatedRows: ', updatedRows);
         this.activeRows = [...updatedRows];
-        console.log('this.activeRows: ', this.activeRows);
-        
     }
 
     handleSortRequest(sortKey, sortDirection) {
