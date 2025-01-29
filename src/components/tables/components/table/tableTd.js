@@ -4,12 +4,13 @@ export class PiTableTd extends LitElement {
 
     static get properties() {
         return {
-            
+            colspan: { type: Number }
         }
     }
 
     constructor() {
         super()
+        this.colspan = 1;
     }
 
     render() {
