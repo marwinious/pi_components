@@ -48,7 +48,6 @@ export class PiTableTbody extends LitElement {
         css`
             :host {
                 display: table-row-group;
-                
             }
 
             .gridlines {
