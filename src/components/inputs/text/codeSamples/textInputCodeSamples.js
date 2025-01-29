@@ -1,0 +1,1 @@
+export const basicTextInputSample = `<pi-text-input @inputChanged="\${(e) => this.handleInput(e.detail)}"></pi-text-input>`

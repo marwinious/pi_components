@@ -4,6 +4,7 @@ import { PiDemoButtons } from '../buttons/demoButtons';
 import { PiDemoCards } from '../cards/demoCards';
 import { PiDemoPaginators } from '../paginators/demoPaginators';
 import { PiDemoDataTable } from '../tables/demoDataTable';
+import { PiDemoTextInputs } from '../inputs/text/demoTextInput';
 
 export class ComponentsPreview extends LitElement {
 
@@ -19,6 +20,7 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
+            <pi-demo-text-inputs></pi-demo-text-inputs>
             <pi-demo-data-table></pi-demo-data-table>
             <pi-demo-paginators></pi-demo-paginators>
             <pi-demo-tabs></pi-demo-tabs>
