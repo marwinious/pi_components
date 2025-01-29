@@ -1,33 +1,39 @@
 import { LitElement, css, html } from 'lit'
+import { chunkArray } from '../../../../lib/utility/arrays';
 import { PiPaginator } from '../../../paginators/components/paginator';
 
 export class PiTablePaginator extends LitElement {
 
     static get properties() {
         return {
-            rawRows: { type: Array },
+            rows: { type: Array },
             rowsPerPage: { type: [Number, String] },
-            activeRows: { type: Array, attribute: false }
+            activeRows: { type: Array, attribute: false },
+            pages: { type: Array, attribute: false },
+            activePageIndex: { type: Number, attribute: false }
         }
     }
 
     constructor() {
         super()
-        this.rawRows = [];
+        this.rows = [];
         this.rowsPerPage = -1;
         this.activeRows = [];
+        this.pages = [];
+        this.activePageIndex = 0;
     }
 
-    connectedCallback() {
-        super.connectedCallback();
-        this.initPagination();
+    willUpdate(changedProperties) {
+        if(changedProperties.has('rows')) {
+            this.initPagination();
+        }
     }
 
     render() {
         return html`
             <pi-paginator
             .rows=${this.rowsPerPage}
-            .totalRecords=${this.rawRows.length}
+            .totalRecords=${this.rows.length}
             @navClick=${(e) => this.handlePagerNavClick(e.detail)}
             ></pi-paginator>
         `;
@@ -35,26 +41,23 @@ export class PiTablePaginator extends LitElement {
 
     initPagination() {
         if(this.rowsPerPage > 0) {
-            this.handleDataPagination(0, this.rowsPerPage);
+            // Split rows into an array of rows for easy reference
+            const pagesOfRows = chunkArray(this.rows, this.rowsPerPage);
+            this.pages = pagesOfRows;
+            
+            this.handlePaginationChange();
         }
     }
 
-    handleDataPagination(rowStart, rowStop) {
-        // Paginate
-        const paginatedData = this.rawRows.slice(rowStart, rowStop);
-
-        // Update activeRows
-        this.activeRows = paginatedData;
-
-        // Emit update
-        this.emitPageRows();
+    handlePaginationChange() {
+        this.emitPageRows(this.pages[this.activePageIndex]);
     }
 
-    emitPageRows() {
+    emitPageRows(updatedRows) {
         // Emit event with selected tab
         const event = new CustomEvent('updatedPageRows', {
             detail: {
-                rows: this.activeRows
+                rows: updatedRows
             },
             bubbles: true,
             composed: true
@@ -67,7 +70,8 @@ export class PiTablePaginator extends LitElement {
         const rowStart = Number(navData.navIndex * this.rowsPerPage);
         const rowStop = rowStart + Number(this.rowsPerPage);
 
-        this.handleDataPagination(rowStart, rowStop);
+        this.activePageIndex = navData.navIndex;
+        this.handlePaginationChange();
     }
 
     static styles = [
