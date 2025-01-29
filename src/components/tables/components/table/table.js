@@ -5,6 +5,7 @@ import { PiTableTbody } from './tableTbody';
 import { PiTableTfoot } from './tableTfoot';
 import { PiBaseTable } from './baseTable';
 import { PiPaginator } from '../../../paginators/components/paginator';
+import { PiTablePaginator } from '../pagination/tablePaginator';
 
 export class PiTable extends LitElement {
 
@@ -39,6 +40,7 @@ export class PiTable extends LitElement {
 
     connectedCallback() {
         super.connectedCallback();
+        this.initTable();
         this.addEventListener('sortRequested', (e) => this.handleSortRequest(e.detail.key, e.detail.newSortDirection))
     }
 
@@ -82,12 +84,20 @@ export class PiTable extends LitElement {
             </pi-base-table>
 
             ${this.paginate ? html`
-                <pi-paginator
-                .rows=3
-                .totalRecords=${this.rows.length}
-                ></pi-paginator>
+                <pi-table-paginator
+                .rawRows=${this.rows}
+                .rowsPerPage=${this.rowsPerPage}
+                @updatedPageRows=${(e) => this.handleUpdatedPageRows(e.detail.rows)}
+                ></pi-table-paginator>
             ` : null}
         `;
+    }
+
+    handleUpdatedPageRows(updatedRows) {
+        console.log('updatedRows: ', updatedRows);
+        this.activeRows = [...updatedRows];
+        console.log('this.activeRows: ', this.activeRows);
+        
     }
 
     handleSortRequest(sortKey, sortDirection) {
@@ -108,10 +118,6 @@ export class PiTable extends LitElement {
     handleDefaultSort() {
         if(this.sortKey != '' && this.sortDirection != '') {
             this.handleSortRequest(this.sortKey, this.sortDirection);
-        }
-        else {
-            // If no default sort settings, use prop as activeRows
-            this.activeRows = this.rows;
         }
     }
 
@@ -155,6 +161,11 @@ export class PiTable extends LitElement {
             this.slottedColumns = columnElements;
         }
 
+    }
+
+    initTable() {
+        // Copy rows prop to activeRows for manipulation
+        this.activeRows = [...this.rows];
     }
 
     static styles = [
