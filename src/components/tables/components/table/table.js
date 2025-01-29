@@ -7,6 +7,11 @@ import { PiBaseTable } from './baseTable';
 import { PiPaginator } from '../../../paginators/components/paginator';
 import { PiTablePaginator } from '../pagination/tablePaginator';
 
+/*
+TODO: Add filter option with input fields to filter columns by search strings
+TODO: Refactor how tfoot is handled. Currently only really works with same columns as header
+*/
+
 export class PiTable extends LitElement {
 
     static get properties() {
