@@ -17,7 +17,7 @@ export class PiDemoCards extends LitElement {
         return html`
 
             <pi-demo-container
-            title="Buttons"
+            title="Cards"
             >
 
                 <div>
