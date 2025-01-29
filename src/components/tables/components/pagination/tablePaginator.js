@@ -26,7 +26,7 @@ export class PiTablePaginator extends LitElement {
     render() {
         return html`
             <pi-paginator
-            .rows=3
+            .rows=${this.rowsPerPage}
             .totalRecords=${this.rawRows.length}
             @navClick=${(e) => this.handlePagerNavClick(e.detail)}
             ></pi-paginator>
@@ -35,15 +35,19 @@ export class PiTablePaginator extends LitElement {
 
     initPagination() {
         if(this.rowsPerPage > 0) {
-            // Paginate initial data
-            let paginatedData = this.rawRows.slice(0, this.rowsPerPage);
-
-            // Update activeRows
-            this.activeRows = paginatedData;
-
-            // Emit update
-            this.emitPageRows();
+            this.handleDataPagination(0, this.rowsPerPage);
         }
+    }
+
+    handleDataPagination(rowStart, rowStop) {
+        // Paginate
+        const paginatedData = this.rawRows.slice(rowStart, rowStop);
+
+        // Update activeRows
+        this.activeRows = paginatedData;
+
+        // Emit update
+        this.emitPageRows();
     }
 
     emitPageRows() {
@@ -60,8 +64,10 @@ export class PiTablePaginator extends LitElement {
     }
 
     handlePagerNavClick(navData) {
-        console.log('navData: ', navData);
-        
+        const rowStart = Number(navData.navIndex * this.rowsPerPage);
+        const rowStop = rowStart + Number(this.rowsPerPage);
+
+        this.handleDataPagination(rowStart, rowStop);
     }
 
     static styles = [
