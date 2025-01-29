@@ -10,14 +10,14 @@ export class PiPaginator extends LitElement {
             totalRecords: { type: Number },
             totalPages: { type: Number },
             rowsPerPageOptions: { type: Array },
-            currentPage: { type: Number },
-            pagerNavNumberStart: { type: Number },
-            pagerNavNumberStop: { type: Number },
-            pagerNavNumberCount: { type: Number },
+            currentPage: { type: Number, attribute: false },
+            pagerNavNumberStart: { type: Number, attribute: false },
+            pagerNavNumberStop: { type: Number, attribute: false },
+            pagerNavNumberCount: { type: Number, attribute: false },
             useStartEndLinks: { type: Boolean },
             useNextPrevLinks: { type: Boolean },
             useNumericLinks: { type: Boolean },
-            template: { type: Object }
+            template: { type: Object, attribute: false }
         }
     }
 
