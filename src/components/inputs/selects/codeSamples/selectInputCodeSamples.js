@@ -21,3 +21,12 @@ defaultText="Pick something"
 .selectedObject="\${this.sampleData[2]}"
 @selectionChanged="\${(e) => this.handleInput(e.detail.selectedItem, 2)}"
 ></pi-select-input>`
+
+export const disabledSelectSample = `<pi-select-input
+.options="\${this.sampleData}"
+labelKey="country"
+valueKey="income"
+.selectedObject="\${this.sampleData[1]}"
+disabled
+@selectionChanged="\${(e) => this.handleInput(e.detail.selectedItem, 3)}"
+></pi-select-input>`
