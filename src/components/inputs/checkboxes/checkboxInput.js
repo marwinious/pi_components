@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
+import { PiBaseFormElement } from '../base/baseFormElement';
 
-export class PiCheckboxInput extends LitElement {
+export class PiCheckboxInput extends PiBaseFormElement {
 
     static get properties() {
         return {
@@ -15,11 +16,11 @@ export class PiCheckboxInput extends LitElement {
         this.label = '';
     }
 
-    render() {
+    renderInput() {
         return html`
             <div 
             class="checkbox-container" 
-            @click=${this._toggleChecked}
+            @click=${this._handleInputChange}
             >
                 <div class="checkmark"></div>
             </div>
@@ -27,21 +28,16 @@ export class PiCheckboxInput extends LitElement {
             <span 
             class="label" 
             ?hidden=${this.label==''}
-             @click=${this._toggleChecked}
+             @click=${this._handleInputChange}
             >${this.label}</span>
         `;
     }
 
-    _toggleChecked() {
+    _handleInputChange() {
         this.checked = !this.checked; // Toggle the checked property
+        this.value = this.checked;
 
-        const event = new CustomEvent('change', { // Emit a 'change' event
-            detail: { checked: this.checked }, // Include checked state in the event detail
-            bubbles: true, // Allow the event to bubble up the DOM tree
-            composed: true, // Allow the event to cross Shadow DOM boundaries
-        });
-
-        this.dispatchEvent(event);
+        this._dispatchChangeEvent(this.value);
     }
 
     static styles = [

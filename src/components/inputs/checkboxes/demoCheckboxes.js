@@ -32,7 +32,8 @@ export class PiDemoCheckboxes extends LitElement {
                         <div class="demoFlexContainer">
                             <div>
                                 <pi-checkbox-input
-                                label="Check me"
+                                name="basic_checkbox"
+                                @change="${(e) => this.handleInput(e.detail, 0)}"
                                 ></pi-checkbox-input>
                             </div>
                         </div>
@@ -49,6 +50,57 @@ export class PiDemoCheckboxes extends LitElement {
                         
                     </pi-card>
 
+                    <pi-card>
+                        <div slot="title">Labeled Checkbox</div>
+
+                        <div class="demoFlexContainer">
+                            <div>
+                                <pi-checkbox-input
+                                name="labeled_checkbox"
+                                label="Check me"
+                                @change="${(e) => this.handleInput(e.detail, 1)}"
+                                ></pi-checkbox-input>
+                            </div>
+                        </div>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[1] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[1]}
+                            ` : null }
+                        </div>
+
+                        <code-display-sample
+                        .code=${"test"}
+                        ></code-display-sample>
+                        
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Preset Checkbox</div>
+
+                        <div class="demoFlexContainer">
+                            <div>
+                                <pi-checkbox-input
+                                name="preset_checkbox"
+                                label="On by default"
+                                checked
+                                @change="${(e) => this.handleInput(e.detail, 2)}"
+                                ></pi-checkbox-input>
+                            </div>
+                        </div>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[2] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[2]}
+                            ` : null }
+                        </div>
+
+                        <code-display-sample
+                        .code=${"test"}
+                        ></code-display-sample>
+                        
+                    </pi-card>
+
                 </div>
 
             </pi-demo-container>
@@ -56,8 +108,8 @@ export class PiDemoCheckboxes extends LitElement {
         `;
     }
 
-    handleInput(newInput, captureIndex) {
-        this.capturedInputs[captureIndex] = JSON.stringify(newInput, null, 2);
+    handleInput(input, captureIndex) {
+        this.capturedInputs[captureIndex] = JSON.stringify(input, null, 2);
         this.requestUpdate();
     }
 
