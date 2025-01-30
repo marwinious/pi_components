@@ -6,7 +6,8 @@ export class TextInput extends LitElement {
         return {
             placeholder: { type: String },
             showLabel: { type: Boolean },
-            value: { type: String }
+            value: { type: String },
+            disabled: { type: Boolean },
         }
     }
 
@@ -15,6 +16,7 @@ export class TextInput extends LitElement {
         this.placeholder = ''
         this.showLabel = true
         this.value = ''
+        this.disabled = false;
     }
 
     render() {
@@ -30,6 +32,7 @@ export class TextInput extends LitElement {
             placeholder=${this.placeholder} 
             @input=${this.handleInputChange}
             .value=${this.value}
+            ?disabled=${this.disabled}
             >
         `;
     }
@@ -61,9 +64,10 @@ export class TextInput extends LitElement {
 
             .label {
                 font-size: var(--pi-text-input-label-font-size, 80%);
-                text-transform: var(--pi-text-input-label-transform, uppercase);
+                text-transform: var(--pi-text-input-label-transform, none);
                 color: var(--pi-text-input-label-color, #888);
                 font-weight: var(--pi-text-input-label-font-weight, bold);
+                padding: var(--pi-text-input-label-padding, 0 0 0 0.5rem);
             }
 
             /*
@@ -73,18 +77,27 @@ export class TextInput extends LitElement {
             input {
                 font-size: var(--pi-text-input-font-size, 16px);
                 padding: var(--pi-text-input-padding, 5px 7px);
-                background-color: var(--pi-text-input-bg-color, inherit);
+                background-color: var(--pi-text-input-bg-color, #fff);
                 border-radius: var(--pi-text-input-border-radius, 5px);
                 border-style: var(--pi-text-input-border-style, solid);
                 border-width: var(--pi-text-input-border-width, 1px);
                 border-color: var(--pi-text-input-border-color, #aaa);
-                color: var(--pi-text-input-text-color, inherit);
+                color: var(--pi-text-input-text-color, #555);
                 transition: background 0.3s ease, 
                             box-shadow 0.3s ease,
                             border-color 0.3s ease;
 
+                &::placeholder {
+                    color: var(--pi-text-input-placeholder-color, #aaa);
+                }
+
+                &:disabled, &:disabled::placeholder {
+                    background-color: var(--pi-text-input-disabled-bg-color, #eee);
+                    color: var(--pi-text-input-disabled-text-color, #888);
+                }
+
                 &:focus {
-                    background: var(--pi-text-input-bg-color-focus, rgb(242, 252, 255));
+                    background: var(--pi-text-input-bg-color-focus, #f2fcff);
                     outline: none;
                     border-style: var(--pi-text-input-border-style-focus, solid);
                     border-width: var(--pi-text-input-border-width-focus, 1px);
@@ -92,6 +105,7 @@ export class TextInput extends LitElement {
                     box-shadow: 1px 1px 1px #ddd;
                 }
             }
+
         `
     ]
 }
