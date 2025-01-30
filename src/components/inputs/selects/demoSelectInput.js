@@ -2,6 +2,8 @@ import { LitElement, css, html } from 'lit'
 import { CodeDisplaySample } from '../../samples/codeSampleDisplay';
 import { 
     basicSelectSample,
+    optionsSelectSample,
+    preSelectedSelectSample
 } from './codeSamples/selectInputCodeSamples';
 import { PiDemoContainer } from '../../samples/demoContainer';
 import { PiCard } from '../../cards/components/card';
@@ -59,6 +61,61 @@ export class PiDemoSelectInputs extends LitElement {
 
                         <code-display-sample
                         .code=${basicSelectSample}
+                        ></code-display-sample>
+                        
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">With options</div>
+
+                        <div class="demoFlexContainer">
+                            <div>
+                                <pi-select-input
+                                .options="${this.sampleData}"
+                                labelKey="country"
+                                valueKey="income"
+                                defaultText="Pick something"
+                                @selectionChanged="${(e) => this.handleInput(e.detail.selectedItem, 1)}"
+                                ></pi-select-input>
+                            </div>
+                        </div>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[1] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[1]}
+                            ` : null }
+                        </div>
+
+                        <code-display-sample
+                        .code=${optionsSelectSample}
+                        ></code-display-sample>
+                        
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Pre-selected Value</div>
+
+                        <div class="demoFlexContainer">
+                            <div>
+                                <pi-select-input
+                                .options="${this.sampleData}"
+                                labelKey="country"
+                                valueKey="income"
+                                defaultText="Pick something"
+                                .selectedObject="${this.sampleData[2]}"
+                                @selectionChanged="${(e) => this.handleInput(e.detail.selectedItem, 2)}"
+                                ></pi-select-input>
+                            </div>
+                        </div>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[2] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[2]}
+                            ` : null }
+                        </div>
+
+                        <code-display-sample
+                        .code=${preSelectedSelectSample}
                         ></code-display-sample>
                         
                     </pi-card>
