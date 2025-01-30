@@ -1,32 +1,24 @@
 import { LitElement, css, html } from 'lit'
+import { PiBaseFormElement } from '../base/baseFormElement';
 
-/*
-EXAMPLE USAGE:
-
-<toggle-control
-.value=true
-@toggleChanged=${this.handleToggleChange}
-></toggle-control>
-*/
-
-export class PiToggleSwitch extends LitElement {
+export class PiToggleSwitch extends PiBaseFormElement {
 
     static get properties() {
         return {
-            value: { type: Boolean }
+            value: { type: Boolean, reflect: true },
         }
     }
 
     constructor() {
-        super()
+        super();
         this.value = false;
     }
 
-    render() {
+    renderInput() {
         return html`
             <div 
             class="toggle_container"
-            @click=${this.handleToggleClick}
+            @click=${this._handleInputChange}
             >
                 <icon-toggle-on class=${this.value ? 'visible' : 'hidden'}></icon-toggle-on>
                 <icon-toggle-off class=${this.value ? 'hidden' : 'visible'}></icon-toggle-off>
@@ -34,17 +26,11 @@ export class PiToggleSwitch extends LitElement {
         `;
     }
 
-    handleToggleClick() {
+    _handleInputChange() {
         if(this.value === true) { this.value = false }
         else { this.value = true }
 
-        const event = new CustomEvent('toggleChanged', {
-            detail: {value: this.value},
-            bubbles: true, 
-            composed: true
-        });
-
-        this.dispatchEvent(event);
+        this._dispatchChangeEvent(this.value)
     }
 
     static styles = [

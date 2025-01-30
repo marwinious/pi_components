@@ -1,20 +1,7 @@
 import { LitElement, css, html } from 'lit'
+import { PiBaseFormElement } from '../base/baseFormElement';
 
-/*
-EXAMPLE USAGE:
-
-<select-field
-.options=${this.sampleData}
-labelKey="testLabel"
-valueKey="testValue"
-defaultText="Pick an option below"
-@selectionChanged=${this.handleSelection}
-.selectedObject=${this.selectedObject}
-></select-field>
-
-*/
-
-export class PiSelectInput extends LitElement {
+export class PiSelectInput extends PiBaseFormElement {
 
     static get properties() {
         return {
@@ -24,7 +11,7 @@ export class PiSelectInput extends LitElement {
             labelKey: { type: String },
             valueKey: { type: String },
             selectedObject: { type: Object },
-            disabled: { type: Boolean }
+            disabled: { type: Boolean },
         }
     }
 
@@ -46,10 +33,10 @@ export class PiSelectInput extends LitElement {
         }
     }
 
-    render() {
+    renderInput() {
         return html`
             <select 
-            @change=${this.handleSelectionChange} 
+            @change=${this._handleInputChange} 
             .value="${this.selectedIndex}"
             ?disabled="${this.disabled}"
             >
@@ -87,21 +74,11 @@ export class PiSelectInput extends LitElement {
         return -1
     }
 
-    handleSelectionChange(e) {
+    _handleInputChange(e) {
         const selectedIndex = e.target.value;
-        
-        const selectedItem = {
-            index: selectedIndex,
-            value: this.options[selectedIndex]
-        }
-        
-        const event = new CustomEvent('selectionChanged', {
-            detail: {selectedItem},
-            bubbles: true, 
-            composed: true
-        });
+        this.value = this.options[selectedIndex];
 
-        this.dispatchEvent(event);
+        this._dispatchChangeEvent(this.value)
     }
 
     static styles = [

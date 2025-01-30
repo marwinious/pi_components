@@ -36,7 +36,8 @@ export class PiDemoToggleSwitches extends LitElement {
                         <div class="demoFlexContainer">
                             <div>
                                 <pi-toggle-switch 
-                                @toggleChanged="${(e) => this.handleInput(e.detail.value, 0)}"
+                                name="basic_switch"
+                                @change="${(e) => this.handleInput(e.detail.value, 0)}"
                                 ></pi-toggle-switch>
                             </div>
                         </div>
@@ -59,8 +60,9 @@ export class PiDemoToggleSwitches extends LitElement {
                         <div class="demoFlexContainer">
                             <div>
                                 <pi-toggle-switch 
+                                name="preset_switch"
                                 ?value="${true}"
-                                @toggleChanged="${(e) => this.handleInput(e.detail.value, 1)}"
+                                @change="${(e) => this.handleInput(e.detail.value, 1)}"
                                 ></pi-toggle-switch>
                             </div>
                         </div>
