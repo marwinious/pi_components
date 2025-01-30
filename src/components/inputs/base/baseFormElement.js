@@ -55,4 +55,4 @@ export class PiBaseFormElement extends LitElement {
     ]
     
 }
-customElements.define('sample-component', PiBaseFormElement);
+customElements.define('pi-base-form-element', PiBaseFormElement);
