@@ -2,5 +2,6 @@
 @import './css//variables/inputDefaultVars.css';
 @import './css/variables/buttonVars.css';
 @import './css/variables/tableVars.css';
-@import './css//variables//textInputVars.css';
+@import './css//variables/textInputVars.css';
+@import './css//variables/selectInputVars.css';
 @import './css/common.css';
