@@ -68,7 +68,6 @@ export class PiDemoTextInputs extends LitElement {
                             <div>
                                 <pi-text-input 
                                 placeholder="Type something here"
-                                showLabel
                                 @inputChanged="${(e) => this.handleInput2(e.detail)}"
                                 >
                                     Field label sample

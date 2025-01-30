@@ -2,7 +2,6 @@ export const basicTextInputSample = `<pi-text-input @inputChanged="\${(e) => thi
 
 export const optionsTextInputSample = `<pi-text-input 
 placeholder="Type something here"
-showLabel
 @inputChanged="\${(e) => this.handleInput2(e.detail)}"
 >
     Field label sample
