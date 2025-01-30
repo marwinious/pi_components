@@ -7,6 +7,7 @@ import { PiDemoDataTable } from '../tables/demoDataTable';
 import { PiDemoTextInputs } from '../inputs/text/demoTextInput';
 import { PiDemoSelectInputs } from '../inputs/selects/demoSelectInput';
 import { PiDemoToggleSwitches } from '../inputs/switches/demoSwitches';
+import { PiDemoCheckboxes } from '../inputs/checkboxes/demoCheckboxes';
 
 export class ComponentsPreview extends LitElement {
 
@@ -22,6 +23,7 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
+            <pi-demo-checkboxes></pi-demo-checkboxes>
             <pi-demo-toggle-switches></pi-demo-toggle-switches>
             <pi-demo-select-inputs></pi-demo-select-inputs>
             <pi-demo-text-inputs></pi-demo-text-inputs>

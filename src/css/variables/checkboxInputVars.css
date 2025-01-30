@@ -1,0 +1,22 @@
+:root {
+
+    /* General */
+    --pi-checkbox-input-width: 10px;
+    --pi-checkbox-input-height: var(--pi-checkbox-input-width);
+
+    /* Label */
+    --pi-checkbox-input-label-color: #555;
+    --pi-checkbox-input-label-font-size: 1rem;
+    --pi-checkbox-input-label-margin: 0 0 0 0.5rem;
+
+    /* On State */
+    --pi-checkbox-input-fill-color-true: var(--pi-input-fill-color-true);
+    --pi-checkbox-input-inner-width: 15px;
+    --pi-checkbox-input-inner-height: var(--pi-checkbox-input-inner-width);
+    --pi-checkbox-input-height: var(--pi-checkbox-input-width);
+
+    /* Off State */
+    --pi-checkbox-input-fill-color-false: var(--pi-input-bg-color-neutral);
+
+
+}
