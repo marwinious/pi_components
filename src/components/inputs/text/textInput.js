@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 
-export class TextInput extends LitElement {
+export class PiTextInput extends LitElement {
 
     static get properties() {
         return {
@@ -108,4 +108,4 @@ export class TextInput extends LitElement {
         `
     ]
 }
-customElements.define('pi-text-input', TextInput);
+customElements.define('pi-text-input', PiTextInput);

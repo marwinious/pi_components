@@ -7,7 +7,7 @@ import {
 } from './codeSamples/textInputCodeSamples';
 import { PiDemoContainer } from '../../samples/demoContainer';
 import { PiCard } from '../../cards/components/card';
-import { TextInput } from './textInput';
+import { PiTextInput } from './textInput';
 
 export class PiDemoTextInputs extends LitElement {
 
