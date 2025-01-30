@@ -23,7 +23,6 @@ export class PiSelectInput extends LitElement {
             defaultText: { type: String },
             labelKey: { type: String },
             valueKey: { type: String },
-            selectedValue: { type: String },
             selectedObject: { type: Object }
         }
     }
@@ -33,7 +32,6 @@ export class PiSelectInput extends LitElement {
         this.defaultText = 'Choose an option';
         this.options = [];
         this.selectedIndex = -1;
-        this.selectedValue = '';
         this.labelKey = '';
         this.valueKey = '';
         this.selectedObject = {};
@@ -102,16 +100,39 @@ export class PiSelectInput extends LitElement {
 
     static styles = [
         css`
+            :host {
+                width: var(--pi-select-input-width, 100%);
+                display: var(--pi-select-input-display, inline-block);
+            }
+
             select {
-                font-size: var(--pi-select-input-text-color, 16px);
-                padding: var(--pi-select-input-padding, 5px 10px);
+                font-size: var(--pi-select-input-font-size, 16px);
+                padding: var(--pi-select-input-padding, 5px 7px);
+                background-color: var(--pi-select-input-bg-color, #fff);
                 border-radius: var(--pi-select-input-border-radius, 5px);
                 border-style: var(--pi-select-input-border-style, solid);
                 border-width: var(--pi-select-input-border-width, 1px);
                 border-color: var(--pi-select-input-border-color, #aaa);
-                width: 100%;
-                display: inline-block;
                 color: var(--pi-select-input-text-color, #555);
+                box-shadow: var(--pi-select-input-box-shadow, none);
+                width: var(--pi-select-input-width, 100%);
+                transition: background 0.3s ease, 
+                            box-shadow 0.3s ease,
+                            border-color 0.3s ease;
+
+                &:disabled {
+                    background-color: var(--pi-select-input-bg-color-disabled, #eee);
+                    color: var(--pi-select-input-text-color-disabled, #888);
+                }
+
+                &:focus {
+                    background: var(--pi-select-input-bg-color-focus, #f2fcff);
+                    outline: none;
+                    border-style: var(--pi-select-input-border-style-focus, solid);
+                    border-width: var(--pi-select-input-border-width-focus, 1px);
+                    border-color: var(--pi-select-input-border-color-focus, #aaa);
+                    box-shadow: var(--pi-select-input-box-shadow-focus, 1px 1px 1px #ddd);
+                }
             }
         `
     ]
