@@ -1,8 +1,5 @@
 @import './css/variables/globalVars.css';
 @import './css/variables/buttonVars.css';
 @import './css/variables/tableVars.css';
+@import './css//variables//textInputVars.css';
 @import './css/common.css';
-
-/* :root {
-    --pi-primary-color: blue;
-} */
