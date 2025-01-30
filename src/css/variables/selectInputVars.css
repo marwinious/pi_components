@@ -1,0 +1,14 @@
+:root {
+
+    /* Select field */
+    --pi-select-input-text-color: var(--pi-input-text-color);
+    --pi-select-input-font-size: var(--pi-input-font-size);
+    --pi-select-input-padding: var(--pi-input-padding);
+    --pi-select-input-border-radius: var(--pi-input-border-radius);
+    --pi-select-input-border-width: var(--pi-input-border-width);
+    --pi-select-input-border-style: var(--pi-input-border-style);
+    --pi-select-input-border-color: var(--pi-input-border-color);
+    --pi-select-input-width: 100%;
+    --pi-select-input-display: inline-block;
+
+}
