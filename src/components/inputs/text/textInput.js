@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
+import { PiBaseFormElement } from '../base/baseFormElement';
 
-export class PiTextInput extends LitElement {
+export class PiTextInput extends PiBaseFormElement {
 
     static get properties() {
         return {
@@ -31,7 +32,7 @@ export class PiTextInput extends LitElement {
             <input 
             type="text" 
             placeholder=${this.placeholder} 
-            @input=${this.handleInputChange}
+            @input=${this._handleInputChange}
             .value=${this.value}
             ?disabled=${this.disabled}
             >
@@ -44,18 +45,6 @@ export class PiTextInput extends LitElement {
         const assignedNodes = slot.assignedNodes({ flatten: true });
 
         this.showLabel = assignedNodes.length > 0 ? true : false;
-    }
-
-    handleInputChange(e) {
-        const newValue = e.target.value;
-
-        const event = new CustomEvent('inputChanged', {
-            detail: newValue,
-            bubbles: true,
-            composed: true
-        })
-
-        this.dispatchEvent(event);
     }
 
     static styles = [

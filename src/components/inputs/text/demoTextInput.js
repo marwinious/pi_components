@@ -13,23 +13,13 @@ export class PiDemoTextInputs extends LitElement {
 
     static get properties() {
         return {
-            textInput1: { type: String, attribute: false },
-            textInput2: { type: String, attribute: false },
-            textInput3: { type: String, attribute: false },
-            textInput4: { type: String, attribute: false },
-            textInput5: { type: String, attribute: false },
-            textInput6: { type: String, attribute: false },
+            capturedInputs: { type: Array, attribute: false },
         }
     }
 
     constructor() {
         super();
-        this.textInput1 = '';
-        this.textInput2 = '';
-        this.textInput3 = '';
-        this.textInput4 = '';
-        this.textInput5 = '';
-        this.textInput6 = '';
+        this.capturedInputs = [];
     }
 
     render() {
@@ -46,13 +36,14 @@ export class PiDemoTextInputs extends LitElement {
 
                         <div class="demoFlexContainer">
                             <div>
-                                <pi-text-input @inputChanged="${(e) => this.handleInput1(e.detail)}"></pi-text-input>
+                                <pi-text-input name="basic_text_field" @change="${(e) => this.handleInput(e.detail, 0)}"></pi-text-input>
                             </div>
-                            <div>
-                                ${this.textInput1 != '' ? html`
-                                    <strong>Captured input:</strong> ${this.textInput1}
-                                ` : null }
-                            </div>
+                        </div>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[0] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[0]}
+                            ` : null }
                         </div>
 
                         <code-display-sample
@@ -67,17 +58,19 @@ export class PiDemoTextInputs extends LitElement {
                         <div class="demoFlexContainer">
                             <div>
                                 <pi-text-input 
+                                name="options_text_field"
                                 placeholder="Type something here"
-                                @inputChanged="${(e) => this.handleInput2(e.detail)}"
+                                @change="${(e) => this.handleInput(e.detail, 1)}"
                                 >
                                     Field label sample
                                 </pi-text-input>
                             </div>
-                            <div>
-                                ${this.textInput2 != '' ? html`
-                                    <strong>Captured input:</strong> ${this.textInput2}
-                                ` : null }
-                            </div>
+                        </div>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[1] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[1]}
+                            ` : null }
                         </div>
 
                         <code-display-sample
@@ -92,15 +85,17 @@ export class PiDemoTextInputs extends LitElement {
                         <div class="demoFlexContainer">
                             <div>
                                 <pi-text-input 
+                                name="preset_text_field"
                                 value="Hello world!"
-                                @inputChanged="${(e) => this.handleInput3(e.detail)}"
+                                @change="${(e) => this.handleInput(e.detail, 2)}"
                                 ></pi-text-input>
                             </div>
-                            <div>
-                                ${this.textInput3 != '' ? html`
-                                    <strong>Captured input:</strong> ${this.textInput3}
-                                ` : null }
-                            </div>
+                        </div>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[2] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[2]}
+                            ` : null }
                         </div>
 
                         <code-display-sample
@@ -115,16 +110,18 @@ export class PiDemoTextInputs extends LitElement {
                         <div class="demoFlexContainer">
                             <div>
                                 <pi-text-input 
+                                name="disabled_text_field"
                                 placeholder="You can't type here"
                                 disabled
-                                @inputChanged="${(e) => this.handleInput3(e.detail)}"
+                                @change="${(e) => this.handleInput(e.detail, 3)}"
                                 ></pi-text-input>
                             </div>
-                            <div>
-                                ${this.textInput3 != '' ? html`
-                                    <strong>Captured input:</strong> ${this.textInput3}
-                                ` : null }
-                            </div>
+                        </div>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[3] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[3]}
+                            ` : null }
                         </div>
 
                         <code-display-sample
@@ -140,12 +137,10 @@ export class PiDemoTextInputs extends LitElement {
         `;
     }
 
-    handleInput1(newInput) { this.textInput1 = newInput }
-    handleInput2(newInput) { this.textInput2 = newInput }
-    handleInput3(newInput) { this.textInput3 = newInput }
-    handleInput4(newInput) { this.textInput4 = newInput }
-    handleInput5(newInput) { this.textInput5 = newInput }
-    handleInput6(newInput) { this.textInput6 = newInput }
+    handleInput(input, captureIndex) {
+        this.capturedInputs[captureIndex] = JSON.stringify(input, null, 2);
+        this.requestUpdate();
+    }
 
     static styles = [
         css`
@@ -153,6 +148,10 @@ export class PiDemoTextInputs extends LitElement {
                 display: flex;
                 justify-content:space-around;
                 align-items: center;
+            }
+
+            .demoCapturedInput {
+                margin-top: 1rem;
             }
         `
     ]
