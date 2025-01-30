@@ -87,12 +87,12 @@ export class PiTextInput extends LitElement {
                             border-color 0.3s ease;
 
                 &::placeholder {
-                    color: var(--pi-text-input-placeholder-color, #aaa);
+                    color: var(--pi-text-input-placeholder-text-color, #aaa);
                 }
 
                 &:disabled, &:disabled::placeholder {
-                    background-color: var(--pi-text-input-disabled-bg-color, #eee);
-                    color: var(--pi-text-input-disabled-text-color, #888);
+                    background-color: var(--pi-text-input-bg-color-disabled, #eee);
+                    color: var(--pi-text-input-text-color-disabled, #888);
                 }
 
                 &:focus {

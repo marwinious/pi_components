@@ -1,28 +1,28 @@
 :root {
 
     /* Input field */
-    --pi-text-input-font-size: 16px;
-    --pi-text-input-padding: 5px 7px;
-    --pi-text-input-bg-color: #fff;
-    --pi-text-input-border-radius: 5px;
-    --pi-text-input-border-style: solid;
-    --pi-text-input-border-width: 1px;
-    --pi-text-input-border-color: #aaa;
-    --pi-text-input-text-color: #555;
-    --pi-text-input-box-shadow: none;
+    --pi-text-input-font-size: var(--pi-input-font-size);
+    --pi-text-input-padding: var(--pi-input-padding);
+    --pi-text-input-bg-color: var(--pi-input-bg-color);
+    --pi-text-input-border-radius: var(--pi-input-border-radius);
+    --pi-text-input-border-style: var(--pi-input-border-style);
+    --pi-text-input-border-width: var(--pi-input-border-width);
+    --pi-text-input-border-color: var(--pi-input-border-color);
+    --pi-text-input-text-color: var(--pi-input-text-color);
+    --pi-text-input-box-shadow: var(--pi-input-box-shadow);
 
     /* Placeholder */
-    --pi-text-input-placeholder-color: #aaa;
+    --pi-text-input-placeholder-text-color: var(--pi-input-placeholder-text-color);
 
     /* Disabled */
-    --pi-text-input-disabled-bg-color: #eee;
-    --pi-text-input-disabled-text-color: #888;
+    --pi-text-input-bg-color-disabled: var(--pi-input-bg-color-disabled);
+    --pi-text-input-text-color-disabled: var(--pi-input-text-color-disabled);
 
     /* Focus */
-    --pi-text-input-bg-color-focus: #f2fcff;
-    --pi-text-input-border-style-focus: solid;
-    --pi-text-input-border-width-focus: 1px;
-    --pi-text-input-border-color-focus: #aaa;
-    --pi-text-input-box-shadow-focus: 1px 1px 1px #ddd;
+    --pi-text-input-bg-color-focus: var(--pi-input-bg-color-focus);
+    --pi-text-input-border-style-focus: var(--pi-input-border-style-focus);
+    --pi-text-input-border-width-focus: var(--pi-input-border-width-focus);
+    --pi-text-input-border-color-focus: var(--pi-input-border-color-focus);
+    --pi-text-input-box-shadow-focus: var(--pi-input-box-shadow-focus);
 
 }
