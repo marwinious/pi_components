@@ -23,7 +23,8 @@ export class PiSelectInput extends LitElement {
             defaultText: { type: String },
             labelKey: { type: String },
             valueKey: { type: String },
-            selectedObject: { type: Object }
+            selectedObject: { type: Object },
+            disabled: { type: Boolean }
         }
     }
 
@@ -35,6 +36,7 @@ export class PiSelectInput extends LitElement {
         this.labelKey = '';
         this.valueKey = '';
         this.selectedObject = {};
+        this.disabled = false;
     }
 
     // willUpdate hook: Detect property changes before re-render
@@ -46,7 +48,11 @@ export class PiSelectInput extends LitElement {
 
     render() {
         return html`
-            <select @change=${this.handleSelectionChange} .value="${this.selectedIndex}">
+            <select 
+            @change=${this.handleSelectionChange} 
+            .value="${this.selectedIndex}"
+            ?disabled="${this.disabled}"
+            >
                 ${this.defaultText != '' ? html`
                     <option disabled selected>${this.defaultText}</option>
                 ` : html``}
