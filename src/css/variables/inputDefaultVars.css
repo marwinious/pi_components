@@ -31,4 +31,8 @@
     /* Decorations */
     --pi-input-box-shadow: none;
 
+    /* Icons */
+    --pi-input-fill-color-true: #74c1d6;
+    --pi-input-fill-color-false: #aaa;
+
 }

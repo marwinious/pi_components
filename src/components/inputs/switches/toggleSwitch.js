@@ -67,16 +67,16 @@ export class PiToggleSwitch extends LitElement {
                 position: absolute;
                 top: 0;
                 left: 0;
-                transition: opacity 0.3s ease, 
-                            visibility 0.3s ease;
+                transition: opacity 0.15s ease, 
+                            visibility 0.15s ease;
             }
 
             icon-toggle-off {
-                fill: #aaa;
+                fill: var(--pi-toggle-switch-input-fill-color-false, #aaa);
             }
 
             icon-toggle-on {
-                fill: #74c1d6;
+                fill: var(--pi-toggle-switch-input-fill-color-true, #74c1d6);
             }
 
             .visible {
