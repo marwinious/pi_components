@@ -49,7 +49,8 @@ export class PiDemoSelectInputs extends LitElement {
                                 .options="${this.sampleData}"
                                 labelKey="country"
                                 valueKey="income"
-                                @selectionChanged="${(e) => this.handleInput(e.detail.selectedItem, 0)}"
+                                name="basic_select"
+                                @change="${(e) => this.handleInput(e.detail, 0)}"
                                 ></pi-select-input>
                             </div>
                         </div>
@@ -75,8 +76,9 @@ export class PiDemoSelectInputs extends LitElement {
                                 .options="${this.sampleData}"
                                 labelKey="country"
                                 valueKey="income"
+                                name="options_select"
                                 defaultText="Pick something"
-                                @selectionChanged="${(e) => this.handleInput(e.detail.selectedItem, 1)}"
+                                @change="${(e) => this.handleInput(e.detail, 1)}"
                                 ></pi-select-input>
                             </div>
                         </div>
@@ -102,9 +104,10 @@ export class PiDemoSelectInputs extends LitElement {
                                 .options="${this.sampleData}"
                                 labelKey="country"
                                 valueKey="income"
+                                name="preset_select"
                                 defaultText="Pick something"
                                 .selectedObject="${this.sampleData[2]}"
-                                @selectionChanged="${(e) => this.handleInput(e.detail.selectedItem, 2)}"
+                                @change="${(e) => this.handleInput(e.detail, 2)}"
                                 ></pi-select-input>
                             </div>
                         </div>
@@ -130,9 +133,10 @@ export class PiDemoSelectInputs extends LitElement {
                                 .options="${this.sampleData}"
                                 labelKey="country"
                                 valueKey="income"
+                                name="disabled_select"
                                 .selectedObject="${this.sampleData[1]}"
                                 disabled
-                                @selectionChanged="${(e) => this.handleInput(e.detail.selectedItem, 3)}"
+                                @change="${(e) => this.handleInput(e.detail, 3)}"
                                 ></pi-select-input>
                             </div>
                         </div>
@@ -156,8 +160,8 @@ export class PiDemoSelectInputs extends LitElement {
         `;
     }
 
-    handleInput(newInput, captureIndex) {
-        this.capturedInputs[captureIndex] = JSON.stringify(newInput, null, 2);
+    handleInput(input, captureIndex) {
+        this.capturedInputs[captureIndex] = JSON.stringify(input, null, 2);
         this.requestUpdate();
     }
 
