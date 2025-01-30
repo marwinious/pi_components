@@ -37,7 +37,7 @@ export class PiDemoToggleSwitches extends LitElement {
                             <div>
                                 <pi-toggle-switch 
                                 name="basic_switch"
-                                @change="${(e) => this.handleInput(e.detail.value, 0)}"
+                                @change="${(e) => this.handleInput(e.detail, 0)}"
                                 ></pi-toggle-switch>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ export class PiDemoToggleSwitches extends LitElement {
                                 <pi-toggle-switch 
                                 name="preset_switch"
                                 ?value="${true}"
-                                @change="${(e) => this.handleInput(e.detail.value, 1)}"
+                                @change="${(e) => this.handleInput(e.detail, 1)}"
                                 ></pi-toggle-switch>
                             </div>
                         </div>
@@ -86,8 +86,8 @@ export class PiDemoToggleSwitches extends LitElement {
         `;
     }
 
-    handleInput(newInput, captureIndex) {
-        this.capturedInputs[captureIndex] = JSON.stringify(newInput, null, 2);
+    handleInput(input, captureIndex) {
+        this.capturedInputs[captureIndex] = JSON.stringify(input, null, 2);
         this.requestUpdate();
     }
 
