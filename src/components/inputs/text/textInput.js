@@ -5,7 +5,7 @@ export class TextInput extends LitElement {
     static get properties() {
         return {
             placeholder: { type: String },
-            showLabel: { type: Boolean },
+            showLabel: { type: Boolean, attribute: false },
             value: { type: String },
             disabled: { type: Boolean },
         }
@@ -13,19 +13,20 @@ export class TextInput extends LitElement {
 
     constructor() {
         super()
-        this.placeholder = ''
-        this.showLabel = true
-        this.value = ''
+        this.placeholder = '';
+        this.showLabel = false;
+        this.value = '';
         this.disabled = false;
     }
 
     render() {
         return html`
-            ${this.showLabel ? html`
-                <div class="label">
-                    <slot @slotchange=${this.handleSlotChange}></slot>
-                </div>
-            ` : null}
+            <div 
+            class="label"
+            ?hidden=${!this.showLabel}
+            >
+                <slot @slotchange=${this.handleSlotChange}></slot>
+            </div>
             
             <input 
             type="text" 
@@ -41,6 +42,7 @@ export class TextInput extends LitElement {
         // Change label visibility depending on slot content
         const slot = this.shadowRoot.querySelector('slot');
         const assignedNodes = slot.assignedNodes({ flatten: true });
+
         this.showLabel = assignedNodes.length > 0 ? true : false;
     }
 
@@ -70,10 +72,6 @@ export class TextInput extends LitElement {
                 padding: var(--pi-text-input-label-padding, 0 0 0 0.5rem);
             }
 
-            /*
-            var(--input-field-, )
-            */
-
             input {
                 font-size: var(--pi-text-input-font-size, 16px);
                 padding: var(--pi-text-input-padding, 5px 7px);
@@ -83,6 +81,7 @@ export class TextInput extends LitElement {
                 border-width: var(--pi-text-input-border-width, 1px);
                 border-color: var(--pi-text-input-border-color, #aaa);
                 color: var(--pi-text-input-text-color, #555);
+                box-shadow: var(--pi-text-input-box-shadow, none);
                 transition: background 0.3s ease, 
                             box-shadow 0.3s ease,
                             border-color 0.3s ease;
@@ -102,7 +101,7 @@ export class TextInput extends LitElement {
                     border-style: var(--pi-text-input-border-style-focus, solid);
                     border-width: var(--pi-text-input-border-width-focus, 1px);
                     border-color: var(--pi-text-input-border-color-focus, #aaa);
-                    box-shadow: 1px 1px 1px #ddd;
+                    box-shadow: var(--pi-text-input-box-shadow-focus, 1px 1px 1px #ddd);
                 }
             }
 
