@@ -1,5 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { CodeDisplaySample } from '../../samples/codeSampleDisplay';
+import { 
+    basicSwitchSample,
+    presetSwitchSample
+} from './codeSamples/toggleSwitchCodeSamples';
 import { PiDemoContainer } from '../../samples/demoContainer';
 import { PiCard } from '../../cards/components/card';
 import { PiToggleSwitch } from './toggleSwitch';
@@ -44,7 +48,7 @@ export class PiDemoToggleSwitches extends LitElement {
                         </div>
 
                         <code-display-sample
-                        .code=${"test"}
+                        .code=${basicSwitchSample}
                         ></code-display-sample>
                         
                     </pi-card>
@@ -68,7 +72,7 @@ export class PiDemoToggleSwitches extends LitElement {
                         </div>
 
                         <code-display-sample
-                        .code=${"test"}
+                        .code=${presetSwitchSample}
                         ></code-display-sample>
                         
                     </pi-card>
