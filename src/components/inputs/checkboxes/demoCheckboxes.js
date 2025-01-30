@@ -1,5 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { CodeDisplaySample } from '../../samples/codeSampleDisplay';
+import { 
+    basicCheckboxSample,
+    labeledCheckboxSample,
+    presetCheckboxSample
+} from './codeSamples/checkboxInputCodeSamples';
 import { PiDemoContainer } from '../../samples/demoContainer';
 import { PiCard } from '../../cards/components/card';
 import { PiCheckboxInput } from './checkboxInput';
@@ -45,7 +50,7 @@ export class PiDemoCheckboxes extends LitElement {
                         </div>
 
                         <code-display-sample
-                        .code=${"test"}
+                        .code=${basicCheckboxSample}
                         ></code-display-sample>
                         
                     </pi-card>
@@ -70,7 +75,7 @@ export class PiDemoCheckboxes extends LitElement {
                         </div>
 
                         <code-display-sample
-                        .code=${"test"}
+                        .code=${labeledCheckboxSample}
                         ></code-display-sample>
                         
                     </pi-card>
@@ -96,7 +101,7 @@ export class PiDemoCheckboxes extends LitElement {
                         </div>
 
                         <code-display-sample
-                        .code=${"test"}
+                        .code=${presetCheckboxSample}
                         ></code-display-sample>
                         
                     </pi-card>
