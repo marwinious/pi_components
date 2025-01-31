@@ -35,6 +35,7 @@ export class PiDemoForms extends LitElement {
                             <div>
                                 <pi-form
                                 @formSubmitted="${(e) => this.handleInput(e.detail, 0)}"
+                                @formDataUpdated="${(e) => this.handleInput(e.detail.formData, 0)}"
                                 >
 
                                     <pi-text-input
@@ -65,6 +66,7 @@ export class PiDemoForms extends LitElement {
                             <div>
                                 <pi-form
                                 @formSubmitted="${(e) => this.handleInput(e.detail, 1)}"
+                                @formDataUpdated="${(e) => this.handleInput(e.detail.formData, 1)}"
                                 >
 
                                     <pi-form-group
@@ -94,6 +96,7 @@ export class PiDemoForms extends LitElement {
                                     ></pi-text-input>
 
                                 </pi-form>
+
                             </div>
                         </div>
 
