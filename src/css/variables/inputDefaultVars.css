@@ -36,4 +36,11 @@
     --pi-input-fill-color-true: #74c1d6;
     --pi-input-fill-color-false: #aaa;
 
+    /* Labels */
+    --pi-input-label-font-size: 1rem;
+    --pi-input-label-transform: none;
+    --pi-input-label-color: #888;
+    --pi-input-label-font-weight: normal;
+    --pi-input-label-padding: 0 0 0 0.5rem;
+
 }

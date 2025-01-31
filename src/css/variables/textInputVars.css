@@ -25,4 +25,11 @@
     --pi-text-input-border-color-focus: var(--pi-input-border-color-focus);
     --pi-text-input-box-shadow-focus: var(--pi-input-box-shadow-focus);
 
+    /* Label */
+    --pi-text-input-label-font-size: var(--pi-input-label-font-size);
+    --pi-text-input-label-transform: var(--pi-input-label-transform);
+    --pi-text-input-label-color: var(--pi-input-label-color);
+    --pi-text-input-label-font-weight: var(--pi-input-label-font-weight);
+    --pi-text-input-label-padding: var(--pi-input-label-padding);
+
 }
