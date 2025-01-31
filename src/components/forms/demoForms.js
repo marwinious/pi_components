@@ -90,6 +90,7 @@ export class PiDemoForms extends LitElement {
                                     labelKey="country"
                                     valueKey="country"
                                     name="country"
+                                    label="Country"
                                     ></pi-select-input>
                                 </pi-form>
 
