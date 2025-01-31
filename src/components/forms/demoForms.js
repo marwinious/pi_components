@@ -100,9 +100,10 @@ export class PiDemoForms extends LitElement {
                                     name="subscribe"
                                     ></pi-checkbox-input>
 
-                                    <pi-toggle-switch
-                                    name="turnedOn"
-                                    ></pi-toggle-switch>
+                                    <div>
+                                        <pi-toggle-switch name="turnedOn" label="Turn on"></pi-toggle-switch>
+                                    </div>
+                                    
                                 </pi-form>
 
                             </div>
