@@ -1,10 +1,17 @@
 import { LitElement, css, html } from 'lit'
 import { CodeDisplaySample } from '../samples/codeSampleDisplay';
+import { 
+    basicFormSample,
+    groupFormSample,
+} from './codeSamples/formCodeSamples';
 import { PiDemoContainer } from '../samples/demoContainer';
 import { PiCard } from '../cards/components/card';
 import { PiForm } from './form';
 import { PiTextInput } from '../inputs';
 import { PiFormGroup } from './formGroup';
+import { PiSelectInput } from '../inputs';
+import { PiCheckboxInput } from '../inputs/checkboxes/checkboxInput';
+import { PiToggleSwitch } from '../inputs/switches/toggleSwitch';
 
 export class PiDemoForms extends LitElement {
 
@@ -17,6 +24,14 @@ export class PiDemoForms extends LitElement {
     constructor() {
         super();
         this.capturedInputs = [];
+
+        this.sampleData = [
+            { name: 'Alice', age: 30, country: 'USA', income: '$100,000', rawIncome: '100000' },
+            { name: 'Bob', age: 25, country: 'UK', income: '$50,000', rawIncome: '50000' },
+            { name: 'Charlie', age: 35, country: 'Canada', income: '$200,000', rawIncome: '200000' },
+            { name: 'David', age: 32, country: 'Spain', income: '$70,000', rawIncome: '70000' },
+            { name: 'Edward', age: 27, country: 'New Zealand', income: '$150,000', rawIncome: '150000' },
+        ]
     }
 
     render() {
@@ -33,17 +48,17 @@ export class PiDemoForms extends LitElement {
 
                         <div class="demoFlexContainer">
                             <div>
+
                                 <pi-form
                                 @formSubmitted="${(e) => this.handleInput(e.detail, 0)}"
                                 @formDataUpdated="${(e) => this.handleInput(e.detail.formData, 0)}"
                                 >
-
                                     <pi-text-input
                                     name="firstName"
                                     label="First Name"
                                     ></pi-text-input>
-
                                 </pi-form>
+
                             </div>
                         </div>
 
@@ -54,7 +69,41 @@ export class PiDemoForms extends LitElement {
                         </div>
 
                         <code-display-sample
-                        .code=${"test"}
+                        .code=${basicFormSample}
+                        ></code-display-sample>
+                        
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Multiple Input Types</div>
+
+                        <div class="demoFlexContainer">
+                            <div>
+
+                                <pi-form
+                                @formSubmitted="${(e) => this.handleInput(e.detail, 2)}"
+                                @formDataUpdated="${(e) => this.handleInput(e.detail.formData, 2)}"
+                                >
+                                    <pi-text-input name="firstName" label="First Name"></pi-text-input>
+                                    <pi-select-input
+                                    .options="${this.sampleData}"
+                                    labelKey="country"
+                                    valueKey="country"
+                                    name="country"
+                                    ></pi-select-input>
+                                </pi-form>
+
+                            </div>
+                        </div>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[2] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[2]}
+                            ` : null }
+                        </div>
+
+                        <code-display-sample
+                        .code=${basicFormSample}
                         ></code-display-sample>
                         
                     </pi-card>
@@ -107,7 +156,7 @@ export class PiDemoForms extends LitElement {
                         </div>
 
                         <code-display-sample
-                        .code=${"test"}
+                        .code=${groupFormSample}
                         ></code-display-sample>
                         
                     </pi-card>
