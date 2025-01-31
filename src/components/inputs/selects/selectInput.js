@@ -12,6 +12,8 @@ export class PiSelectInput extends PiBaseFormElement {
             valueKey: { type: String },
             selectedObject: { type: Object },
             disabled: { type: Boolean },
+            value: { type: String },
+            // resetAvailable: { type: Boolean }
         }
     }
 
@@ -24,13 +26,25 @@ export class PiSelectInput extends PiBaseFormElement {
         this.valueKey = '';
         this.selectedObject = {};
         this.disabled = false;
+        this.value = '';
+        // this.resetAvailable = false;
     }
+
+    /* firstUpdated() {
+        console.log('firstupdated');
+        this.resetAvailable = true;
+    } */
 
     // willUpdate hook: Detect property changes before re-render
     willUpdate(changedProperties) {
         if(changedProperties.has('selectedObject')) {
             this.selectedIndex = this.determineDefaultSelectedIndex(this.options, this.selectedObject);  
         }
+        /* if(changedProperties.has('value')) {
+            if(this.value == '' && this.resetAvailable) {
+                this._handleReset();
+            } 
+        } */
     }
 
     renderInput() {
@@ -41,7 +55,7 @@ export class PiSelectInput extends PiBaseFormElement {
             ?disabled="${this.disabled}"
             >
                 ${this.defaultText != '' ? html`
-                    <option disabled selected>${this.defaultText}</option>
+                    <option disabled ?selected="${this.value == ''}">${this.defaultText}</option>
                 ` : html``}
                     
                 ${this.options.length > 0 ? html`
@@ -74,9 +88,24 @@ export class PiSelectInput extends PiBaseFormElement {
         return -1
     }
 
+    /* _handleReset() {
+        this.selectedIndex = -1;  
+        this.selectedObject = {};
+        this._dispatchChangeEvent(this.value);
+    } */
+
     _handleInputChange(e) {
         const selectedIndex = e.target.value;
-        this.value = this.options[selectedIndex];
+
+        // If a valueKey was provided, use that value from selected object
+        if(this.valueKey != '') {
+            this.value = this.options[selectedIndex][this.valueKey];
+        }
+        else {
+            // Otherwise, use entire selected object
+            this.value = this.options[selectedIndex];
+        }
+        
 
         this._dispatchChangeEvent(this.value)
     }
