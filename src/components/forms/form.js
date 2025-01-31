@@ -18,14 +18,11 @@ export class PiForm extends LitElement {
         super.connectedCallback();
         // Listen for 'change' events from child form elements
         this.addEventListener('change', (event) => this._handleFormElementChange(event));
-        /* this.addEventListener('change', (event) => { 
-            this.formData = { ...this.formData, [event.detail.name]: event.detail.value };
-            // console.log("Form Data on Change:", this.formData); 
-        }); */
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.removeEventListener('change', this._handleFormElementChange());
+        this.removeEventListener('change', (event) => this._handleFormElementChange(event));
     }
 
     render() {
@@ -40,7 +37,7 @@ export class PiForm extends LitElement {
 
     _handleFormElementChange(e) {
         this.formData = { ...this.formData, [e.detail.name]: e.detail.value };
-        // console.log("Form Data on Change:", this.formData);
+        console.log("Form Data on Change:", this.formData);
     }
 
     _handleSubmit(e) {
@@ -59,18 +56,42 @@ export class PiForm extends LitElement {
         this.dispatchEvent(submitEvent);
     }
 
-    _collectFormData() { 
+    _collectFormData() {
         const formElements = this.querySelectorAll('[name]');
         const formData = {};
+        
         formElements.forEach(element => {
-            const component = element.closest('pi-base-form-element');
-            if (component) {
-                formData[component.name] = component.getValue();
+            const groupName = element.closest('pi-form-group')?.name; // Get group name if within a group
+
+            if (groupName) {
+                if (!formData[groupName]) {
+                    formData[groupName] = {}; 
+                }
+
+                const component = element.closest('pi-base-form-element');
+
+                if (component) {
+                    formData[groupName][component.name] = component.getValue();
+                } 
+                else {
+                    // Exclude any form group elements from collection (children of groups will still be processed)
+                    if(element.tagName != 'PI-FORM-GROUP') {
+                        formData[groupName][element.name] = element.value; 
+                    }   
+                }
             } 
             else {
-                formData[element.name] = element.value; 
+                const component = element.closest('pi-base-form-element');
+
+                if (component) {
+                    formData[component.name] = component.getValue();
+                } 
+                else {
+                    formData[element.name] = element.value; 
+                }
             }
         });
+
         return formData;
     }
 
