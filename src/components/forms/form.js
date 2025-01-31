@@ -85,7 +85,10 @@ export class PiForm extends LitElement {
                     formData[groupName] = {}; 
                 }
 
-                const component = element.closest('pi-base-form-element');
+                const component = element.closest('pi-base-form-element')
+                                    || element.closest('pi-text-input')
+                                    || element.closest('pi-select-input')
+                ;
 
                 if (component) {
                     formData[groupName][component.name] = component.getValue();
@@ -98,7 +101,10 @@ export class PiForm extends LitElement {
                 }
             } 
             else {
-                const component = element.closest('pi-base-form-element');
+                const component = element.closest('pi-base-form-element')
+                                    || element.closest('pi-text-input')
+                                    || element.closest('pi-select-input')
+                ;
 
                 if (component) {
                     formData[component.name] = component.getValue();
@@ -118,7 +124,12 @@ export class PiForm extends LitElement {
         const formElements = this.querySelectorAll('[name]');
 
         formElements.forEach(element => {
-            const component = element.closest('pi-base-form-element');
+            const component = element.closest('pi-base-form-element')
+                                || element.closest('pi-text-input')
+                                || element.closest('pi-select-input')
+            
+            ;
+            
             if (component) {
                 component.setValue('');
             } 
