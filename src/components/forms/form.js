@@ -29,13 +29,15 @@ export class PiForm extends LitElement {
         return html`
             <form @submit=${this._handleSubmit} @reset=${this._handleReset}>
                 <slot @slotchange=${this._handleSlotChange}></slot>
-                <button type="submit">Submit</button>
-                <button type="reset">Reset</button>
+
+                <div>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+                
             </form>
         `;
     }
-
-    getFormData() { return this.formData }
 
     _handleFormElementChange(e) {
         if(e.detail?.group) {
@@ -88,6 +90,8 @@ export class PiForm extends LitElement {
                 const component = element.closest('pi-base-form-element')
                                     || element.closest('pi-text-input')
                                     || element.closest('pi-select-input')
+                                    || element.closest('pi-checkbox-input')
+                                    || element.closest('pi-toggle-switch')
                 ;
 
                 if (component) {
@@ -104,6 +108,8 @@ export class PiForm extends LitElement {
                 const component = element.closest('pi-base-form-element')
                                     || element.closest('pi-text-input')
                                     || element.closest('pi-select-input')
+                                    || element.closest('pi-checkbox-input')
+                                    || element.closest('pi-toggle-switch')
                 ;
 
                 if (component) {
@@ -127,13 +133,19 @@ export class PiForm extends LitElement {
             const component = element.closest('pi-base-form-element')
                                 || element.closest('pi-text-input')
                                 || element.closest('pi-select-input')
+                                || element.closest('pi-checkbox-input')
+                                || element.closest('pi-toggle-switch')
             
             ;
-            
+
             if (component) {
                 component.setValue('');
             } 
-            else if (element.tagName === 'PI-TEXT-INPUT' || element.tagName === 'PI-SELECT-INPUT' || element.tagName === 'TEXTAREA'){
+            else if (element.tagName === 'PI-TEXT-INPUT' 
+                    || element.tagName === 'PI-SELECT-INPUT' 
+                    || element.tagName === 'TEXTAREA'
+                    || element.tagName === 'PI-CHECKBOX-INPUT'
+            ){
                 element.value = '';
             }
         });
