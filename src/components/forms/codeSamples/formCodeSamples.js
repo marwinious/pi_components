@@ -10,6 +10,7 @@ export const multiInputsFormSample = `<pi-form
 @formDataUpdated="\${(e) => this.handleInput(e.detail.formData, 2)}"
 >
     <pi-text-input name="firstName" label="First Name"></pi-text-input>
+
     <pi-select-input
     .options="\${this.sampleData}"
     labelKey="country"
@@ -17,11 +18,15 @@ export const multiInputsFormSample = `<pi-form
     name="country"
     label="Country"
     ></pi-select-input>
+
+    <pi-checkbox-input label="Subscribe" name="subscribe"></pi-checkbox-input>
+
+    <pi-toggle-switch name="turnedOn"></pi-toggle-switch>
 </pi-form>`
 
 export const groupFormSample = `<pi-form
-@formSubmitted="${(e) => this.handleInput(e.detail, 1)}"
-@formDataUpdated="${(e) => this.handleInput(e.detail.formData, 1)}"
+@formSubmitted="\${(e) => this.handleInput(e.detail, 1)}"
+@formDataUpdated="\${(e) => this.handleInput(e.detail.formData, 1)}"
 >
     <pi-form-group name="person">                                    
         <pi-text-input name="firstName" label="First Name"></pi-text-input>
