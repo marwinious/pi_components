@@ -27,7 +27,10 @@ export class PiBaseFormElement extends LitElement {
     // Method to dispatch the 'change' event
     _dispatchChangeEvent(value) {
         const event = new CustomEvent('change', {
-            detail: { name: this.name, value }, // Include name for easy identification
+            detail: { 
+                name: this.name, 
+                value, 
+                group: this.closest('pi-form-group')?.name || null }, // Include name for easy identification
             bubbles: true,
             composed: true,
         });
