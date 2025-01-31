@@ -88,7 +88,7 @@ export class PiCheckboxInput extends PiBaseFormElement {
             }
 
             .label {
-                margin: var(--pi-checkbox-input-label-margin, 0 0 0 0.5rem); /* Space between checkbox and label */
+                padding: var(--pi-checkbox-input-label-padding, 0 0 0 0.5rem); /* Space between checkbox and label */
                 font-size: var(--pi-checkbox-input-label-font-size, 1rem); /* Adjust as needed */
                 color: var(--pi-checkbox-input-label-color, #555); /* Or your preferred label color */
             }
