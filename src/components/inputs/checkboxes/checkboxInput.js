@@ -6,7 +6,8 @@ export class PiCheckboxInput extends PiBaseFormElement {
     static get properties() {
         return {
             checked: { type: Boolean, reflect: true },
-            label: { type: String }
+            label: { type: String },
+            value: { type: Boolean },
         }
     }
 
@@ -14,6 +15,7 @@ export class PiCheckboxInput extends PiBaseFormElement {
         super()
         this.checked = false;
         this.label = '';
+        this.value = false;
     }
 
     renderInput() {
