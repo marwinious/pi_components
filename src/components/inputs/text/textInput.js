@@ -9,6 +9,7 @@ export class PiTextInput extends PiBaseFormElement {
             showLabel: { type: Boolean, attribute: false },
             value: { type: String },
             disabled: { type: Boolean },
+            label: { type: String }
         }
     }
 
@@ -18,15 +19,16 @@ export class PiTextInput extends PiBaseFormElement {
         this.showLabel = false;
         this.value = '';
         this.disabled = false;
+        this.label = '';
     }
 
     render() {
         return html`
             <div 
             class="label"
-            ?hidden=${!this.showLabel}
+            ?hidden=${!this.showLabel && this.label==''}
             >
-                <slot @slotchange=${this.handleSlotChange}></slot>
+                <slot @slotchange=${this.handleSlotChange}>${this.label}</slot>
             </div>
             
             <input 
