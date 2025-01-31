@@ -47,7 +47,7 @@ export class PiBaseFormElement extends LitElement {
     getValue() { return this.value; }
 
     // Set value (for form reset and initial value)
-    setValue(value) { this.value = value; }
+    setValue(value) { this.value = value; this._dispatchChangeEvent(this.value) }
 
     static styles = [
         css`
