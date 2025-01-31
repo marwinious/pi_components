@@ -5,6 +5,20 @@ export const basicFormSample = `<pi-form
     <pi-text-input name="firstName" label="First Name"></pi-text-input>
 </pi-form>`
 
+export const multiInputsFormSample = `<pi-form
+@formSubmitted="\${(e) => this.handleInput(e.detail, 2)}"
+@formDataUpdated="\${(e) => this.handleInput(e.detail.formData, 2)}"
+>
+    <pi-text-input name="firstName" label="First Name"></pi-text-input>
+    <pi-select-input
+    .options="\${this.sampleData}"
+    labelKey="country"
+    valueKey="country"
+    name="country"
+    label="Country"
+    ></pi-select-input>
+</pi-form>`
+
 export const groupFormSample = `<pi-form
 @formSubmitted="${(e) => this.handleInput(e.detail, 1)}"
 @formDataUpdated="${(e) => this.handleInput(e.detail.formData, 1)}"

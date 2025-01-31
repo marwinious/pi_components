@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { CodeDisplaySample } from '../samples/codeSampleDisplay';
 import { 
     basicFormSample,
+    multiInputsFormSample,
     groupFormSample,
 } from './codeSamples/formCodeSamples';
 import { PiDemoContainer } from '../samples/demoContainer';
@@ -104,7 +105,7 @@ export class PiDemoForms extends LitElement {
                         </div>
 
                         <code-display-sample
-                        .code=${basicFormSample}
+                        .code=${multiInputsFormSample}
                         ></code-display-sample>
                         
                     </pi-card>
