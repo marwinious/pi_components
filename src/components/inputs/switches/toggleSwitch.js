@@ -36,8 +36,10 @@ export class PiToggleSwitch extends PiBaseFormElement {
     static styles = [
         css`
             :host {
-                display: inline-block;
+                display: block;
                 width: 39px;
+                height: 36px;
+                position: relative;
             }
 
             .toggle_container {
