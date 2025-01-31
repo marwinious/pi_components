@@ -35,9 +35,26 @@ export class PiForm extends LitElement {
         `;
     }
 
+    getFormData() { return this.formData }
+
     _handleFormElementChange(e) {
-        this.formData = { ...this.formData, [e.detail.name]: e.detail.value };
-        console.log("Form Data on Change:", this.formData);
+        if(e.detail?.group) {
+            if(typeof this.formData[e.detail.group] == 'undefined') { this.formData[e.detail.group] = {} }
+            this.formData[e.detail.group][e.detail.name] = e.detail.value;
+        }
+        else {
+            this.formData = { ...this.formData, [e.detail.name]: e.detail.value };
+        }
+        
+        // console.log("Form Data on Change:", this.formData);
+
+        const submitEvent = new CustomEvent('formDataUpdated', {
+            detail: { formData: this.formData },
+            bubbles: true,
+            composed: true,
+        });
+
+        this.dispatchEvent(submitEvent);
     }
 
     _handleSubmit(e) {
@@ -45,7 +62,7 @@ export class PiForm extends LitElement {
 
         const finalFormData = this._collectFormData();
 
-        console.log('Final Form Data on Submit:', finalFormData);
+        // console.log('Final Form Data on Submit:', finalFormData);
 
         const submitEvent = new CustomEvent('formSubmitted', {
             detail: finalFormData,
@@ -105,7 +122,7 @@ export class PiForm extends LitElement {
             if (component) {
                 component.setValue('');
             } 
-            else if (element.tagName === 'INPUT' || element.tagName === 'SELECT' || element.tagName === 'TEXTAREA'){
+            else if (element.tagName === 'PI-TEXT-INPUT' || element.tagName === 'PI-SELECT-INPUT' || element.tagName === 'TEXTAREA'){
                 element.value = '';
             }
         });
@@ -113,18 +130,8 @@ export class PiForm extends LitElement {
     }
 
     _handleSlotChange() {
-        this.formData = {};
-        const formElements = this.querySelectorAll('[name]');
-
-        formElements.forEach(element => {
-            const component = element.closest('pi-base-form-element');
-            if (component) {
-                this.formData[component.name] = component.value;
-            } 
-            else {
-                this.formData[element.name] = element.value;
-            }
-        });
+        const formData = this._collectFormData();
+        this.formData = formData;
     }
 
     static styles = [
