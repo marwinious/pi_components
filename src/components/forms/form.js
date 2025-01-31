@@ -14,6 +14,20 @@ export class PiForm extends LitElement {
         this.formData = {};
     }
 
+    connectedCallback() {
+        super.connectedCallback();
+        // Listen for 'change' events from child form elements
+        this.addEventListener('change', (event) => this._handleFormElementChange(event));
+        /* this.addEventListener('change', (event) => { 
+            this.formData = { ...this.formData, [event.detail.name]: event.detail.value };
+            // console.log("Form Data on Change:", this.formData); 
+        }); */
+    }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.removeEventListener('change', this._handleFormElementChange());
+    }
+
     render() {
         return html`
             <form @submit=${this._handleSubmit} @reset=${this._handleReset}>
@@ -26,25 +40,14 @@ export class PiForm extends LitElement {
 
     _handleFormElementChange(e) {
         this.formData = { ...this.formData, [e.detail.name]: e.detail.value };
-        console.log("Form Data on Change:", this.formData);
+        // console.log("Form Data on Change:", this.formData);
     }
 
     _handleSubmit(e) {
         e.preventDefault(); // Prevent default form submission
 
-        const formElements = this.querySelectorAll('[name]'); // Select elements with 'name' attribute
-        const finalFormData = {};
+        const finalFormData = this._collectFormData();
 
-        formElements.forEach(element => {
-            const component = element.closest('pi-base-form-element'); // Find the custom component
-            if (component) {
-                finalFormData[component.name] = component.getValue();
-            } 
-            else {
-                finalFormData[element.name] = element.value; // For standard inputs
-            }
-
-        });
         console.log('Final Form Data on Submit:', finalFormData);
 
         const submitEvent = new CustomEvent('formSubmitted', {
@@ -56,9 +59,24 @@ export class PiForm extends LitElement {
         this.dispatchEvent(submitEvent);
     }
 
+    _collectFormData() { 
+        const formElements = this.querySelectorAll('[name]');
+        const formData = {};
+        formElements.forEach(element => {
+            const component = element.closest('pi-base-form-element');
+            if (component) {
+                formData[component.name] = component.getValue();
+            } 
+            else {
+                formData[element.name] = element.value; 
+            }
+        });
+        return formData;
+    }
+
     _handleReset(e) {
         e.preventDefault();
-        
+
         const formElements = this.querySelectorAll('[name]');
 
         formElements.forEach(element => {
