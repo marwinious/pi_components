@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { PiBaseFormElement } from '../base/baseFormElement';
 
-export class PiTextAreaInput extends LitElement {
+export class PiTextAreaInput extends PiBaseFormElement {
 
     static get properties() {
         return {
@@ -28,6 +28,7 @@ export class PiTextAreaInput extends LitElement {
             <textarea
             .value=${this.value}
             placeholder=${this.placeholder}
+            ?disabled=${this.disabled}
             @input=${this._handleInputChange}
             ></textarea>
         `;
