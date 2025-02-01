@@ -1,0 +1,35 @@
+:root {
+
+    /* Input field */
+    --pi-textarea-input-font-size: var(--pi-input-font-size);
+    --pi-textarea-input-padding: var(--pi-input-padding);
+    --pi-textarea-input-bg-color: var(--pi-input-bg-color);
+    --pi-textarea-input-border-radius: var(--pi-input-border-radius);
+    --pi-textarea-input-border-style: var(--pi-input-border-style);
+    --pi-textarea-input-border-width: var(--pi-input-border-width);
+    --pi-textarea-input-border-color: var(--pi-input-border-color);
+    --pi-textarea-input-text-color: var(--pi-input-text-color);
+    --pi-textarea-input-box-shadow: var(--pi-input-box-shadow);
+
+    /* Placeholder */
+    --pi-textarea-input-placeholder-text-color: var(--pi-input-placeholder-text-color);
+
+    /* Disabled */
+    --pi-textarea-input-bg-color-disabled: var(--pi-input-bg-color-disabled);
+    --pi-textarea-input-text-color-disabled: var(--pi-input-text-color-disabled);
+
+    /* Focus */
+    --pi-textarea-input-bg-color-focus: var(--pi-input-bg-color-focus);
+    --pi-textarea-input-border-style-focus: var(--pi-input-border-style-focus);
+    --pi-textarea-input-border-width-focus: var(--pi-input-border-width-focus);
+    --pi-textarea-input-border-color-focus: var(--pi-input-border-color-focus);
+    --pi-textarea-input-box-shadow-focus: var(--pi-input-box-shadow-focus);
+
+    /* Label */
+    --pi-textarea-input-label-font-size: var(--pi-input-label-font-size);
+    --pi-textarea-input-label-transform: var(--pi-input-label-transform);
+    --pi-textarea-input-label-color: var(--pi-input-label-color);
+    --pi-textarea-input-label-font-weight: var(--pi-input-label-font-weight);
+    --pi-textarea-input-label-padding: var(--pi-input-label-padding);
+
+}
