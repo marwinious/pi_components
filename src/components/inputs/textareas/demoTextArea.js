@@ -26,7 +26,7 @@ export class PiDemoTextArea extends LitElement {
         return html`
 
             <pi-demo-container
-            title="Checkbox Inputs"
+            title="Textarea Inputs"
             >
 
                 <div>
