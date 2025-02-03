@@ -82,6 +82,7 @@ export class PiForm extends LitElement {
         formElements.forEach(element => {
             const groupName = element.closest('pi-form-group')?.name; // Get group name if within a group
 
+            // If looking into a form group
             if (groupName) {
                 if (!formData[groupName]) {
                     formData[groupName] = {}; 
@@ -92,10 +93,20 @@ export class PiForm extends LitElement {
                                     || element.closest('pi-select-input')
                                     || element.closest('pi-checkbox-input')
                                     || element.closest('pi-toggle-switch')
+                                    || element.closest('pi-radio-input')
+                                    || element.closest('pi-text-area-input')
                 ;
 
                 if (component) {
-                    formData[groupName][component.name] = component.getValue();
+                    // Account for radio inputs
+                    if(component.tagName == 'PI-RADIO-INPUT') {
+                        if(component.checked) {
+                            formData[groupName][component.name] = component.getValue();
+                        }
+                    }
+                    else {
+                        formData[groupName][component.name] = component.getValue();
+                    }
                 } 
                 else {
                     // Exclude any form group elements from collection (children of groups will still be processed)
@@ -103,17 +114,29 @@ export class PiForm extends LitElement {
                         formData[groupName][element.name] = element.value; 
                     }   
                 }
-            } 
+            }
+            // Otherwise, assume we're looking at a direct form element
             else {
                 const component = element.closest('pi-base-form-element')
                                     || element.closest('pi-text-input')
                                     || element.closest('pi-select-input')
                                     || element.closest('pi-checkbox-input')
                                     || element.closest('pi-toggle-switch')
+                                    || element.closest('pi-radio-input')
+                                    || element.closest('pi-text-area-input')
                 ;
 
                 if (component) {
-                    formData[component.name] = component.getValue();
+                    // Account for radio inputs
+                    if(component.tagName == 'PI-RADIO-INPUT') {
+                        if(component.checked) {
+                            formData[component.name] = component.getValue();
+                        }
+                    }
+                    else {
+                        formData[component.name] = component.getValue();
+                    }
+                    
                 } 
                 else {
                     formData[element.name] = element.value; 
@@ -135,6 +158,8 @@ export class PiForm extends LitElement {
                                 || element.closest('pi-select-input')
                                 || element.closest('pi-checkbox-input')
                                 || element.closest('pi-toggle-switch')
+                                || element.closest('pi-radio-input')
+                                || element.closest('pi-text-area-input')
             
             ;
 
@@ -143,7 +168,9 @@ export class PiForm extends LitElement {
             } 
             else if (element.tagName === 'PI-TEXT-INPUT' 
                     || element.tagName === 'PI-SELECT-INPUT' 
-                    || element.tagName === 'TEXTAREA'
+                    || element.tagName === 'PI-TEXT-AREA-INPUT'
+                    || element.tagName === 'PI-TOGGLE-INPUT'
+                    || element.tagName === 'PI-RADIO-INPUT'
                     || element.tagName === 'PI-CHECKBOX-INPUT'
             ){
                 element.value = '';
