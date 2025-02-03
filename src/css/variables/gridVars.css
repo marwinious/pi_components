@@ -1,0 +1,18 @@
+:root {
+
+    /* Grid */
+    --pi-grid-template-columns: repeat(12, 1fr);
+    --pi-grid-gap: 1rem;
+    --pi-grid-column-gap: var(--pi-grid-gap);
+    --pi-grid-row-gap: var(--pi-grid-gap);
+    --pi-grid-gap-gutter-sm: 0.5rem;
+    --pi-grid-gap-gutter-md: 1rem;
+    --pi-grid-gap-gutter-lg: 2rem;
+
+    /* Responsive */
+    --pi-grid-gap-mw-768: 0.5rem;
+    --pi-grid-row-gap-mw-768: var(--pi-grid-gap-mw-768);
+    --pi-grid-column-gap-mw-768: var(--pi-grid-gap-mw-768);
+    --pi-grid-template-columns-mw-768: repeat(6, 1fr);
+    --pi-grid-template-columns-mw-480: repeat(2, 1fr);
+}

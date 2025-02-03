@@ -1,5 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { CodeDisplaySample } from '../samples/codeSampleDisplay';
+import { 
+    basicGridSample,
+    smGutterGridSample,
+    lgGutterGridSample
+} from './codeSamples/gridCodeSamples';
 import { PiDemoContainer } from '../samples/demoContainer';
 import { PiCard } from '../cards/components/card';
 import { PiGrid } from './components/gridContainer';
@@ -33,18 +38,18 @@ export class PiDemoGrid extends LitElement {
 
                         <pi-grid>
                             <pi-row>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
-                                <pi-col>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
+                                <pi-col cols=1>1</pi-col>
                             </pi-row>
                             <pi-row>
                                 <pi-col cols=2>2</pi-col>
@@ -86,7 +91,63 @@ export class PiDemoGrid extends LitElement {
                         </div>
 
                         <code-display-sample
-                        .code=${"test"}
+                        .code=${basicGridSample}
+                        ></code-display-sample>
+                        
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Small Gutter</div>
+
+                        <pi-grid gutter="sm">
+                            <pi-row>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                            </pi-row>
+                            <pi-row>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                            </pi-row>
+                        </pi-grid>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[1] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[1]}
+                            ` : null }
+                        </div>
+
+                        <code-display-sample
+                        .code=${smGutterGridSample}
+                        ></code-display-sample>
+                        
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Large Gutter</div>
+
+                        <pi-grid gutter="lg">
+                            <pi-row>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                            </pi-row>
+                            <pi-row>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                            </pi-row>
+                        </pi-grid>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[2] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[2]}
+                            ` : null }
+                        </div>
+
+                        <code-display-sample
+                        .code=${lgGutterGridSample}
                         ></code-display-sample>
                         
                     </pi-card>
