@@ -145,7 +145,7 @@ export class PiRadioInput extends PiBaseFormElement {
                 border-radius: 50%;
                 background-color: #fff; /* Or use a CSS variable */
                 position: absolute;
-                top: 58%;
+                top: 60%;
                 left: 17%;
                 transform: translate(-80%, -80%);
             }
