@@ -10,11 +10,16 @@ export class PiGridColumn extends LitElement {
 
     constructor() {
         super()
-        this.cols = 1;
+        this.cols = 0;
     }
 
     render() {
-        this.style.gridColumn = `span ${this.cols}`;
+        if(this.cols > 0) {
+            this.style.gridColumn = `span ${this.cols}`;
+        }
+        else {
+            // this.style.gridColumn = 'auto';
+        }
 
         return html`
             <slot></slot>
@@ -25,6 +30,9 @@ export class PiGridColumn extends LitElement {
         css`
             :host {
                 display: block;
+                grid-column: auto;
+                width: 100%;
+                min-width: 0;
             }
         `
     ]
