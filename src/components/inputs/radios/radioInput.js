@@ -113,9 +113,14 @@ export class PiRadioInput extends PiBaseFormElement {
             input {
                 opacity: 0; /* Hide the default radio button */
                 position: absolute;
+                margin: 0;
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
             }
 
             .radio_indicator { /* The custom radio indicator */
+                cursor: pointer;
                 width: 18px;
                 height: 18px;
                 border-radius: 50%; /* Make it round */
@@ -123,7 +128,8 @@ export class PiRadioInput extends PiBaseFormElement {
                 background-color: var(--radio-background-color, #fff);
                 margin-right: 8px; /* Space between indicator and label */
                 box-sizing: border-box; /* Include border in size */
-                transition: background-color 0.2s ease, border-color 0.2s ease; /* Smooth transitions */
+                transition: background-color 0.4s ease, 
+                            border-color 0.4s ease; /* Smooth transitions */
             }
 
             input:checked + .radio_indicator {
@@ -137,10 +143,10 @@ export class PiRadioInput extends PiBaseFormElement {
                 width: 8px;
                 height: 8px;
                 border-radius: 50%;
-                background-color: green; /* Or use a CSS variable */
+                background-color: #fff; /* Or use a CSS variable */
                 position: absolute;
-                top: 0%;
-                left: 0%;
+                top: 58%;
+                left: 17%;
                 transform: translate(-80%, -80%);
             }
 
