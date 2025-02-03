@@ -91,6 +91,62 @@ export class PiDemoGrid extends LitElement {
                         
                     </pi-card>
 
+                    <pi-card>
+                        <div slot="title">Small Gutter</div>
+
+                        <pi-grid gutter="sm">
+                            <pi-row>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                            </pi-row>
+                            <pi-row>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                            </pi-row>
+                        </pi-grid>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[0] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[0]}
+                            ` : null }
+                        </div>
+
+                        <code-display-sample
+                        .code=${"test"}
+                        ></code-display-sample>
+                        
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Large Gutter</div>
+
+                        <pi-grid gutter="lg">
+                            <pi-row>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                            </pi-row>
+                            <pi-row>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                                <pi-col cols="4">4</pi-col>
+                            </pi-row>
+                        </pi-grid>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[0] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[0]}
+                            ` : null }
+                        </div>
+
+                        <code-display-sample
+                        .code=${"test"}
+                        ></code-display-sample>
+                        
+                    </pi-card>
+
                 </div>
 
             </pi-demo-container>
