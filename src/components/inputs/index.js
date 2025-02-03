@@ -1,2 +1,6 @@
 export * from './text/textInput'
 export * from './selects/selectInput'
+export * from './checkboxes/checkboxInput'
+export * from './radios/radioInput'
+export * from './switches/toggleSwitch'
+export * from './textareas/textAreaInput'
