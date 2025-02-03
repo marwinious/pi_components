@@ -13,6 +13,7 @@ import { PiFormGroup } from './formGroup';
 import { PiSelectInput } from '../inputs';
 import { PiCheckboxInput } from '../inputs/checkboxes/checkboxInput';
 import { PiToggleSwitch } from '../inputs/switches/toggleSwitch';
+import { PiRadioInput } from '../inputs/radios/radioInput';
 
 export class PiDemoForms extends LitElement {
 
@@ -102,6 +103,25 @@ export class PiDemoForms extends LitElement {
 
                                     <div>
                                         <pi-toggle-switch name="turnedOn" label="Turn on"></pi-toggle-switch>
+                                    </div>
+
+                                    <div>
+                                        <pi-radio-input
+                                        name="ageRange3"
+                                        label="18-24"
+                                        value="18_24"
+                                        ></pi-radio-input>
+                                        <pi-radio-input
+                                        name="ageRange3"
+                                        label="25-29"
+                                        value="25_29"
+                                        checked
+                                        ></pi-radio-input>
+                                        <pi-radio-input
+                                        name="ageRange3"
+                                        label="30-35"
+                                        value="30_35"
+                                        ></pi-radio-input>
                                     </div>
                                     
                                 </pi-form>

@@ -1,5 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { CodeDisplaySample } from '../../samples/codeSampleDisplay';
+import { 
+    basicRadioInputSample,
+    preselectedRadioInputSample
+} from './codeSamples/radioInputCodeSamples';
 import { PiDemoContainer } from '../../samples/demoContainer';
 import { PiCard } from '../../cards/components/card';
 import { PiRadioInput } from './radioInput';
@@ -35,7 +39,6 @@ export class PiDemoRadioInputs extends LitElement {
                                 name="ageRange"
                                 label="18-24"
                                 value="18_24"
-                                checked
                                 @change="${(e) => this.handleInput(e.detail, 0)}"
                                 ></pi-radio-input>
                                 <pi-radio-input
@@ -60,7 +63,46 @@ export class PiDemoRadioInputs extends LitElement {
                         </div>
 
                         <code-display-sample
-                        .code=${"test"}
+                        .code=${basicRadioInputSample}
+                        ></code-display-sample>
+                        
+                    </pi-card>
+
+                    <pi-card>
+                        <div slot="title">Pre-selected</div>
+
+                        <div class="demoFlexContainer">
+                            <div>
+                                <pi-radio-input
+                                name="ageRange2"
+                                label="18-24"
+                                value="18_24"
+                                @change="${(e) => this.handleInput(e.detail, 1)}"
+                                ></pi-radio-input>
+                                <pi-radio-input
+                                name="ageRange2"
+                                label="25-29"
+                                value="25_29"
+                                checked
+                                @change="${(e) => this.handleInput(e.detail, 1)}"
+                                ></pi-radio-input>
+                                <pi-radio-input
+                                name="ageRange2"
+                                label="30-35"
+                                value="30_35"
+                                @change="${(e) => this.handleInput(e.detail, 1)}"
+                                ></pi-radio-input>
+                            </div>
+                        </div>
+
+                        <div class="demoCapturedInput">
+                            ${typeof this.capturedInputs[1] != 'undefined' ? html`
+                                <strong>Captured input:</strong> ${this.capturedInputs[1]}
+                            ` : null }
+                        </div>
+
+                        <code-display-sample
+                        .code=${preselectedRadioInputSample}
                         ></code-display-sample>
                         
                     </pi-card>
