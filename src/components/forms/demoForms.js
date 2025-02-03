@@ -14,6 +14,7 @@ import { PiSelectInput } from '../inputs';
 import { PiCheckboxInput } from '../inputs/checkboxes/checkboxInput';
 import { PiToggleSwitch } from '../inputs/switches/toggleSwitch';
 import { PiRadioInput } from '../inputs/radios/radioInput';
+import { PiTextAreaInput } from '../inputs/textareas/textAreaInput';
 
 export class PiDemoForms extends LitElement {
 
@@ -123,6 +124,10 @@ export class PiDemoForms extends LitElement {
                                         value="30_35"
                                         ></pi-radio-input>
                                     </div>
+
+                                    <pi-text-area-input
+                                    name="shortBio"
+                                    ></pi-text-area-input>
                                     
                                 </pi-form>
 
