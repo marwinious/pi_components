@@ -46,9 +46,9 @@ export class PiDemoContainer extends LitElement {
                 </pi-card>
             </div>
 
-            <code-display-sample
+            <!-- <code-display-sample
             .code=${this.demoCode}
-            ></code-display-sample>
+            ></code-display-sample> -->
         `;
     }
 

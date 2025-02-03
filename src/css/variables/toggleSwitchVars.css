@@ -1,0 +1,13 @@
+:root {
+
+    /* General */
+    
+
+    /* On State */
+    --pi-toggle-switch-input-fill-color-true: var(--pi-input-fill-color-true);
+
+    /* Off State */
+    --pi-toggle-switch-input-fill-color-false: var(--pi-input-fill-color-false);
+
+
+}

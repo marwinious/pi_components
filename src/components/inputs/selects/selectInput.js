@@ -1,0 +1,168 @@
+import { LitElement, css, html } from 'lit'
+import { PiBaseFormElement } from '../base/baseFormElement';
+
+export class PiSelectInput extends PiBaseFormElement {
+
+    static get properties() {
+        return {
+            options: { type: Array },
+            selectedIndex: { type: Number },
+            defaultText: { type: String },
+            labelKey: { type: String },
+            valueKey: { type: String },
+            selectedObject: { type: Object },
+            disabled: { type: Boolean },
+            value: { type: String },
+            label: { type: String }
+            // resetAvailable: { type: Boolean }
+        }
+    }
+
+    constructor() {
+        super()
+        this.defaultText = 'Choose an option';
+        this.options = [];
+        this.selectedIndex = -1;
+        this.labelKey = '';
+        this.valueKey = '';
+        this.selectedObject = {};
+        this.disabled = false;
+        this.value = '';
+        this.label = '';
+        
+        // this.resetAvailable = false;
+    }
+
+    /* firstUpdated() {
+        console.log('firstupdated');
+        this.resetAvailable = true;
+    } */
+
+    // willUpdate hook: Detect property changes before re-render
+    willUpdate(changedProperties) {
+        if(changedProperties.has('selectedObject')) {
+            this.selectedIndex = this.determineDefaultSelectedIndex(this.options, this.selectedObject);  
+        }
+        /* if(changedProperties.has('value')) {
+            if(this.value == '' && this.resetAvailable) {
+                this._handleReset();
+            } 
+        } */
+    }
+
+    renderInput() {
+        return html`
+            <div 
+            class="label"
+            ?hidden=${this.label==''}
+            >${this.label}</div>
+
+            <select 
+            @change=${this._handleInputChange} 
+            .value="${this.selectedIndex}"
+            ?disabled="${this.disabled}"
+            >
+                ${this.defaultText != '' ? html`
+                    <option disabled ?selected="${this.value == ''}">${this.defaultText}</option>
+                ` : html``}
+                    
+                ${this.options.length > 0 ? html`
+                    ${this.options.map((item, index) => html`
+                        <option value="${index}" ?selected="${this.selectedIndex === index}">${item[this.labelKey]}</option>
+                    `)}
+                ` : html``}
+            </select>
+        `;
+    }
+
+    determineDefaultSelectedIndex(optionsAry, targetObj) {
+        if(optionsAry.length > 0) {
+            const lookupLabel = this.labelKey;
+            const valueLookup = this.valueKey;
+            let foundIndex = -1;
+
+            optionsAry.some((item, index) => {
+                if(
+                    item[lookupLabel] == targetObj[lookupLabel] 
+                    && item[valueLookup] == targetObj[valueLookup]
+                ) {
+                    foundIndex = index;      
+                }
+            }) 
+
+            return foundIndex;
+        }
+
+        return -1
+    }
+
+    /* _handleReset() {
+        this.selectedIndex = -1;  
+        this.selectedObject = {};
+        this._dispatchChangeEvent(this.value);
+    } */
+
+    _handleInputChange(e) {
+        const selectedIndex = e.target.value;
+
+        // If a valueKey was provided, use that value from selected object
+        if(this.valueKey != '') {
+            this.value = this.options[selectedIndex][this.valueKey];
+        }
+        else {
+            // Otherwise, use entire selected object
+            this.value = this.options[selectedIndex];
+        }
+        
+
+        this._dispatchChangeEvent(this.value)
+    }
+
+    static styles = [
+        css`
+            :host {
+                width: var(--pi-select-input-width, 100%);
+                display: var(--pi-select-input-display, inline-block);
+            }
+
+            .label {
+                font-size: var(--pi-select-input-label-font-size, 80%);
+                text-transform: var(--pi-select-input-label-transform, none);
+                color: var(--pi-select-input-label-color, #888);
+                font-weight: var(--pi-select-input-label-font-weight, bold);
+                padding: var(--pi-select-input-label-padding, 0 0 0 0.5rem);
+            }
+
+            select {
+                font-size: var(--pi-select-input-font-size, 16px);
+                padding: var(--pi-select-input-padding, 5px 7px);
+                background-color: var(--pi-select-input-bg-color, #fff);
+                border-radius: var(--pi-select-input-border-radius, 5px);
+                border-style: var(--pi-select-input-border-style, solid);
+                border-width: var(--pi-select-input-border-width, 1px);
+                border-color: var(--pi-select-input-border-color, #aaa);
+                color: var(--pi-select-input-text-color, #555);
+                box-shadow: var(--pi-select-input-box-shadow, none);
+                width: var(--pi-select-input-width, 100%);
+                transition: background 0.3s ease, 
+                            box-shadow 0.3s ease,
+                            border-color 0.3s ease;
+
+                &:disabled {
+                    background-color: var(--pi-select-input-bg-color-disabled, #eee);
+                    color: var(--pi-select-input-text-color-disabled, #888);
+                }
+
+                &:focus {
+                    background: var(--pi-select-input-bg-color-focus, #f2fcff);
+                    outline: none;
+                    border-style: var(--pi-select-input-border-style-focus, solid);
+                    border-width: var(--pi-select-input-border-width-focus, 1px);
+                    border-color: var(--pi-select-input-border-color-focus, #aaa);
+                    box-shadow: var(--pi-select-input-box-shadow-focus, 1px 1px 1px #ddd);
+                }
+            }
+        `
+    ]
+}
+customElements.define('pi-select-input', PiSelectInput);

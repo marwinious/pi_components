@@ -1,0 +1,46 @@
+:root {
+
+    /* Text */
+    --pi-input-text-color: #555;
+    --pi-input-font-size: 16px;
+    --pi-input-placeholder-text-color: #aaa;
+    
+    /* Background */
+    --pi-input-bg-color: #fff;
+    --pi-input-bg-color-neutral: #e6f2ff;
+
+    /* Margin & Padding */
+    --pi-input-padding: 5px 7px;
+
+    /* Border */
+    --pi-input-border-radius: 5px;
+    --pi-input-border-style: solid;
+    --pi-input-border-width: 1px;
+    --pi-input-border-color: #aaa;
+
+    /* Focus */
+    --pi-input-bg-color-focus: #f2fcff;
+    --pi-input-border-style-focus: solid;
+    --pi-input-border-width-focus: 1px;
+    --pi-input-border-color-focus: #aaa;
+    --pi-input-box-shadow-focus: 1px 1px 1px #ddd;
+
+    /* Disabled */
+    --pi-input-bg-color-disabled: #eee;
+    --pi-input-text-color-disabled: #888;
+
+    /* Decorations */
+    --pi-input-box-shadow: none;
+
+    /* Icons & Symbols */
+    --pi-input-fill-color-true: #74c1d6;
+    --pi-input-fill-color-false: #aaa;
+
+    /* Labels */
+    --pi-input-label-font-size: 1rem;
+    --pi-input-label-transform: none;
+    --pi-input-label-color: #888;
+    --pi-input-label-font-weight: normal;
+    --pi-input-label-padding: 0 0 0 0.5rem;
+
+}
