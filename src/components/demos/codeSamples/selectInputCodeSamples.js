@@ -1,9 +1,9 @@
 export const basicSelectSample = `<pi-select-input
 .options="\${this.sampleData}"
 labelKey="country"
-valueKey="income"
+valueKey="country"
 name="basic_select"
-@selectionChanged="\${(e) => this.handleInput(e.detail.selectedItem, 0)}"
+@change="\${(e) => this.child[0].handleCallbackData(e.detail)}"
 ></pi-select-input>`
 
 export const optionsSelectSample = `<pi-select-input
@@ -12,7 +12,7 @@ labelKey="country"
 valueKey="income"
 name="options_select"
 defaultText="Pick something"
-@selectionChanged="\${(e) => this.handleInput(e.detail.selectedItem, 1)}"
+@change="\${(e) => this.child[1].handleCallbackData(e.detail)}"
 ></pi-select-input>`
 
 export const preSelectedSelectSample = `<pi-select-input
@@ -22,7 +22,7 @@ valueKey="income"
 name="preset_select"
 defaultText="Pick something"
 .selectedObject="\${this.sampleData[2]}"
-@selectionChanged="\${(e) => this.handleInput(e.detail.selectedItem, 2)}"
+@change="\${(e) => this.child[2].handleCallbackData(e.detail)}"
 ></pi-select-input>`
 
 export const disabledSelectSample = `<pi-select-input
@@ -32,5 +32,5 @@ valueKey="income"
 name="disabled_select"
 .selectedObject="\${this.sampleData[1]}"
 disabled
-@selectionChanged="\${(e) => this.handleInput(e.detail.selectedItem, 3)}"
+@change="\${(e) => this.child[3].handleCallbackData(e.detail)}"
 ></pi-select-input>`

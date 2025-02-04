@@ -1,8 +1,10 @@
 export const basicSwitchSample = `<pi-toggle-switch 
-@toggleChanged="\${(e) => this.handleInput(e.detail.value, 0)}"
+name="basic_switch"
+@change="\${(e) => this.child[0].handleCallbackData(e.detail)}"
 ></pi-toggle-switch>`
 
 export const presetSwitchSample = `<pi-toggle-switch 
-?value="\${true}"
-@toggleChanged="\${(e) => this.handleInput(e.detail.value, 1)}"
+name="preset_switch"
+checked
+@change="\${(e) => this.child[1].handleCallbackData(e.detail)}"
 ></pi-toggle-switch>`
