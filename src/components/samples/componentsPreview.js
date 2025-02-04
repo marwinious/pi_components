@@ -13,6 +13,7 @@ import { PiToggleSwitchDemo } from '../demos/componentDemos/toggleSwitchDemo';
 import { PiTextAreaInputDemo } from '../demos/componentDemos/textAreaInputDemo';
 import { PiButtonsDemo } from '../demos/componentDemos/buttonsDemo';
 import { PiCardDemo } from '../demos/componentDemos/cardDemo';
+import { PiFormDemo } from '../demos/componentDemos/formDemo';
 
 export class ComponentsPreview extends LitElement {
 
@@ -28,7 +29,7 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
-            
+            <pi-form-demo></pi-form-demo>
             <pi-demo-grid></pi-demo-grid>
             <pi-card-demo></pi-card-demo>
             <pi-radio-input-demo></pi-radio-input-demo>

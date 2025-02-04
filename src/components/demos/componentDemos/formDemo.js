@@ -1,0 +1,97 @@
+import { LitElement, css, html } from 'lit'
+import { PiFeatureDemoContainer } from '../base/featureDemoContainer';
+import { PiFeatureExampleContainer } from '../base/featureExampleContainer';
+import { 
+    
+} from '../codeSamples/formCodeSamples';
+import { PiForm } from '../../forms/form';
+import { PiFormGroup } from '../../forms/formGroup';
+import { PiTextInput } from '../../inputs';
+import { PiGrid } from '../../grid/components/gridContainer';
+import { PiGridRow } from '../../grid/components/gridRow';
+import { PiGridColumn } from '../../grid/components/gridColumn';
+import { PiButton } from '../../buttons';
+
+export class PiFormDemo extends LitElement {
+
+    static get properties() {
+        return {
+            child: { type: Object }
+        }
+    }
+
+    constructor() {
+        super()
+        this.child = {}
+
+        this.sampleData = [
+            { name: 'Alice', age: 30, country: 'USA', income: '$100,000', rawIncome: '100000' },
+            { name: 'Bob', age: 25, country: 'UK', income: '$50,000', rawIncome: '50000' },
+            { name: 'Charlie', age: 35, country: 'Canada', income: '$200,000', rawIncome: '200000' },
+            { name: 'David', age: 32, country: 'Spain', income: '$70,000', rawIncome: '70000' },
+            { name: 'Edward', age: 27, country: 'New Zealand', income: '$150,000', rawIncome: '150000' },
+        ]
+    }
+
+    firstUpdated() {
+        this.child = this.shadowRoot.querySelectorAll('pi-feature-example-container')
+    }
+
+    submitFormById(e, formId) {
+        this.shadowRoot.querySelector(`pi-form[id='${formId}']`)._handleSubmit(e)
+    }
+
+    render() {
+        return html`
+            <pi-feature-demo-container 
+            label="Forms"
+            >
+
+                <pi-feature-example-container
+                title="Basic Form"
+                .sampleCode=${""}
+                >
+
+                    <pi-form
+                    id="pi-form-1"
+                    @formSubmitted="${(e) => this.child[0].handleCallbackData(e.detail)}"
+                    @formDataUpdated="${(e) => this.child[0].handleCallbackData(e.detail)}"
+                    >
+
+                        <pi-grid>
+                            <pi-row>
+                                <pi-col cols=4>
+                                    <pi-text-input
+                                    name="firstName"
+                                    label="First Name"
+                                    ></pi-text-input>
+                                </pi-col>
+                                <pi-col cols=4>
+                                    <pi-text-input
+                                    name="lastName"
+                                    label="Last Name"
+                                    ></pi-text-input>
+                                </pi-col>
+                            </pi-row>
+                        </pi-grid>
+
+                        <pi-button slot="submitButton" type="submit">Submit</pi-button>
+
+                        <!-- <pi-button slot="submitButton" @click="${(e) => this.submitFormById(e, 'pi-form-1')}">Submit</pi-button> -->
+                        
+                    </pi-form>
+
+                </pi-feature-example-container>
+
+            </pi-feature-demo-container>
+        `;
+    }
+
+    static styles = [
+        css`
+            
+        `
+    ]
+    
+}
+customElements.define('pi-form-demo', PiFormDemo);

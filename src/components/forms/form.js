@@ -5,24 +5,30 @@ export class PiForm extends LitElement {
 
     static get properties() {
         return {
-            formData: { type: Object }
+            formData: { type: Object },
+            showReset: { type: Boolean },
+            showSubmit: { type: Boolean }
         }
     }
 
     constructor() {
         super()
         this.formData = {};
+        this.showReset = false;
+        this.showSubmit = true;
     }
 
     connectedCallback() {
         super.connectedCallback();
         // Listen for 'change' events from child form elements
         this.addEventListener('change', (event) => this._handleFormElementChange(event));
+        this.addEventListener('pi-submit', (event) => this._handleSubmit(event));
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removeEventListener('change', (event) => this._handleFormElementChange(event));
+        this.removeEventListener('pi-submit', (event) => this._handleSubmit(event));
     }
 
     render() {
@@ -30,9 +36,19 @@ export class PiForm extends LitElement {
             <form @submit=${this._handleSubmit} @reset=${this._handleReset}>
                 <slot @slotchange=${this._handleSlotChange}></slot>
 
-                <div>
-                    <button type="submit">Submit</button>
-                    <button type="reset">Reset</button>
+                <div class="button_row">
+                    
+                        <slot name="submitButton">
+                            <button type="submit">Submit</button>
+                        </slot>
+                    
+                    
+                    ${this.showReset ? html `
+                        <slot name="resetButton">
+                            <button type="reset">Reset</button>
+                        </slot>
+                    `: null}
+                    
                 </div>
                 
             </form>
@@ -51,7 +67,7 @@ export class PiForm extends LitElement {
         // console.log("Form Data on Change:", this.formData);
 
         const submitEvent = new CustomEvent('formDataUpdated', {
-            detail: { formData: this.formData },
+            detail: this.formData,
             bubbles: true,
             composed: true,
         });
@@ -186,7 +202,9 @@ export class PiForm extends LitElement {
 
     static styles = [
         css`
-            
+            .button_row {
+                margin: 1rem 0;
+            }
         `
     ]
     
