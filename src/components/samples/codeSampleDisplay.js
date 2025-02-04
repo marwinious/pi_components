@@ -68,6 +68,11 @@ export class CodeDisplaySample extends LitElement {
             pre {
                 padding: 1rem;
             }
+
+            .code_block {
+                overflow-y: auto;
+                background: #21252B;
+            }
         `
     ]
     
