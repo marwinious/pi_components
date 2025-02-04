@@ -28,8 +28,9 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
-            <pi-card-demo></pi-card-demo>
+            
             <pi-demo-grid></pi-demo-grid>
+            <pi-card-demo></pi-card-demo>
             <pi-radio-input-demo></pi-radio-input-demo>
             <pi-textarea-input-demo></pi-textarea-input-demo>
             <pi-demo-forms></pi-demo-forms>
