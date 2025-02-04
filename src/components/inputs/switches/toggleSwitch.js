@@ -21,11 +21,12 @@ export class PiToggleSwitch extends PiBaseFormElement {
     connectedCallback() {
         super.connectedCallback();
         this.addEventListener('click', this._handleInputChange);
+        if(this.checked) { this.value = this.checked }
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        his.removeEventListener('click', this._handleInputChange);
+        this.removeEventListener('click', this._handleInputChange);
     }
 
     renderInput() {
