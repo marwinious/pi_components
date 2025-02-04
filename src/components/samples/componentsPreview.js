@@ -1,18 +1,17 @@
 import { LitElement, css, html } from 'lit'
 import { PiDemoTabs } from '../tabs/demoTabs';
-import { PiDemoButtons } from '../buttons/demoButtons';
 import { PiDemoCards } from '../cards/demoCards';
 import { PiDemoPaginators } from '../paginators/demoPaginators';
 import { PiDemoDataTable } from '../tables/demoDataTable';
-import { PiDemoToggleSwitches } from '../inputs/switches/demoSwitches';
 import { PiDemoForms } from '../forms/demoForms';
-import { PiDemoTextArea } from '../inputs/textareas/demoTextArea';
 import { PiDemoGrid } from '../grid/demoGrid';
 import { PiTextInputDemo } from '../demos/componentDemos/textInputDemo';
 import { PiCheckboxInputDemo } from '../demos/componentDemos/checkboxInputDemo';
 import { PiRadioInputDemo } from '../demos/componentDemos/radioInputDemo';
 import { PiSelectInputDemo } from '../demos/componentDemos/selectInputDemo';
 import { PiToggleSwitchDemo } from '../demos/componentDemos/toggleSwitchDemo';
+import { PiTextAreaInputDemo } from '../demos/componentDemos/textAreaInputDemo';
+import { PiButtonsDemo } from '../demos/componentDemos/buttonsDemo';
 
 export class ComponentsPreview extends LitElement {
 
@@ -28,19 +27,19 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
-            <pi-toggle-switch-demo></pi-toggle-switch-demo>
+            
             <pi-demo-grid></pi-demo-grid>
             <pi-radio-input-demo></pi-radio-input-demo>
-            <pi-demo-text-area></pi-demo-text-area>
+            <pi-textarea-input-demo></pi-textarea-input-demo>
             <pi-demo-forms></pi-demo-forms>
             <pi-checkbox-input-demo></pi-checkbox-input-demo>
-            
+            <pi-toggle-switch-demo></pi-toggle-switch-demo>
             <pi-select-input-demo></pi-select-input-demo>
             <pi-text-input-demo></pi-text-input-demo>
             <pi-demo-data-table></pi-demo-data-table>
             <pi-demo-paginators></pi-demo-paginators>
             <pi-demo-tabs></pi-demo-tabs>
-            <pi-demo-buttons></pi-demo-buttons>
+            <pi-buttons-demo></pi-buttons-demo>
         `;
     }
 

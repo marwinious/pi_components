@@ -16,7 +16,7 @@ export class PiFeatureExampleContainer extends LitElement {
         super()
         this.title = '';
         this.sampleCode = '';
-        this.callbackData = {};
+        this.callbackData = null;
     }
 
     render() {
@@ -26,7 +26,9 @@ export class PiFeatureExampleContainer extends LitElement {
 
                 <div class="flex_container"><slot></slot></div>
 
-                <div class="callback_data">${JSON.stringify(this.callbackData, null, 2)}</div>
+                ${this.callbackData ? html`
+                    <div class="callback_data">${JSON.stringify(this.callbackData, null, 2)}</div>
+                ` : null }
 
                 ${this.sampleCode != '' ? html`
                     <code-display-sample
