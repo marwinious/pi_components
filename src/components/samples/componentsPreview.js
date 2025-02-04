@@ -12,6 +12,7 @@ import { PiDemoForms } from '../forms/demoForms';
 import { PiDemoTextArea } from '../inputs/textareas/demoTextArea';
 import { PiDemoRadioInputs } from '../inputs/radios/demoRadioInputs';
 import { PiDemoGrid } from '../grid/demoGrid';
+import { PiTextInputDemo } from '../demos/componentDemos/textInputDemo';
 
 export class ComponentsPreview extends LitElement {
 
@@ -27,6 +28,7 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
+            <pi-text-input-demo></pi-text-input-demo>
             <pi-demo-grid></pi-demo-grid>
             <pi-demo-radio-inputs></pi-demo-radio-inputs>
             <pi-demo-text-area></pi-demo-text-area>
