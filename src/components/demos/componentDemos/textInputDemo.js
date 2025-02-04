@@ -5,6 +5,7 @@ import {
     basicTextInputSample,
     optionsTextInputSample,
     presetTextInputSample,
+    disabledTextInputSample
 } from '../../inputs/text/codeSamples/textInputCodeSamples';
 import { PiTextInput } from '../../inputs';
 
@@ -67,6 +68,20 @@ export class PiTextInputDemo extends LitElement {
                     name="preset_text_field"
                     value="Hello world!"
                     @change="${(e) => this.child[2].handleCallbackData(e.detail)}"
+                    ></pi-text-input>
+
+                </pi-feature-example-container>
+
+                <pi-feature-example-container
+                title="Disabled"
+                .sampleCode=${disabledTextInputSample}
+                >
+
+                    <pi-text-input 
+                    name="disabled_text_field"
+                    placeholder="You can't type here"
+                    disabled
+                    @change="${(e) => this.child[3].handleCallbackData(e.detail)}"
                     ></pi-text-input>
 
                 </pi-feature-example-container>
