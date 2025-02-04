@@ -6,7 +6,7 @@ import {
     optionsTextInputSample,
     presetTextInputSample,
     disabledTextInputSample
-} from '../../inputs/text/codeSamples/textInputCodeSamples';
+} from '../codeSamples/textInputCodeSamples';
 import { PiTextInput } from '../../inputs';
 
 export class PiTextInputDemo extends LitElement {

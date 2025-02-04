@@ -6,12 +6,12 @@ import { PiDemoPaginators } from '../paginators/demoPaginators';
 import { PiDemoDataTable } from '../tables/demoDataTable';
 import { PiDemoSelectInputs } from '../inputs/selects/demoSelectInput';
 import { PiDemoToggleSwitches } from '../inputs/switches/demoSwitches';
-import { PiDemoCheckboxes } from '../inputs/checkboxes/demoCheckboxes';
 import { PiDemoForms } from '../forms/demoForms';
 import { PiDemoTextArea } from '../inputs/textareas/demoTextArea';
-import { PiDemoRadioInputs } from '../inputs/radios/demoRadioInputs';
 import { PiDemoGrid } from '../grid/demoGrid';
 import { PiTextInputDemo } from '../demos/componentDemos/textInputDemo';
+import { PiCheckboxInputDemo } from '../demos/componentDemos/checkboxInputDemo';
+import { PiRadioInputDemo } from '../demos/componentDemos/radioInputDemo';
 
 export class ComponentsPreview extends LitElement {
 
@@ -29,10 +29,10 @@ export class ComponentsPreview extends LitElement {
         return html`
             
             <pi-demo-grid></pi-demo-grid>
-            <pi-demo-radio-inputs></pi-demo-radio-inputs>
+            <pi-radio-input-demo></pi-radio-input-demo>
             <pi-demo-text-area></pi-demo-text-area>
             <pi-demo-forms></pi-demo-forms>
-            <pi-demo-checkboxes></pi-demo-checkboxes>
+            <pi-checkbox-input-demo></pi-checkbox-input-demo>
             <pi-demo-toggle-switches></pi-demo-toggle-switches>
             <pi-demo-select-inputs></pi-demo-select-inputs>
             <pi-text-input-demo></pi-text-input-demo>
