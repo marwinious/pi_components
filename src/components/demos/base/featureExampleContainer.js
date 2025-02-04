@@ -40,7 +40,9 @@ export class PiFeatureExampleContainer extends LitElement {
         `;
     }
 
-    handleCallbackData(data) { this.callbackData = data; }
+    handleCallbackData(data) { 
+        this.callbackData = {...data}; 
+    }
 
     static styles = [
         css`
