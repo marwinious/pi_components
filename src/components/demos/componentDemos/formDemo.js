@@ -2,7 +2,8 @@ import { LitElement, css, html } from 'lit'
 import { PiFeatureDemoContainer } from '../base/featureDemoContainer';
 import { PiFeatureExampleContainer } from '../base/featureExampleContainer';
 import { 
-    
+    basicFormSample,
+    customSubmitFormSample,
 } from '../codeSamples/formCodeSamples';
 import { PiForm } from '../../forms/form';
 import { PiFormGroup } from '../../forms/formGroup';
@@ -49,24 +50,23 @@ export class PiFormDemo extends LitElement {
 
                 <pi-feature-example-container
                 title="Basic Form"
-                .sampleCode=${""}
+                .sampleCode=${basicFormSample}
                 >
 
                     <pi-form
-                    id="pi-form-1"
                     @formSubmitted="${(e) => this.child[0].handleCallbackData(e.detail)}"
                     @formDataUpdated="${(e) => this.child[0].handleCallbackData(e.detail)}"
                     >
 
                         <pi-grid>
                             <pi-row>
-                                <pi-col cols=4>
+                                <pi-col cols=3>
                                     <pi-text-input
                                     name="firstName"
                                     label="First Name"
                                     ></pi-text-input>
                                 </pi-col>
-                                <pi-col cols=4>
+                                <pi-col cols=3>
                                     <pi-text-input
                                     name="lastName"
                                     label="Last Name"
@@ -76,8 +76,40 @@ export class PiFormDemo extends LitElement {
                         </pi-grid>
 
                         <pi-button slot="submitButton" type="submit">Submit</pi-button>
+                        
+                    </pi-form>
 
-                        <!-- <pi-button slot="submitButton" @click="${(e) => this.submitFormById(e, 'pi-form-1')}">Submit</pi-button> -->
+                </pi-feature-example-container>
+
+                <pi-feature-example-container
+                title="Custom Submit"
+                .sampleCode=${customSubmitFormSample}
+                >
+
+                    <pi-form
+                    id="pi-form-1"
+                    @formSubmitted="${(e) => this.child[1].handleCallbackData(e.detail)}"
+                    @formDataUpdated="${(e) => this.child[1].handleCallbackData(e.detail)}"
+                    >
+
+                        <pi-grid>
+                            <pi-row>
+                                <pi-col cols=3>
+                                    <pi-text-input
+                                    name="firstName"
+                                    label="First Name"
+                                    ></pi-text-input>
+                                </pi-col>
+                                <pi-col cols=3>
+                                    <pi-text-input
+                                    name="lastName"
+                                    label="Last Name"
+                                    ></pi-text-input>
+                                </pi-col>
+                            </pi-row>
+                        </pi-grid>
+
+                        <pi-button slot="submitButton" @click="${(e) => this.submitFormById(e, 'pi-form-1')}">Submit</pi-button>
                         
                     </pi-form>
 

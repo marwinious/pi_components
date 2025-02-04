@@ -53,9 +53,14 @@ export class PiTextInput extends PiBaseFormElement {
         css`
             :host {
                 display: block;
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+                box-sizing: border-box;
             }
 
             .label {
+                box-sizing: border-box;
                 font-size: var(--pi-text-input-label-font-size, 80%);
                 text-transform: var(--pi-text-input-label-transform, none);
                 color: var(--pi-text-input-label-color, #888);
@@ -64,6 +69,7 @@ export class PiTextInput extends PiBaseFormElement {
             }
 
             input {
+                box-sizing: border-box;
                 font-size: var(--pi-text-input-font-size, 16px);
                 padding: var(--pi-text-input-padding, 5px 7px);
                 background-color: var(--pi-text-input-bg-color, #fff);
@@ -73,6 +79,9 @@ export class PiTextInput extends PiBaseFormElement {
                 border-color: var(--pi-text-input-border-color, #aaa);
                 color: var(--pi-text-input-text-color, #555);
                 box-shadow: var(--pi-text-input-box-shadow, none);
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
                 transition: background 0.3s ease, 
                             box-shadow 0.3s ease,
                             border-color 0.3s ease;

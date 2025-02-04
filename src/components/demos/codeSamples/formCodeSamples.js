@@ -1,28 +1,56 @@
 export const basicFormSample = `<pi-form
-@formSubmitted="\${(e) => this.handleInput(e.detail, 0)}"
-@formDataUpdated="\${(e) => this.handleInput(e.detail.formData, 0)}"
+@formSubmitted="\${(e) => this.child[0].handleCallbackData(e.detail)}"
+@formDataUpdated="\${(e) => this.child[0].handleCallbackData(e.detail)}"
 >
-    <pi-text-input name="firstName" label="First Name"></pi-text-input>
+    <pi-grid>
+        <pi-row>
+            <pi-col cols=3>
+                <pi-text-input
+                name="firstName"
+                label="First Name"
+                ></pi-text-input>
+            </pi-col>
+            <pi-col cols=3>
+                <pi-text-input
+                name="lastName"
+                label="Last Name"
+                ></pi-text-input>
+            </pi-col>
+        </pi-row>
+    </pi-grid>
+    <pi-button slot="submitButton" type="submit">Submit</pi-button>
 </pi-form>`
 
-export const multiInputsFormSample = `<pi-form
-@formSubmitted="\${(e) => this.handleInput(e.detail, 2)}"
-@formDataUpdated="\${(e) => this.handleInput(e.detail.formData, 2)}"
+export const customSubmitFormSample = `<pi-form
+id="pi-form-1"
+@formSubmitted="${(e) => this.child[0].handleCallbackData(e.detail)}"
+@formDataUpdated="${(e) => this.child[0].handleCallbackData(e.detail)}"
 >
-    <pi-text-input name="firstName" label="First Name"></pi-text-input>
 
-    <pi-select-input
-    .options="\${this.sampleData}"
-    labelKey="country"
-    valueKey="country"
-    name="country"
-    label="Country"
-    ></pi-select-input>
+    <pi-grid>
+        <pi-row>
+            <pi-col cols=3>
+                <pi-text-input
+                name="firstName"
+                label="First Name"
+                ></pi-text-input>
+            </pi-col>
+            <pi-col cols=3>
+                <pi-text-input
+                name="lastName"
+                label="Last Name"
+                ></pi-text-input>
+            </pi-col>
+        </pi-row>
+    </pi-grid>
 
-    <pi-checkbox-input label="Subscribe" name="subscribe"></pi-checkbox-input>
+    <pi-button slot="submitButton" @click="${(e) => this.submitFormById(e, 'pi-form-1')}">Submit</pi-button>
+    
+</pi-form>
 
-    <pi-toggle-switch name="turnedOn"></pi-toggle-switch>
-</pi-form>`
+submitFormById(e, formId) {
+    this.shadowRoot.querySelector(\`pi-form[id='\${formId}']\`)._handleSubmit(e)
+}`
 
 export const groupFormSample = `<pi-form
 @formSubmitted="\${(e) => this.handleInput(e.detail, 1)}"
