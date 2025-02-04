@@ -4,6 +4,7 @@ import { PiFeatureExampleContainer } from '../base/featureExampleContainer';
 import { 
     basicFormSample,
     customSubmitFormSample,
+    groupFormSample,
 } from '../codeSamples/formCodeSamples';
 import { PiForm } from '../../forms/form';
 import { PiFormGroup } from '../../forms/formGroup';
@@ -110,6 +111,61 @@ export class PiFormDemo extends LitElement {
                         </pi-grid>
 
                         <pi-button slot="submitButton" @click="${(e) => this.submitFormById(e, 'pi-form-1')}">Submit</pi-button>
+                        
+                    </pi-form>
+
+                </pi-feature-example-container>
+
+                <pi-feature-example-container
+                title="Form Groups"
+                .sampleCode=${groupFormSample}
+                >
+
+                    <pi-form
+                    @formSubmitted="${(e) => this.child[2].handleCallbackData(e.detail)}"
+                    @formDataUpdated="${(e) => this.child[2].handleCallbackData(e.detail)}"
+                    >
+
+                        <pi-grid>
+                            <pi-row>
+                                <pi-col cols=3>
+                                    <pi-form-group
+                                    name="person"
+                                    >
+                                        <pi-text-input
+                                        name="firstName"
+                                        label="First Name"
+                                        ></pi-text-input>
+                                    </pi-form-group>
+                                </pi-col>
+                                <pi-col cols=3>
+                                    <pi-form-group
+                                    name="person"
+                                    >
+                                        <pi-text-input
+                                        name="lastName"
+                                        label="Last Name"
+                                        ></pi-text-input>
+                                    </pi-form-group>
+                                </pi-col>
+                            </pi-row>
+                            <pi-row>
+                                <pi-col cols=3>
+                                    <pi-text-input
+                                    name="company"
+                                    label="Company"
+                                    ></pi-text-input>
+                                </pi-col>
+                                <pi-col cols=3>
+                                    <pi-text-input
+                                    name="planet"
+                                    label="Planet"
+                                    ></pi-text-input>
+                                </pi-col>
+                            </pi-row>
+                        </pi-grid>
+
+                        <pi-button slot="submitButton" type="submit">Submit</pi-button>
                         
                     </pi-form>
 

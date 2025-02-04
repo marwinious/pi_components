@@ -56,6 +56,8 @@ export class PiForm extends LitElement {
     }
 
     _handleFormElementChange(e) {
+        // console.log('e.detail from change: ', e.detail);
+        
         if(e.detail?.group) {
             if(typeof this.formData[e.detail.group] == 'undefined') { this.formData[e.detail.group] = {} }
             this.formData[e.detail.group][e.detail.name] = e.detail.value;
