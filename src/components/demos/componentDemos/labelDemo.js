@@ -27,7 +27,7 @@ export class PiLabelDemo extends LitElement {
     render() {
         return html`
             <pi-feature-demo-container 
-            label="Text Inputs"
+            label="Labels"
             >
 
                 <pi-feature-example-container
