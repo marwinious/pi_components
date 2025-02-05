@@ -1,7 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiDemoPaginators } from '../paginators/demoPaginators';
 import { PiDemoDataTable } from '../tables/demoDataTable';
-import { PiDemoGrid } from '../grid/demoGrid';
 import { PiTextInputDemo } from '../demos/componentDemos/textInputDemo';
 import { PiCheckboxInputDemo } from '../demos/componentDemos/checkboxInputDemo';
 import { PiRadioInputDemo } from '../demos/componentDemos/radioInputDemo';
@@ -12,6 +11,8 @@ import { PiButtonsDemo } from '../demos/componentDemos/buttonsDemo';
 import { PiCardDemo } from '../demos/componentDemos/cardDemo';
 import { PiFormDemo } from '../demos/componentDemos/formDemo';
 import { PiTabsDemo } from '../demos/componentDemos/tabsDemo';
+import { PiGridDemo } from '../demos/componentDemos/gridDemo';
+import { PiPaginatorDemo } from '../demos/componentDemos/paginatorDemo';
 
 export class ComponentsPreview extends LitElement {
 
@@ -27,8 +28,8 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
-            
-            <pi-demo-grid></pi-demo-grid>
+        <pi-paginator-demo></pi-paginator-demo>
+            <pi-grid-demo></pi-grid-demo>
             <pi-card-demo></pi-card-demo>
             <pi-radio-input-demo></pi-radio-input-demo>
             <pi-textarea-input-demo></pi-textarea-input-demo>

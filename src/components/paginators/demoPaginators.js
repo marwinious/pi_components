@@ -11,10 +11,6 @@ export class PiDemoPaginators extends LitElement {
         }
     }
 
-    /*
-    TODO: Find a way to make code sample work
-    */
-
     constructor() {
         super()
     }
@@ -31,7 +27,7 @@ export class PiDemoPaginators extends LitElement {
             >
 
                 <div>
-                    
+
                     <pi-card>
                         <div slot="title">Basic paginator</div>
                         <pi-paginator rows=10 totalRecords=100></pi-paginator>
