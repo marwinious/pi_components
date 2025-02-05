@@ -1,0 +1,51 @@
+:root {
+    /* Table Root */
+    --pi-table-border-collapse: collapse;
+    --pi-table-text-align: left;
+    --pi-table-white-space: nowrap;
+    --pi-table-width: 100%;
+    --pi-table-overflow-x: auto;
+    --pi-table-overflow-y: visible;
+
+    /* Table Rows (TR) */
+    --pi-table-row-bg-color-striped-even: #f8f8f8;
+    --pi-table-row-bg-color-striped-odd: #fff;
+
+    /* Table Column (TH) */
+    --pi-table-th-font-weight: bold;
+    --pi-table-th-text-color: #555;
+    --pi-table-th-text-align: left;
+    --pi-table-th-padding: 0.5em;
+    --pi-table-th-border-all: 1px solid #ddd;
+    --pi-table-th-border-top: none;
+    --pi-table-th-border-right: none;
+    --pi-table-th-border-bottom: var(--pi-table-th-border-all);
+    --pi-table-th-border-left: none;
+    --pi-table-th-bg-color: #fff;
+    --pi-table-th-bg-color-active: color-mix(in srgb, var(--pi-table-th-bg-color, #f4f4f4), black 20%);
+    --pi-table-th-transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+    --pi-table-th-font-size-sm: 0.9em;
+
+    /* Table Cells (TD) */
+    --pi-table-cell-font-weight: normal;
+    --pi-table-cell-text-color: initial;
+    --pi-table-cell-text-align: left;
+    --pi-table-cell-padding: 0.5em;
+    --pi-table-cell-border-all: 1px solid #ddd;
+    --pi-table-cell-border-top: var(--pi-table-cell-border-all);
+    --pi-table-cell-border-right: none;
+    --pi-table-cell-border-bottom: var(--pi-table-cell-border-all);
+    --pi-table-cell-border-left: none;
+    --pi-table-cell-bg-color: transparent;
+    --pi-table-cell-transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+    --pi-table-cell-clickable-text-color: blue;
+    --pi-table-cell-clickable-text-color-hover: purple;
+    --pi-table-cell-font-size-sm: 0.9em;
+
+    /* Sort Icons */
+    --pi-table-sort-icon-font-size: 0.8em;
+    --pi-table-sort-icon-color: #666;
+    --pi-table-sort-icon-active-color: #000;
+    --pi-table-sort-icon-margin: 0 0 0 0.5em;
+    
+}

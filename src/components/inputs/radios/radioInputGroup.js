@@ -1,0 +1,113 @@
+import { LitElement, css, html } from 'lit'
+import { PiBaseFormElement } from '../base/baseFormElement';
+import { PiLabel } from '../../labels/components/label';
+
+export class PiRadioInputGroup extends PiBaseFormElement {
+
+    static get properties() {
+        return {
+            label: { type: String },
+            name: { type: String },
+            value: { type: String },
+            radios: { type: Array }
+        }
+    }
+
+    constructor() {
+        super()
+        this.label = '';
+        this.name = '';
+        this.value = '';
+        this.radios = [];
+    }
+    
+    connectedCallback() {
+        super.connectedCallback();
+        this.addEventListener('radio-change', (event) => this._handleRadioElementChange(event));
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.removeEventListener('radio-change', (event) => this._handleRadioElementChange(event));
+    }
+
+    render() {
+        return html`
+            <pi-label 
+            text=${this.label}
+            block
+            no-padding
+            ?hidden=${this.label==''}
+            ></pi-label>
+            
+            <slot @slotchange=${this._handleSlotChange}></slot>
+        `;
+    }
+
+    _handleRadioElementChange(e) {
+        if(typeof e.detail?.value != 'undefined') {
+            this.value = e.detail.value;
+            this._dispatchChangeEvent(e.detail.value)
+        }
+
+        // reset checked values of other radio options
+        this.syncCheckedRadio();
+    }
+
+    syncCheckedRadio() {
+        this.radios.forEach((radio) => {
+            if(radio.value !== this.value) {
+                radio.checked = false;
+            }
+        })
+    }
+
+    _collectRadioData() {
+        const formElements = this.querySelectorAll('[name]');
+        const radioData = '';
+        
+        formElements.forEach(element => {
+            const component = element.closest('pi-radio-input');
+
+            if(component) {
+                if(component.checked) {
+                    radioData = component.getValue();
+                }
+            } 
+            else {
+                radioData = element.value; 
+            }
+            
+        });
+
+        return radioData;
+    }
+
+    _handleSlotChange() {
+        this.radios = this.querySelectorAll('pi-radio-input');
+
+        const radioData = this._collectRadioData();
+        this.value = radioData;
+    }
+
+    static styles = [
+        css`
+            :host {
+                display: block;
+            }
+
+            label {
+                display: block;
+                box-sizing: border-box;
+                font-size: var(--pi-radio-group-label-font-size, 1rem);
+                text-transform: var(--pi-radio-group-label-transform, none);
+                color: var(--pi-radio-group-label-color, #888);
+                font-weight: var(--pi-radio-group-label-font-weight, normal);
+                padding: 0;
+                margin-bottom: 0.25rem;
+            }
+        `
+    ]
+    
+}
+customElements.define('pi-radio-input-group', PiRadioInputGroup);

@@ -1,0 +1,11 @@
+@import './css/variables/globalVars.css';
+@import './css/variables//gridVars.css';
+@import './css//variables/inputDefaultVars.css';
+@import './css/variables/buttonVars.css';
+@import './css/variables/tableVars.css';
+@import './css//variables/textInputVars.css';
+@import './css//variables/selectInputVars.css';
+@import './css//variables/toggleSwitchVars.css';
+@import './css//variables/checkboxInputVars.css';
+@import './css//variables/textAreaInputVars.css';
+@import './css/common.css';
