@@ -1,0 +1,22 @@
+:root {
+
+    /* Card */
+    --pi-card-line-height: 1.4rem;
+    --pi-card-border: solid 1px #ccc;
+    --pi-card-border-radius: 4px;
+    --pi-card-box-shadow: 1px 1px 1px #ddd;
+    --pi-card-margin: 0.5rem 0;
+
+    /* Title */
+    --pi-card-title-padding: 1rem 1rem 0rem 1rem;
+    --pi-card-title-font-weight: bold;
+    --pi-card-title-text-color: #555;
+    --pi-card-title-font-size: 1.2rem;
+
+    /* Sub-title */
+    --pi-card-sub-title-padding: 0.25rem 1rem 0rem 1rem;
+    --pi-card-sub-title-color: #777;
+
+    /* Content */
+    --pi-card-content-padding: 1rem;
+}

@@ -1,6 +1,11 @@
 @import './css/variables/globalVars.css';
+@import './css/variables/cardVars.css';
 @import './css/variables//gridVars.css';
+@import './css/variables//badgeVars.css';
+@import './css/variables/formVars.css';
 @import './css//variables/inputDefaultVars.css';
+@import './css//variables/radioInputVars.css';
+@import './css//variables/tabVars.css';
 @import './css/variables/buttonVars.css';
 @import './css/variables/tableVars.css';
 @import './css//variables/textInputVars.css';

@@ -1,0 +1,11 @@
+:root {
+
+    /* Badges */
+    --pi-badge-width: 10px;
+    --pi-badge-height: 10px;
+    --pi-badge-font-size: 0.75rem;
+    --pi-badge-border-radius: 50%;
+    --pi-badge-background-color: rgba(0,0,0,0.25);
+    --pi-badge-padding: 0.27rem;
+
+}

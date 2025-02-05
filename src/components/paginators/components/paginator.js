@@ -166,8 +166,8 @@ export class PiPaginator extends LitElement {
                 display: flex;
                 width: 100%;
                 justify-content: center;
-                margin-top: 1rem;
-                gap: 10px;
+                margin: var(--pi-paginator-margin, 1rem 0 0 0);
+                gap: var(--pi-paginator-gap, 10px);
             }
         `
     ]

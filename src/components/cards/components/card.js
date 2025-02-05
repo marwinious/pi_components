@@ -96,7 +96,7 @@ export class PiCard extends LitElement {
                 border-radius: var(--pi-card-border-radius, 4px);
                 box-shadow: var(--pi-card-box-shadow, 1px 1px 1px #ddd);
                 overflow: hidden;
-                margin: 0.5rem 0;
+                margin: var(--pi-card-margin, 0.5rem 0);
             }
 
             slot {
