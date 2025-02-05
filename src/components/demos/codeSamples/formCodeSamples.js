@@ -141,8 +141,7 @@ export const multiInputFormSample = `<pi-form
         </pi-row>
         <pi-row>
             <pi-col cols=12>
-                <label>Age Range</label>
-                <div>
+                <pi-radio-input-group label="Age Range">
                     <pi-radio-input
                     name="ageRange"
                     label="18-24"
@@ -159,7 +158,7 @@ export const multiInputFormSample = `<pi-form
                     label="30-35"
                     value="30_35"
                     ></pi-radio-input>
-                </div>
+                </pi-radio-input-group>
             </pi-col>
         </pi-row>
         <pi-row>

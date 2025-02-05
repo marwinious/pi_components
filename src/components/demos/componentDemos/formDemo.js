@@ -17,6 +17,7 @@ import { PiButton } from '../../buttons';
 import { PiSelectInput } from '../../inputs';
 import { PiCheckboxInput } from '../../inputs';
 import { PiRadioInput } from '../../inputs';
+import { PiRadioInputGroup } from '../../inputs/radios/radioInputGroup';
 import { PiToggleSwitch } from '../../inputs';
 import { PiTextAreaInput } from '../../inputs';
 
@@ -229,8 +230,7 @@ export class PiFormDemo extends LitElement {
                             </pi-row>
                             <pi-row>
                                 <pi-col cols=12>
-                                    <label>Age Range</label>
-                                    <div>
+                                    <pi-radio-input-group label="Age Range">
                                         <pi-radio-input
                                         name="ageRange"
                                         label="18-24"
@@ -247,7 +247,7 @@ export class PiFormDemo extends LitElement {
                                         label="30-35"
                                         value="30_35"
                                         ></pi-radio-input>
-                                    </div>
+                                    </pi-radio-input-group>
                                 </pi-col>
                             </pi-row>
                             <pi-row>

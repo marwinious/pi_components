@@ -29,12 +29,12 @@ export class PiRadioInput extends PiBaseFormElement {
 
     connectedCallback() {
         super.connectedCallback();
-        this.addToGroup();
+        // this.addToGroup();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.removeFromGroup();
+        // this.removeFromGroup();
     }
 
     render() {
@@ -63,10 +63,19 @@ export class PiRadioInput extends PiBaseFormElement {
         this.checked = !this.checked;
 
         if(this.checked) {
-            this.syncCheckedState();
+            // this.syncCheckedState();
         }
-
-        this._dispatchChangeEvent(this.value)
+        
+        const event = new CustomEvent('radio-change', {
+            detail: { 
+                name: this.name, 
+                value: this.value, 
+                group: null 
+            }, // Include name for easy identification
+            bubbles: true,
+            composed: true,
+        });
+        this.dispatchEvent(event);
     }
 
     addToGroup() {

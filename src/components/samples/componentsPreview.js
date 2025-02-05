@@ -29,10 +29,11 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
+            <pi-radio-input-demo></pi-radio-input-demo>
             <pi-form-demo></pi-form-demo>
             <pi-demo-grid></pi-demo-grid>
             <pi-card-demo></pi-card-demo>
-            <pi-radio-input-demo></pi-radio-input-demo>
+            
             <pi-textarea-input-demo></pi-textarea-input-demo>
             <pi-demo-forms></pi-demo-forms>
             <pi-checkbox-input-demo></pi-checkbox-input-demo>

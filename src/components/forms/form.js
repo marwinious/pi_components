@@ -111,7 +111,7 @@ export class PiForm extends LitElement {
                                     || element.closest('pi-select-input')
                                     || element.closest('pi-checkbox-input')
                                     || element.closest('pi-toggle-switch')
-                                    || element.closest('pi-radio-input')
+                                    || element.closest('pi-radio-input-group')
                                     || element.closest('pi-text-area-input')
                 ;
 
@@ -140,7 +140,7 @@ export class PiForm extends LitElement {
                                     || element.closest('pi-select-input')
                                     || element.closest('pi-checkbox-input')
                                     || element.closest('pi-toggle-switch')
-                                    || element.closest('pi-radio-input')
+                                    || element.closest('pi-radio-input-group')
                                     || element.closest('pi-text-area-input')
                 ;
 
@@ -176,7 +176,7 @@ export class PiForm extends LitElement {
                                 || element.closest('pi-select-input')
                                 || element.closest('pi-checkbox-input')
                                 || element.closest('pi-toggle-switch')
-                                || element.closest('pi-radio-input')
+                                || element.closest('pi-radio-input-group')
                                 || element.closest('pi-text-area-input')
             
             ;

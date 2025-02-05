@@ -6,6 +6,7 @@ import {
     preselectedRadioInputSample
 } from '../codeSamples/radioInputCodeSamples';
 import { PiRadioInput } from '../../inputs';
+import { PiRadioInputGroup } from '../../inputs/radios/radioInputGroup';
 
 export class PiRadioInputDemo extends LitElement {
 
@@ -35,24 +36,29 @@ export class PiRadioInputDemo extends LitElement {
                 .sampleCode=${basicRadioInputSample}
                 >
 
-                    <pi-radio-input
-                    name="ageRange"
-                    label="18-24"
-                    value="18_24"
+                    <pi-radio-input-group 
+                    name="ageRange1"
                     @change="${(e) => this.child[0].handleCallbackData(e.detail)}"
-                    ></pi-radio-input>
-                    <pi-radio-input
-                    name="ageRange"
-                    label="25-29"
-                    value="25_29"
-                    @change="${(e) => this.child[0].handleCallbackData(e.detail)}"
-                    ></pi-radio-input>
-                    <pi-radio-input
-                    name="ageRange"
-                    label="30-35"
-                    value="30_35"
-                    @change="${(e) => this.child[0].handleCallbackData(e.detail)}"
-                    ></pi-radio-input>
+                    >
+                        <pi-radio-input
+                        
+                        label="18-24"
+                        value="18_24"
+                        
+                        ></pi-radio-input>
+                        <pi-radio-input
+                        
+                        label="25-29"
+                        value="25_29"
+                        
+                        ></pi-radio-input>
+                        <pi-radio-input
+                        
+                        label="30-35"
+                        value="30_35"
+                        
+                        ></pi-radio-input>
+                    </pi-radio-input-group>
 
                 </pi-feature-example-container>
 
@@ -61,25 +67,50 @@ export class PiRadioInputDemo extends LitElement {
                 .sampleCode=${preselectedRadioInputSample}
                 >
 
-                    <pi-radio-input
+                    <pi-radio-input-group
                     name="ageRange2"
-                    label="18-24"
-                    value="18_24"
                     @change="${(e) => this.child[1].handleCallbackData(e.detail)}"
-                    ></pi-radio-input>
-                    <pi-radio-input
-                    name="ageRange2"
-                    label="25-29"
-                    value="25_29"
-                    checked
-                    @change="${(e) => this.child[1].handleCallbackData(e.detail)}"
-                    ></pi-radio-input>
-                    <pi-radio-input
-                    name="ageRange2"
-                    label="30-35"
-                    value="30_35"
-                    @change="${(e) => this.child[1].handleCallbackData(e.detail)}"
-                    ></pi-radio-input>
+                    >
+                        <pi-radio-input
+                        label="18-24"
+                        value="18_24"
+                        ></pi-radio-input>
+                        <pi-radio-input
+                        label="25-29"
+                        value="25_29"
+                        checked
+                        ></pi-radio-input>
+                        <pi-radio-input
+                        label="30-35"
+                        value="30_35"
+                        ></pi-radio-input>
+                    </pi-radio-input-group>
+
+                </pi-feature-example-container>
+
+                <pi-feature-example-container
+                title="Group Label"
+                .sampleCode=${preselectedRadioInputSample}
+                >
+
+                    <pi-radio-input-group 
+                    label="Age Range"
+                    name="ageRange3"
+                    @change="${(e) => this.child[2].handleCallbackData(e.detail)}"
+                    >
+                        <pi-radio-input
+                        label="18-24"
+                        value="18_24"
+                        ></pi-radio-input>
+                        <pi-radio-input
+                        label="25-29"
+                        value="25_29"
+                        ></pi-radio-input>
+                        <pi-radio-input
+                        label="30-35"
+                        value="30_35"
+                        ></pi-radio-input>
+                    </pi-radio-input-group>
 
                 </pi-feature-example-container>
 
