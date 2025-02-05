@@ -64,8 +64,8 @@ export class PiCheckboxInput extends PiBaseFormElement {
 
             .checkmark {
                 position: absolute;
-                top: 50%;
-                left: 50%;
+                top: 0.48rem;
+                left: 0.48rem;
                 transform: translate(-50%, -50%);
                 width: var(--pi-checkbox-input-width, 12px); /* Adjust checkmark size */
                 height: var(--pi-checkbox-input-height, 12px);

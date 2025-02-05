@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiBaseFormElement } from '../base/baseFormElement';
+import { PiLabel } from '../../labels/components/label';
 
 export class PiRadioInput extends PiBaseFormElement {
 
@@ -52,7 +53,12 @@ export class PiRadioInput extends PiBaseFormElement {
                 role="radio"
                 >
                 <div class="radio_indicator"></div>
-                <label>${this.label}</label>
+                <!-- <label>${this.label}</label> -->
+                <pi-label 
+                text=${this.label} 
+                no-padding 
+                no-margin
+                ></pi-label>
             </div>
             
         `;
@@ -110,20 +116,18 @@ export class PiRadioInput extends PiBaseFormElement {
                 -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight */
             }
 
+            :host([block]) {
+                display: block;
+
+                .container {
+                    margin-right: 0;
+                }
+            }
+
             .container {
                 display: flex;
                 align-items: center;
-            }
-
-            label {
-                display: inline-block;
-                box-sizing: border-box;
-                font-size: var(--pi-radio-inpout-label-font-size, 1rem);
-                text-transform: var(--pi-radio-inpout-label-transform, none);
-                color: var(--pi-radio-inpout-label-color, #888);
-                font-weight: var(--pi-radio-inpout-label-font-weight, normal);
-                padding: 0;
-                user-select: none;
+                margin-right: 0.75rem;
             }
 
             input {
@@ -161,8 +165,8 @@ export class PiRadioInput extends PiBaseFormElement {
                 border-radius: 50%;
                 background-color: #fff; /* Or use a CSS variable */
                 position: absolute;
-                top: 60%;
-                left: 17%;
+                top: 0.85rem;
+                left: 0.72rem;
                 transform: translate(-80%, -80%);
             }
 

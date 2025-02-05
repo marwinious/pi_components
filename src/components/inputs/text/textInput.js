@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiBaseFormElement } from '../base/baseFormElement';
+import { PiLabel } from '../../labels/components/label';
 
 export class PiTextInput extends PiBaseFormElement {
 
@@ -22,10 +23,10 @@ export class PiTextInput extends PiBaseFormElement {
 
     render() {
         return html`
-            <div 
-            class="label"
+            <pi-label 
+            text=${this.label}
             ?hidden=${this.label==''}
-            >${this.label}</div>
+            ></pi-label>
             
             <input 
             type="text" 
@@ -45,15 +46,6 @@ export class PiTextInput extends PiBaseFormElement {
                 min-width: 0;
                 max-width: 100%;
                 box-sizing: border-box;
-            }
-
-            .label {
-                box-sizing: border-box;
-                font-size: var(--pi-text-input-label-font-size, 1rem);
-                text-transform: var(--pi-text-input-label-transform, none);
-                color: var(--pi-text-input-label-color, #888);
-                font-weight: var(--pi-text-input-label-font-weight, normal);
-                padding: var(--pi-text-input-label-padding, 0 0 0 0.5rem);
             }
 
             input {
