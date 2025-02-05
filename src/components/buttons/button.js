@@ -5,6 +5,7 @@ import severityCss from './css/buttonSeverityCss'
 import variantCss from './css/buttonVariantCss'
 import iconsCss from './css/buttonIconsCss'
 import { IconHandler } from '../icons/base/iconHandler';
+import { PiBadge } from '../badges/badge';
 
 // commonCss = css`${unsafeCSS(commonCss)}`;
 
@@ -67,10 +68,7 @@ export class PiButton extends LitElement {
                     
 
                     <!-- Optional Badge -->
-                    <span class="button_badge">${this.badge}</span>
-                    ${this.badge ? html`
-                        <!-- <span class="button_badge">${this.badge}</span> -->
-                    ` : null}
+                    <pi-badge>${this.badge}</pi-badge>
                 </span>
                 
             </button>
@@ -172,20 +170,12 @@ export class PiButton extends LitElement {
                 width: var(--pi-button-icon-width, 15px);
             }
 
-            .button_badge {
+            pi-badge { 
                 display: none;
-                width: 10px;
-                height: 10px;
-                font-size: 0.75rem;
-                border-radius: 50%;
-                background: rgba(0,0,0,0.25);
-                padding: 0.27rem;
             }
 
-            :host([badge]) .button_badge {
+            :host([badge]) pi-badge {
                 display: inline-flex;
-                align-items: center;
-                justify-content: center;
             }
 
         `
