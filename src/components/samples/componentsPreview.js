@@ -12,6 +12,7 @@ import { PiTabsDemo } from '../demos/componentDemos/tabsDemo';
 import { PiGridDemo } from '../demos/componentDemos/gridDemo';
 import { PiPaginatorDemo } from '../demos/componentDemos/paginatorDemo';
 import { PiTableDemo } from '../demos/componentDemos/tableDemo';
+import { PiLabelDemo } from '../demos/componentDemos/labelDemo';
 
 export class ComponentsPreview extends LitElement {
 
@@ -27,7 +28,7 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
-            
+            <pi-label-demo></pi-label-demo>
             <pi-grid-demo></pi-grid-demo>
             <pi-card-demo></pi-card-demo>
             <pi-radio-input-demo></pi-radio-input-demo>
