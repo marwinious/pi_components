@@ -3,20 +3,19 @@
     /* General */
     --pi-checkbox-input-width: 10px;
     --pi-checkbox-input-height: var(--pi-checkbox-input-width);
+    --pi-checkbox-border-width: 2px;
+    --pi-checkbox-border-style: solid;
+    --pi-checkbox-border-color: var(--pi-input-fill-color-false);
+    --pi-checkbox-border-radius: 3px;
+    --pi-checkbox-background-color: #FFF;
 
     /* On State */
     --pi-checkbox-input-fill-color-true: var(--pi-input-fill-color-true);
     --pi-checkbox-input-inner-width: 15px;
     --pi-checkbox-input-inner-height: var(--pi-checkbox-input-inner-width);
     --pi-checkbox-input-height: var(--pi-checkbox-input-width);
+    --pi-checkbox-input-border-radius: 2px;
 
     /* Off State */
     --pi-checkbox-input-fill-color-false: var(--pi-input-bg-color-neutral);
-
-    /* Label */
-    --pi-checkbox-input-label-font-size: var(--pi-input-label-font-size);
-    --pi-checkbox-input-label-transform: var(--pi-input-label-transform);
-    --pi-checkbox-input-label-color: var(--pi-input-label-color);
-    --pi-checkbox-input-label-font-weight: var(--pi-input-label-font-weight);
-    --pi-checkbox-input-label-padding: var(--pi-input-label-padding);
 }

@@ -1,7 +1,7 @@
 :root {
 
     /* General */
-    
+    --pi-toggle-switch-input-slider-color: #FFF;
 
     /* On State */
     --pi-toggle-switch-input-fill-color-true: var(--pi-input-fill-color-true);

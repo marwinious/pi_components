@@ -70,7 +70,7 @@ export class PiToggleSwitch extends PiBaseFormElement {
                 width: 40px;
                 height: 20px;
                 border-radius: 10px;
-                background-color: #aaa;
+                background-color: var(--pi-toggle-switch-input-fill-color-false, #aaa);
                 position: relative;
             }
 
@@ -83,18 +83,12 @@ export class PiToggleSwitch extends PiBaseFormElement {
                 border-radius: 9px;
                 width: 13px;
                 /* height: 15px; */
-                background-color: #fff;
+                background-color: var(--pi-toggle-switch-input-slider-color, #fff);
                 transition: transform 0.3s ease-in-out;
             }
 
             :host([checked]) .slider {
                 transform: translateX(19px); 
-            }
-
-            .label {
-                padding: var(--pi-checkbox-input-label-padding, 0 0 0 0.5rem); /* Space between checkbox and label */
-                font-size: var(--pi-checkbox-input-label-font-size, 1rem); /* Adjust as needed */
-                color: var(--pi-checkbox-input-label-color, #555); /* Or your preferred label color */
             }
         `
     ]

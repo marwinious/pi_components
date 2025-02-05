@@ -95,17 +95,6 @@ export class PiRadioInputGroup extends PiBaseFormElement {
             :host {
                 display: block;
             }
-
-            label {
-                display: block;
-                box-sizing: border-box;
-                font-size: var(--pi-radio-group-label-font-size, 1rem);
-                text-transform: var(--pi-radio-group-label-transform, none);
-                color: var(--pi-radio-group-label-color, #888);
-                font-weight: var(--pi-radio-group-label-font-weight, normal);
-                padding: 0;
-                margin-bottom: 0.25rem;
-            }
         `
     ]
     

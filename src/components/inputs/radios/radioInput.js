@@ -144,17 +144,17 @@ export class PiRadioInput extends PiBaseFormElement {
                 width: 18px;
                 height: 18px;
                 border-radius: 50%; /* Make it round */
-                border: 2px solid var(--radio-border-color, #ccc); /* Use a CSS variable for easy styling */
-                background-color: var(--radio-background-color, #fff);
-                margin-right: 8px; /* Space between indicator and label */
+                border: 2px solid var(--pi-radio-input-border-color, #ccc); /* Use a CSS variable for easy styling */
+                background-color: var(--pi-radio-input-background-color, #fff);
+                margin-right: var(--pi-radio-input-margin-right, 8px); /* Space between indicator and label */
                 box-sizing: border-box; /* Include border in size */
                 transition: background-color 0.4s ease, 
                             border-color 0.4s ease; /* Smooth transitions */
             }
 
             input:checked + .radio_indicator {
-                background-color: var(--radio-checked-color, #2196f3); /* Checked color */
-                border-color: var(--radio-checked-color, #2196f3);
+                background-color: var(--pi-radio-input-color-checked, #2196f3); /* Checked color */
+                border-color: var(--pi-radio-input-color-checked, #2196f3);
             }
 
             input:checked + .radio_indicator::after { /* The inner circle when checked */
@@ -163,7 +163,7 @@ export class PiRadioInput extends PiBaseFormElement {
                 width: 8px;
                 height: 8px;
                 border-radius: 50%;
-                background-color: #fff; /* Or use a CSS variable */
+                background-color: var(--pi-radio-input-background-color-checked, #FFF); /* Or use a CSS variable */
                 position: absolute;
                 top: 0.85rem;
                 left: 0.72rem;

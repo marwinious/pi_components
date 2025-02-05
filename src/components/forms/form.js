@@ -213,7 +213,7 @@ export class PiForm extends LitElement {
     static styles = [
         css`
             .button_row {
-                margin: 1rem 0;
+                margin: var(--pi-form-button-row-margin, 1rem 0);
             }
         `
     ]
