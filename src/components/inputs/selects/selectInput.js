@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiBaseFormElement } from '../base/baseFormElement';
+import { PiLabel } from '../../labels/components/label';
 
 export class PiSelectInput extends PiBaseFormElement {
 
@@ -52,10 +53,10 @@ export class PiSelectInput extends PiBaseFormElement {
 
     renderInput() {
         return html`
-            <div 
-            class="label"
+            <pi-label 
+            text=${this.label}
             ?hidden=${this.label==''}
-            >${this.label}</div>
+            ></pi-label>
 
             <select 
             @change=${this._handleInputChange} 
@@ -123,14 +124,6 @@ export class PiSelectInput extends PiBaseFormElement {
             :host {
                 width: var(--pi-select-input-width, 100%);
                 display: var(--pi-select-input-display, inline-block);
-            }
-
-            .label {
-                font-size: var(--pi-select-input-label-font-size, 80%);
-                text-transform: var(--pi-select-input-label-transform, none);
-                color: var(--pi-select-input-label-color, #888);
-                font-weight: var(--pi-select-input-label-font-weight, bold);
-                padding: var(--pi-select-input-label-padding, 0 0 0 0.5rem);
             }
 
             select {

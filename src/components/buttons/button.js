@@ -19,6 +19,7 @@ export class PiButton extends LitElement {
             rounded: { type: Boolean },
             variant: { type: String },
             badge: { type: [Number, String] },
+            type: { type: String }
         }
     }
 
@@ -31,6 +32,7 @@ export class PiButton extends LitElement {
         this.rounded = false;
         this.variant = false;
         this.badge = null;
+        this.type = 'button';
     }
 
     /* <div class="icon">${unsafeHTML(this.icon)}</div> */
@@ -42,20 +44,14 @@ export class PiButton extends LitElement {
             [`btn_variant_${this.variant}`]: true,
             'raised': this.raised === true,
             'rounded': this.rounded === true,
-            /* 'btn_severity_primary': this.severity === 'primary',
-            'btn_severity_secondary': this.severity === 'secondary',
-            'btn_severity_success': this.severity === 'success',
-            'btn_severity_info': this.severity === 'info',
-            'btn_severity_warn': this.severity === 'warn',
-            'btn_severity_help': this.severity === 'help',
-            'btn_severity_danger': this.severity === 'danger', */
         }
 
         return html`
             <button 
-            type="button"
+            type=${this.type}
             class=${classMap(buttonClasses)}
             ?disabled=${this.disabled}
+            @click=${this._handleClick}
             >
 
                 <span class="button_content_container">
@@ -79,6 +75,21 @@ export class PiButton extends LitElement {
                 
             </button>
         `;
+    }
+
+    _handleClick(e) {
+        if (this.type !== 'submit') { // Only handle clicks for non-submit buttons
+            this.dispatchEvent(new CustomEvent('click', { 
+                detail: e
+            }));
+        }
+        else {
+            this.dispatchEvent(new CustomEvent('pi-submit', { 
+                detail: e,
+                composed: true,
+                bubbles: true
+            }));
+        }
     }
 
     static styles = [

@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiBaseFormElement } from '../base/baseFormElement';
+import { PiLabel } from '../../labels/components/label';
 
 export class PiToggleSwitch extends PiBaseFormElement {
 
@@ -21,11 +22,12 @@ export class PiToggleSwitch extends PiBaseFormElement {
     connectedCallback() {
         super.connectedCallback();
         this.addEventListener('click', this._handleInputChange);
+        if(this.checked) { this.value = this.checked }
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        his.removeEventListener('click', this._handleInputChange);
+        this.removeEventListener('click', this._handleInputChange);
     }
 
     renderInput() {
@@ -36,10 +38,11 @@ export class PiToggleSwitch extends PiBaseFormElement {
                 <div class="slider"></div>
             </div>
 
-            <span 
-            class="label" 
+            <pi-label
+            text=${this.label}
             ?hidden=${this.label==''}
-            >${this.label}</span>
+            no-margin
+            ></pi-label>
         `;
     }
 

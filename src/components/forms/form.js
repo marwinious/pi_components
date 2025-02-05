@@ -5,24 +5,30 @@ export class PiForm extends LitElement {
 
     static get properties() {
         return {
-            formData: { type: Object }
+            formData: { type: Object },
+            showReset: { type: Boolean },
+            showSubmit: { type: Boolean }
         }
     }
 
     constructor() {
         super()
         this.formData = {};
+        this.showReset = false;
+        this.showSubmit = true;
     }
 
     connectedCallback() {
         super.connectedCallback();
         // Listen for 'change' events from child form elements
         this.addEventListener('change', (event) => this._handleFormElementChange(event));
+        this.addEventListener('pi-submit', (event) => this._handleSubmit(event));
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removeEventListener('change', (event) => this._handleFormElementChange(event));
+        this.removeEventListener('pi-submit', (event) => this._handleSubmit(event));
     }
 
     render() {
@@ -30,9 +36,19 @@ export class PiForm extends LitElement {
             <form @submit=${this._handleSubmit} @reset=${this._handleReset}>
                 <slot @slotchange=${this._handleSlotChange}></slot>
 
-                <div>
-                    <button type="submit">Submit</button>
-                    <button type="reset">Reset</button>
+                <div class="button_row">
+                    
+                        <slot name="submitButton">
+                            <button type="submit">Submit</button>
+                        </slot>
+                    
+                    
+                    ${this.showReset ? html `
+                        <slot name="resetButton">
+                            <button type="reset">Reset</button>
+                        </slot>
+                    `: null}
+                    
                 </div>
                 
             </form>
@@ -40,6 +56,8 @@ export class PiForm extends LitElement {
     }
 
     _handleFormElementChange(e) {
+        // console.log('e.detail from change: ', e.detail);
+        
         if(e.detail?.group) {
             if(typeof this.formData[e.detail.group] == 'undefined') { this.formData[e.detail.group] = {} }
             this.formData[e.detail.group][e.detail.name] = e.detail.value;
@@ -51,7 +69,7 @@ export class PiForm extends LitElement {
         // console.log("Form Data on Change:", this.formData);
 
         const submitEvent = new CustomEvent('formDataUpdated', {
-            detail: { formData: this.formData },
+            detail: this.formData,
             bubbles: true,
             composed: true,
         });
@@ -93,16 +111,20 @@ export class PiForm extends LitElement {
                                     || element.closest('pi-select-input')
                                     || element.closest('pi-checkbox-input')
                                     || element.closest('pi-toggle-switch')
-                                    || element.closest('pi-radio-input')
+                                    || element.closest('pi-radio-input-group')
                                     || element.closest('pi-text-area-input')
                 ;
 
                 if (component) {
+                    // console.log('component: ', component);
+                    
                     // Account for radio inputs
-                    if(component.tagName == 'PI-RADIO-INPUT') {
-                        if(component.checked) {
+                    if(component.tagName == 'PI-RADIO-INPUT-GROUP') {
+                        // console.log('input group');
+                        
+                        /* if(component.checked) {
                             formData[groupName][component.name] = component.getValue();
-                        }
+                        } */
                     }
                     else {
                         formData[groupName][component.name] = component.getValue();
@@ -111,6 +133,8 @@ export class PiForm extends LitElement {
                 else {
                     // Exclude any form group elements from collection (children of groups will still be processed)
                     if(element.tagName != 'PI-FORM-GROUP') {
+                        // console.log('element: ', element);
+                        
                         formData[groupName][element.name] = element.value; 
                     }   
                 }
@@ -122,16 +146,18 @@ export class PiForm extends LitElement {
                                     || element.closest('pi-select-input')
                                     || element.closest('pi-checkbox-input')
                                     || element.closest('pi-toggle-switch')
-                                    || element.closest('pi-radio-input')
+                                    || element.closest('pi-radio-input-group')
                                     || element.closest('pi-text-area-input')
                 ;
 
                 if (component) {
+                    // console.log('component: ', component, component.getValue());
+                    
                     // Account for radio inputs
                     if(component.tagName == 'PI-RADIO-INPUT') {
-                        if(component.checked) {
+                        /* if(component.checked) {
                             formData[component.name] = component.getValue();
-                        }
+                        } */
                     }
                     else {
                         formData[component.name] = component.getValue();
@@ -158,7 +184,7 @@ export class PiForm extends LitElement {
                                 || element.closest('pi-select-input')
                                 || element.closest('pi-checkbox-input')
                                 || element.closest('pi-toggle-switch')
-                                || element.closest('pi-radio-input')
+                                || element.closest('pi-radio-input-group')
                                 || element.closest('pi-text-area-input')
             
             ;
@@ -186,7 +212,9 @@ export class PiForm extends LitElement {
 
     static styles = [
         css`
-            
+            .button_row {
+                margin: 1rem 0;
+            }
         `
     ]
     

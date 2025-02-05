@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiBaseFormElement } from '../base/baseFormElement';
+import { PiLabel } from '../../labels/components/label';
 
 export class PiRadioInput extends PiBaseFormElement {
 
@@ -29,12 +30,12 @@ export class PiRadioInput extends PiBaseFormElement {
 
     connectedCallback() {
         super.connectedCallback();
-        this.addToGroup();
+        // this.addToGroup();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.removeFromGroup();
+        // this.removeFromGroup();
     }
 
     render() {
@@ -52,7 +53,12 @@ export class PiRadioInput extends PiBaseFormElement {
                 role="radio"
                 >
                 <div class="radio_indicator"></div>
-                <label>${this.label}</label>
+                <!-- <label>${this.label}</label> -->
+                <pi-label 
+                text=${this.label} 
+                no-padding 
+                no-margin
+                ></pi-label>
             </div>
             
         `;
@@ -63,10 +69,19 @@ export class PiRadioInput extends PiBaseFormElement {
         this.checked = !this.checked;
 
         if(this.checked) {
-            this.syncCheckedState();
+            // this.syncCheckedState();
         }
 
-        this._dispatchChangeEvent(this.value)
+        const event = new CustomEvent('radio-change', {
+            detail: { 
+                name: this.name, 
+                value: this.value, 
+                group: null 
+            }, // Include name for easy identification
+            bubbles: true,
+            composed: true,
+        });
+        this.dispatchEvent(event);
     }
 
     addToGroup() {
@@ -101,13 +116,18 @@ export class PiRadioInput extends PiBaseFormElement {
                 -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight */
             }
 
+            :host([block]) {
+                display: block;
+
+                .container {
+                    margin-right: 0;
+                }
+            }
+
             .container {
                 display: flex;
                 align-items: center;
-            }
-
-            label {
-                user-select: none;
+                margin-right: 0.75rem;
             }
 
             input {
@@ -145,8 +165,8 @@ export class PiRadioInput extends PiBaseFormElement {
                 border-radius: 50%;
                 background-color: #fff; /* Or use a CSS variable */
                 position: absolute;
-                top: 60%;
-                left: 17%;
+                top: 0.85rem;
+                left: 0.72rem;
                 transform: translate(-80%, -80%);
             }
 

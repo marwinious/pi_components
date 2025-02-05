@@ -1,17 +1,18 @@
 import { LitElement, css, html } from 'lit'
-import { PiDemoTabs } from '../tabs/demoTabs';
-import { PiDemoButtons } from '../buttons/demoButtons';
-import { PiDemoCards } from '../cards/demoCards';
-import { PiDemoPaginators } from '../paginators/demoPaginators';
-import { PiDemoDataTable } from '../tables/demoDataTable';
-import { PiDemoTextInputs } from '../inputs/text/demoTextInput';
-import { PiDemoSelectInputs } from '../inputs/selects/demoSelectInput';
-import { PiDemoToggleSwitches } from '../inputs/switches/demoSwitches';
-import { PiDemoCheckboxes } from '../inputs/checkboxes/demoCheckboxes';
-import { PiDemoForms } from '../forms/demoForms';
-import { PiDemoTextArea } from '../inputs/textareas/demoTextArea';
-import { PiDemoRadioInputs } from '../inputs/radios/demoRadioInputs';
-import { PiDemoGrid } from '../grid/demoGrid';
+import { PiTextInputDemo } from '../demos/componentDemos/textInputDemo';
+import { PiCheckboxInputDemo } from '../demos/componentDemos/checkboxInputDemo';
+import { PiRadioInputDemo } from '../demos/componentDemos/radioInputDemo';
+import { PiSelectInputDemo } from '../demos/componentDemos/selectInputDemo';
+import { PiToggleSwitchDemo } from '../demos/componentDemos/toggleSwitchDemo';
+import { PiTextAreaInputDemo } from '../demos/componentDemos/textAreaInputDemo';
+import { PiButtonsDemo } from '../demos/componentDemos/buttonsDemo';
+import { PiCardDemo } from '../demos/componentDemos/cardDemo';
+import { PiFormDemo } from '../demos/componentDemos/formDemo';
+import { PiTabsDemo } from '../demos/componentDemos/tabsDemo';
+import { PiGridDemo } from '../demos/componentDemos/gridDemo';
+import { PiPaginatorDemo } from '../demos/componentDemos/paginatorDemo';
+import { PiTableDemo } from '../demos/componentDemos/tableDemo';
+import { PiLabelDemo } from '../demos/componentDemos/labelDemo';
 
 export class ComponentsPreview extends LitElement {
 
@@ -27,18 +28,20 @@ export class ComponentsPreview extends LitElement {
 
     render() {
         return html`
-            <pi-demo-grid></pi-demo-grid>
-            <pi-demo-radio-inputs></pi-demo-radio-inputs>
-            <pi-demo-text-area></pi-demo-text-area>
-            <pi-demo-forms></pi-demo-forms>
-            <pi-demo-checkboxes></pi-demo-checkboxes>
-            <pi-demo-toggle-switches></pi-demo-toggle-switches>
-            <pi-demo-select-inputs></pi-demo-select-inputs>
-            <pi-demo-text-inputs></pi-demo-text-inputs>
-            <pi-demo-data-table></pi-demo-data-table>
-            <pi-demo-paginators></pi-demo-paginators>
-            <pi-demo-tabs></pi-demo-tabs>
-            <pi-demo-buttons></pi-demo-buttons>
+            <pi-label-demo></pi-label-demo>
+            <pi-grid-demo></pi-grid-demo>
+            <pi-card-demo></pi-card-demo>
+            <pi-radio-input-demo></pi-radio-input-demo>
+            <pi-textarea-input-demo></pi-textarea-input-demo>
+            <pi-form-demo></pi-form-demo>
+            <pi-checkbox-input-demo></pi-checkbox-input-demo>
+            <pi-toggle-switch-demo></pi-toggle-switch-demo>
+            <pi-select-input-demo></pi-select-input-demo>
+            <pi-text-input-demo></pi-text-input-demo>
+            <pi-table-demo></pi-table-demo>
+            <pi-paginator-demo></pi-paginator-demo>
+            <pi-tabs-demo></pi-tabs-demo>
+            <pi-buttons-demo></pi-buttons-demo>
         `;
     }
 

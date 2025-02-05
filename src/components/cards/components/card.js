@@ -88,6 +88,8 @@ export class PiCard extends LitElement {
             :host {
                 display: block;
                 max-width: 100%;
+                width: 100%;
+                min-width: 0;
                 line-height: var(--pi-card-line-height, 1.4rem);
                 font-family: var(--font-sans-serif);
                 border: var(--pi-card-border, solid 1px #ccc);
@@ -108,7 +110,7 @@ export class PiCard extends LitElement {
                 overflow: hidden;
             }
 
-            .header slot::slotted(img) {
+            .header ::slotted(img) {
                 width: 100%;
                 max-width: 100%;
                 height: auto;
