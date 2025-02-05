@@ -6,7 +6,6 @@ export class PiTextInput extends PiBaseFormElement {
     static get properties() {
         return {
             placeholder: { type: String },
-            showLabel: { type: Boolean, attribute: false },
             value: { type: String },
             disabled: { type: Boolean },
             label: { type: String }
@@ -16,7 +15,6 @@ export class PiTextInput extends PiBaseFormElement {
     constructor() {
         super()
         this.placeholder = '';
-        this.showLabel = false;
         this.value = '';
         this.disabled = false;
         this.label = '';
@@ -26,10 +24,8 @@ export class PiTextInput extends PiBaseFormElement {
         return html`
             <div 
             class="label"
-            ?hidden=${!this.showLabel && this.label==''}
-            >
-                <slot @slotchange=${this.handleSlotChange}>${this.label}</slot>
-            </div>
+            ?hidden=${this.label==''}
+            >${this.label}</div>
             
             <input 
             type="text" 
@@ -39,14 +35,6 @@ export class PiTextInput extends PiBaseFormElement {
             ?disabled=${this.disabled}
             >
         `;
-    }
-
-    handleSlotChange() {
-        // Change label visibility depending on slot content
-        const slot = this.shadowRoot.querySelector('slot');
-        const assignedNodes = slot.assignedNodes({ flatten: true });
-
-        this.showLabel = assignedNodes.length > 0 ? true : false;
     }
 
     static styles = [
@@ -61,10 +49,10 @@ export class PiTextInput extends PiBaseFormElement {
 
             .label {
                 box-sizing: border-box;
-                font-size: var(--pi-text-input-label-font-size, 80%);
+                font-size: var(--pi-text-input-label-font-size, 1rem);
                 text-transform: var(--pi-text-input-label-transform, none);
                 color: var(--pi-text-input-label-color, #888);
-                font-weight: var(--pi-text-input-label-font-weight, bold);
+                font-weight: var(--pi-text-input-label-font-weight, normal);
                 padding: var(--pi-text-input-label-padding, 0 0 0 0.5rem);
             }
 

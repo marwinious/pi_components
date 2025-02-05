@@ -260,10 +260,10 @@ export class PiFormDemo extends LitElement {
                             </pi-row>
                             <pi-row>
                                 <pi-col cols=12>
-                                    <label>Enable Alerts</label>
                                     <div>
                                         <pi-toggle-switch
                                         name="enableAlerts"
+                                        label="Enable Alerts"
                                         ></pi-toggle-switch>
                                     </div>
                                 </pi-col>

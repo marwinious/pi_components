@@ -65,7 +65,7 @@ export class PiRadioInput extends PiBaseFormElement {
         if(this.checked) {
             // this.syncCheckedState();
         }
-        
+
         const event = new CustomEvent('radio-change', {
             detail: { 
                 name: this.name, 
@@ -116,6 +116,13 @@ export class PiRadioInput extends PiBaseFormElement {
             }
 
             label {
+                display: inline-block;
+                box-sizing: border-box;
+                font-size: var(--pi-radio-inpout-label-font-size, 1rem);
+                text-transform: var(--pi-radio-inpout-label-transform, none);
+                color: var(--pi-radio-inpout-label-color, #888);
+                font-weight: var(--pi-radio-inpout-label-font-weight, normal);
+                padding: 0;
                 user-select: none;
             }
 
