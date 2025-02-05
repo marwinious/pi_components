@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiBaseFormElement } from '../base/baseFormElement';
+import { PiLabel } from '../../labels/components/label';
 
 export class PiCheckboxInput extends PiBaseFormElement {
 
@@ -27,11 +28,12 @@ export class PiCheckboxInput extends PiBaseFormElement {
                 <div class="checkmark"></div>
             </div>
 
-            <span 
-            class="label" 
+            <pi-label
+            text=${this.label}
             ?hidden=${this.label==''}
-             @click=${this._handleInputChange}
-            >${this.label}</span>
+            @click=${this._handleInputChange}
+            no-margin
+            ></pi-label>
         `;
     }
 
@@ -64,8 +66,8 @@ export class PiCheckboxInput extends PiBaseFormElement {
 
             .checkmark {
                 position: absolute;
-                top: 50%;
-                left: 50%;
+                top: 0.48rem;
+                left: 0.48rem;
                 transform: translate(-50%, -50%);
                 width: var(--pi-checkbox-input-width, 12px); /* Adjust checkmark size */
                 height: var(--pi-checkbox-input-height, 12px);

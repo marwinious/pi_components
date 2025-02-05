@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { PiBaseFormElement } from '../base/baseFormElement';
+import { PiLabel } from '../../labels/components/label';
 
 export class PiRadioInputGroup extends PiBaseFormElement {
 
@@ -32,10 +33,12 @@ export class PiRadioInputGroup extends PiBaseFormElement {
 
     render() {
         return html`
-            <label 
-            class="label"
+            <pi-label 
+            text=${this.label}
+            block
+            no-padding
             ?hidden=${this.label==''}
-            >${this.label}</label>
+            ></pi-label>
             
             <slot @slotchange=${this._handleSlotChange}></slot>
         `;
