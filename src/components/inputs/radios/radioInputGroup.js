@@ -64,7 +64,7 @@ export class PiRadioInputGroup extends PiBaseFormElement {
 
     _collectRadioData() {
         const formElements = this.querySelectorAll('[name]');
-        const radioData = '';
+        let radioData = '';
         
         formElements.forEach(element => {
             const component = element.closest('pi-radio-input');
