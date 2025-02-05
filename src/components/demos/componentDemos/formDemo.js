@@ -230,20 +230,20 @@ export class PiFormDemo extends LitElement {
                             </pi-row>
                             <pi-row>
                                 <pi-col cols=12>
-                                    <pi-radio-input-group label="Age Range">
+                                    <pi-radio-input-group 
+                                    label="Age Range"
+                                    name="ageRange"
+                                    >
                                         <pi-radio-input
-                                        name="ageRange"
                                         label="18-24"
                                         value="18_24"
                                         checked
                                         ></pi-radio-input>
                                         <pi-radio-input
-                                        name="ageRange"
                                         label="25-29"
                                         value="25_29"
                                         ></pi-radio-input>
                                         <pi-radio-input
-                                        name="ageRange"
                                         label="30-35"
                                         value="30_35"
                                         ></pi-radio-input>

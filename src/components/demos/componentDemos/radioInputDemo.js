@@ -41,22 +41,16 @@ export class PiRadioInputDemo extends LitElement {
                     @change="${(e) => this.child[0].handleCallbackData(e.detail)}"
                     >
                         <pi-radio-input
-                        
                         label="18-24"
                         value="18_24"
-                        
                         ></pi-radio-input>
                         <pi-radio-input
-                        
                         label="25-29"
                         value="25_29"
-                        
                         ></pi-radio-input>
                         <pi-radio-input
-                        
                         label="30-35"
                         value="30_35"
-                        
                         ></pi-radio-input>
                     </pi-radio-input-group>
 

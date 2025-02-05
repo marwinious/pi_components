@@ -116,11 +116,15 @@ export class PiForm extends LitElement {
                 ;
 
                 if (component) {
+                    // console.log('component: ', component);
+                    
                     // Account for radio inputs
-                    if(component.tagName == 'PI-RADIO-INPUT') {
-                        if(component.checked) {
+                    if(component.tagName == 'PI-RADIO-INPUT-GROUP') {
+                        // console.log('input group');
+                        
+                        /* if(component.checked) {
                             formData[groupName][component.name] = component.getValue();
-                        }
+                        } */
                     }
                     else {
                         formData[groupName][component.name] = component.getValue();
@@ -129,6 +133,8 @@ export class PiForm extends LitElement {
                 else {
                     // Exclude any form group elements from collection (children of groups will still be processed)
                     if(element.tagName != 'PI-FORM-GROUP') {
+                        // console.log('element: ', element);
+                        
                         formData[groupName][element.name] = element.value; 
                     }   
                 }
@@ -145,11 +151,13 @@ export class PiForm extends LitElement {
                 ;
 
                 if (component) {
+                    // console.log('component: ', component, component.getValue());
+                    
                     // Account for radio inputs
                     if(component.tagName == 'PI-RADIO-INPUT') {
-                        if(component.checked) {
+                        /* if(component.checked) {
                             formData[component.name] = component.getValue();
-                        }
+                        } */
                     }
                     else {
                         formData[component.name] = component.getValue();
