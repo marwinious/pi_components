@@ -1,7 +1,7 @@
 :root {
     /* Defaults */
     --pi-button-bg-color-default: #333;
-    --pi-button-border-default: solid 1px #333;
+    --pi-button-border-default: solid 1px var(--pi-button-border-default);
     --pi-button-text-color-default: #FFF;
     --pi-button-hover-bg-color-default: #666;
     --pi-button-hover-text-color-default: #FFF;
@@ -12,7 +12,7 @@
 
     /* Primary Severity */
     --pi-button-bg-color-primary: #117ab4;
-    --pi-button-border-primary: solid 1px #117ab4;
+    --pi-button-border-primary: solid 1px var(--pi-button-border-primary);
     --pi-button-text-color-primary: #FFF;
     --pi-button-hover-bg-color-primary: #0a486a;
     --pi-button-hover-text-color-primary: #FFF;
@@ -97,7 +97,7 @@
     --pi-button-active-bg-color-disabled: #FFF;
     --pi-button-active-text-color-disabled: #0a486a;
     --pi-button-active-border-color-disabled: #0a486a;
-
+    
     --pi-button-disabled-bg-color: #bbb;
     --pi-button-disabled-border-color: #bbb;
     --pi-button-disabled-text-color: #fff;

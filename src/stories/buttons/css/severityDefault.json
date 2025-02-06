@@ -1,0 +1,9 @@
+[{"property":"--pi-button-bg-color-default","value":"#333"},
+{"property":"--pi-button-border-default","value":"solid 1px var(--pi-button-border-default)"},
+{"property":"--pi-button-text-color-default","value":"#FFF"},
+{"property":"--pi-button-hover-bg-color-default","value":"#666"},
+{"property":"--pi-button-hover-text-color-default","value":"#FFF"},
+{"property":"--pi-button-hover-border-color-default","value":"#666"},
+{"property":"--pi-button-active-bg-color-default","value":"#FFF"},
+{"property":"--pi-button-active-text-color-default","value":"#000"},
+{"property":"--pi-button-active-border-color-default","value":"#000"}]

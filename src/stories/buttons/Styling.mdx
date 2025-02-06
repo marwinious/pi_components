@@ -1,8 +1,12 @@
 import { Canvas, Meta, Story, Markdown } from '@storybook/addon-docs';
+import severityDefault from './css/severityDefault.json'
+import severityPrimary from './css/severityPrimary.json'
 
 import * as PiButtonStories from './button.stories.js'
 
 <Meta of={PiButtonStories}  />
+
+export const test = 'test2';
 
 # Button
 
@@ -15,15 +19,22 @@ Button is implemented from `Box` component, comes with several variants and colo
 ## Usage
 <Canvas of={PiButtonStories.Default} />
 
-## Table
+## CSS Property Mapping
 
+### Default (no severity)
 <Markdown>
 {`
-
 | Property | Default |
 | -------- | ------- |
-| --pi-text-input-text-color | #294878 |
-| --pi-text-input-padding | 0 0.5rem |
+${severityDefault.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
 
+### "Primary" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severityPrimary.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
 `}
 </Markdown>
