@@ -112,7 +112,7 @@ export class PiButton extends LitElement {
                 font-size: var(--pi-button-font-size, 16px);
                 cursor: var(--pi-button-cursor, pointer);
                 user-select: none; 
-                transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+                transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
                 background: var(--pi-button-bg-color, #333);
                 border: var(--pi-button-border, solid 1px #333);
                 color: var(--pi-button-text-color, #FFF);
