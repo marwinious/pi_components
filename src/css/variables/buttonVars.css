@@ -1,7 +1,7 @@
 :root {
     /* Defaults */
     --pi-button-bg-color-default: #333;
-    --pi-button-border-default: solid 1px var(--pi-button-border-default);
+    --pi-button-border-default: solid 1px var(--pi-button-bg-color-default);
     --pi-button-text-color-default: #FFF;
     --pi-button-hover-bg-color-default: #666;
     --pi-button-hover-text-color-default: #FFF;
@@ -12,9 +12,9 @@
 
     /* Primary Severity */
     --pi-button-bg-color-primary: #117ab4;
-    --pi-button-border-primary: solid 1px var(--pi-button-border-primary);
+    --pi-button-border-primary: solid 1px var(--pi-button-bg-color-primary);
     --pi-button-text-color-primary: #FFF;
-    --pi-button-hover-bg-color-primary: #0a486a;
+    --pi-button-hover-bg-color-primary: color-mix(in srgb, var(--pi-button-bg-color-primary) 70%, black);
     --pi-button-hover-text-color-primary: #FFF;
     --pi-button-hover-border-color-primary: #0a486a;
     --pi-button-active-bg-color-primary: #FFF;
@@ -25,8 +25,8 @@
     --pi-button-bg-color-secondary: #ccc;
     --pi-button-border-secondary: solid 1px #aaa;
     --pi-button-text-color-secondary: #333;
-    --pi-button-hover-bg-color-secondary: #0a486a;
-    --pi-button-hover-text-color-secondary: #333;
+    --pi-button-hover-bg-color-secondary: color-mix(in srgb, var(--pi-button-bg-color-secondary) 70%, black);
+    --pi-button-hover-text-color-secondary: #FFF;
     --pi-button-hover-border-color-secondary: #0a486a;
     --pi-button-active-bg-color-secondary: #FFF;
     --pi-button-active-text-color-secondary: #0a486a;
@@ -36,7 +36,7 @@
     --pi-button-bg-color-success: #208c39;
     --pi-button-border-success: solid 1px #208c39;
     --pi-button-text-color-success: #FFF;
-    --pi-button-hover-bg-color-success: #0a486a;
+    --pi-button-hover-bg-color-success: color-mix(in srgb, var(--pi-button-bg-color-success) 70%, black);
     --pi-button-hover-text-color-success: #FFF;
     --pi-button-hover-border-color-success: #0a486a;
     --pi-button-active-bg-color-success: #FFF;
@@ -47,7 +47,7 @@
     --pi-button-bg-color-info: #17A2B9;
     --pi-button-border-info: solid 1px #17A2B9;
     --pi-button-text-color-info: #FFF;
-    --pi-button-hover-bg-color-info: #0a486a;
+    --pi-button-hover-bg-color-info: color-mix(in srgb, var(--pi-button-bg-color-info) 70%, black);
     --pi-button-hover-text-color-info: #FFF;
     --pi-button-hover-border-color-info: #0a486a;
     --pi-button-active-bg-color-info: #FFF;
@@ -58,7 +58,7 @@
     --pi-button-bg-color-warn: #d28809;
     --pi-button-border-warn: solid 1px #d28809;
     --pi-button-text-color-warn: #FFF;
-    --pi-button-hover-bg-color-warn: #0a486a;
+    --pi-button-hover-bg-color-warn: color-mix(in srgb, var(--pi-button-bg-color-warn) 70%, black);
     --pi-button-hover-text-color-warn: #FFF;
     --pi-button-hover-border-color-warn: #0a486a;
     --pi-button-active-bg-color-warn: #FFF;
@@ -69,7 +69,7 @@
     --pi-button-bg-color-help: #A855F8;
     --pi-button-border-help: solid 1px #A855F8;
     --pi-button-text-color-help: #FFF;
-    --pi-button-hover-bg-color-help: #0a486a;
+    --pi-button-hover-bg-color-help: color-mix(in srgb, var(--pi-button-bg-color-help) 70%, black);
     --pi-button-hover-text-color-help: #FFF;
     --pi-button-hover-border-color-help: #0a486a;
     --pi-button-active-bg-color-help: #FFF;
@@ -80,7 +80,7 @@
     --pi-button-bg-color-danger: #F04544;
     --pi-button-border-danger: solid 1px #F04544;
     --pi-button-text-color-danger: #FFF;
-    --pi-button-hover-bg-color-danger: #0a486a;
+    --pi-button-hover-bg-color-danger: color-mix(in srgb, var(--pi-button-bg-color-danger) 70%, black);
     --pi-button-hover-text-color-danger: #FFF;
     --pi-button-hover-border-color-danger: #0a486a;
     --pi-button-active-bg-color-danger: #FFF;

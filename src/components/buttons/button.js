@@ -120,6 +120,7 @@ export class PiButton extends LitElement {
                 &:hover {
                     background: var(--pi-button-hover-bg-color, #0a486a);
                     border-color: var(--pi-button-hover-border-color, #0a486a);
+                    color: var(--pi-button-hover-text-color, #FFF);
                 }
 
                 &:active {
