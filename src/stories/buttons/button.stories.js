@@ -73,6 +73,14 @@ export default {
                 type: { summary: 'string' },
                 defaultValue: { summary: 'none'}
             }
+        },
+        disabled: {
+            control: 'boolean',
+            description: 'Disables click and hover events',
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: 'false'}
+            }
         }
     },
 /*     args: {
@@ -80,12 +88,13 @@ export default {
     } */
 }
 
-const Template = ({ slotContent, variant, severity, raised, rounded, badge, icon }) => html`
+const Template = ({ slotContent, variant, severity, raised, rounded, badge, icon, disabled }) => html`
     <pi-button 
     variant="${variant}" 
     severity="${severity}" 
     ?raised=${raised}
     ?rounded=${rounded}
+    ?disabled=${disabled}
     badge=${ifDefined(badge > 0 ? badge : undefined)}
     icon=${ifDefined(icon != '' ? icon : undefined)}
     >${slotContent}</pi-button>
