@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import defaultCss from '../../../css/defaultCss';
 import { PiBaseFormElement } from '../base/baseFormElement';
 import { PiLabel } from '../../labels/components/label';
 
@@ -9,7 +10,8 @@ export class PiRadioInputGroup extends PiBaseFormElement {
             label: { type: String },
             name: { type: String },
             value: { type: String },
-            radios: { type: Array }
+            radios: { type: Array },
+            disabled: { type: Boolean }
         }
     }
 
@@ -19,6 +21,7 @@ export class PiRadioInputGroup extends PiBaseFormElement {
         this.name = '';
         this.value = '';
         this.radios = [];
+        this.disabled = false;
     }
     
     connectedCallback() {
@@ -45,13 +48,15 @@ export class PiRadioInputGroup extends PiBaseFormElement {
     }
 
     _handleRadioElementChange(e) {
-        if(typeof e.detail?.value != 'undefined') {
-            this.value = e.detail.value;
-            this._dispatchChangeEvent(e.detail.value)
-        }
+        if(!this.disabled) {
+            if(typeof e.detail?.value != 'undefined') {
+                this.value = e.detail.value;
+                this._dispatchChangeEvent(e.detail.value)
+            }
 
-        // reset checked values of other radio options
-        this.syncCheckedRadio();
+            // reset checked values of other radio options
+            this.syncCheckedRadio();
+        }
     }
 
     syncCheckedRadio() {
@@ -86,14 +91,24 @@ export class PiRadioInputGroup extends PiBaseFormElement {
     _handleSlotChange() {
         this.radios = this.querySelectorAll('pi-radio-input');
 
+        // Disabled all radio buttons if disabled is flagged
+        if(this.disabled) {
+            this.radios.forEach((radio) => {
+                radio.disabled = true;
+            })
+        }
+
         const radioData = this._collectRadioData();
         this.value = radioData;
     }
 
     static styles = [
+        defaultCss,
         css`
             :host {
                 display: block;
+                position: relative;
+                box-sizing: border-box;
             }
         `
     ]
