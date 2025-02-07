@@ -56,7 +56,7 @@ export default {
 
 const Template = ({ label, placeholder, value, disabled }) => html`
     <pi-text-input 
-    name="basic_text_field"
+    name="firstName"
     label=${ifDefined(label != '' ? label : undefined)}
     placeholder=${ifDefined(placeholder != '' ? placeholder : undefined)}
     value=${ifDefined(value != '' ? value : undefined)}
