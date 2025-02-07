@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-
+import defaultCss from '../../../css/defaultCss';
 /*
 
 <!-- <img slot="header" src="https://primefaces.org/cdn/primevue/images/card-vue.jpg" alt=""> -->
@@ -84,6 +84,7 @@ export class PiCard extends LitElement {
     }
 
     static styles = [
+        defaultCss,
         css`
             :host {
                 display: block;
@@ -91,7 +92,6 @@ export class PiCard extends LitElement {
                 width: 100%;
                 min-width: 0;
                 line-height: var(--pi-card-line-height, 1.4rem);
-                font-family: var(--font-sans-serif);
                 border: var(--pi-card-border, solid 1px #ccc);
                 border-radius: var(--pi-card-border-radius, 4px);
                 box-shadow: var(--pi-card-box-shadow, 1px 1px 1px #ddd);

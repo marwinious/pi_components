@@ -1,5 +1,16 @@
 :root {
     --pi-raised-box-shadow: 0px 1px 2px 1px #aaa;
     --pi-rounded-border-radius: 2rem;
-    --pi-component-font-family: Arial, Helvetica, sans-serif;
+    --pi-font-family: Arial, Helvetica, sans-serif;
+    --pi-text-color: #333;
+    --pi-font-size: 1rem;
+    --pi-font-weight: normal;
+    --pi-font-style: normal;
+    --pi-letter-spacing: normal;
+    --pi-line-height: normal;
+    --pi-word-spacing: normal;
+    --pi-white-space: normal;
+    --pi-text-align: left;
+    --pi-text-indent: 0;
+    --pi-visibility: visible;
 }
