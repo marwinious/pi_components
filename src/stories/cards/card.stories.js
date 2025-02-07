@@ -51,6 +51,15 @@ export default {
                 type: { summary: 'string' },
                 defaultValue: { summary: ''}
             } 
+        },
+        footerSlot: { 
+            control: 'text', 
+            name: 'footer slot (optional)',
+            description: 'Unstyled footer slot',
+            table: {
+                type: { summary: 'string' },
+                defaultValue: { summary: ''}
+            } 
         }
     },
     args: {
@@ -58,7 +67,7 @@ export default {
     }
 }
 
-const Template = ({ slotContent, headerSlot }) => html`
+const Template = ({ slotContent, headerSlot, footerSlot }) => html`
     <pi-card>
 
         <div
@@ -66,6 +75,10 @@ const Template = ({ slotContent, headerSlot }) => html`
         >${unsafeHTML(headerSlot)}</div>
 
         <slot>${slotContent}</slot>
+
+        <div
+        slot="footer"
+        >${unsafeHTML(footerSlot)}</div>
 
     </pi-card>
 `;
@@ -101,4 +114,9 @@ export const Titles = TemplateTitle.bind();
 Titles.args = {
     titleSlot: 'Title for my card',
     subTitleSlot: 'A nice subtitle for context'
+}
+
+export const Footer = Template.bind();
+Footer.args = {
+    footerSlot: 'A footer with similar features as the header.'
 }
