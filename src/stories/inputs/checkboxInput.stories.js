@@ -50,7 +50,7 @@ const Template = ({ label, checked, disabled }) => html`
     label=${ifDefined(label != '' ? label : undefined)}
     ?checked=${checked}
     ?disabled=${disabled}
-    @change=${(e) => action('Text input changed')(e.detail)}
+    @change=${(e) => action('Checkbox clicked')(e.detail)}
     ></pi-checkbox-input>
 `;
 
