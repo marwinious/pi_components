@@ -26,6 +26,7 @@ export class PiGrid extends LitElement {
                 flex-direction: column; /* Ensures rows stack properly */
                 gap: var(--pi-grid-row-gap, 1rem); /* Adjust spacing between rows */
                 width: 100%;
+                box-sizing: border-box;
             }
 
             :host([gutter="sm"]) { gap: var(--pi-grid-gap-gutter-sm, 0.5rem) }

@@ -25,6 +25,7 @@ export class PiGridRow extends LitElement {
                 grid-template-columns: var(--pi-grid-template-columns, repeat(12, 1fr)); /* 12-column layout */
                 /* gap: 16px; Space between columns */
                 width: 100%;
+                box-sizing: border-box;
             }
 
             @media (max-width: 768px) {
