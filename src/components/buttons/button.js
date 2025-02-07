@@ -4,6 +4,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import severityCss from './css/buttonSeverityCss'
 import variantCss from './css/buttonVariantCss'
 import iconsCss from './css/buttonIconsCss'
+import badgeCss from './css/buttonBadgeCss'
 import { IconHandler } from '../icons/base/iconHandler';
 import { PiBadge } from '../badges/badge';
 
@@ -94,6 +95,7 @@ export class PiButton extends LitElement {
         severityCss,
         variantCss,
         iconsCss,
+        badgeCss,
         unsafeCSS(commonCss),
         css`
             :host {

@@ -29,7 +29,7 @@ export default {
         },
         severity: { 
             control: 'select' , 
-            options: ['primary', 'secondary', 'success', 'info', 'warn', 'help', 'danger'],
+            options: ['', 'primary', 'secondary', 'success', 'info', 'warn', 'help', 'danger'],
             description: 'Colorized versions for various scenarios',
             table: {
                 type: { summary: 'string' },
