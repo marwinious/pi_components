@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import defaultCss from '../../../css/defaultCss';
 import { PiBaseFormElement } from '../base/baseFormElement';
 import { PiLabel } from '../../labels/components/label';
 
@@ -120,6 +121,7 @@ export class PiSelectInput extends PiBaseFormElement {
     }
 
     static styles = [
+        defaultCss,
         css`
             :host {
                 width: var(--pi-select-input-width, 100%);
