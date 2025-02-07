@@ -76,9 +76,6 @@ export class PiCard extends LitElement {
     }
 
     determineSlotContents() {
-        console.log(this.shadowRoot?.querySelector('slot[name="title"]')?.assignedNodes()?.length);
-        console.log(this.shadowRoot?.querySelector('slot[name="title"]')?.assignedNodes());
-        
         // Get values for specific slots
         this.headerHasContent = this.shadowRoot?.querySelector('slot[name="header"]')?.assignedNodes()?.length > 0;
         this.titleHasContent = this.shadowRoot?.querySelector('slot[name="title"]')?.assignedNodes()?.length > 0;
