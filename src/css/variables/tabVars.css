@@ -1,0 +1,28 @@
+:root {
+
+    /* General */
+    --pi-tabs-tab-padding: 0.5em 1em;
+    --pi-tabs-tab-cursor: pointer;
+    --pi-tabs-tab-text-color: #000;
+    --pi-tabs-tab-font-weight: normal;
+    --pi-tabs-tab-border-bottom: solid 2px transparent;
+    --pi-tabs-tab-bg-color: #FFF;
+    --pi-tabs-tab-header-border-top: none;
+    --pi-tabs-tab-header-border-right: none;
+    --pi-tabs-tab-header-border-bottom: 1px solid #ddd;
+    --pi-tabs-tab-header-border-left: none;
+
+    /* Selected */
+    --pi-tabs-tab-font-weight-selected: normal;
+    --pi-tabs-tab-text-color-selected: #000;
+    --pi-tabs-tab-bg-color-selected: #DDD;
+    --pi-tabs-tab-border-bottom-selected: solid 2px #000;
+
+    /* Panels */
+    --pi-tabs-panel-text-color: inherit;
+    --pi-tabs-panel-bg-color: inherit;
+    --pi-tabs-panel-padding: 1rem;
+    -pi-tabs-panel-border-style: solid;
+    -pi-tabs-panel-border-width: 1px;
+    -pi-tabs-panel-border-color: #ddd;
+}

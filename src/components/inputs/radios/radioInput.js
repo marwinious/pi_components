@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import defaultCss from '../../../css/defaultCss';
 import { PiBaseFormElement } from '../base/baseFormElement';
 import { PiLabel } from '../../labels/components/label';
 
@@ -30,12 +31,10 @@ export class PiRadioInput extends PiBaseFormElement {
 
     connectedCallback() {
         super.connectedCallback();
-        // this.addToGroup();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        // this.removeFromGroup();
     }
 
     render() {
@@ -68,10 +67,6 @@ export class PiRadioInput extends PiBaseFormElement {
         this.value = e.target.value;
         this.checked = !this.checked;
 
-        if(this.checked) {
-            // this.syncCheckedState();
-        }
-
         const event = new CustomEvent('radio-change', {
             detail: { 
                 name: this.name, 
@@ -84,35 +79,14 @@ export class PiRadioInput extends PiBaseFormElement {
         this.dispatchEvent(event);
     }
 
-    addToGroup() {
-        if(this.name) {
-            this._group = Array.from(this.getRootNode().querySelectorAll(`pi-radio-input[name="${this.name}"]`))
-            this.syncCheckedState();
-        }
-    }
-
-    removeFromGroup() {
-        if(this.name) {
-            this._group = this._group.filter(radio => radio !== this);
-        }
-    }
-
-    syncCheckedState() {
-        if(this.checked) {
-            this._group.forEach(radio => {      
-                if(radio !== this) {
-                    radio.checked = false;
-                }
-            })
-        }
-    }
-
     static styles = [
+        defaultCss,
         css`
             :host {
                 display: inline-block;
                 position: relative;
                 cursor: pointer;
+                box-sizing: border-box;
                 -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight */
             }
 
@@ -144,17 +118,17 @@ export class PiRadioInput extends PiBaseFormElement {
                 width: 18px;
                 height: 18px;
                 border-radius: 50%; /* Make it round */
-                border: 2px solid var(--radio-border-color, #ccc); /* Use a CSS variable for easy styling */
-                background-color: var(--radio-background-color, #fff);
-                margin-right: 8px; /* Space between indicator and label */
+                border: 2px solid var(--pi-radio-input-border-color, #ccc); /* Use a CSS variable for easy styling */
+                background-color: var(--pi-radio-input-background-color, #fff);
+                margin-right: var(--pi-radio-input-margin-right, 8px); /* Space between indicator and label */
                 box-sizing: border-box; /* Include border in size */
                 transition: background-color 0.4s ease, 
                             border-color 0.4s ease; /* Smooth transitions */
             }
 
             input:checked + .radio_indicator {
-                background-color: var(--radio-checked-color, #2196f3); /* Checked color */
-                border-color: var(--radio-checked-color, #2196f3);
+                background-color: var(--pi-radio-input-color-checked, #2196f3); /* Checked color */
+                border-color: var(--pi-radio-input-color-checked, #2196f3);
             }
 
             input:checked + .radio_indicator::after { /* The inner circle when checked */
@@ -163,11 +137,21 @@ export class PiRadioInput extends PiBaseFormElement {
                 width: 8px;
                 height: 8px;
                 border-radius: 50%;
-                background-color: #fff; /* Or use a CSS variable */
+                background-color: var(--pi-radio-input-background-color-checked, #FFF); /* Or use a CSS variable */
                 position: absolute;
-                top: 0.85rem;
-                left: 0.72rem;
+                top: 12px;
+                left: 11px;
                 transform: translate(-80%, -80%);
+            }
+
+            :host([disabled]) {
+                input {
+                    cursor: default;
+                }
+
+                .radio_indicator {
+                    background-color: var(--pi-input-bg-color-disabled);
+                }
             }
 
         `

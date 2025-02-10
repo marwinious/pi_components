@@ -91,7 +91,6 @@ export class PiTabList extends LitElement {
         css`
             :host {
                 display: flex;
-                border: var(--pi-tabs-tab-header-border, none);
                 border-top: var(--pi-tabs-tab-header-border-top, none);
                 border-right: var(--pi-tabs-tab-header-border-right, none);
                 border-bottom: var(--pi-tabs-tab-header-border-bottom, 1px solid #ddd);

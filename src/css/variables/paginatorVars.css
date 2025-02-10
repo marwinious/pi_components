@@ -1,0 +1,13 @@
+:root {
+
+    /* General */
+    --pi-paginator-margin: 1rem 0 0 0;
+    --pi-paginator-gap: 10px;
+
+    /* Nav Items */
+    --pi-paginator-nav-item-padding: 5px 10px;
+    --pi-paginator-nav-item-text-color: #777;
+    --pi-paginator-nav-item-text-color-hover: #000;
+    --pi-paginator-nav-item-text-color-active: #000;
+    --pi-paginator-nav-item-font-weight-active: bold;
+}

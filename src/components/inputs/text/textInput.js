@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { PiBaseFormElement } from '../base/baseFormElement';
 import { PiLabel } from '../../labels/components/label';
+import defaultCss from '../../../css/defaultCss';
 
 export class PiTextInput extends PiBaseFormElement {
 
@@ -39,6 +40,7 @@ export class PiTextInput extends PiBaseFormElement {
     }
 
     static styles = [
+        defaultCss,
         css`
             :host {
                 display: block;

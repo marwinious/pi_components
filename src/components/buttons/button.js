@@ -4,7 +4,9 @@ import { classMap } from 'lit/directives/class-map.js';
 import severityCss from './css/buttonSeverityCss'
 import variantCss from './css/buttonVariantCss'
 import iconsCss from './css/buttonIconsCss'
+import badgeCss from './css/buttonBadgeCss'
 import { IconHandler } from '../icons/base/iconHandler';
+import { PiBadge } from '../badges/badge';
 
 // commonCss = css`${unsafeCSS(commonCss)}`;
 
@@ -67,10 +69,7 @@ export class PiButton extends LitElement {
                     
 
                     <!-- Optional Badge -->
-                    <span class="button_badge">${this.badge}</span>
-                    ${this.badge ? html`
-                        <!-- <span class="button_badge">${this.badge}</span> -->
-                    ` : null}
+                    <pi-badge>${this.badge}</pi-badge>
                 </span>
                 
             </button>
@@ -96,6 +95,7 @@ export class PiButton extends LitElement {
         severityCss,
         variantCss,
         iconsCss,
+        badgeCss,
         unsafeCSS(commonCss),
         css`
             :host {
@@ -114,7 +114,7 @@ export class PiButton extends LitElement {
                 font-size: var(--pi-button-font-size, 16px);
                 cursor: var(--pi-button-cursor, pointer);
                 user-select: none; 
-                transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+                transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
                 background: var(--pi-button-bg-color, #333);
                 border: var(--pi-button-border, solid 1px #333);
                 color: var(--pi-button-text-color, #FFF);
@@ -122,6 +122,7 @@ export class PiButton extends LitElement {
                 &:hover {
                     background: var(--pi-button-hover-bg-color, #0a486a);
                     border-color: var(--pi-button-hover-border-color, #0a486a);
+                    color: var(--pi-button-hover-text-color, #FFF);
                 }
 
                 &:active {
@@ -172,20 +173,12 @@ export class PiButton extends LitElement {
                 width: var(--pi-button-icon-width, 15px);
             }
 
-            .button_badge {
+            pi-badge { 
                 display: none;
-                width: 10px;
-                height: 10px;
-                font-size: 0.75rem;
-                border-radius: 50%;
-                background: rgba(0,0,0,0.25);
-                padding: 0.27rem;
             }
 
-            :host([badge]) .button_badge {
+            :host([badge]) pi-badge {
                 display: inline-flex;
-                align-items: center;
-                justify-content: center;
             }
 
         `

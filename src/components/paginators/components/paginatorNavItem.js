@@ -25,13 +25,13 @@ export class PiPaginatorNavItem extends LitElement {
         css`
             :host {
                 display: block;
-                padding: 5px 10px;
+                padding: var(--pi-paginator-nav-item-padding, 5px 10px);
                 cursor: pointer;
-                color: var(--standard-table-pager-button-color, #777);
+                color: var(--pi-paginator-nav-item-text-color, #777);
                 user-select: none;
 
                 &:hover {
-                    color: var(--standard-table-pager-button-color-hover, #000);
+                    color: var(--pi-paginator-nav-item-text-color-hover, #000);
                 }
             }
 
@@ -41,8 +41,8 @@ export class PiPaginatorNavItem extends LitElement {
             }
 
             :host([active]) {
-                color: var(--standard-table-pager-number-color-active, #000);
-                font-weight: bold;
+                color: var(--pi-paginator-nav-item-text-color-active, #000);
+                font-weight: var(--pi-paginator-nav-item-font-weight-active, bold);
             }
         `
     ]

@@ -1,0 +1,12 @@
+:root {
+
+    /* General */
+    --pi-radio-input-border-color: #CCC;
+    --pi-radio-input-margin-right: 8px;
+    --pi-radio-input-background-color: #FFF;
+
+    /* Checked */
+    --pi-radio-input-color-checked: #2196f3;
+    --pi-radio-input-background-color-checked: #FFF;
+
+}
