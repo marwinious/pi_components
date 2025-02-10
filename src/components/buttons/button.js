@@ -4,6 +4,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import severityCss from './css/buttonSeverityCss'
 import variantCss from './css/buttonVariantCss'
 import iconsCss from './css/buttonIconsCss'
+import badgeCss from './css/buttonBadgeCss'
 import { IconHandler } from '../icons/base/iconHandler';
 import { PiBadge } from '../badges/badge';
 
@@ -94,6 +95,7 @@ export class PiButton extends LitElement {
         severityCss,
         variantCss,
         iconsCss,
+        badgeCss,
         unsafeCSS(commonCss),
         css`
             :host {
@@ -112,7 +114,7 @@ export class PiButton extends LitElement {
                 font-size: var(--pi-button-font-size, 16px);
                 cursor: var(--pi-button-cursor, pointer);
                 user-select: none; 
-                transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+                transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
                 background: var(--pi-button-bg-color, #333);
                 border: var(--pi-button-border, solid 1px #333);
                 color: var(--pi-button-text-color, #FFF);
@@ -120,6 +122,7 @@ export class PiButton extends LitElement {
                 &:hover {
                     background: var(--pi-button-hover-bg-color, #0a486a);
                     border-color: var(--pi-button-hover-border-color, #0a486a);
+                    color: var(--pi-button-hover-text-color, #FFF);
                 }
 
                 &:active {

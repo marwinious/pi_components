@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import defaultCss from '../../../css/defaultCss';
 import { PiBaseFormElement } from '../base/baseFormElement';
 import { PiLabel } from '../../labels/components/label';
 
@@ -47,13 +48,17 @@ export class PiToggleSwitch extends PiBaseFormElement {
     }
 
     _handleInputChange() {
-        this.checked = !this.checked; // Toggle the checked property
-        this.value = this.checked;
+        if(!this.disabled) {
+            this.checked = !this.checked; // Toggle the checked property
+            this.value = this.checked;
 
-        this._dispatchChangeEvent(this.value)
+            this._dispatchChangeEvent(this.value)
+        }
+        
     }
 
     static styles = [
+        defaultCss,
         css`
             :host {
                 display: inline-flex;
@@ -89,6 +94,15 @@ export class PiToggleSwitch extends PiBaseFormElement {
 
             :host([checked]) .slider {
                 transform: translateX(19px); 
+            }
+
+            :host([disabled]) {
+                cursor: default;
+                user-select: none;
+                
+                .toggle_container {
+                    background-color: var(--pi-input-bg-color-disabled)
+                }
             }
         `
     ]

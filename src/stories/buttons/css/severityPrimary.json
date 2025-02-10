@@ -1,0 +1,9 @@
+[{"property":"--pi-button-bg-color-primary","value":"#117ab4"},
+{"property":"--pi-button-border-primary","value":"solid 1px var(--pi-button-border-primary)"},
+{"property":"--pi-button-text-color-primary","value":"#FFF"},
+{"property":"--pi-button-hover-bg-color-primary","value":"#0a486a"},
+{"property":"--pi-button-hover-text-color-primary","value":"#FFF"},
+{"property":"--pi-button-hover-border-color-primary","value":"#0a486a"},
+{"property":"--pi-button-active-bg-color-primary","value":"#FFF"},
+{"property":"--pi-button-active-text-color-primary","value":"#0a486a"},
+{"property":"--pi-button-active-border-color-primary","value":"#0a486a"}]

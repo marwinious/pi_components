@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import defaultCss from '../../../css/defaultCss';
 import { PiBaseFormElement } from '../base/baseFormElement';
 import { PiLabel } from '../../labels/components/label';
 
@@ -38,13 +39,16 @@ export class PiCheckboxInput extends PiBaseFormElement {
     }
 
     _handleInputChange() {
-        this.checked = !this.checked; // Toggle the checked property
-        this.value = this.checked;
+        if(!this.disabled) {
+            this.checked = !this.checked; // Toggle the checked property
+            this.value = this.checked;
 
-        this._dispatchChangeEvent(this.value);
+            this._dispatchChangeEvent(this.value);
+        }
     }
 
     static styles = [
+        defaultCss,
         css`
             :host {
                 display: inline-flex; /* Use inline-flex for label alignment */
@@ -89,6 +93,14 @@ export class PiCheckboxInput extends PiBaseFormElement {
             /* Optional: Style the container when checked */
             :host([checked]) .checkbox-container {
                 background-color: var(--pi-checkbox-input-fill-color-false, #ccc); /* Or your checked background color */
+            }
+
+            :host([disabled]) {
+                cursor: default;
+
+                .checkbox-container {
+                    background-color: var(--pi-input-bg-color-disabled);
+                }
             }
         `
     ]
