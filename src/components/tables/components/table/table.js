@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import defaultCss from '../../../../css/defaultCss';
 import { sortArrayOfObjects } from '../../../../lib/utility/sorters';
 import { PiTableThead } from './tableThead';
 import { PiTableTbody } from './tableTbody';
@@ -180,6 +181,7 @@ export class PiTable extends LitElement {
     }
 
     static styles = [
+        defaultCss,
         css`
             :host {
                 display: table;
