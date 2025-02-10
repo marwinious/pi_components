@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { classMap } from 'lit/directives/class-map.js';
+import defaultCss from '../../../css/defaultCss';
 import { PiPaginatorNavItem } from './paginatorNavItem';
 
 export class PiPaginator extends LitElement {
@@ -161,6 +162,7 @@ export class PiPaginator extends LitElement {
     }
 
     static styles = [
+        defaultCss,
         css`
             :host {
                 display: flex;
