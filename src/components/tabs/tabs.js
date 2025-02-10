@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-
+import defaultCss from '../../css/defaultCss';
 /*
 Main component for this feature
 */
@@ -59,6 +59,7 @@ export class PiTabs extends LitElement {
     }
 
     static styles = [
+        defaultCss,
         css`
             :host {
                 display: block;
