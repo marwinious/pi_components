@@ -139,12 +139,16 @@ Gridlines.args = {
 }
 
 export const SelectiveSorting = TemplateSortColumn.bind();
-SelectiveSorting.args = {
-    
-}
+SelectiveSorting.args = {}
 
 export const PreSorted = Template.bind();
 PreSorted.args = {
     sortKey: 'age',
     sortDirection: 'asc'
+}
+
+export const Paginated = Template.bind();
+Paginated.args = {
+    paginate: true,
+    rowsPerPage: 3
 }
