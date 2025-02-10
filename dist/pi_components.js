@@ -1422,91 +1422,34 @@ customElements.define(iconData.iconLabel, IconUserRoundedLight);
 
 const commonCss = ".raised {\r\n    box-shadow: var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa);\r\n}\r\n\r\n.rounded {\r\n    border-radius: var(--pi-rounded-border-radius, 2rem);\r\n}";
 
+const severities = [
+    'primary',
+    'secondary',
+    'success',
+    'info',
+    'warn',
+    'help',
+    'danger'
+];
+
+const generateSeverityStyles = () => severities.map(severity => `
+    .btn_severity_${severity} {
+        --pi-button-bg-color: var(--pi-button-bg-color-${severity});
+        --pi-button-text-color: var(--pi-button-text-color-${severity});
+        --pi-button-border: var(--pi-button-border-${severity});
+        --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-${severity});
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-${severity}, #FFF);
+        --pi-button-hover-border-color: var(--pi-button-hover-border-color-${severity});
+        --pi-button-active-bg-color: var(--pi-button-active-bg-color-${severity});
+        --pi-button-active-text-color: var(--pi-button-active-text-color-${severity});
+        --pi-button-active-border-color: var(--pi-button-active-border-color-${severity});
+    }
+`).join('');
+
 const severityCss = css`
 
-    .btn_severity_primary {
-        --pi-button-bg-color: var(--pi-button-bg-color-primary);
-        --pi-button-border: var(--pi-button-border-primary);
-        --pi-button-text-color: var(--pi-button-text-color-primary);
-        --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-primary);
-        --pi-button-hover-text-color: var(--pi-button-hover-bg-color-primary);
-        --pi-button-hover-border-color: var(--pi-button-hover-border-color-primary);
-        --pi-button-active-bg-color: var(--pi-button-active-bg-color-primary);
-        --pi-button-active-text-color: var(--pi-button-active-text-color-primary);
-        --pi-button-active-border-color: var(--pi-button-active-border-color-primary);
-    }
+    ${unsafeCSS(generateSeverityStyles())}
 
-    .btn_severity_secondary {
-        --pi-button-bg-color: var(--pi-button-bg-color-secondary);
-        --pi-button-border: var(--pi-button-border-secondary);
-        --pi-button-text-color: var(--pi-button-text-color-secondary);
-        --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-secondary);
-        --pi-button-hover-text-color: var(--pi-button-hover-bg-color-secondary);
-        --pi-button-hover-border-color: var(--pi-button-hover-border-color-secondary);
-        --pi-button-active-bg-color: var(--pi-button-active-bg-color-secondary);
-        --pi-button-active-text-color: var(--pi-button-active-text-color-secondary);
-        --pi-button-active-border-color: var(--pi-button-active-border-color-secondary);
-    }
-
-    .btn_severity_success {
-        --pi-button-bg-color: var(--pi-button-bg-color-success);
-        --pi-button-border: var(--pi-button-border-success);
-        --pi-button-text-color: var(--pi-button-text-color-success);
-        --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-success);
-        --pi-button-hover-text-color: var(--pi-button-hover-bg-color-success);
-        --pi-button-hover-border-color: var(--pi-button-hover-border-color-success);
-        --pi-button-active-bg-color: var(--pi-button-active-bg-color-success);
-        --pi-button-active-text-color: var(--pi-button-active-text-color-success);
-        --pi-button-active-border-color: var(--pi-button-active-border-color-success);
-    }
-
-    .btn_severity_info {
-        --pi-button-bg-color: var(--pi-button-bg-color-info);
-        --pi-button-border: var(--pi-button-border-info);
-        --pi-button-text-color: var(--pi-button-text-color-info);
-        --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-info);
-        --pi-button-hover-text-color: var(--pi-button-hover-bg-color-info);
-        --pi-button-hover-border-color: var(--pi-button-hover-border-color-info);
-        --pi-button-active-bg-color: var(--pi-button-active-bg-color-info);
-        --pi-button-active-text-color: var(--pi-button-active-text-color-info);
-        --pi-button-active-border-color: var(--pi-button-active-border-color-info);
-    }
-
-    .btn_severity_warn {
-        --pi-button-bg-color: var(--pi-button-bg-color-warn);
-        --pi-button-border: var(--pi-button-border-warn);
-        --pi-button-text-color: var(--pi-button-text-color-warn);
-        --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-warn);
-        --pi-button-hover-text-color: var(--pi-button-hover-bg-color-warn);
-        --pi-button-hover-border-color: var(--pi-button-hover-border-color-warn);
-        --pi-button-active-bg-color: var(--pi-button-active-bg-color-warn);
-        --pi-button-active-text-color: var(--pi-button-active-text-color-warn);
-        --pi-button-active-border-color: var(--pi-button-active-border-color-warn);
-    }
-
-    .btn_severity_help {
-        --pi-button-bg-color: var(--pi-button-bg-color-help);
-        --pi-button-border: var(--pi-button-border-help);
-        --pi-button-text-color: var(--pi-button-text-color-help);
-        --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-help);
-        --pi-button-hover-text-color: var(--pi-button-hover-bg-color-help);
-        --pi-button-hover-border-color: var(--pi-button-hover-border-color-help);
-        --pi-button-active-bg-color: var(--pi-button-active-bg-color-help);
-        --pi-button-active-text-color: var(--pi-button-active-text-color-help);
-        --pi-button-active-border-color: var(--pi-button-active-border-color-help);
-    }
-
-    .btn_severity_danger {
-        --pi-button-bg-color: var(--pi-button-bg-color-danger);
-        --pi-button-border: var(--pi-button-border-danger);
-        --pi-button-text-color: var(--pi-button-text-color-danger);
-        --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-danger);
-        --pi-button-hover-text-color: var(--pi-button-hover-bg-color-danger);
-        --pi-button-hover-border-color: var(--pi-button-hover-border-color-danger);
-        --pi-button-active-bg-color: var(--pi-button-active-bg-color-danger);
-        --pi-button-active-text-color: var(--pi-button-active-text-color-danger);
-        --pi-button-active-border-color: var(--pi-button-active-border-color-danger);
-    }
 
 `;
 
@@ -1524,30 +1467,37 @@ const variantCss = css`
 
     .btn_variant_text.btn_severity_primary {
         --pi-button-text-color: var(--pi-button-bg-color-primary);
+        --pi-button-hover-text-color: var(--pi-button-bg-color-primary);
     }
 
     .btn_variant_text.btn_severity_secondary {
         --pi-button-text-color: var(--pi-button-text-color-secondary);
+        --pi-button-hover-text-color: var(--pi-button-text-color-secondary);
     }
 
     .btn_variant_text.btn_severity_success {
         --pi-button-text-color: var(--pi-button-bg-color-success);
+        --pi-button-hover-text-color: var(--pi-button-bg-color-success);
     }
 
     .btn_variant_text.btn_severity_info {
         --pi-button-text-color: var(--pi-button-bg-color-info);
+        --pi-button-hover-text-color: var(--pi-button-bg-color-info);
     }
 
     .btn_variant_text.btn_severity_warn {
         --pi-button-text-color: var(--pi-button-bg-color-warn);
+        --pi-button-hover-text-color: var(--pi-button-bg-color-warn);
     }
 
     .btn_variant_text.btn_severity_help {
         --pi-button-text-color: var(--pi-button-bg-color-help);
+        --pi-button-hover-text-color: var(--pi-button-bg-color-help);
     }
 
     .btn_variant_text.btn_severity_danger {
         --pi-button-text-color: var(--pi-button-bg-color-danger);
+        --pi-button-hover-text-color: var(--pi-button-bg-color-danger);
     }
 
     .btn_variant_text[disabled] {
@@ -1566,36 +1516,52 @@ const variantCss = css`
 
     .btn_variant_outlined.btn_severity_primary {
         --pi-button-text-color: var(--pi-button-bg-color-primary);
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-primary);
+        --pi-button-hover-bg-color: var(--pi-button-bg-color-primary);
     }
 
     .btn_variant_outlined.btn_severity_secondary {
         --pi-button-text-color: var(--pi-button-text-color-secondary);
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-secondary);
+        --pi-button-hover-bg-color: var(--pi-button-bg-color-secondary);
     }
 
     .btn_variant_outlined.btn_severity_success {
         --pi-button-text-color: var(--pi-button-bg-color-success);
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-success);
+        --pi-button-hover-bg-color: var(--pi-button-bg-color-success);
     }
 
     .btn_variant_outlined.btn_severity_info {
         --pi-button-text-color: var(--pi-button-bg-color-info);
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-info);
+        --pi-button-hover-bg-color: var(--pi-button-bg-color-info);
     }
 
     .btn_variant_outlined.btn_severity_warn {
         --pi-button-text-color: var(--pi-button-bg-color-warn);
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-warn);
+        --pi-button-hover-bg-color: var(--pi-button-bg-color-warn);
     }
 
     .btn_variant_outlined.btn_severity_help {
         --pi-button-text-color: var(--pi-button-bg-color-help);
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-help);
+        --pi-button-hover-bg-color: var(--pi-button-bg-color-help);
     }
 
     .btn_variant_outlined.btn_severity_danger {
         --pi-button-text-color: var(--pi-button-bg-color-danger);
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-danger);
+        --pi-button-hover-bg-color: var(--pi-button-bg-color-danger);
     }
 
     .btn_variant_outlined[disabled] {
         --pi-button-disabled-bg-color: transparent;
         --pi-button-disabled-text-color: var(--pi-button-bg-color-disabled);
     }
+
+    
 `;
 
 const iconsCss = css`
@@ -1605,49 +1571,166 @@ const iconsCss = css`
         padding: 0.5rem;
     }
 
-    .btn_severity_primary {
-        .button_icon_container {
-            fill: var(--pi-button-text-color-primary);
-        }
+    :host([icon]) .btn_variant_outlined .button_icon_container,
+    :host([icon]) .btn_variant_text .button_icon_container {
+        fill: var(--pi-button-bg-color-default);
     }
 
-    .btn_severity_secondary {
-        .button_icon_container {
-            fill: var(--pi-button-text-color-secondary);
-        }
+    .btn_severity_primary .button_icon_container {
+        fill: var(--pi-button-text-color-primary);
     }
 
-    .btn_severity_success {
-        .button_icon_container {
-            fill: var(--pi-button-text-color-success);
-        }
+    :host([icon]) .btn_variant_outlined.btn_severity_primary .button_icon_container,
+    :host([icon]) .btn_variant_text.btn_severity_primary .button_icon_container {
+        fill: var(--pi-button-bg-color-primary);
     }
 
-    .btn_severity_info {
-        .button_icon_container {
-            fill: var(--pi-button-text-color-info);
-        }
+    .btn_severity_secondary .button_icon_container {
+        fill: var(--pi-button-text-color-secondary);
     }
 
-    .btn_severity_warn {
-        .button_icon_container {
-            fill: var(--pi-button-text-color-warn);
-        }
+    :host([icon]) .btn_variant_outlined.btn_severity_secondary .button_icon_container,
+    :host([icon]) .btn_variant_text.btn_severity_secondary .button_icon_container {
+        fill: var(--pi-button-text-color-secondary);
     }
 
-    .btn_severity_help {
-        .button_icon_container {
-            fill: var(--pi-button-text-color-help);
-        }
+    .btn_severity_success .button_icon_container {
+        fill: var(--pi-button-text-color-success);
     }
 
-    .btn_severity_danger {
-        .button_icon_container {
-            fill: var(--pi-button-text-color-danger);
-        }
+    :host([icon]) .btn_variant_outlined.btn_severity_success .button_icon_container,
+    :host([icon]) .btn_variant_text.btn_severity_success .button_icon_container {
+        fill: var(--pi-button-bg-color-success);
+    }
+
+    .btn_severity_info .button_icon_container {
+        fill: var(--pi-button-text-color-info);
+    }
+
+    :host([icon]) .btn_variant_outlined.btn_severity_info .button_icon_container,
+    :host([icon]) .btn_variant_text.btn_severity_info .button_icon_container {
+        fill: var(--pi-button-bg-color-info);
+    }
+
+    .btn_severity_warn .button_icon_container {
+        fill: var(--pi-button-text-color-warn);
+    }
+
+    :host([icon]) .btn_variant_outlined.btn_severity_warn .button_icon_container,
+    :host([icon]) .btn_variant_text.btn_severity_warn .button_icon_container {
+        fill: var(--pi-button-bg-color-warn);
+    }
+
+    .btn_severity_help .button_icon_container {
+        fill: var(--pi-button-text-color-help);
+    }
+
+    :host([icon]) .btn_variant_outlined.btn_severity_help .button_icon_container,
+    :host([icon]) .btn_variant_text.btn_severity_help .button_icon_container {
+        fill: var(--pi-button-bg-color-help);
+    }
+
+    .btn_severity_danger .button_icon_container {
+        fill: var(--pi-button-text-color-danger);
+    }
+
+    :host([icon]) .btn_variant_outlined.btn_severity_danger .button_icon_container,
+    :host([icon]) .btn_variant_text.btn_severity_danger .button_icon_container {
+        fill: var(--pi-button-bg-color-danger);
+    }
+
+    button[disabled].btn_variant_outlined .button_icon_container,
+    button[disabled].btn_variant_text .button_icon_container {
+        fill: var(--pi-button-bg-color-disabled) !important;
     }
 
 `;
+
+const badgeCss = css`
+
+    :host([badge]) .btn_variant_text pi-badge {
+        background-color: var(--pi-button-bg-color-default);
+    }
+
+    :host([badge]) .btn_variant_text.btn_severity_primary pi-badge,
+    :host([badge]) .btn_variant_outlined.btn_severity_primary pi-badge {
+        background-color: var(--pi-button-bg-color-primary);
+    }
+
+    :host([badge]) .btn_variant_text.btn_severity_secondary pi-badge,
+    :host([badge]) .btn_variant_outlined.btn_severity_secondary pi-badge {
+        background-color: var(--pi-button-text-color-secondary);
+    }
+
+    :host([badge]) .btn_variant_text.btn_severity_success pi-badge,
+    :host([badge]) .btn_variant_outlined.btn_severity_success pi-badge {
+        background-color: var(--pi-button-bg-color-success);
+    }
+
+    :host([badge]) .btn_variant_text.btn_severity_info pi-badge,
+    :host([badge]) .btn_variant_outlined.btn_severity_info pi-badge {
+        background-color: var(--pi-button-bg-color-info);
+    }
+
+    :host([badge]) .btn_variant_text.btn_severity_warn pi-badge,
+    :host([badge]) .btn_variant_outlined.btn_severity_warn pi-badge {
+        background-color: var(--pi-button-bg-color-warn);
+    }
+
+    :host([badge]) .btn_variant_text.btn_severity_help pi-badge,
+    :host([badge]) .btn_variant_outlined.btn_severity_help pi-badge {
+        background-color: var(--pi-button-bg-color-help);
+    }
+
+    :host([badge]) .btn_variant_text.btn_severity_danger pi-badge,
+    :host([badge]) .btn_variant_outlined.btn_severity_danger pi-badge {
+        background-color: var(--pi-button-bg-color-danger);
+    }
+
+    button[disabled].btn_variant_outlined pi-badge,
+    button[disabled].btn_variant_text pi-badge {
+        background-color: var(--pi-button-bg-color-disabled) !important;
+    }
+
+`;
+
+class PiBadge extends LitElement {
+
+    static get properties() {
+        return {
+            
+        }
+    }
+
+    constructor() {
+        super();
+    }
+
+    render() {
+        return html`
+            <slot></slot>
+        `;
+    }
+
+    static styles = [
+        css`
+            :host {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: var(--pi-badge-width, 10px);
+                height: var(--pi-badge-height, 10px);
+                font-size: var(--pi-badge-font-size, 0.75rem);
+                border-radius: var(--pi-badge-border-radius, 50%);
+                background: var(--pi-badge-background-color, rgba(0,0,0,0.25));
+                padding: var(--pi-badge-padding, 0.27rem);
+                color: #FFF;
+            }
+        `
+    ]
+    
+}
+customElements.define('pi-badge', PiBadge);
 
 // commonCss = css`${unsafeCSS(commonCss)}`;
 
@@ -1662,6 +1745,7 @@ class PiButton extends LitElement {
             rounded: { type: Boolean },
             variant: { type: String },
             badge: { type: [Number, String] },
+            type: { type: String }
         }
     }
 
@@ -1674,6 +1758,7 @@ class PiButton extends LitElement {
         this.rounded = false;
         this.variant = false;
         this.badge = null;
+        this.type = 'button';
     }
 
     /* <div class="icon">${unsafeHTML(this.icon)}</div> */
@@ -1685,20 +1770,14 @@ class PiButton extends LitElement {
             [`btn_variant_${this.variant}`]: true,
             'raised': this.raised === true,
             'rounded': this.rounded === true,
-            /* 'btn_severity_primary': this.severity === 'primary',
-            'btn_severity_secondary': this.severity === 'secondary',
-            'btn_severity_success': this.severity === 'success',
-            'btn_severity_info': this.severity === 'info',
-            'btn_severity_warn': this.severity === 'warn',
-            'btn_severity_help': this.severity === 'help',
-            'btn_severity_danger': this.severity === 'danger', */
         };
 
         return html`
             <button 
-            type="button"
+            type=${this.type}
             class=${classMap(buttonClasses)}
             ?disabled=${this.disabled}
+            @click=${this._handleClick}
             >
 
                 <span class="button_content_container">
@@ -1714,20 +1793,33 @@ class PiButton extends LitElement {
                     
 
                     <!-- Optional Badge -->
-                    <span class="button_badge">${this.badge}</span>
-                    ${this.badge ? html`
-                        <!-- <span class="button_badge">${this.badge}</span> -->
-                    ` : null}
+                    <pi-badge>${this.badge}</pi-badge>
                 </span>
                 
             </button>
         `;
     }
 
+    _handleClick(e) {
+        if (this.type !== 'submit') { // Only handle clicks for non-submit buttons
+            this.dispatchEvent(new CustomEvent('click', { 
+                detail: e
+            }));
+        }
+        else {
+            this.dispatchEvent(new CustomEvent('pi-submit', { 
+                detail: e,
+                composed: true,
+                bubbles: true
+            }));
+        }
+    }
+
     static styles = [
         severityCss,
         variantCss,
         iconsCss,
+        badgeCss,
         unsafeCSS(commonCss),
         css`
             :host {
@@ -1746,7 +1838,7 @@ class PiButton extends LitElement {
                 font-size: var(--pi-button-font-size, 16px);
                 cursor: var(--pi-button-cursor, pointer);
                 user-select: none; 
-                transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+                transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
                 background: var(--pi-button-bg-color, #333);
                 border: var(--pi-button-border, solid 1px #333);
                 color: var(--pi-button-text-color, #FFF);
@@ -1754,6 +1846,7 @@ class PiButton extends LitElement {
                 &:hover {
                     background: var(--pi-button-hover-bg-color, #0a486a);
                     border-color: var(--pi-button-hover-border-color, #0a486a);
+                    color: var(--pi-button-hover-text-color, #FFF);
                 }
 
                 &:active {
@@ -1804,20 +1897,12 @@ class PiButton extends LitElement {
                 width: var(--pi-button-icon-width, 15px);
             }
 
-            .button_badge {
+            pi-badge { 
                 display: none;
-                width: 10px;
-                height: 10px;
-                font-size: 0.75rem;
-                border-radius: 50%;
-                background: rgba(0,0,0,0.25);
-                padding: 0.27rem;
             }
 
-            :host([badge]) .button_badge {
+            :host([badge]) pi-badge {
                 display: inline-flex;
-                align-items: center;
-                justify-content: center;
             }
 
         `
@@ -1826,5 +1911,830 @@ class PiButton extends LitElement {
 }
 customElements.define('pi-button', PiButton);
 
-export { IconAlertTriangleDark, IconAlertTriangleLight, IconAreaChartStand, IconAvatarGenericLight, IconBase, IconChainLink, IconCloseSquareDark, IconEditImage, IconEditPageFilled, IconEditVideo, IconGearSolid, IconHandler, IconInfoChatBubbleDark, IconInfoChatBubbleLight, IconInfoFilled, IconInfoLight, IconInfoRoundedDark, IconInfoRoundedLight, IconInfoSimpleDark, IconInfoSimpleLight, IconLeftArrowCircled, IconLogout, IconMagnifyText, IconNotificationBoxDark, IconNotificationBoxLight, IconPaperAirplaneSolid, IconSlackLogoSlanted, IconStopExDark, IconStopExLight, IconThumbsDownDark, IconThumbsDownLight, IconThumbsUpDark, IconThumbsUpLight, IconToggleOff, IconToggleOn, IconUserRoundedDark, IconUserRoundedLight, PiButton };
+class PiBaseFormElement extends LitElement {
+
+    static get properties() {
+        return {
+            disabled: { type: Boolean },
+            name: { type: String },
+        }
+    }
+
+    constructor() {
+        super();
+        this.disabled = false;
+        this.name = '';
+    }
+
+    render() {
+        return html`${this.renderInput()}`;
+    }
+
+    // Abstract method to render the form element (implement in child classes)
+    renderInput() {
+        throw new Error('renderInput() must be implemented in child class');
+    }
+
+    // Method to dispatch the 'change' event
+    _dispatchChangeEvent(value) {
+        const event = new CustomEvent('change', {
+            detail: { 
+                name: this.name, 
+                value, 
+                group: this.closest('pi-form-group')?.name || null }, // Include name for easy identification
+            bubbles: true,
+            composed: true,
+        });
+        this.dispatchEvent(event);
+    }
+
+    // Example input change handler (override in child classes if needed)
+    _handleInputChange(e) {
+        this.value = e.target.value;
+        this._dispatchChangeEvent(this.value);
+    }
+
+    // Get value (for form submit)
+    getValue() { return this.value; }
+
+    // Set value (for form reset and initial value)
+    setValue(value) { 
+        this.value = value; 
+        this._dispatchChangeEvent(this.value); 
+    }
+
+    static styles = [
+        css`
+            :host { 
+                display: inline-block;
+            }
+        `
+    ]
+    
+}
+customElements.define('pi-base-form-element', PiBaseFormElement);
+
+class PiLabel extends LitElement {
+
+    static get properties() {
+        return {
+            text: { type: String }
+        }
+    }
+
+    constructor() {
+        super();
+        this.text = '';
+    }
+
+    render() {
+        return html`
+            ${this.text}
+        `;
+    }
+
+    static styles = [
+        css`
+            :host {
+                display: inline-block;
+                box-sizing: border-box;
+                font-size: var(--pi-label-font-size, 1rem);
+                text-transform: var(--pi-label-transform, none);
+                color: var(--pi-label-color, #888);
+                font-weight: var(--pi-label-font-weight, normal);
+                padding: var(--pi-label-padding, 0 0 0 0.5rem);
+                margin: var(--pi-label-margin, 0 0 0.25rem 0);
+            }
+
+            :host([block]) {
+                display: block;
+            }
+
+            :host([no-padding]) {
+                padding: 0;
+            }
+
+            :host([no-margin]) {
+                margin: 0;
+            }
+        `
+    ]
+    
+}
+customElements.define('pi-label', PiLabel);
+
+const defaultCss = css`
+
+    :host {
+        color: var(--pi-text-color, #333);
+        font-family: var(--pi-font-family, Arial, Helvetica, sans-serif);
+        font-size: var(--pi-font-size, 1rem);
+        font-weight: var(--pi-font-weight, normal);
+        letter-spacing: var(--pi-letter-spacing, normal);
+        line-height: var(--pi-line-height, normal);
+        text-align: var(--pi-text-align, left);
+        white-space: var(--pi-white-space, normal);
+        word-spacing: var(--pi-word-spacing, normal);
+        visibility: var(--pi-visibility, visible);
+    }
+
+`;
+
+class PiTextInput extends PiBaseFormElement {
+
+    static get properties() {
+        return {
+            placeholder: { type: String },
+            value: { type: String },
+            disabled: { type: Boolean },
+            label: { type: String }
+        }
+    }
+
+    constructor() {
+        super();
+        this.placeholder = '';
+        this.value = '';
+        this.disabled = false;
+        this.label = '';
+    }
+
+    render() {
+        return html`
+            <pi-label 
+            text=${this.label}
+            ?hidden=${this.label==''}
+            ></pi-label>
+            
+            <input 
+            type="text" 
+            placeholder=${this.placeholder} 
+            @input=${this._handleInputChange}
+            .value=${this.value}
+            ?disabled=${this.disabled}
+            >
+        `;
+    }
+
+    static styles = [
+        defaultCss,
+        css`
+            :host {
+                display: block;
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            input {
+                box-sizing: border-box;
+                font-size: var(--pi-text-input-font-size, 16px);
+                padding: var(--pi-text-input-padding, 5px 7px);
+                background-color: var(--pi-text-input-bg-color, #fff);
+                border-radius: var(--pi-text-input-border-radius, 5px);
+                border-style: var(--pi-text-input-border-style, solid);
+                border-width: var(--pi-text-input-border-width, 1px);
+                border-color: var(--pi-text-input-border-color, #aaa);
+                color: var(--pi-text-input-text-color, #555);
+                box-shadow: var(--pi-text-input-box-shadow, none);
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+                transition: background 0.3s ease, 
+                            box-shadow 0.3s ease,
+                            border-color 0.3s ease;
+
+                &::placeholder {
+                    color: var(--pi-text-input-placeholder-text-color, #aaa);
+                }
+
+                &:disabled, &:disabled::placeholder {
+                    background-color: var(--pi-text-input-bg-color-disabled, #eee);
+                    color: var(--pi-text-input-text-color-disabled, #888);
+                }
+
+                &:focus {
+                    background: var(--pi-text-input-bg-color-focus, #f2fcff);
+                    outline: none;
+                    border-style: var(--pi-text-input-border-style-focus, solid);
+                    border-width: var(--pi-text-input-border-width-focus, 1px);
+                    border-color: var(--pi-text-input-border-color-focus, #aaa);
+                    box-shadow: var(--pi-text-input-box-shadow-focus, 1px 1px 1px #ddd);
+                }
+            }
+
+        `
+    ]
+}
+customElements.define('pi-text-input', PiTextInput);
+
+class PiSelectInput extends PiBaseFormElement {
+
+    static get properties() {
+        return {
+            options: { type: Array },
+            selectedIndex: { type: Number },
+            defaultText: { type: String },
+            labelKey: { type: String },
+            valueKey: { type: String },
+            selectedObject: { type: Object },
+            disabled: { type: Boolean },
+            value: { type: String },
+            label: { type: String }
+            // resetAvailable: { type: Boolean }
+        }
+    }
+
+    constructor() {
+        super();
+        this.defaultText = 'Choose an option';
+        this.options = [];
+        this.selectedIndex = -1;
+        this.labelKey = '';
+        this.valueKey = '';
+        this.selectedObject = {};
+        this.disabled = false;
+        this.value = '';
+        this.label = '';
+        
+        // this.resetAvailable = false;
+    }
+
+    /* firstUpdated() {
+        console.log('firstupdated');
+        this.resetAvailable = true;
+    } */
+
+    // willUpdate hook: Detect property changes before re-render
+    willUpdate(changedProperties) {
+        if(changedProperties.has('selectedObject')) {
+            this.selectedIndex = this.determineDefaultSelectedIndex(this.options, this.selectedObject);  
+        }
+        /* if(changedProperties.has('value')) {
+            if(this.value == '' && this.resetAvailable) {
+                this._handleReset();
+            } 
+        } */
+    }
+
+    renderInput() {
+        return html`
+            <pi-label 
+            text=${this.label}
+            ?hidden=${this.label==''}
+            ></pi-label>
+
+            <select 
+            @change=${this._handleInputChange} 
+            .value="${this.selectedIndex}"
+            ?disabled="${this.disabled}"
+            >
+                ${this.defaultText != '' ? html`
+                    <option disabled ?selected="${this.value == ''}">${this.defaultText}</option>
+                ` : html``}
+                    
+                ${this.options.length > 0 ? html`
+                    ${this.options.map((item, index) => html`
+                        <option value="${index}" ?selected="${this.selectedIndex === index}">${item[this.labelKey]}</option>
+                    `)}
+                ` : html``}
+            </select>
+        `;
+    }
+
+    determineDefaultSelectedIndex(optionsAry, targetObj) {
+        if(optionsAry.length > 0) {
+            const lookupLabel = this.labelKey;
+            const valueLookup = this.valueKey;
+            let foundIndex = -1;
+
+            optionsAry.some((item, index) => {
+                if(
+                    item[lookupLabel] == targetObj[lookupLabel] 
+                    && item[valueLookup] == targetObj[valueLookup]
+                ) {
+                    foundIndex = index;      
+                }
+            }); 
+
+            return foundIndex;
+        }
+
+        return -1
+    }
+
+    /* _handleReset() {
+        this.selectedIndex = -1;  
+        this.selectedObject = {};
+        this._dispatchChangeEvent(this.value);
+    } */
+
+    _handleInputChange(e) {
+        const selectedIndex = e.target.value;
+
+        // If a valueKey was provided, use that value from selected object
+        if(this.valueKey != '') {
+            this.value = this.options[selectedIndex][this.valueKey];
+        }
+        else {
+            // Otherwise, use entire selected object
+            this.value = this.options[selectedIndex];
+        }
+        
+
+        this._dispatchChangeEvent(this.value);
+    }
+
+    static styles = [
+        defaultCss,
+        css`
+            :host {
+                width: var(--pi-select-input-width, 100%);
+                display: var(--pi-select-input-display, inline-block);
+            }
+
+            select {
+                font-size: var(--pi-select-input-font-size, 16px);
+                padding: var(--pi-select-input-padding, 5px 7px);
+                background-color: var(--pi-select-input-bg-color, #fff);
+                border-radius: var(--pi-select-input-border-radius, 5px);
+                border-style: var(--pi-select-input-border-style, solid);
+                border-width: var(--pi-select-input-border-width, 1px);
+                border-color: var(--pi-select-input-border-color, #aaa);
+                color: var(--pi-select-input-text-color, #555);
+                box-shadow: var(--pi-select-input-box-shadow, none);
+                width: var(--pi-select-input-width, 100%);
+                transition: background 0.3s ease, 
+                            box-shadow 0.3s ease,
+                            border-color 0.3s ease;
+
+                &:disabled {
+                    background-color: var(--pi-select-input-bg-color-disabled, #eee);
+                    color: var(--pi-select-input-text-color-disabled, #888);
+                }
+
+                &:focus {
+                    background: var(--pi-select-input-bg-color-focus, #f2fcff);
+                    outline: none;
+                    border-style: var(--pi-select-input-border-style-focus, solid);
+                    border-width: var(--pi-select-input-border-width-focus, 1px);
+                    border-color: var(--pi-select-input-border-color-focus, #aaa);
+                    box-shadow: var(--pi-select-input-box-shadow-focus, 1px 1px 1px #ddd);
+                }
+            }
+        `
+    ]
+}
+customElements.define('pi-select-input', PiSelectInput);
+
+class PiCheckboxInput extends PiBaseFormElement {
+
+    static get properties() {
+        return {
+            checked: { type: Boolean, reflect: true },
+            label: { type: String },
+            value: { type: Boolean },
+        }
+    }
+
+    constructor() {
+        super();
+        this.checked = false;
+        this.label = '';
+        this.value = false;
+    }
+
+    renderInput() {
+        return html`
+            <div 
+            class="checkbox-container" 
+            @click=${this._handleInputChange}
+            >
+                <div class="checkmark"></div>
+            </div>
+
+            <pi-label
+            text=${this.label}
+            ?hidden=${this.label==''}
+            @click=${this._handleInputChange}
+            no-margin
+            ></pi-label>
+        `;
+    }
+
+    _handleInputChange() {
+        if(!this.disabled) {
+            this.checked = !this.checked; // Toggle the checked property
+            this.value = this.checked;
+
+            this._dispatchChangeEvent(this.value);
+        }
+    }
+
+    static styles = [
+        defaultCss,
+        css`
+            :host {
+                display: inline-flex; /* Use inline-flex for label alignment */
+                align-items: center; /* Vertically align checkbox and label */
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .checkbox-container {
+                position: relative; /* For positioning the checkmark */
+                width: var(--pi-checkbox-input-inner-width, 20px); /* Adjust size as needed */
+                height: var(--pi-checkbox-input-inner-height, 20px);
+                border-width: var(--pi-checkbox-border-width, 2px); /* Or your preferred border style */
+                border-style: var(--pi-checkbox-border-style, solid); /* Or your preferred border style */
+                border-color: var(--pi-checkbox-border-color); /* Or your preferred border style */
+                border-radius: var(--pi-checkbox-border-radius, 3px); /* Optional rounded corners */
+                background-color: var(--pi-checkbox-background-color, #fff); /* Default background color */
+            }
+
+            .checkmark {
+                position: absolute;
+                top: 0.48rem;
+                left: 0.48rem;
+                transform: translate(-50%, -50%);
+                width: var(--pi-checkbox-input-width, 12px); /* Adjust checkmark size */
+                height: var(--pi-checkbox-input-height, 12px);
+                background-color: var(--pi-checkbox-input-fill-color-true, #74c1d6); /* Or your checkmark color */
+                border-radius: var(--pi-checkbox-input-border-radius, 2px); /* Optional rounded checkmark */
+                opacity: 0; /* Initially hidden */
+                transition: opacity 0.2s ease; /* Smooth appearance */
+            }
+
+            :host([checked]) .checkmark { /* Show checkmark when checked */
+                opacity: 1;
+            }
+
+            /* Optional: Style the container on hover */
+            .checkbox-container:hover {
+                border-color: var(--pi-checkbox-input-fill-color-true, #74c1d6);
+            }
+
+            /* Optional: Style the container when checked */
+            :host([checked]) .checkbox-container {
+                background-color: var(--pi-checkbox-input-fill-color-false, #ccc); /* Or your checked background color */
+            }
+
+            :host([disabled]) {
+                cursor: default;
+
+                .checkbox-container {
+                    background-color: var(--pi-input-bg-color-disabled);
+                }
+            }
+        `
+    ]
+    
+}
+customElements.define('pi-checkbox-input', PiCheckboxInput);
+
+class PiRadioInput extends PiBaseFormElement {
+
+    static get properties() {
+        return {
+            placeholder: { type: String },
+            showLabel: { type: Boolean, attribute: false },
+            value: { type: String },
+            disabled: { type: Boolean, reflect: true },
+            label: { type: String },
+            checked: { type: Boolean, reflect: true },
+            name: { type: String }
+        }
+    }
+
+    constructor() {
+        super();
+        this.placeholder = '';
+        this.showLabel = false;
+        this.value = '';
+        this.disabled = false;
+        this.label = '';
+        this.checked = false;
+        this._group = [];
+        this.name = '';
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+    }
+
+    render() {
+        return html`
+            <div class="container">
+                <input 
+                type="radio" 
+                placeholder=${this.placeholder} 
+                @input=${this._handleInputChange}
+                .value=${this.value}
+                ?disabled=${this.disabled}
+                tabindex="0"
+                .checked=${this.checked}
+                aria-checked=${this.checked}
+                role="radio"
+                >
+                <div class="radio_indicator"></div>
+                <!-- <label>${this.label}</label> -->
+                <pi-label 
+                text=${this.label} 
+                no-padding 
+                no-margin
+                ></pi-label>
+            </div>
+            
+        `;
+    }
+
+    _handleInputChange(e) {
+        this.value = e.target.value;
+        this.checked = !this.checked;
+
+        const event = new CustomEvent('radio-change', {
+            detail: { 
+                name: this.name, 
+                value: this.value, 
+                group: null 
+            }, // Include name for easy identification
+            bubbles: true,
+            composed: true,
+        });
+        this.dispatchEvent(event);
+    }
+
+    static styles = [
+        defaultCss,
+        css`
+            :host {
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                box-sizing: border-box;
+                -webkit-tap-highlight-color: transparent; /* Remove mobile tap highlight */
+            }
+
+            :host([block]) {
+                display: block;
+
+                .container {
+                    margin-right: 0;
+                }
+            }
+
+            .container {
+                display: flex;
+                align-items: center;
+                margin-right: 0.75rem;
+            }
+
+            input {
+                opacity: 0; /* Hide the default radio button */
+                position: absolute;
+                margin: 0;
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+            }
+
+            .radio_indicator { /* The custom radio indicator */
+                cursor: pointer;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%; /* Make it round */
+                border: 2px solid var(--pi-radio-input-border-color, #ccc); /* Use a CSS variable for easy styling */
+                background-color: var(--pi-radio-input-background-color, #fff);
+                margin-right: var(--pi-radio-input-margin-right, 8px); /* Space between indicator and label */
+                box-sizing: border-box; /* Include border in size */
+                transition: background-color 0.4s ease, 
+                            border-color 0.4s ease; /* Smooth transitions */
+            }
+
+            input:checked + .radio_indicator {
+                background-color: var(--pi-radio-input-color-checked, #2196f3); /* Checked color */
+                border-color: var(--pi-radio-input-color-checked, #2196f3);
+            }
+
+            input:checked + .radio_indicator::after { /* The inner circle when checked */
+                content: '';
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: var(--pi-radio-input-background-color-checked, #FFF); /* Or use a CSS variable */
+                position: absolute;
+                top: 12px;
+                left: 11px;
+                transform: translate(-80%, -80%);
+            }
+
+            :host([disabled]) {
+                input {
+                    cursor: default;
+                }
+
+                .radio_indicator {
+                    background-color: var(--pi-input-bg-color-disabled);
+                }
+            }
+
+        `
+    ]
+}
+customElements.define('pi-radio-input', PiRadioInput);
+
+class PiToggleSwitch extends PiBaseFormElement {
+
+     static get properties() {
+        return {
+            checked: { type: Boolean, reflect: true },
+            value: { type: Boolean },
+            label: { type: String },
+        }
+    }
+
+    constructor() {
+        super();
+        this.checked = false;
+        this.value = false;
+        this.label = '';
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.addEventListener('click', this._handleInputChange);
+        if(this.checked) { this.value = this.checked; }
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.removeEventListener('click', this._handleInputChange);
+    }
+
+    renderInput() {
+        return html`
+            <div 
+            class="toggle_container" 
+            >
+                <div class="slider"></div>
+            </div>
+
+            <pi-label
+            text=${this.label}
+            ?hidden=${this.label==''}
+            no-margin
+            ></pi-label>
+        `;
+    }
+
+    _handleInputChange() {
+        if(!this.disabled) {
+            this.checked = !this.checked; // Toggle the checked property
+            this.value = this.checked;
+
+            this._dispatchChangeEvent(this.value);
+        }
+        
+    }
+
+    static styles = [
+        defaultCss,
+        css`
+            :host {
+                display: inline-flex;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            :host([checked]) .toggle_container {
+                background-color: var(--pi-checkbox-input-fill-color-true, #74c1d6); 
+            }
+
+            .toggle_container {
+                display: inline-block;
+                width: 40px;
+                height: 20px;
+                border-radius: 10px;
+                background-color: var(--pi-toggle-switch-input-fill-color-false, #aaa);
+                position: relative;
+            }
+
+            .slider {
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                right: 4px;
+                bottom: 4px;
+                border-radius: 9px;
+                width: 13px;
+                /* height: 15px; */
+                background-color: var(--pi-toggle-switch-input-slider-color, #fff);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            :host([checked]) .slider {
+                transform: translateX(19px); 
+            }
+
+            :host([disabled]) {
+                cursor: default;
+                user-select: none;
+                
+                .toggle_container {
+                    background-color: var(--pi-input-bg-color-disabled)
+                }
+            }
+        `
+    ]
+}
+customElements.define('pi-toggle-switch', PiToggleSwitch);
+
+class PiTextAreaInput extends PiBaseFormElement {
+
+    static get properties() {
+        return {
+            label: { type: String },
+            value: { type: String },
+            placeholder: { type: String }
+        }
+    }
+
+    constructor() {
+        super();
+        this.label = '';
+        this.value = '';
+        this.placeholder = '';
+    }
+
+    render() {
+        return html`
+            <pi-label 
+            text=${this.label}
+            ?hidden=${this.label==''}
+            ></pi-label>
+
+            <textarea
+            .value=${this.value}
+            placeholder=${this.placeholder}
+            ?disabled=${this.disabled}
+            @input=${this._handleInputChange}
+            ></textarea>
+        `;
+    }
+
+    static styles = [
+        defaultCss,
+        css`
+            :host { 
+                display: inline-block;
+                min-width: 250px;
+            }
+
+            textarea {
+                width: 100%;
+                min-height: 80px;
+                font-size: var(--pi-textarea-input-font-size, 16px);
+                padding: var(--pi-textarea-input-padding, 5px 7px);
+                background-color: var(--pi-textarea-input-bg-color, #fff);
+                border-radius: var(--pi-textarea-input-border-radius, 5px);
+                border-style: var(--pi-textarea-input-border-style, solid);
+                border-width: var(--pi-textarea-input-border-width, 1px);
+                border-color: var(--pi-textarea-input-border-color, #aaa);
+                color: var(--pi-textarea-input-text-color, #555);
+                box-shadow: var(--pi-textarea-input-box-shadow, none);
+                transition: background 0.3s ease, 
+                            box-shadow 0.3s ease,
+                            border-color 0.3s ease;
+
+                &::placeholder {
+                    color: var(--pi-textarea-input-placeholder-text-color, #aaa);
+                }
+
+                &:disabled, &:disabled::placeholder {
+                    background-color: var(--pi-textarea-input-bg-color-disabled, #eee);
+                    color: var(--pi-textarea-input-text-color-disabled, #888);
+                }
+
+                &:focus {
+                    background: var(--pi-textarea-input-bg-color-focus, #f2fcff);
+                    outline: none;
+                    border-style: var(--pi-textarea-input-border-style-focus, solid);
+                    border-width: var(--pi-textarea-input-border-width-focus, 1px);
+                    border-color: var(--pi-textarea-input-border-color-focus, #aaa);
+                    box-shadow: var(--pi-textarea-input-box-shadow-focus, 1px 1px 1px #ddd);
+                }
+            }
+        `
+    ]
+    
+}
+customElements.define('pi-text-area-input', PiTextAreaInput);
+
+export { IconAlertTriangleDark, IconAlertTriangleLight, IconAreaChartStand, IconAvatarGenericLight, IconBase, IconChainLink, IconCloseSquareDark, IconEditImage, IconEditPageFilled, IconEditVideo, IconGearSolid, IconHandler, IconInfoChatBubbleDark, IconInfoChatBubbleLight, IconInfoFilled, IconInfoLight, IconInfoRoundedDark, IconInfoRoundedLight, IconInfoSimpleDark, IconInfoSimpleLight, IconLeftArrowCircled, IconLogout, IconMagnifyText, IconNotificationBoxDark, IconNotificationBoxLight, IconPaperAirplaneSolid, IconSlackLogoSlanted, IconStopExDark, IconStopExLight, IconThumbsDownDark, IconThumbsDownLight, IconThumbsUpDark, IconThumbsUpLight, IconToggleOff, IconToggleOn, IconUserRoundedDark, IconUserRoundedLight, PiButton, PiCheckboxInput, PiRadioInput, PiSelectInput, PiTextAreaInput, PiTextInput, PiToggleSwitch };
 //# sourceMappingURL=pi_components.js.map
