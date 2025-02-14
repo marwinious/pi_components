@@ -2,7 +2,7 @@ import { LitElement, html, css, unsafeCSS } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { classMap } from 'lit/directives/class-map.js';
 
-class IconBase extends LitElement {
+class PiIconBase extends LitElement {
 
     static get properties() {
         return {
@@ -75,9 +75,9 @@ class IconBase extends LitElement {
         `
     ]
 }
-customElements.define('icon-base', IconBase);
+customElements.define('pi-icon-base', PiIconBase);
 
-class IconHandler extends LitElement {
+class PiIconHandler extends LitElement {
 
     static get properties() {
         return {
@@ -119,7 +119,7 @@ class IconHandler extends LitElement {
         `
     ]
 }
-customElements.define('icon-handler', IconHandler);
+customElements.define('pi-icon-handler', PiIconHandler);
 
 const iconData$y = {
     iconLabel: 'icon-left-arrow-circled',
@@ -143,14 +143,14 @@ class IconLeftArrowCircled extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLineJoin="round"
             pathFillRule="nonzero"
             strokeMiterLimit=2
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -184,7 +184,7 @@ class IconChainLink extends LitElement {
 
     render() {
         return html`
-            <icon-base pathData=${this.pathData}></icon-base>
+            <pi-icon-base pathData=${this.pathData}></pi-icon-base>
         `;
     }
 
@@ -218,9 +218,9 @@ class IconAlertTriangleDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -254,9 +254,9 @@ class IconAlertTriangleLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -290,7 +290,7 @@ class IconAreaChartStand extends LitElement {
 
     render() {
         return html`
-            <icon-base pathData=${this.pathData}></icon-base>
+            <pi-icon-base pathData=${this.pathData}></pi-icon-base>
         `;
     }
 
@@ -324,11 +324,11 @@ class IconAvatarGenericLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -362,14 +362,14 @@ class IconCloseSquareDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLineJoin="round"
             strokeMiterLimit="2"
             pathFillRule="nonzero"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -403,9 +403,9 @@ class IconEditImage extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -439,14 +439,14 @@ class IconEditPageFilled extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLineJoin="round"
             strokeMiterLimit="2"
             pathFillRule="nonzero"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -480,9 +480,9 @@ class IconEditVideo extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -516,9 +516,9 @@ class IconGearSolid extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -552,9 +552,9 @@ class IconInfoChatBubbleDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -588,9 +588,9 @@ class IconInfoChatBubbleLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -624,9 +624,9 @@ class IconInfoFilled extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -660,9 +660,9 @@ class IconInfoLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -696,9 +696,9 @@ class IconInfoRoundedDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -732,9 +732,9 @@ class IconInfoRoundedLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -768,14 +768,14 @@ class IconInfoSimpleDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLineJoin="round"
             strokeMiterLimit="2"
             pathFillRule="nonzero"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -809,14 +809,14 @@ class IconInfoSimpleLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLineJoin="round"
             strokeMiterLimit="2"
             pathFillRule="nonzero"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -850,9 +850,9 @@ class IconLogout extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -886,9 +886,9 @@ class IconMagnifyText extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -922,14 +922,14 @@ class IconNotificationBoxDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLineJoin="round"
             strokeMiterLimit="2"
             pathFillRule="nonzero"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -963,14 +963,14 @@ class IconNotificationBoxLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLineJoin="round"
             strokeMiterLimit="2"
             pathFillRule="nonzero"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1004,9 +1004,9 @@ class IconPaperAirplaneSolid extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1040,11 +1040,11 @@ class IconSlackLogoSlanted extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1078,9 +1078,9 @@ class IconStopExDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1114,9 +1114,9 @@ class IconStopExLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1150,9 +1150,9 @@ class IconThumbsDownDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1186,9 +1186,9 @@ class IconThumbsDownLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1222,9 +1222,9 @@ class IconThumbsUpDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1258,9 +1258,9 @@ class IconThumbsUpLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1294,11 +1294,11 @@ class IconToggleOff extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1332,11 +1332,11 @@ class IconToggleOn extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1370,9 +1370,9 @@ class IconUserRoundedDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1406,9 +1406,9 @@ class IconUserRoundedLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -1783,7 +1783,7 @@ class PiButton extends LitElement {
                 <span class="button_content_container">
                     <!-- Optional icon -->
                     <span class="button_icon_container">
-                        <icon-handler .icon=${this.icon}></icon-handler>
+                        <pi-icon-handler .icon=${this.icon}></pi-icon-handler>
                     </span>
 
                     <!-- Button text -->
@@ -2736,5 +2736,152 @@ class PiTextAreaInput extends PiBaseFormElement {
 }
 customElements.define('pi-text-area-input', PiTextAreaInput);
 
-export { IconAlertTriangleDark, IconAlertTriangleLight, IconAreaChartStand, IconAvatarGenericLight, IconBase, IconChainLink, IconCloseSquareDark, IconEditImage, IconEditPageFilled, IconEditVideo, IconGearSolid, IconHandler, IconInfoChatBubbleDark, IconInfoChatBubbleLight, IconInfoFilled, IconInfoLight, IconInfoRoundedDark, IconInfoRoundedLight, IconInfoSimpleDark, IconInfoSimpleLight, IconLeftArrowCircled, IconLogout, IconMagnifyText, IconNotificationBoxDark, IconNotificationBoxLight, IconPaperAirplaneSolid, IconSlackLogoSlanted, IconStopExDark, IconStopExLight, IconThumbsDownDark, IconThumbsDownLight, IconThumbsUpDark, IconThumbsUpLight, IconToggleOff, IconToggleOn, IconUserRoundedDark, IconUserRoundedLight, PiButton, PiCheckboxInput, PiRadioInput, PiSelectInput, PiTextAreaInput, PiTextInput, PiToggleSwitch };
+/*
+
+<!-- <img slot="header" src="https://primefaces.org/cdn/primevue/images/card-vue.jpg" alt=""> -->
+<!-- <span slot="title">Card Title Area</span> -->
+<!-- <span slot="subTitle">Card Sub-Title Area</span> -->
+<!-- <span slot="footer">Card Footer Area</span> -->
+
+*/
+
+class PiCard extends LitElement {
+
+    static get properties() {
+        return {
+            headerHasContent: { type: Boolean },
+            titleHasContent: { type: Boolean },
+            subTitleHasContent: { type: Boolean },
+            footerHasContent: { type: Boolean },
+        }
+    }
+
+    constructor() {
+        super();
+        this.headerHasContent = false;
+        this.titleHasContent = false;
+        this.subTitleHasContent = false;
+        this.footerHasContent = false;
+    }
+
+    firstUpdated() {
+        this.determineSlotContents();
+    }
+    
+    render() {
+        return html`
+
+            <!-- Conditionally show header if slot is not empty -->
+            <div 
+            class="header" 
+            ?hidden=${!this.headerHasContent}
+            >
+                <slot name="header"></slot>
+            </div>
+
+            <!-- Conditionally show title if slot is not empty -->
+            <div 
+            class="title" 
+            ?hidden=${!this.titleHasContent}
+            >
+                <slot name="title"></slot>
+            </div>
+
+            <!-- Conditionally show title if slot is not empty -->
+            <div 
+            class="sub_title" 
+            ?hidden=${!this.subTitleHasContent}
+            >
+                <slot name="subTitle"></slot>
+            </div>
+
+            <!-- Render default content slot -->
+            <div class="content">
+                <slot></slot>
+            </div>
+
+            <!-- Conditionally show footer if slot is not empty -->
+            <div 
+            class="footer"
+            ?hidden=${!this.footerHasContent}
+            >
+                <slot name="footer"></slot>
+            </div>
+
+        `;
+    }
+
+    determineSlotContents() {
+        // Get values for specific slots
+        this.headerHasContent = this.shadowRoot?.querySelector('slot[name="header"]')?.assignedNodes()?.length > 0;
+        this.titleHasContent = this.shadowRoot?.querySelector('slot[name="title"]')?.assignedNodes()?.length > 0;
+        this.subTitleHasContent = this.shadowRoot?.querySelector('slot[name="subTitle"]')?.assignedNodes()?.length > 0;
+        this.footerHasContent = this.shadowRoot?.querySelector('slot[name="footer"]')?.assignedNodes()?.length > 0;
+    }
+
+    static styles = [
+        defaultCss,
+        css`
+            :host {
+                display: block;
+                max-width: 100%;
+                width: 100%;
+                min-width: 0;
+                line-height: var(--pi-card-line-height, 1.4rem);
+                border: var(--pi-card-border, solid 1px #ccc);
+                border-radius: var(--pi-card-border-radius, 4px);
+                box-shadow: var(--pi-card-box-shadow, 1px 1px 1px #ddd);
+                overflow: hidden;
+                margin: var(--pi-card-margin, 0.5rem 0);
+                background: var(--pi-card-background, #FFF);
+            }
+
+            slot {
+                display: block;
+            }
+
+            .header {
+                width: 100%;
+                display: block;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            .header ::slotted(img) {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .title {
+                padding: var(--pi-card-title-padding, 1rem 1rem 0rem 1rem);
+                font-weight: var(--pi-card-title-font-weight, bold);
+                color: var(--pi-card-title-color, #555);
+                font-size: var(--pi-card-title-font-size, 1.2rem);
+            }
+
+            .sub_title {
+                padding: var(--pi-card-sub-title-padding, 0.25rem 1rem 0rem 1rem);
+                color: var(--pi-card-sub-title-color, #777);
+                font-size: var(--pi-card-sub-title-font-size, 1rem);
+            }
+
+            .content {
+                padding: var(--pi-card-content-padding, 1rem);
+            }
+
+            .footer {
+                width: 100%;
+                display: block;
+                box-sizing: border-box;
+                overflow: hidden;
+                /* padding: var(--pi-card-footer-padding, 0.5rem 1rem 1rem 1rem); */
+            }
+        `
+    ]
+}
+customElements.define('pi-card', PiCard);
+
+export { IconAlertTriangleDark, IconAlertTriangleLight, IconAreaChartStand, IconAvatarGenericLight, IconChainLink, IconCloseSquareDark, IconEditImage, IconEditPageFilled, IconEditVideo, IconGearSolid, IconInfoChatBubbleDark, IconInfoChatBubbleLight, IconInfoFilled, IconInfoLight, IconInfoRoundedDark, IconInfoRoundedLight, IconInfoSimpleDark, IconInfoSimpleLight, IconLeftArrowCircled, IconLogout, IconMagnifyText, IconNotificationBoxDark, IconNotificationBoxLight, IconPaperAirplaneSolid, IconSlackLogoSlanted, IconStopExDark, IconStopExLight, IconThumbsDownDark, IconThumbsDownLight, IconThumbsUpDark, IconThumbsUpLight, IconToggleOff, IconToggleOn, IconUserRoundedDark, IconUserRoundedLight, PiButton, PiCard, PiCheckboxInput, PiIconBase, PiIconHandler, PiRadioInput, PiSelectInput, PiTextAreaInput, PiTextInput, PiToggleSwitch };
 //# sourceMappingURL=pi_components.js.map

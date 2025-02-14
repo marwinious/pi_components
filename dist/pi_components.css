@@ -22,6 +22,7 @@
     --pi-card-border-radius: 4px;
     --pi-card-box-shadow: 1px 1px 1px #ddd;
     --pi-card-margin: 0.5rem 0;
+    --pi-card-background: #FFF;
 
     /* Title */
     --pi-card-title-padding: 1rem 1rem 0rem 1rem;
@@ -32,6 +33,7 @@
     /* Sub-title */
     --pi-card-sub-title-padding: 0.25rem 1rem 0rem 1rem;
     --pi-card-sub-title-color: #777;
+    --pi-card-sub-title-font-size: 1.2rem;
 
     /* Content */
     --pi-card-content-padding: 1rem;
