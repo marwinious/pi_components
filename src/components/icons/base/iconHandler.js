@@ -18,7 +18,7 @@ export class PiIconHandler extends LitElement {
 
     render() {
         return html`
-            <div class="icon">${unsafeHTML('<icon-'+this.icon+'></icon-'+this.icon)}</div>
+            <div class="icon">${unsafeHTML('<pi-icon-'+this.icon+'></pi-icon-'+this.icon)}</div>
         `;
     }
 

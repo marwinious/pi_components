@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-info-rounded-light',
-    className: 'IconInfoRoundedLight'
+    iconLabel: 'pi-icon-info-rounded-light',
+    className: 'PiIconInfoRoundedLight'
 }
 
-export class IconInfoRoundedLight extends LitElement {
+export class PiIconInfoRoundedLight extends LitElement {
 
     static get properties() {
         return {
@@ -34,5 +34,5 @@ export class IconInfoRoundedLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconInfoRoundedLight);
+customElements.define(iconData.iconLabel, PiIconInfoRoundedLight);
 

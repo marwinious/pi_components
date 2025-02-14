@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-left-arrow-circled',
-    className: 'IconLeftArrowCircled'
+    iconLabel: 'pi-icon-left-arrow-circled',
+    className: 'PiIconLeftArrowCircled'
 }
 
-export class IconLeftArrowCircled extends LitElement {
+export class PiIconLeftArrowCircled extends LitElement {
 
     static get properties() {
         return {
@@ -39,5 +39,5 @@ export class IconLeftArrowCircled extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconLeftArrowCircled);
+customElements.define(iconData.iconLabel, PiIconLeftArrowCircled);
 

@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-chain-link',
-    className: 'IconChainLink'
+    iconLabel: 'pi-icon-chain-link',
+    className: 'PiIconChainLink'
 }
 
-export class IconChainLink extends LitElement {
+export class PiIconChainLink extends LitElement {
 
     static get properties() {
         return {
@@ -32,5 +32,5 @@ export class IconChainLink extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconChainLink);
+customElements.define(iconData.iconLabel, PiIconChainLink);
 

@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-edit-page-filled',
-    className: 'IconEditPageFilled'
+    iconLabel: 'pi-icon-edit-page-filled',
+    className: 'PiIconEditPageFilled'
 }
 
-export class IconEditPageFilled extends LitElement {
+export class PiIconEditPageFilled extends LitElement {
 
     static get properties() {
         return {
@@ -39,5 +39,5 @@ export class IconEditPageFilled extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconEditPageFilled);
+customElements.define(iconData.iconLabel, PiIconEditPageFilled);
 

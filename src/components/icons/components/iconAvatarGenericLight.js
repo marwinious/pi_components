@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-avatar-generic-light',
-    className: 'IconAvatarGenericLight'
+    iconLabel: 'pi-icon-avatar-generic-light',
+    className: 'PiIconAvatarGenericLight'
 }
 
-export class IconAvatarGenericLight extends LitElement {
+export class PiIconAvatarGenericLight extends LitElement {
 
     static get properties() {
         return {
@@ -36,5 +36,5 @@ export class IconAvatarGenericLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconAvatarGenericLight);
+customElements.define(iconData.iconLabel, PiIconAvatarGenericLight);
 

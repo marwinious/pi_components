@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-logout',
-    className: 'IconLogout'
+    iconLabel: 'pi-icon-logout',
+    className: 'PiIconLogout'
 }
 
-export class IconLogout extends LitElement {
+export class PiIconLogout extends LitElement {
 
     static get properties() {
         return {
@@ -34,5 +34,5 @@ export class IconLogout extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconLogout);
+customElements.define(iconData.iconLabel, PiIconLogout);
 
