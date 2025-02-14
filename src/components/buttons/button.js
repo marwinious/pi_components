@@ -5,7 +5,7 @@ import severityCss from './css/buttonSeverityCss'
 import variantCss from './css/buttonVariantCss'
 import iconsCss from './css/buttonIconsCss'
 import badgeCss from './css/buttonBadgeCss'
-import { IconHandler } from '../icons/base/iconHandler';
+import { PiIconHandler } from '../icons';
 import { PiBadge } from '../badges/badge';
 
 // commonCss = css`${unsafeCSS(commonCss)}`;
@@ -59,7 +59,7 @@ export class PiButton extends LitElement {
                 <span class="button_content_container">
                     <!-- Optional icon -->
                     <span class="button_icon_container">
-                        <icon-handler .icon=${this.icon}></icon-handler>
+                        <pi-icon-handler .icon=${this.icon}></pi-icon-handler>
                     </span>
 
                     <!-- Button text -->

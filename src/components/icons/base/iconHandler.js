@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
-export class IconHandler extends LitElement {
+export class PiIconHandler extends LitElement {
 
     static get properties() {
         return {
@@ -43,4 +43,4 @@ export class IconHandler extends LitElement {
         `
     ]
 }
-customElements.define('icon-handler', IconHandler);
+customElements.define('pi-icon-handler', PiIconHandler);

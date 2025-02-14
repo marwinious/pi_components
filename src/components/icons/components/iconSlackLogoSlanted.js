@@ -22,11 +22,11 @@ export class IconSlackLogoSlanted extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 

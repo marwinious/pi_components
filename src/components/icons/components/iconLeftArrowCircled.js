@@ -22,14 +22,14 @@ export class IconLeftArrowCircled extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLineJoin="round"
             pathFillRule="nonzero"
             strokeMiterLimit=2
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 

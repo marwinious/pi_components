@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 
-export class IconBase extends LitElement {
+export class PiIconBase extends LitElement {
 
     static get properties() {
         return {
@@ -73,4 +73,4 @@ export class IconBase extends LitElement {
         `
     ]
 }
-customElements.define('icon-base', IconBase);
+customElements.define('pi-icon-base', PiIconBase);

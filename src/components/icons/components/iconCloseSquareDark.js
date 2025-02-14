@@ -22,14 +22,14 @@ export class IconCloseSquareDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLineJoin="round"
             strokeMiterLimit="2"
             pathFillRule="nonzero"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 

@@ -22,9 +22,9 @@ export class IconPaperAirplaneSolid extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 

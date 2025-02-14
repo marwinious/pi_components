@@ -22,7 +22,7 @@ export class IconAreaChartStand extends LitElement {
 
     render() {
         return html`
-            <icon-base pathData=${this.pathData}></icon-base>
+            <pi-icon-base pathData=${this.pathData}></pi-icon-base>
         `;
     }
 
