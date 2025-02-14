@@ -22,3 +22,4 @@ if (import.meta.env.MODE === 'development') {
 export * from './components/icons/index'
 export * from './components/buttons/index'
 export * from './components/inputs/index'
+export * from './components/cards/index'
