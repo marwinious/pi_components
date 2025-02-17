@@ -75,7 +75,8 @@ class PiIconBase extends LitElement {
         `
     ]
 }
-customElements.define('pi-icon-base', PiIconBase);
+
+if(!customElements.get('pi-icon-base')) { customElements.define('pi-icon-base', PiIconBase); }
 
 class PiIconHandler extends LitElement {
 
@@ -119,7 +120,8 @@ class PiIconHandler extends LitElement {
         `
     ]
 }
-customElements.define('pi-icon-handler', PiIconHandler);
+
+if(!customElements.get('pi-icon-handler')) { customElements.define('pi-icon-handler', PiIconHandler); }
 
 const iconData$y = {
     iconLabel: 'pi-icon-left-arrow-circled',
@@ -160,7 +162,8 @@ class PiIconLeftArrowCircled extends LitElement {
         `
     ]
 }
-customElements.define(iconData$y.iconLabel, PiIconLeftArrowCircled);
+
+if(!customElements.get(iconData$y.iconLabel)) { customElements.define(iconData$y.iconLabel, PiIconLeftArrowCircled); }
 
 const iconData$x = {
     iconLabel: 'pi-icon-chain-link',
@@ -194,7 +197,8 @@ class PiIconChainLink extends LitElement {
         `
     ]
 }
-customElements.define(iconData$x.iconLabel, PiIconChainLink);
+
+if(!customElements.get(iconData$x.iconLabel)) { customElements.define(iconData$x.iconLabel, PiIconChainLink); }
 
 const iconData$w = {
     iconLabel: 'pi-icon-alert-triangle-dark',
@@ -230,7 +234,8 @@ class PiIconAlertTriangleDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData$w.iconLabel, PiIconAlertTriangleDark);
+
+if(!customElements.get(iconData$w.iconLabel)) { customElements.define(iconData$w.iconLabel, PiIconAlertTriangleDark); }
 
 const iconData$v = {
     iconLabel: 'pi-icon-alert-triangle-light',
@@ -266,7 +271,8 @@ class PiIconAlertTriangleLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData$v.iconLabel, PiIconAlertTriangleLight);
+
+if(!customElements.get(iconData$v.iconLabel)) { customElements.define(iconData$v.iconLabel, PiIconAlertTriangleLight); }
 
 const iconData$u = {
     iconLabel: 'pi-icon-area-chart-stand',
@@ -300,7 +306,8 @@ class PiIconAreaChartStand extends LitElement {
         `
     ]
 }
-customElements.define(iconData$u.iconLabel, PiIconAreaChartStand);
+
+if(!customElements.get(iconData$u.iconLabel)) { customElements.define(iconData$u.iconLabel, PiIconAreaChartStand); }
 
 const iconData$t = {
     iconLabel: 'pi-icon-avatar-generic-light',
@@ -338,7 +345,8 @@ class PiIconAvatarGenericLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData$t.iconLabel, PiIconAvatarGenericLight);
+
+if(!customElements.get(iconData$t.iconLabel)) { customElements.define(iconData$t.iconLabel, PiIconAvatarGenericLight); }
 
 const iconData$s = {
     iconLabel: 'pi-icon-close-square-dark',
@@ -379,7 +387,8 @@ class PiIconCloseSquareDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData$s.iconLabel, PiIconCloseSquareDark);
+
+if(!customElements.get(iconData$s.iconLabel)) { customElements.define(iconData$s.iconLabel, PiIconCloseSquareDark); }
 
 const iconData$r = {
     iconLabel: 'pi-icon-edit-image',
@@ -415,7 +424,8 @@ class PiIconEditImage extends LitElement {
         `
     ]
 }
-customElements.define(iconData$r.iconLabel, PiIconEditImage);
+
+if(!customElements.get(iconData$r.iconLabel)) { customElements.define(iconData$r.iconLabel, PiIconEditImage); }
 
 const iconData$q = {
     iconLabel: 'pi-icon-edit-page-filled',
@@ -456,7 +466,8 @@ class PiIconEditPageFilled extends LitElement {
         `
     ]
 }
-customElements.define(iconData$q.iconLabel, PiIconEditPageFilled);
+
+if(!customElements.get(iconData$q.iconLabel)) { customElements.define(iconData$q.iconLabel, PiIconEditPageFilled); }
 
 const iconData$p = {
     iconLabel: 'pi-icon-edit-video',
@@ -492,7 +503,8 @@ class PiIconEditVideo extends LitElement {
         `
     ]
 }
-customElements.define(iconData$p.iconLabel, PiIconEditVideo);
+
+if(!customElements.get(iconData$p.iconLabel)) { customElements.define(iconData$p.iconLabel, PiIconEditVideo); }
 
 const iconData$o = {
     iconLabel: 'pi-icon-gear-solid',
@@ -528,7 +540,8 @@ class PiIconGearSolid extends LitElement {
         `
     ]
 }
-customElements.define(iconData$o.iconLabel, PiIconGearSolid);
+
+if(!customElements.get(iconData$o.iconLabel)) { customElements.define(iconData$o.iconLabel, PiIconGearSolid); }
 
 const iconData$n = {
     iconLabel: 'pi-icon-info-chat-bubble-dark',
@@ -564,7 +577,8 @@ class PiIconInfoChatBubbleDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData$n.iconLabel, PiIconInfoChatBubbleDark);
+
+if(!customElements.get(iconData$n.iconLabel)) { customElements.define(iconData$n.iconLabel, PiIconInfoChatBubbleDark); }
 
 const iconData$m = {
     iconLabel: 'pi-icon-info-chat-bubble-light',
@@ -600,7 +614,8 @@ class PiIconInfoChatBubbleLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData$m.iconLabel, PiIconInfoChatBubbleLight);
+
+if(!customElements.get(iconData$m.iconLabel)) { customElements.define(iconData$m.iconLabel, PiIconInfoChatBubbleLight); }
 
 const iconData$l = {
     iconLabel: 'pi-icon-info-filled',
@@ -636,7 +651,8 @@ class PiIconInfoFilled extends LitElement {
         `
     ]
 }
-customElements.define(iconData$l.iconLabel, PiIconInfoFilled);
+
+if(!customElements.get(iconData$l.iconLabel)) { customElements.define(iconData$l.iconLabel, PiIconInfoFilled); }
 
 const iconData$k = {
     iconLabel: 'pi-icon-info-light',
@@ -672,7 +688,8 @@ class PiIconInfoLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData$k.iconLabel, PiIconInfoLight);
+
+if(!customElements.get(iconData$k.iconLabel)) { customElements.define(iconData$k.iconLabel, PiIconInfoLight); }
 
 const iconData$j = {
     iconLabel: 'pi-icon-info-rounded-dark',
@@ -708,7 +725,8 @@ class PiIconInfoRoundedDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData$j.iconLabel, PiIconInfoRoundedDark);
+
+if(!customElements.get(iconData$j.iconLabel)) { customElements.define(iconData$j.iconLabel, PiIconInfoRoundedDark); }
 
 const iconData$i = {
     iconLabel: 'pi-icon-info-rounded-light',
@@ -744,7 +762,8 @@ class PiIconInfoRoundedLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData$i.iconLabel, PiIconInfoRoundedLight);
+
+if(!customElements.get(iconData$i.iconLabel)) { customElements.define(iconData$i.iconLabel, PiIconInfoRoundedLight); }
 
 const iconData$h = {
     iconLabel: 'pi-icon-info-sample-dark',
@@ -785,7 +804,8 @@ class PiIconInfoSimpleDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData$h.iconLabel, PiIconInfoSimpleDark);
+
+if(!customElements.get(iconData$h.iconLabel)) { customElements.define(iconData$h.iconLabel, PiIconInfoSimpleDark); }
 
 const iconData$g = {
     iconLabel: 'pi-icon-info-simple-light',
@@ -826,7 +846,8 @@ class PiIconInfoSimpleLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData$g.iconLabel, PiIconInfoSimpleLight);
+
+if(!customElements.get(iconData$g.iconLabel)) { customElements.define(iconData$g.iconLabel, PiIconInfoSimpleLight); }
 
 const iconData$f = {
     iconLabel: 'pi-icon-logout',
@@ -862,7 +883,8 @@ class PiIconLogout extends LitElement {
         `
     ]
 }
-customElements.define(iconData$f.iconLabel, PiIconLogout);
+
+if(!customElements.get(iconData$f.iconLabel)) { customElements.define(iconData$f.iconLabel, PiIconLogout); }
 
 const iconData$e = {
     iconLabel: 'pi-icon-magnify-text',
@@ -898,7 +920,8 @@ class PiIconMagnifyText extends LitElement {
         `
     ]
 }
-customElements.define(iconData$e.iconLabel, PiIconMagnifyText);
+
+if(!customElements.get(iconData$e.iconLabel)) { customElements.define(iconData$e.iconLabel, PiIconMagnifyText); }
 
 const iconData$d = {
     iconLabel: 'pi-icon-notification-box-dark',
@@ -939,7 +962,8 @@ class PiIconNotificationBoxDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData$d.iconLabel, PiIconNotificationBoxDark);
+
+if(!customElements.get(iconData$d.iconLabel)) { customElements.define(iconData$d.iconLabel, PiIconNotificationBoxDark); }
 
 const iconData$c = {
     iconLabel: 'pi-icon-notification-box-light',
@@ -980,7 +1004,8 @@ class PiIconNotificationBoxLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData$c.iconLabel, PiIconNotificationBoxLight);
+
+if(!customElements.get(iconData$c.iconLabel)) { customElements.define(iconData$c.iconLabel, PiIconNotificationBoxLight); }
 
 const iconData$b = {
     iconLabel: 'pi-icon-paper-airplane-solid',
@@ -1016,7 +1041,8 @@ class PiIconPaperAirplaneSolid extends LitElement {
         `
     ]
 }
-customElements.define(iconData$b.iconLabel, PiIconPaperAirplaneSolid);
+
+if(!customElements.get(iconData$b.iconLabel)) { customElements.define(iconData$b.iconLabel, PiIconPaperAirplaneSolid); }
 
 const iconData$a = {
     iconLabel: 'pi-icon-slack-logo-slanted',
@@ -1054,7 +1080,8 @@ class PiIconSlackLogoSlanted extends LitElement {
         `
     ]
 }
-customElements.define(iconData$a.iconLabel, PiIconSlackLogoSlanted);
+
+if(!customElements.get(iconData$a.iconLabel)) { customElements.define(iconData$a.iconLabel, PiIconSlackLogoSlanted); }
 
 const iconData$9 = {
     iconLabel: 'pi-icon-stop-ex-dark',
@@ -1090,7 +1117,8 @@ class PiIconStopExDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData$9.iconLabel, PiIconStopExDark);
+
+if(!customElements.get(iconData$9.iconLabel)) { customElements.define(iconData$9.iconLabel, PiIconStopExDark); }
 
 const iconData$8 = {
     iconLabel: 'pi-icon-stop-ex-light',
@@ -1126,7 +1154,8 @@ class PiIconStopExLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData$8.iconLabel, PiIconStopExLight);
+
+if(!customElements.get(iconData$8.iconLabel)) { customElements.define(iconData$8.iconLabel, PiIconStopExLight); }
 
 const iconData$7 = {
     iconLabel: 'pi-icon-thumbs-down-dark',
@@ -1162,7 +1191,8 @@ class PiIconThumbsDownDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData$7.iconLabel, PiIconThumbsDownDark);
+
+if(!customElements.get(iconData$7.iconLabel)) { customElements.define(iconData$7.iconLabel, PiIconThumbsDownDark); }
 
 const iconData$6 = {
     iconLabel: 'pi-icon-thumbs-down-light',
@@ -1198,7 +1228,8 @@ class PiIconThumbsDownLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData$6.iconLabel, PiIconThumbsDownLight);
+
+if(!customElements.get(iconData$6.iconLabel)) { customElements.define(iconData$6.iconLabel, PiIconThumbsDownLight); }
 
 const iconData$5 = {
     iconLabel: 'pi-icon-thumbs-up-dark',
@@ -1234,7 +1265,8 @@ class PiIconThumbsUpDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData$5.iconLabel, PiIconThumbsUpDark);
+
+if(!customElements.get(iconData$5.iconLabel)) { customElements.define(iconData$5.iconLabel, PiIconThumbsUpDark); }
 
 const iconData$4 = {
     iconLabel: 'pi-icon-thumbs-up-light',
@@ -1270,7 +1302,8 @@ class PiIconThumbsUpLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData$4.iconLabel, PiIconThumbsUpLight);
+
+if(!customElements.get(iconData$4.iconLabel)) { customElements.define(iconData$4.iconLabel, PiIconThumbsUpLight); }
 
 const iconData$3 = {
     iconLabel: 'pi-icon-toggle-off',
@@ -1308,7 +1341,8 @@ class PiIconToggleOff extends LitElement {
         `
     ]
 }
-customElements.define(iconData$3.iconLabel, PiIconToggleOff);
+
+if(!customElements.get(iconData$3.iconLabel)) { customElements.define(iconData$3.iconLabel, PiIconToggleOff); }
 
 const iconData$2 = {
     iconLabel: 'pi-icon-toggle-on',
@@ -1346,7 +1380,8 @@ class PiIconToggleOn extends LitElement {
         `
     ]
 }
-customElements.define(iconData$2.iconLabel, PiIconToggleOn);
+
+if(!customElements.get(iconData$2.iconLabel)) { customElements.define(iconData$2.iconLabel, PiIconToggleOn); }
 
 const iconData$1 = {
     iconLabel: 'pi-icon-user-rounded-dark',
@@ -1382,7 +1417,8 @@ class PiIconUserRoundedDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData$1.iconLabel, PiIconUserRoundedDark);
+
+if(!customElements.get(iconData$1.iconLabel)) { customElements.define(iconData$1.iconLabel, PiIconUserRoundedDark); }
 
 const iconData = {
     iconLabel: 'pi-icon-user-rounded-light',
@@ -1418,7 +1454,8 @@ class PiIconUserRoundedLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconUserRoundedLight);
+
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconUserRoundedLight); }
 
 const commonCss = ".raised {\r\n    box-shadow: var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa);\r\n}\r\n\r\n.rounded {\r\n    border-radius: var(--pi-rounded-border-radius, 2rem);\r\n}";
 
@@ -1730,7 +1767,8 @@ class PiBadge extends LitElement {
     ]
     
 }
-customElements.define('pi-badge', PiBadge);
+
+if(!customElements.get('pi-badge')) { customElements.define('pi-badge', PiBadge); }
 
 // commonCss = css`${unsafeCSS(commonCss)}`;
 
@@ -1972,7 +2010,8 @@ class PiBaseFormElement extends LitElement {
     ]
     
 }
-customElements.define('pi-base-form-element', PiBaseFormElement);
+
+if(!customElements.get('pi-base-form-element')) { customElements.define('pi-base-form-element', PiBaseFormElement); }
 
 class PiLabel extends LitElement {
 
@@ -2021,7 +2060,8 @@ class PiLabel extends LitElement {
     ]
     
 }
-customElements.define('pi-label', PiLabel);
+
+if(!customElements.get('pi-label')) { customElements.define('pi-label', PiLabel); }
 
 const defaultCss = css`
 
@@ -2127,7 +2167,8 @@ class PiTextInput extends PiBaseFormElement {
         `
     ]
 }
-customElements.define('pi-text-input', PiTextInput);
+
+if(!customElements.get('pi-text-input')) { customElements.define('pi-text-input', PiTextInput); }
 
 class PiSelectInput extends PiBaseFormElement {
 
@@ -2286,7 +2327,8 @@ class PiSelectInput extends PiBaseFormElement {
         `
     ]
 }
-customElements.define('pi-select-input', PiSelectInput);
+
+if(!customElements.get('pi-select-input')) { customElements.define('pi-select-input', PiSelectInput); }
 
 class PiCheckboxInput extends PiBaseFormElement {
 
@@ -2391,7 +2433,8 @@ class PiCheckboxInput extends PiBaseFormElement {
     ]
     
 }
-customElements.define('pi-checkbox-input', PiCheckboxInput);
+
+if(!customElements.get('pi-checkbox-input')) { customElements.define('pi-checkbox-input', PiCheckboxInput); }
 
 class PiRadioInput extends PiBaseFormElement {
 
@@ -2547,7 +2590,8 @@ class PiRadioInput extends PiBaseFormElement {
         `
     ]
 }
-customElements.define('pi-radio-input', PiRadioInput);
+
+if(!customElements.get('pi-radio-input')) { customElements.define('pi-radio-input', PiRadioInput); }
 
 class PiToggleSwitch extends PiBaseFormElement {
 
@@ -2653,7 +2697,8 @@ class PiToggleSwitch extends PiBaseFormElement {
         `
     ]
 }
-customElements.define('pi-toggle-switch', PiToggleSwitch);
+
+if(!customElements.get('pi-toggle-switch')) { customElements.define('pi-toggle-switch', PiToggleSwitch); }
 
 class PiTextAreaInput extends PiBaseFormElement {
 
@@ -2734,7 +2779,8 @@ class PiTextAreaInput extends PiBaseFormElement {
     ]
     
 }
-customElements.define('pi-text-area-input', PiTextAreaInput);
+
+if(!customElements.get('pi-text-area-input')) { customElements.define('pi-text-area-input', PiTextAreaInput); }
 
 /*
 
@@ -2881,7 +2927,8 @@ class PiCard extends LitElement {
         `
     ]
 }
-customElements.define('pi-card', PiCard);
+
+if(!customElements.get('pi-card')) { customElements.define('pi-card', PiCard); }
 
 export { PiButton, PiCard, PiCheckboxInput, PiIconAlertTriangleDark, PiIconAlertTriangleLight, PiIconAreaChartStand, PiIconAvatarGenericLight, PiIconBase, PiIconChainLink, PiIconCloseSquareDark, PiIconEditImage, PiIconEditPageFilled, PiIconEditVideo, PiIconGearSolid, PiIconHandler, PiIconInfoChatBubbleDark, PiIconInfoChatBubbleLight, PiIconInfoFilled, PiIconInfoLight, PiIconInfoRoundedDark, PiIconInfoRoundedLight, PiIconInfoSimpleDark, PiIconInfoSimpleLight, PiIconLeftArrowCircled, PiIconLogout, PiIconMagnifyText, PiIconNotificationBoxDark, PiIconNotificationBoxLight, PiIconPaperAirplaneSolid, PiIconSlackLogoSlanted, PiIconStopExDark, PiIconStopExLight, PiIconThumbsDownDark, PiIconThumbsDownLight, PiIconThumbsUpDark, PiIconThumbsUpLight, PiIconToggleOff, PiIconToggleOn, PiIconUserRoundedDark, PiIconUserRoundedLight, PiRadioInput, PiSelectInput, PiTextAreaInput, PiTextInput, PiToggleSwitch };
 //# sourceMappingURL=pi_components.js.map
