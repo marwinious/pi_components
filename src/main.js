@@ -20,6 +20,13 @@ if (import.meta.env.MODE === 'development') {
 // import { ComponentsPreview } from "./components/samples/componentsPreview";
 
 export * from './components/icons/index'
+export * from './components/labels/index'
+export * from './components/badges/index'
 export * from './components/buttons/index'
 export * from './components/inputs/index'
 export * from './components/cards/index'
+export * from './components/forms/index'
+export * from './components/grid/index'
+export * from './components/paginators/index'
+export * from './components/tables/index'
+export * from './components/tabs/index'
