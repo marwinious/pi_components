@@ -36,5 +36,5 @@ export class PiIconAvatarGenericLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconAvatarGenericLight);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconAvatarGenericLight); }

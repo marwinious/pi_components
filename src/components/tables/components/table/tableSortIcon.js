@@ -37,4 +37,5 @@ export class PiTableSortIcon extends LitElement {
     ]
     
 }
-customElements.define('pi-table-sort-icon', PiTableSortIcon);
+
+if(!customElements.get('pi-table-sort-icon')) { customElements.define('pi-table-sort-icon', PiTableSortIcon); }

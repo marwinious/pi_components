@@ -34,5 +34,5 @@ export class PiIconMagnifyText extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconMagnifyText);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMagnifyText); }

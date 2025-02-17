@@ -35,4 +35,5 @@ export class PiTableTfoot extends LitElement {
     ]
     
 }
-customElements.define('pi-table-tfoot', PiTableTfoot);
+
+if(!customElements.get('pi-table-tfoot')) { customElements.define('pi-table-tfoot', PiTableTfoot); }

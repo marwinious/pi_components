@@ -36,4 +36,5 @@ export class PiTab extends LitElement {
     `;
 
 }
-customElements.define('pi-tab', PiTab);
+
+if(!customElements.get('pi-tab')) { customElements.define('pi-tab', PiTab); }

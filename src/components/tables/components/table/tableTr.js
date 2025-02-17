@@ -27,4 +27,5 @@ export class PiTableTr extends LitElement {
     ]
     
 }
-customElements.define('pi-table-tr', PiTableTr);
+
+if(!customElements.get('pi-table-tr')) { customElements.define('pi-table-tr', PiTableTr); }

@@ -107,4 +107,5 @@ export class PiToggleSwitch extends PiBaseFormElement {
         `
     ]
 }
-customElements.define('pi-toggle-switch', PiToggleSwitch);
+
+if(!customElements.get('pi-toggle-switch')) { customElements.define('pi-toggle-switch', PiToggleSwitch); }

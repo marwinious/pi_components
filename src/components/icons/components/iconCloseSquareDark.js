@@ -39,5 +39,5 @@ export class PiIconCloseSquareDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconCloseSquareDark);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCloseSquareDark); }

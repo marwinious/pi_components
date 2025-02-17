@@ -73,4 +73,5 @@ export class PiIconBase extends LitElement {
         `
     ]
 }
-customElements.define('pi-icon-base', PiIconBase);
+
+if(!customElements.get('pi-icon-base')) { customElements.define('pi-icon-base', PiIconBase); }

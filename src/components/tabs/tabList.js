@@ -100,4 +100,5 @@ export class PiTabList extends LitElement {
     ]
     
 }
-customElements.define('pi-tab-list', PiTabList);
+
+if(!customElements.get('pi-tab-list')) { customElements.define('pi-tab-list', PiTabList); }

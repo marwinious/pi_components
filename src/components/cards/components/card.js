@@ -145,4 +145,5 @@ export class PiCard extends LitElement {
         `
     ]
 }
-customElements.define('pi-card', PiCard);
+
+if(!customElements.get('pi-card')) { customElements.define('pi-card', PiCard); }

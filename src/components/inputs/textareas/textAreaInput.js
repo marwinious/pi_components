@@ -82,4 +82,5 @@ export class PiTextAreaInput extends PiBaseFormElement {
     ]
     
 }
-customElements.define('pi-text-area-input', PiTextAreaInput);
+
+if(!customElements.get('pi-text-area-input')) { customElements.define('pi-text-area-input', PiTextAreaInput); }

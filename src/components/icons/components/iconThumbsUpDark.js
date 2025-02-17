@@ -34,5 +34,5 @@ export class PiIconThumbsUpDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconThumbsUpDark);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconThumbsUpDark); }

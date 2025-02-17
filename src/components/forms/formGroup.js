@@ -27,4 +27,5 @@ export class PiFormGroup extends LitElement {
     ]
     
 }
-customElements.define('pi-form-group', PiFormGroup);
+
+if(!customElements.get('pi-form-group')) { customElements.define('pi-form-group', PiFormGroup); }

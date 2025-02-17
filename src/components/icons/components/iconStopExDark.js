@@ -34,5 +34,5 @@ export class PiIconStopExDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconStopExDark);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconStopExDark); }
