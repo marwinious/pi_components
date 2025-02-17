@@ -2,6 +2,13 @@ import { Canvas, Meta, Story, Markdown } from '@storybook/addon-docs';
 import initialButtonProperties from './css/initialButtonProperties.json'
 import severityDefault from './css/severityDefault.json'
 import severityPrimary from './css/severityPrimary.json'
+import severitySecondary from './css/severitySecondary.json'
+import severitySuccess from './css/severitySuccess.json'
+import severityInfo from './css/severityInfo.json'
+import severityWarn from './css/severityWarn.json'
+import severityHelp from './css/severityHelp.json'
+import severityDanger from './css/severityDanger.json'
+import disabled from './css/disabled.json'
 
 import * as PiButtonStories from './button.stories.js'
 
@@ -29,11 +36,74 @@ ${initialButtonProperties.map((item) => `| \`${item.property}\` | \`${item.value
 `}
 </Markdown>
 
+### "Disabled"
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${disabled.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
 ### "Primary" Severity
 <Markdown>
 {`
 | Property | Default |
 | -------- | ------- |
 ${severityPrimary.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Secondary" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severitySecondary.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Success" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severitySuccess.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Info" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severityInfo.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Warn" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severityWarn.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Help" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severityHelp.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Danger" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severityDanger.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
 `}
 </Markdown>

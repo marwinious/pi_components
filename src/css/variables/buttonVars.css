@@ -120,8 +120,4 @@
     --pi-button-active-bg-color-disabled: #FFF;
     --pi-button-active-text-color-disabled: #bbb;
     --pi-button-active-border-color-disabled: #bbb;
-    
-    --pi-button-disabled-bg-color: #bbb;
-    --pi-button-disabled-border-color: #bbb;
-    --pi-button-disabled-text-color: #fff;
 }

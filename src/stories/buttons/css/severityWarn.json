@@ -1,0 +1,9 @@
+[{"property":"--pi-button-bg-color-warn","value":"#d28809"},
+{"property":"--pi-button-border-warn","value":"solid 1px #d28809"},
+{"property":"--pi-button-text-color-warn","value":"#FFF"},
+{"property":"--pi-button-hover-bg-color-warn","value":"color-mix(in srgb, var(--pi-button-bg-color-warn) 70%, black)"},
+{"property":"--pi-button-hover-text-color-warn","value":"#FFF"},
+{"property":"--pi-button-hover-border-color-warn","value":"#d28809"},
+{"property":"--pi-button-active-bg-color-warn","value":"#FFF"},
+{"property":"--pi-button-active-text-color-warn","value":"#d28809"},
+{"property":"--pi-button-active-border-color-warn","value":"#d28809"}]

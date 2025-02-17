@@ -1,0 +1,9 @@
+[{"property":"--pi-button-bg-color-disabled","value":"#bbb"},
+{"property":"--pi-button-border-disabled","value":"solid 1px #bbb"},
+{"property":"--pi-button-text-color-disabled","value":"#FFF"},
+{"property":"--pi-button-hover-bg-color-disabled","value":"#bbb"},
+{"property":"--pi-button-hover-text-color-disabled","value":"#FFF"},
+{"property":"--pi-button-hover-border-color-disabled","value":"#bbb"},
+{"property":"--pi-button-active-bg-color-disabled","value":"#FFF"},
+{"property":"--pi-button-active-text-color-disabled","value":"#bbb"},
+{"property":"--pi-button-active-border-color-disabled","value":"#bbb"}]
