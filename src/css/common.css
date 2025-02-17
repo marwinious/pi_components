@@ -5,3 +5,7 @@
 .rounded {
     border-radius: var(--pi-rounded-border-radius, 2rem);
 }
+
+.squared {
+    border-radius: var(--pi-squared-border-radius, 0rem);
+}

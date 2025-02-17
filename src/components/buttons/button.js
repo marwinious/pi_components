@@ -19,6 +19,7 @@ export class PiButton extends LitElement {
             severity: { type: String },
             raised: { type: Boolean },
             rounded: { type: Boolean },
+            squared: { type: Boolean },
             variant: { type: String },
             badge: { type: [Number, String] },
             type: { type: String }
@@ -32,6 +33,7 @@ export class PiButton extends LitElement {
         this.severity = '';
         this.raised = false;
         this.rounded = false;
+        this.squared = false;
         this.variant = false;
         this.badge = null;
         this.type = 'button';
@@ -46,6 +48,7 @@ export class PiButton extends LitElement {
             [`btn_variant_${this.variant}`]: true,
             'raised': this.raised === true,
             'rounded': this.rounded === true,
+            'squared': this.squared === true,
         }
 
         return html`
@@ -120,15 +123,15 @@ export class PiButton extends LitElement {
                 color: var(--pi-button-text-color, #FFF);
 
                 &:hover {
-                    background: var(--pi-button-hover-bg-color, #0a486a);
-                    border-color: var(--pi-button-hover-border-color, #0a486a);
+                    background: var(--pi-button-hover-bg-color, #666);
+                    border-color: var(--pi-button-hover-border-color, #666);
                     color: var(--pi-button-hover-text-color, #FFF);
                 }
 
                 &:active {
                     background: var(--pi-button-active-bg-color, #FFF);
-                    color: var(--pi-button-active-text-color, #0a486a);
-                    border-color: var(--pi-button-active-border-color, #0a486a);
+                    color: var(--pi-button-active-text-color, #000);
+                    border-color: var(--pi-button-active-border-color, #000);
                 }
 
                 &:disabled, &[disabled] {
