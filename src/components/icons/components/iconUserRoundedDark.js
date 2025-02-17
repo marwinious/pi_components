@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-user-rounded-dark',
-    className: 'IconUserRoundedDark'
+    iconLabel: 'pi-icon-user-rounded-dark',
+    className: 'PiIconUserRoundedDark'
 }
 
-export class IconUserRoundedDark extends LitElement {
+export class PiIconUserRoundedDark extends LitElement {
 
     static get properties() {
         return {
@@ -22,9 +22,9 @@ export class IconUserRoundedDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -34,5 +34,5 @@ export class IconUserRoundedDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconUserRoundedDark);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconUserRoundedDark); }

@@ -66,4 +66,5 @@ export class PiTableTbody extends LitElement {
     ]
     
 }
-customElements.define('pi-table-tbody', PiTableTbody);
+
+if(!customElements.get('pi-table-tbody')) { customElements.define('pi-table-tbody', PiTableTbody); }

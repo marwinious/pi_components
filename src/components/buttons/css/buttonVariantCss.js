@@ -55,10 +55,12 @@ export default css`
     /**
     OUTLINED VARIANT
      */
-    .btn_variant_outlined{
+    .btn_variant_outlined {
         --pi-button-bg-color: transparent;
-        --pi-button-hover-bg-color: #eee;
         --pi-button-text-color: var(--pi-button-bg-color-default);
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-default-outlined);
+        --pi-button-hover-bg-color: #eee;
+        
     }
 
     .btn_variant_outlined.btn_severity_primary {

@@ -97,6 +97,7 @@ export class PiCard extends LitElement {
                 box-shadow: var(--pi-card-box-shadow, 1px 1px 1px #ddd);
                 overflow: hidden;
                 margin: var(--pi-card-margin, 0.5rem 0);
+                background: var(--pi-card-background, #FFF);
             }
 
             slot {
@@ -127,6 +128,7 @@ export class PiCard extends LitElement {
             .sub_title {
                 padding: var(--pi-card-sub-title-padding, 0.25rem 1rem 0rem 1rem);
                 color: var(--pi-card-sub-title-color, #777);
+                font-size: var(--pi-card-sub-title-font-size, 1rem);
             }
 
             .content {
@@ -143,4 +145,5 @@ export class PiCard extends LitElement {
         `
     ]
 }
-customElements.define('pi-card', PiCard);
+
+if(!customElements.get('pi-card')) { customElements.define('pi-card', PiCard); }

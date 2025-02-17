@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-slack-logo-slanted',
-    className: 'IconSlackLogoSlanted'
+    iconLabel: 'pi-icon-slack-logo-slanted',
+    className: 'PiIconSlackLogoSlanted'
 }
 
-export class IconSlackLogoSlanted extends LitElement {
+export class PiIconSlackLogoSlanted extends LitElement {
 
     static get properties() {
         return {
@@ -22,11 +22,11 @@ export class IconSlackLogoSlanted extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -36,5 +36,5 @@ export class IconSlackLogoSlanted extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconSlackLogoSlanted);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconSlackLogoSlanted); }

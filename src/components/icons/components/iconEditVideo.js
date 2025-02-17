@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-edit-video',
-    className: 'IconEditVideo'
+    iconLabel: 'pi-icon-edit-video',
+    className: 'PiIconEditVideo'
 }
 
-export class IconEditVideo extends LitElement {
+export class PiIconEditVideo extends LitElement {
 
     static get properties() {
         return {
@@ -22,9 +22,9 @@ export class IconEditVideo extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -34,5 +34,5 @@ export class IconEditVideo extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconEditVideo);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconEditVideo); }

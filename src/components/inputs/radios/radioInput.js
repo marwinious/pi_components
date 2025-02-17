@@ -157,4 +157,5 @@ export class PiRadioInput extends PiBaseFormElement {
         `
     ]
 }
-customElements.define('pi-radio-input', PiRadioInput);
+
+if(!customElements.get('pi-radio-input')) { customElements.define('pi-radio-input', PiRadioInput); }

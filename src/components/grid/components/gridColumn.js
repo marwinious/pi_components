@@ -39,4 +39,5 @@ export class PiGridColumn extends LitElement {
     ]
     
 }
-customElements.define('pi-col', PiGridColumn);
+
+if(!customElements.get('pi-col')) { customElements.define('pi-col', PiGridColumn); }

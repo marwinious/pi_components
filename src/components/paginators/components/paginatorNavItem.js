@@ -48,4 +48,5 @@ export class PiPaginatorNavItem extends LitElement {
     ]
     
 }
-customElements.define('pi-paginator-nav-item', PiPaginatorNavItem);
+
+if(!customElements.get('pi-paginator-nav-item')) { customElements.define('pi-paginator-nav-item', PiPaginatorNavItem); }

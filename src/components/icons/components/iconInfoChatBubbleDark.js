@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-info-chat-bubble-dark',
-    className: 'IconInfoChatBubbleDark'
+    iconLabel: 'pi-icon-info-chat-bubble-dark',
+    className: 'PiIconInfoChatBubbleDark'
 }
 
-export class IconInfoChatBubbleDark extends LitElement {
+export class PiIconInfoChatBubbleDark extends LitElement {
 
     static get properties() {
         return {
@@ -22,9 +22,9 @@ export class IconInfoChatBubbleDark extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -34,5 +34,5 @@ export class IconInfoChatBubbleDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconInfoChatBubbleDark);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconInfoChatBubbleDark); }

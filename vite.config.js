@@ -23,7 +23,7 @@ export default defineConfig({
         },
         sourcemap: true,
         target: 'esnext',
-        minify: false,
+        minify: true,
         // minify: terser, // Enable minification using Terser (default minifier)
         rollupOptions: {
             external: [

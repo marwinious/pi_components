@@ -175,4 +175,5 @@ export class PiPaginator extends LitElement {
     ]
     
 }
-customElements.define('pi-paginator', PiPaginator);
+
+if(!customElements.get('pi-paginator')) { customElements.define('pi-paginator', PiPaginator); }

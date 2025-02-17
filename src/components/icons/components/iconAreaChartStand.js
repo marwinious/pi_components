@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-area-chart-stand',
-    className: 'IconAreaChartStand'
+    iconLabel: 'pi-icon-area-chart-stand',
+    className: 'PiIconAreaChartStand'
 }
 
-export class IconAreaChartStand extends LitElement {
+export class PiIconAreaChartStand extends LitElement {
 
     static get properties() {
         return {
@@ -22,7 +22,7 @@ export class IconAreaChartStand extends LitElement {
 
     render() {
         return html`
-            <icon-base pathData=${this.pathData}></icon-base>
+            <pi-icon-base pathData=${this.pathData}></pi-icon-base>
         `;
     }
 
@@ -32,5 +32,5 @@ export class IconAreaChartStand extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconAreaChartStand);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconAreaChartStand); }

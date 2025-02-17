@@ -123,4 +123,5 @@ export class PiTableColumn extends LitElement {
     ]
     
 }
-customElements.define('pi-table-column', PiTableColumn);
+
+if(!customElements.get('pi-table-column')) { customElements.define('pi-table-column', PiTableColumn); }

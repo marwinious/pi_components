@@ -84,4 +84,5 @@ export class PiTablePaginator extends LitElement {
     ]
     
 }
-customElements.define('pi-table-paginator', PiTablePaginator);
+
+if(!customElements.get('pi-table-paginator')) { customElements.define('pi-table-paginator', PiTablePaginator); }

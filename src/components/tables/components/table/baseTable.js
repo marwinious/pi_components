@@ -6,28 +6,6 @@ import { PiTableTbody } from './tableTbody';
 import { PiTableTd } from './tableTd';
 import { PiTableTfoot } from './tableTfoot';
 
-/*
-<table>
-                <pi-table-thead>
-                    <pi-table-tr>
-                        ${this.columns.map((col) => html`
-                            <pi-table-th>${col.label}</pi-table-th>
-                        `)}
-                    </pi-table-tr>
-                </pi-table-thead>
-                <pi-table-tbody>
-                    ${this.rows.map((row) => html`
-                        <pi-table-tr>
-                            ${this.columns.map((col) => html`
-                                <pi-table-td>${row[col.key]}</pi-table-td>
-                            `)}
-                        </pi-table-tr>
-                    `)}
-                </pi-table-tbody>
-                <pi-table-tfoot></pi-table-tfoot>
-            </table>
-*/
-
 export class PiBaseTable extends LitElement {
 
     static get properties() {
@@ -63,4 +41,5 @@ export class PiBaseTable extends LitElement {
     ]
     
 }
-customElements.define('pi-base-table', PiBaseTable);
+
+if(!customElements.get('pi-base-table')) { customElements.define('pi-base-table', PiBaseTable); }

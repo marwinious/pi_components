@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-left-arrow-circled',
-    className: 'IconLeftArrowCircled'
+    iconLabel: 'pi-icon-left-arrow-circled',
+    className: 'PiIconLeftArrowCircled'
 }
 
-export class IconLeftArrowCircled extends LitElement {
+export class PiIconLeftArrowCircled extends LitElement {
 
     static get properties() {
         return {
@@ -22,14 +22,14 @@ export class IconLeftArrowCircled extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
             strokeLineJoin="round"
             pathFillRule="nonzero"
             strokeMiterLimit=2
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -39,5 +39,5 @@ export class IconLeftArrowCircled extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconLeftArrowCircled);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconLeftArrowCircled); }

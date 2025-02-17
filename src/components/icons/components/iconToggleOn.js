@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-toggle-on',
-    className: 'IconToggleOn'
+    iconLabel: 'pi-icon-toggle-on',
+    className: 'PiIconToggleOn'
 }
 
-export class IconToggleOn extends LitElement {
+export class PiIconToggleOn extends LitElement {
 
     static get properties() {
         return {
@@ -22,11 +22,11 @@ export class IconToggleOn extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
             fillRule="evenodd"
             clipRule="evenodd"
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -36,5 +36,5 @@ export class IconToggleOn extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconToggleOn);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconToggleOn); }

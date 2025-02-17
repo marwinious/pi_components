@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-info-chat-bubble-light',
-    className: 'IconInfoChatBubbleLight'
+    iconLabel: 'pi-icon-info-chat-bubble-light',
+    className: 'PiIconInfoChatBubbleLight'
 }
 
-export class IconInfoChatBubbleLight extends LitElement {
+export class PiIconInfoChatBubbleLight extends LitElement {
 
     static get properties() {
         return {
@@ -22,9 +22,9 @@ export class IconInfoChatBubbleLight extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -34,5 +34,5 @@ export class IconInfoChatBubbleLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconInfoChatBubbleLight);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconInfoChatBubbleLight); }

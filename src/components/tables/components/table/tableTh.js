@@ -92,4 +92,5 @@ export class PiTableTh extends LitElement {
     ]
     
 }
-customElements.define('pi-table-th', PiTableTh);
+
+if(!customElements.get('pi-table-th')) { customElements.define('pi-table-th', PiTableTh); }

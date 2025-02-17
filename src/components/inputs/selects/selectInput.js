@@ -160,4 +160,5 @@ export class PiSelectInput extends PiBaseFormElement {
         `
     ]
 }
-customElements.define('pi-select-input', PiSelectInput);
+
+if(!customElements.get('pi-select-input')) { customElements.define('pi-select-input', PiSelectInput); }

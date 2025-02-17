@@ -62,4 +62,5 @@ export class PiTableThead extends LitElement {
     ]
     
 }
-customElements.define('pi-table-thead', PiTableThead);
+
+if(!customElements.get('pi-table-thead')) { customElements.define('pi-table-thead', PiTableThead); }

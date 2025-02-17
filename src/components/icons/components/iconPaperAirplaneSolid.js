@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 
 const iconData = {
-    iconLabel: 'icon-paper-airplane-solid',
-    className: 'IconPaperAirplaneSolid'
+    iconLabel: 'pi-icon-paper-airplane-solid',
+    className: 'PiIconPaperAirplaneSolid'
 }
 
-export class IconPaperAirplaneSolid extends LitElement {
+export class PiIconPaperAirplaneSolid extends LitElement {
 
     static get properties() {
         return {
@@ -22,9 +22,9 @@ export class IconPaperAirplaneSolid extends LitElement {
 
     render() {
         return html`
-            <icon-base 
+            <pi-icon-base 
             pathData=${this.pathData}
-            ></icon-base>
+            ></pi-icon-base>
         `;
     }
 
@@ -34,5 +34,5 @@ export class IconPaperAirplaneSolid extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, IconPaperAirplaneSolid);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconPaperAirplaneSolid); }
