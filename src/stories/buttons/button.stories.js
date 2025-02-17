@@ -52,6 +52,14 @@ export default {
                 defaultValue: { summary: 'false'}
             }
         },
+        squared: { 
+            control: 'boolean',
+            description: 'Squares the corners of the button',
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: 'false'}
+            }
+        },
         badge: { 
             control: {
                 type: 'number',
@@ -88,12 +96,13 @@ export default {
     } */
 }
 
-const Template = ({ slotContent, variant, severity, raised, rounded, badge, icon, disabled }) => html`
+const Template = ({ slotContent, variant, severity, raised, rounded, squared, badge, icon, disabled }) => html`
     <pi-button 
     variant="${variant}" 
     severity="${severity}" 
     ?raised=${raised}
     ?rounded=${rounded}
+    ?squared=${squared}
     ?disabled=${disabled}
     badge=${ifDefined(badge > 0 ? badge : undefined)}
     icon=${ifDefined(icon != '' ? icon : undefined)}
@@ -115,6 +124,12 @@ export const Rounded = Template.bind();
 Rounded.args = {
     slotContent: 'Rounded',
     rounded: true
+}
+
+export const Squared = Template.bind();
+Squared.args = {
+    slotContent: 'Squared',
+    squared: true
 }
 
 export const Outlined = Template.bind();
