@@ -1,0 +1,22 @@
+[
+    {"property":"--pi-button-padding","value":"7px 12px"},
+    {"property":"--pi-button-border-radius","value":"5px"},
+    {"property":"--pi-button-font-weight","value":"bold"},
+    {"property":"--pi-button-font-size","value":"16px"},
+    {"property":"--pi-button-cursor","value":"pointer"},
+    {"property":"--pi-button-bg-color","value":"#333"},
+    {"property":"--pi-button-border","value":"solid 1px #333"},
+    {"property":"--pi-button-text-color","value":"var(--pi-button-text-color-default)"},
+    {"property":"--pi-button-hover-bg-color","value":"var(--pi-button-hover-bg-color-default)"},
+    {"property":"--pi-button-hover-border-color","value":"var(--pi-button-hover-border-color-default)"},
+    {"property":"--pi-button-hover-text-color","value":"var(--pi-button-hover-text-color-default)"},
+    {"property":"--pi-button-active-bg-color","value":"var(--pi-button-active-bg-color-default)"},
+    {"property":"--pi-button-active-text-color","value":"var(--pi-button-active-text-color-default)"},
+    {"property":"--pi-button-active-border-color","value":"var(--pi-button-active-border-color-default)"},
+    {"property":"--pi-button-disabled-bg-color","value":"#bbb"},
+    {"property":"--pi-button-disabled-border-color","value":"#bbb"},
+    {"property":"--pi-button-disabled-text-color","value":"#fff"},
+    {"property":"--pi-button-icon-height","value":"15px"},
+    {"property":"--pi-button-icon-fill-color","value":"#FFF"},
+    {"property":"--pi-button-icon-width","value":"15px"}
+]
