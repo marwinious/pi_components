@@ -1,6 +1,7 @@
 :root {
     --pi-raised-box-shadow: 0px 1px 2px 1px #aaa;
     --pi-rounded-border-radius: 2rem;
+    --pi-squared-border-radius: 0rem;
     --pi-font-family: Arial, Helvetica, sans-serif;
     --pi-text-color: #333;
     --pi-font-size: 1rem;
@@ -166,10 +167,33 @@
     --pi-button-text-color-default: #FFF;
     --pi-button-hover-bg-color-default: #666;
     --pi-button-hover-text-color-default: #FFF;
+    --pi-button-hover-text-color-default-outlined: #383838;
     --pi-button-hover-border-color-default: #666;
     --pi-button-active-bg-color-default: #FFF;
     --pi-button-active-text-color-default: #000;
     --pi-button-active-border-color-default: #000;
+
+    /* Set Defaults as initial values */
+    --pi-button-padding: 7px 12px;
+    --pi-button-border-radius: 5px;
+    --pi-button-font-weight: bold;
+    --pi-button-font-size: 16px;
+    --pi-button-cursor: pointer;
+    --pi-button-bg-color: #333;
+    --pi-button-border: solid 1px #333;
+    --pi-button-text-color: var(--pi-button-text-color-default);
+    --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-default);
+    --pi-button-hover-border-color: var(--pi-button-hover-border-color-default);
+    --pi-button-hover-text-color: var(--pi-button-hover-text-color-default);
+    --pi-button-active-bg-color: var(--pi-button-active-bg-color-default);
+    --pi-button-active-text-color: var(--pi-button-active-text-color-default);
+    --pi-button-active-border-color: var(--pi-button-active-border-color-default);
+    --pi-button-disabled-bg-color: #bbb;
+    --pi-button-disabled-border-color: #bbb;
+    --pi-button-disabled-text-color: #fff;
+    --pi-button-icon-height: 15px;
+    --pi-button-icon-fill-color: #FFF;
+    --pi-button-icon-width: 15px;
 
     /* Primary Severity */
     --pi-button-bg-color-primary: #117ab4;
@@ -457,4 +481,7 @@
 }
 .rounded {
     border-radius: var(--pi-rounded-border-radius, 2rem);
+}
+.squared {
+    border-radius: var(--pi-squared-border-radius, 0rem);
 }

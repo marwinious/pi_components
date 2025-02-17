@@ -1457,7 +1457,7 @@ class PiIconUserRoundedLight extends LitElement {
 
 if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconUserRoundedLight); }
 
-const commonCss = ".raised {\r\n    box-shadow: var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa);\r\n}\r\n\r\n.rounded {\r\n    border-radius: var(--pi-rounded-border-radius, 2rem);\r\n}";
+const commonCss = ".raised {\r\n    box-shadow: var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa);\r\n}\r\n\r\n.rounded {\r\n    border-radius: var(--pi-rounded-border-radius, 2rem);\r\n}\r\n\r\n.squared {\r\n    border-radius: var(--pi-squared-border-radius, 0rem);\r\n}";
 
 const severities = [
     'primary',
@@ -1545,10 +1545,12 @@ const variantCss = css`
     /**
     OUTLINED VARIANT
      */
-    .btn_variant_outlined{
+    .btn_variant_outlined {
         --pi-button-bg-color: transparent;
-        --pi-button-hover-bg-color: #eee;
         --pi-button-text-color: var(--pi-button-bg-color-default);
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-default-outlined);
+        --pi-button-hover-bg-color: #eee;
+        
     }
 
     .btn_variant_outlined.btn_severity_primary {
@@ -1781,6 +1783,7 @@ class PiButton extends LitElement {
             severity: { type: String },
             raised: { type: Boolean },
             rounded: { type: Boolean },
+            squared: { type: Boolean },
             variant: { type: String },
             badge: { type: [Number, String] },
             type: { type: String }
@@ -1794,6 +1797,7 @@ class PiButton extends LitElement {
         this.severity = '';
         this.raised = false;
         this.rounded = false;
+        this.squared = false;
         this.variant = false;
         this.badge = null;
         this.type = 'button';
@@ -1808,6 +1812,7 @@ class PiButton extends LitElement {
             [`btn_variant_${this.variant}`]: true,
             'raised': this.raised === true,
             'rounded': this.rounded === true,
+            'squared': this.squared === true,
         };
 
         return html`
@@ -1882,15 +1887,15 @@ class PiButton extends LitElement {
                 color: var(--pi-button-text-color, #FFF);
 
                 &:hover {
-                    background: var(--pi-button-hover-bg-color, #0a486a);
-                    border-color: var(--pi-button-hover-border-color, #0a486a);
+                    background: var(--pi-button-hover-bg-color, #666);
+                    border-color: var(--pi-button-hover-border-color, #666);
                     color: var(--pi-button-hover-text-color, #FFF);
                 }
 
                 &:active {
                     background: var(--pi-button-active-bg-color, #FFF);
-                    color: var(--pi-button-active-text-color, #0a486a);
-                    border-color: var(--pi-button-active-border-color, #0a486a);
+                    color: var(--pi-button-active-text-color, #000);
+                    border-color: var(--pi-button-active-border-color, #000);
                 }
 
                 &:disabled, &[disabled] {
