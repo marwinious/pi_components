@@ -34,5 +34,5 @@ export class PiIconEditImage extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconEditImage);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconEditImage); }

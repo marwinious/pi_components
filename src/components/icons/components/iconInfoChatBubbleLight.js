@@ -34,5 +34,5 @@ export class PiIconInfoChatBubbleLight extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconInfoChatBubbleLight);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconInfoChatBubbleLight); }

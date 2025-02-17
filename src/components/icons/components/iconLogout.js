@@ -34,5 +34,5 @@ export class PiIconLogout extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconLogout);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconLogout); }

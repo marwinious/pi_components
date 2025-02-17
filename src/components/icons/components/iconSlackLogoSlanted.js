@@ -36,5 +36,5 @@ export class PiIconSlackLogoSlanted extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconSlackLogoSlanted);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconSlackLogoSlanted); }

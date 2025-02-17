@@ -34,5 +34,5 @@ export class PiIconUserRoundedDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconUserRoundedDark);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconUserRoundedDark); }

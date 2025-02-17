@@ -39,5 +39,5 @@ export class PiIconInfoSimpleDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconInfoSimpleDark);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconInfoSimpleDark); }

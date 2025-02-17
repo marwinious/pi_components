@@ -34,5 +34,5 @@ export class PiIconAlertTriangleDark extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconAlertTriangleDark);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconAlertTriangleDark); }

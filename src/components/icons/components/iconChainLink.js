@@ -32,5 +32,5 @@ export class PiIconChainLink extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconChainLink);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconChainLink); }

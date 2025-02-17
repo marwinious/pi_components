@@ -34,5 +34,5 @@ export class PiIconPaperAirplaneSolid extends LitElement {
         `
     ]
 }
-customElements.define(iconData.iconLabel, PiIconPaperAirplaneSolid);
 
+if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconPaperAirplaneSolid); }
