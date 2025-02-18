@@ -10,7 +10,7 @@ import{x as q}from"./lit-element-qJpPW6A9.js";import{o as f}from"./if-defined-CT
     badge=${f(c>0?c:void 0)}
     icon=${f(b!=""?b:void 0)}
     >${$}</pi-button>
-`,n=e.bind();n.args={slotContent:"Button"};const t=e.bind();t.args={fullWidth:!0};const d=e.bind();d.args={slotContent:"Severity",severity:"primary"};const a=e.bind();a.args={slotContent:"Rounded",rounded:!0};const i=e.bind();i.args={slotContent:"Squared",squared:!0};const r=e.bind();r.args={slotContent:"Outlined",variant:"outlined"};const o=e.bind();o.args={slotContent:"Raised",raised:!0};const s=e.bind();s.args={slotContent:"Badge",badge:2};const u=e.bind();u.args={slotContent:"With Icon",icon:"gear-solid"};const l=e.bind();l.args={slotContent:"",variant:"iconOnly",icon:"gear-solid"};n.parameters={...n.parameters,docs:{...n.parameters?.docs,source:{originalSource:`({
+`,n=e.bind();n.args={slotContent:"Button"};const t=e.bind();t.args={slotContent:"Button",fullWidth:!0};const d=e.bind();d.args={slotContent:"Severity",severity:"primary"};const a=e.bind();a.args={slotContent:"Rounded",rounded:!0};const i=e.bind();i.args={slotContent:"Squared",squared:!0};const r=e.bind();r.args={slotContent:"Outlined",variant:"outlined"};const o=e.bind();o.args={slotContent:"Raised",raised:!0};const s=e.bind();s.args={slotContent:"Badge",badge:2};const u=e.bind();u.args={slotContent:"With Icon",icon:"gear-solid"};const l=e.bind();l.args={slotContent:"",variant:"iconOnly",icon:"gear-solid"};n.parameters={...n.parameters,docs:{...n.parameters?.docs,source:{originalSource:`({
   slotContent,
   variant,
   severity,
@@ -240,4 +240,4 @@ import{x as q}from"./lit-element-qJpPW6A9.js";import{o as f}from"./if-defined-CT
     badge=\${ifDefined(badge > 0 ? badge : undefined)}
     icon=\${ifDefined(icon != '' ? icon : undefined)}
     >\${slotContent}</pi-button>
-\``,...l.parameters?.docs?.source}}};const D=["Default","FullWidth","Severity","Rounded","Squared","Outlined","Raised","Badge","WithIcon","IconOnly"],R=Object.freeze(Object.defineProperty({__proto__:null,Badge:s,Default:n,FullWidth:t,IconOnly:l,Outlined:r,Raised:o,Rounded:a,Severity:d,Squared:i,WithIcon:u,__namedExportsOrder:D,default:C},Symbol.toStringTag,{value:"Module"}));export{R as P};
+\``,...l.parameters?.docs?.source}}};const D=["Default","FullWidth","Severity","Rounded","Squared","Outlined","Raised","Badge","WithIcon","IconOnly"],B=Object.freeze(Object.defineProperty({__proto__:null,Badge:s,Default:n,FullWidth:t,IconOnly:l,Outlined:r,Raised:o,Rounded:a,Severity:d,Squared:i,WithIcon:u,__namedExportsOrder:D,default:C},Symbol.toStringTag,{value:"Module"}));export{B as P};

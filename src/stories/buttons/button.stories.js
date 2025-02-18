@@ -125,6 +125,7 @@ Default.args = {
 
 export const FullWidth = Template.bind();
 FullWidth.args = {
+    slotContent: 'Button',
     fullWidth: true
 }
 
