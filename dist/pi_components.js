@@ -1,7 +1,7 @@
-import { LitElement as r, html as e, css as a, unsafeCSS as Q } from "lit";
-import { unsafeHTML as W } from "lit/directives/unsafe-html.js";
-import { classMap as b } from "lit/directives/class-map.js";
-class Y extends r {
+import { LitElement as s, html as e, css as a, unsafeCSS as W } from "lit";
+import { unsafeHTML as Q } from "lit/directives/unsafe-html.js";
+import { classMap as h } from "lit/directives/class-map.js";
+class Y extends s {
   static get properties() {
     return {
       viewBox: {
@@ -64,7 +64,7 @@ class Y extends r {
   ];
 }
 customElements.get("pi-icon-base") || customElements.define("pi-icon-base", Y);
-class Z extends r {
+class Z extends s {
   static get properties() {
     return {
       icon: {
@@ -77,7 +77,7 @@ class Z extends r {
   }
   render() {
     return e`
-            <div class="icon">${W("<pi-icon-" + this.icon + "></pi-icon-" + this.icon)}</div>
+            <div class="icon">${Q("<pi-icon-" + this.icon + "></pi-icon-" + this.icon)}</div>
         `;
   }
   static styles = [
@@ -103,10 +103,9 @@ class Z extends r {
 }
 customElements.get("pi-icon-handler") || customElements.define("pi-icon-handler", Z);
 const g = {
-  iconLabel: "pi-icon-left-arrow-circled",
-  className: "PiIconLeftArrowCircled"
+  iconLabel: "pi-icon-left-arrow-circled"
 };
-class tt extends r {
+class tt extends s {
   static get properties() {
     return {
       pathData: {
@@ -136,11 +135,10 @@ class tt extends r {
   ];
 }
 customElements.get(g.iconLabel) || customElements.define(g.iconLabel, tt);
-const m = {
-  iconLabel: "pi-icon-chain-link",
-  className: "PiIconChainLink"
+const v = {
+  iconLabel: "pi-icon-chain-link"
 };
-class et extends r {
+class et extends s {
   static get properties() {
     return {
       pathData: {
@@ -162,12 +160,11 @@ class et extends r {
         `
   ];
 }
-customElements.get(m.iconLabel) || customElements.define(m.iconLabel, et);
-const v = {
-  iconLabel: "pi-icon-alert-triangle-dark",
-  className: "PiIconAlertTriangleDark"
+customElements.get(v.iconLabel) || customElements.define(v.iconLabel, et);
+const m = {
+  iconLabel: "pi-icon-alert-triangle-dark"
 };
-class it extends r {
+class it extends s {
   static get properties() {
     return {
       pathData: {
@@ -191,12 +188,11 @@ class it extends r {
         `
   ];
 }
-customElements.get(v.iconLabel) || customElements.define(v.iconLabel, it);
+customElements.get(m.iconLabel) || customElements.define(m.iconLabel, it);
 const f = {
-  iconLabel: "pi-icon-alert-triangle-light",
-  className: "PiIconAlertTriangleLight"
+  iconLabel: "pi-icon-alert-triangle-light"
 };
-class ot extends r {
+class ot extends s {
   static get properties() {
     return {
       pathData: {
@@ -222,10 +218,9 @@ class ot extends r {
 }
 customElements.get(f.iconLabel) || customElements.define(f.iconLabel, ot);
 const y = {
-  iconLabel: "pi-icon-area-chart-stand",
-  className: "PiIconAreaChartStand"
+  iconLabel: "pi-icon-area-chart-stand"
 };
-class at extends r {
+class at extends s {
   static get properties() {
     return {
       pathData: {
@@ -249,10 +244,9 @@ class at extends r {
 }
 customElements.get(y.iconLabel) || customElements.define(y.iconLabel, at);
 const x = {
-  iconLabel: "pi-icon-avatar-generic-light",
-  className: "PiIconAvatarGenericLight"
+  iconLabel: "pi-icon-avatar-generic-light"
 };
-class st extends r {
+class rt extends s {
   static get properties() {
     return {
       pathData: {
@@ -278,12 +272,11 @@ class st extends r {
         `
   ];
 }
-customElements.get(x.iconLabel) || customElements.define(x.iconLabel, st);
+customElements.get(x.iconLabel) || customElements.define(x.iconLabel, rt);
 const _ = {
-  iconLabel: "pi-icon-close-square-dark",
-  className: "PiIconCloseSquareDark"
+  iconLabel: "pi-icon-close-square-dark"
 };
-class rt extends r {
+class st extends s {
   static get properties() {
     return {
       pathData: {
@@ -312,12 +305,11 @@ class rt extends r {
         `
   ];
 }
-customElements.get(_.iconLabel) || customElements.define(_.iconLabel, rt);
+customElements.get(_.iconLabel) || customElements.define(_.iconLabel, st);
 const k = {
-  iconLabel: "pi-icon-edit-image",
-  className: "PiIconEditImage"
+  iconLabel: "pi-icon-edit-image"
 };
-class nt extends r {
+class nt extends s {
   static get properties() {
     return {
       pathData: {
@@ -343,10 +335,9 @@ class nt extends r {
 }
 customElements.get(k.iconLabel) || customElements.define(k.iconLabel, nt);
 const w = {
-  iconLabel: "pi-icon-edit-page-filled",
-  className: "PiIconEditPageFilled"
+  iconLabel: "pi-icon-edit-page-filled"
 };
-class lt extends r {
+class lt extends s {
   static get properties() {
     return {
       pathData: {
@@ -377,10 +368,9 @@ class lt extends r {
 }
 customElements.get(w.iconLabel) || customElements.define(w.iconLabel, lt);
 const D = {
-  iconLabel: "pi-icon-edit-video",
-  className: "PiIconEditVideo"
+  iconLabel: "pi-icon-edit-video"
 };
-class ct extends r {
+class ct extends s {
   static get properties() {
     return {
       pathData: {
@@ -406,10 +396,9 @@ class ct extends r {
 }
 customElements.get(D.iconLabel) || customElements.define(D.iconLabel, ct);
 const E = {
-  iconLabel: "pi-icon-gear-solid",
-  className: "PiIconGearSolid"
+  iconLabel: "pi-icon-gear-solid"
 };
-class pt extends r {
+class pt extends s {
   static get properties() {
     return {
       pathData: {
@@ -434,11 +423,10 @@ class pt extends r {
   ];
 }
 customElements.get(E.iconLabel) || customElements.define(E.iconLabel, pt);
-const P = {
-  iconLabel: "pi-icon-info-chat-bubble-dark",
-  className: "PiIconInfoChatBubbleDark"
+const L = {
+  iconLabel: "pi-icon-info-chat-bubble-dark"
 };
-class dt extends r {
+class dt extends s {
   static get properties() {
     return {
       pathData: {
@@ -462,12 +450,11 @@ class dt extends r {
         `
   ];
 }
-customElements.get(P.iconLabel) || customElements.define(P.iconLabel, dt);
-const L = {
-  iconLabel: "pi-icon-info-chat-bubble-light",
-  className: "PiIconInfoChatBubbleLight"
+customElements.get(L.iconLabel) || customElements.define(L.iconLabel, dt);
+const S = {
+  iconLabel: "pi-icon-info-chat-bubble-light"
 };
-class ht extends r {
+class bt extends s {
   static get properties() {
     return {
       pathData: {
@@ -491,12 +478,11 @@ class ht extends r {
         `
   ];
 }
-customElements.get(L.iconLabel) || customElements.define(L.iconLabel, ht);
-const S = {
-  iconLabel: "pi-icon-info-filled",
-  className: "PiIconInfoFilled"
+customElements.get(S.iconLabel) || customElements.define(S.iconLabel, bt);
+const $ = {
+  iconLabel: "pi-icon-info-filled"
 };
-class bt extends r {
+class ht extends s {
   static get properties() {
     return {
       pathData: {
@@ -520,12 +506,11 @@ class bt extends r {
         `
   ];
 }
-customElements.get(S.iconLabel) || customElements.define(S.iconLabel, bt);
-const $ = {
-  iconLabel: "pi-icon-info-light",
-  className: "PiIconInfoLight"
+customElements.get($.iconLabel) || customElements.define($.iconLabel, ht);
+const P = {
+  iconLabel: "pi-icon-info-light"
 };
-class ut extends r {
+class ut extends s {
   static get properties() {
     return {
       pathData: {
@@ -549,12 +534,11 @@ class ut extends r {
         `
   ];
 }
-customElements.get($.iconLabel) || customElements.define($.iconLabel, ut);
-const C = {
-  iconLabel: "pi-icon-info-rounded-dark",
-  className: "PiIconInfoRoundedDark"
+customElements.get(P.iconLabel) || customElements.define(P.iconLabel, ut);
+const z = {
+  iconLabel: "pi-icon-info-rounded-dark"
 };
-class gt extends r {
+class gt extends s {
   static get properties() {
     return {
       pathData: {
@@ -578,12 +562,11 @@ class gt extends r {
         `
   ];
 }
-customElements.get(C.iconLabel) || customElements.define(C.iconLabel, gt);
-const I = {
-  iconLabel: "pi-icon-info-rounded-light",
-  className: "PiIconInfoRoundedLight"
+customElements.get(z.iconLabel) || customElements.define(z.iconLabel, gt);
+const C = {
+  iconLabel: "pi-icon-info-rounded-light"
 };
-class mt extends r {
+class vt extends s {
   static get properties() {
     return {
       pathData: {
@@ -607,12 +590,11 @@ class mt extends r {
         `
   ];
 }
-customElements.get(I.iconLabel) || customElements.define(I.iconLabel, mt);
-const z = {
-  iconLabel: "pi-icon-info-sample-dark",
-  className: "PiIconInfoSimpleDark"
+customElements.get(C.iconLabel) || customElements.define(C.iconLabel, vt);
+const I = {
+  iconLabel: "pi-icon-info-sample-dark"
 };
-class vt extends r {
+class mt extends s {
   static get properties() {
     return {
       pathData: {
@@ -641,12 +623,11 @@ class vt extends r {
         `
   ];
 }
-customElements.get(z.iconLabel) || customElements.define(z.iconLabel, vt);
-const N = {
-  iconLabel: "pi-icon-info-simple-light",
-  className: "PiIconInfoSimpleLight"
+customElements.get(I.iconLabel) || customElements.define(I.iconLabel, mt);
+const R = {
+  iconLabel: "pi-icon-info-simple-light"
 };
-class ft extends r {
+class ft extends s {
   static get properties() {
     return {
       pathData: {
@@ -675,12 +656,11 @@ class ft extends r {
         `
   ];
 }
-customElements.get(N.iconLabel) || customElements.define(N.iconLabel, ft);
+customElements.get(R.iconLabel) || customElements.define(R.iconLabel, ft);
 const T = {
-  iconLabel: "pi-icon-logout",
-  className: "PiIconLogout"
+  iconLabel: "pi-icon-logout"
 };
-class yt extends r {
+class yt extends s {
   static get properties() {
     return {
       pathData: {
@@ -705,11 +685,10 @@ class yt extends r {
   ];
 }
 customElements.get(T.iconLabel) || customElements.define(T.iconLabel, yt);
-const R = {
-  iconLabel: "pi-icon-magnify-text",
-  className: "PiIconMagnifyText"
+const N = {
+  iconLabel: "pi-icon-magnify-text"
 };
-class xt extends r {
+class xt extends s {
   static get properties() {
     return {
       pathData: {
@@ -733,12 +712,11 @@ class xt extends r {
         `
   ];
 }
-customElements.get(R.iconLabel) || customElements.define(R.iconLabel, xt);
+customElements.get(N.iconLabel) || customElements.define(N.iconLabel, xt);
 const A = {
-  iconLabel: "pi-icon-notification-box-dark",
-  className: "PiIconNotificationBoxDark"
+  iconLabel: "pi-icon-notification-box-dark"
 };
-class _t extends r {
+class _t extends s {
   static get properties() {
     return {
       pathData: {
@@ -769,10 +747,9 @@ class _t extends r {
 }
 customElements.get(A.iconLabel) || customElements.define(A.iconLabel, _t);
 const B = {
-  iconLabel: "pi-icon-notification-box-light",
-  className: "PiIconNotificationBoxLight"
+  iconLabel: "pi-icon-notification-box-light"
 };
-class kt extends r {
+class kt extends s {
   static get properties() {
     return {
       pathData: {
@@ -803,10 +780,9 @@ class kt extends r {
 }
 customElements.get(B.iconLabel) || customElements.define(B.iconLabel, kt);
 const F = {
-  iconLabel: "pi-icon-paper-airplane-solid",
-  className: "PiIconPaperAirplaneSolid"
+  iconLabel: "pi-icon-paper-airplane-solid"
 };
-class wt extends r {
+class wt extends s {
   static get properties() {
     return {
       pathData: {
@@ -832,10 +808,9 @@ class wt extends r {
 }
 customElements.get(F.iconLabel) || customElements.define(F.iconLabel, wt);
 const M = {
-  iconLabel: "pi-icon-slack-logo-slanted",
-  className: "PiIconSlackLogoSlanted"
+  iconLabel: "pi-icon-slack-logo-slanted"
 };
-class Dt extends r {
+class Dt extends s {
   static get properties() {
     return {
       pathData: {
@@ -863,10 +838,9 @@ class Dt extends r {
 }
 customElements.get(M.iconLabel) || customElements.define(M.iconLabel, Dt);
 const O = {
-  iconLabel: "pi-icon-stop-ex-dark",
-  className: "PiIconStopExDark"
+  iconLabel: "pi-icon-stop-ex-dark"
 };
-class Et extends r {
+class Et extends s {
   static get properties() {
     return {
       pathData: {
@@ -892,10 +866,9 @@ class Et extends r {
 }
 customElements.get(O.iconLabel) || customElements.define(O.iconLabel, Et);
 const U = {
-  iconLabel: "pi-icon-stop-ex-light",
-  className: "PiIconStopExLight"
+  iconLabel: "pi-icon-stop-ex-light"
 };
-class Pt extends r {
+class Lt extends s {
   static get properties() {
     return {
       pathData: {
@@ -919,12 +892,11 @@ class Pt extends r {
         `
   ];
 }
-customElements.get(U.iconLabel) || customElements.define(U.iconLabel, Pt);
+customElements.get(U.iconLabel) || customElements.define(U.iconLabel, Lt);
 const q = {
-  iconLabel: "pi-icon-thumbs-down-dark",
-  className: "PiIconThumbsDownDark"
+  iconLabel: "pi-icon-thumbs-down-dark"
 };
-class Lt extends r {
+class St extends s {
   static get properties() {
     return {
       pathData: {
@@ -948,12 +920,11 @@ class Lt extends r {
         `
   ];
 }
-customElements.get(q.iconLabel) || customElements.define(q.iconLabel, Lt);
-const H = {
-  iconLabel: "pi-icon-thumbs-down-light",
-  className: "PiIconThumbsDownLight"
+customElements.get(q.iconLabel) || customElements.define(q.iconLabel, St);
+const j = {
+  iconLabel: "pi-icon-thumbs-down-light"
 };
-class St extends r {
+class $t extends s {
   static get properties() {
     return {
       pathData: {
@@ -977,12 +948,11 @@ class St extends r {
         `
   ];
 }
-customElements.get(H.iconLabel) || customElements.define(H.iconLabel, St);
-const j = {
-  iconLabel: "pi-icon-thumbs-up-dark",
-  className: "PiIconThumbsUpDark"
+customElements.get(j.iconLabel) || customElements.define(j.iconLabel, $t);
+const H = {
+  iconLabel: "pi-icon-thumbs-up-dark"
 };
-class $t extends r {
+class Pt extends s {
   static get properties() {
     return {
       pathData: {
@@ -1006,12 +976,11 @@ class $t extends r {
         `
   ];
 }
-customElements.get(j.iconLabel) || customElements.define(j.iconLabel, $t);
+customElements.get(H.iconLabel) || customElements.define(H.iconLabel, Pt);
 const K = {
-  iconLabel: "pi-icon-thumbs-up-light",
-  className: "PiIconThumbsUpLight"
+  iconLabel: "pi-icon-thumbs-up-light"
 };
-class Ct extends r {
+class zt extends s {
   static get properties() {
     return {
       pathData: {
@@ -1035,12 +1004,11 @@ class Ct extends r {
         `
   ];
 }
-customElements.get(K.iconLabel) || customElements.define(K.iconLabel, Ct);
+customElements.get(K.iconLabel) || customElements.define(K.iconLabel, zt);
 const G = {
-  iconLabel: "pi-icon-toggle-off",
-  className: "PiIconToggleOff"
+  iconLabel: "pi-icon-toggle-off"
 };
-class It extends r {
+class Ct extends s {
   static get properties() {
     return {
       pathData: {
@@ -1066,12 +1034,11 @@ class It extends r {
         `
   ];
 }
-customElements.get(G.iconLabel) || customElements.define(G.iconLabel, It);
-const V = {
-  iconLabel: "pi-icon-toggle-on",
-  className: "PiIconToggleOn"
+customElements.get(G.iconLabel) || customElements.define(G.iconLabel, Ct);
+const J = {
+  iconLabel: "pi-icon-toggle-on"
 };
-class zt extends r {
+class It extends s {
   static get properties() {
     return {
       pathData: {
@@ -1097,12 +1064,11 @@ class zt extends r {
         `
   ];
 }
-customElements.get(V.iconLabel) || customElements.define(V.iconLabel, zt);
-const J = {
-  iconLabel: "pi-icon-user-rounded-dark",
-  className: "PiIconUserRoundedDark"
+customElements.get(J.iconLabel) || customElements.define(J.iconLabel, It);
+const V = {
+  iconLabel: "pi-icon-user-rounded-dark"
 };
-class Nt extends r {
+class Rt extends s {
   static get properties() {
     return {
       pathData: {
@@ -1126,12 +1092,11 @@ class Nt extends r {
         `
   ];
 }
-customElements.get(J.iconLabel) || customElements.define(J.iconLabel, Nt);
+customElements.get(V.iconLabel) || customElements.define(V.iconLabel, Rt);
 const X = {
-  iconLabel: "pi-icon-user-rounded-light",
-  className: "PiIconUserRoundedLight"
+  iconLabel: "pi-icon-user-rounded-light"
 };
-class Tt extends r {
+class Tt extends s {
   static get properties() {
     return {
       pathData: {
@@ -1156,7 +1121,7 @@ class Tt extends r {
   ];
 }
 customElements.get(X.iconLabel) || customElements.define(X.iconLabel, Tt);
-class Rt extends r {
+class Nt extends s {
   static get properties() {
     return {
       text: { type: String }
@@ -1197,8 +1162,8 @@ class Rt extends r {
         `
   ];
 }
-customElements.get("pi-label") || customElements.define("pi-label", Rt);
-class At extends r {
+customElements.get("pi-label") || customElements.define("pi-label", Nt);
+class At extends s {
   static get properties() {
     return {};
   }
@@ -1250,7 +1215,7 @@ const Bt = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)
     }
 `).join(""), Ot = a`
 
-    ${Q(Mt())}
+    ${W(Mt())}
 
 
 `, Ut = a`
@@ -1444,7 +1409,7 @@ const Bt = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)
         fill: var(--pi-button-bg-color-disabled) !important;
     }
 
-`, Ht = a`
+`, jt = a`
 
     :host([badge]) .btn_variant_text pi-badge {
         background-color: var(--pi-button-bg-color-default);
@@ -1491,7 +1456,7 @@ const Bt = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)
     }
 
 `;
-class jt extends r {
+class Ht extends s {
   static get properties() {
     return {
       disabled: { type: Boolean },
@@ -1520,7 +1485,7 @@ class jt extends r {
     return e`
             <button 
             type=${this.type}
-            class=${b(t)}
+            class=${h(t)}
             ?disabled=${this.disabled}
             @click=${this._handleClick}
             >
@@ -1557,13 +1522,17 @@ class jt extends r {
     Ot,
     Ut,
     qt,
-    Ht,
-    Q(Bt),
+    jt,
+    W(Bt),
     a`
             :host {
                 display: inline-flex;
                 align-items: flex-start;
                 justify-content: center;
+            }
+
+            :host([fullWidth]) {
+                width: 100%;
             }
 
             button {
@@ -1607,6 +1576,7 @@ class jt extends r {
                 align-items: center;
                 gap: 0;
                 padding: var(--pi-button-padding, 7px 12px);
+                justify-content: center;
             }
 
             :host([icon]:not([variant="iconOnly"])) .button_content_container,
@@ -1646,8 +1616,8 @@ class jt extends r {
         `
   ];
 }
-customElements.define("pi-button", jt);
-class h extends r {
+customElements.define("pi-button", Ht);
+class b extends s {
   static get properties() {
     return {
       disabled: { type: Boolean },
@@ -1698,7 +1668,7 @@ class h extends r {
         `
   ];
 }
-customElements.get("pi-base-form-element") || customElements.define("pi-base-form-element", h);
+customElements.get("pi-base-form-element") || customElements.define("pi-base-form-element", b);
 const c = a`
 
     :host {
@@ -1715,7 +1685,7 @@ const c = a`
     }
 
 `;
-class Kt extends h {
+class Kt extends b {
   static get properties() {
     return {
       placeholder: { type: String },
@@ -1795,7 +1765,7 @@ class Kt extends h {
   ];
 }
 customElements.get("pi-text-input") || customElements.define("pi-text-input", Kt);
-class Gt extends h {
+class Gt extends b {
   static get properties() {
     return {
       options: { type: Array },
@@ -1847,10 +1817,10 @@ class Gt extends h {
   }
   determineDefaultSelectedIndex(t, o) {
     if (t.length > 0) {
-      const s = this.labelKey, n = this.valueKey;
+      const r = this.labelKey, n = this.valueKey;
       let l = -1;
       return t.some((p, d) => {
-        p[s] == o[s] && p[n] == o[n] && (l = d);
+        p[r] == o[r] && p[n] == o[n] && (l = d);
       }), l;
     }
     return -1;
@@ -1905,7 +1875,7 @@ class Gt extends h {
   ];
 }
 customElements.get("pi-select-input") || customElements.define("pi-select-input", Gt);
-class Vt extends h {
+class Jt extends b {
   static get properties() {
     return {
       checked: { type: Boolean, reflect: !0 },
@@ -1994,8 +1964,8 @@ class Vt extends h {
         `
   ];
 }
-customElements.get("pi-checkbox-input") || customElements.define("pi-checkbox-input", Vt);
-class Jt extends h {
+customElements.get("pi-checkbox-input") || customElements.define("pi-checkbox-input", Jt);
+class Vt extends b {
   static get properties() {
     return {
       placeholder: { type: String },
@@ -2133,8 +2103,8 @@ class Jt extends h {
         `
   ];
 }
-customElements.get("pi-radio-input") || customElements.define("pi-radio-input", Jt);
-class Xt extends h {
+customElements.get("pi-radio-input") || customElements.define("pi-radio-input", Vt);
+class Xt extends b {
   static get properties() {
     return {
       label: { type: String },
@@ -2176,9 +2146,9 @@ class Xt extends h {
   _collectRadioData() {
     const t = this.querySelectorAll("[name]");
     let o = "";
-    return t.forEach((s) => {
-      const n = s.closest("pi-radio-input");
-      n ? n.checked && (o = n.getValue()) : o = s.value;
+    return t.forEach((r) => {
+      const n = r.closest("pi-radio-input");
+      n ? n.checked && (o = n.getValue()) : o = r.value;
     }), o;
   }
   _handleSlotChange() {
@@ -2200,7 +2170,7 @@ class Xt extends h {
   ];
 }
 customElements.get("pi-radio-input-group") || customElements.define("pi-radio-input-group", Xt);
-class Qt extends h {
+class Wt extends b {
   static get properties() {
     return {
       checked: { type: Boolean, reflect: !0 },
@@ -2285,8 +2255,8 @@ class Qt extends h {
         `
   ];
 }
-customElements.get("pi-toggle-switch") || customElements.define("pi-toggle-switch", Qt);
-class Wt extends h {
+customElements.get("pi-toggle-switch") || customElements.define("pi-toggle-switch", Wt);
+class Qt extends b {
   static get properties() {
     return {
       label: { type: String },
@@ -2357,8 +2327,8 @@ class Wt extends h {
         `
   ];
 }
-customElements.get("pi-text-area-input") || customElements.define("pi-text-area-input", Wt);
-class Yt extends r {
+customElements.get("pi-text-area-input") || customElements.define("pi-text-area-input", Qt);
+class Yt extends s {
   static get properties() {
     return {
       headerHasContent: { type: Boolean },
@@ -2481,7 +2451,7 @@ class Yt extends r {
   ];
 }
 customElements.get("pi-card") || customElements.define("pi-card", Yt);
-class Zt extends r {
+class Zt extends s {
   static get properties() {
     return {
       formData: { type: Object },
@@ -2532,31 +2502,31 @@ class Zt extends r {
   }
   _handleSubmit(t) {
     t.preventDefault();
-    const o = this._collectFormData(), s = new CustomEvent("formSubmitted", {
+    const o = this._collectFormData(), r = new CustomEvent("formSubmitted", {
       detail: o,
       bubbles: !0,
       composed: !0
     });
-    this.dispatchEvent(s);
+    this.dispatchEvent(r);
   }
   _collectFormData() {
     const t = this.querySelectorAll("[name]"), o = {};
-    return t.forEach((s) => {
-      const n = s.closest("pi-form-group")?.name;
+    return t.forEach((r) => {
+      const n = r.closest("pi-form-group")?.name;
       if (n) {
         o[n] || (o[n] = {});
-        const l = s.closest("pi-base-form-element") || s.closest("pi-text-input") || s.closest("pi-select-input") || s.closest("pi-checkbox-input") || s.closest("pi-toggle-switch") || s.closest("pi-radio-input-group") || s.closest("pi-text-area-input");
-        l ? l.tagName == "PI-RADIO-INPUT-GROUP" || (o[n][l.name] = l.getValue()) : s.tagName != "PI-FORM-GROUP" && (o[n][s.name] = s.value);
+        const l = r.closest("pi-base-form-element") || r.closest("pi-text-input") || r.closest("pi-select-input") || r.closest("pi-checkbox-input") || r.closest("pi-toggle-switch") || r.closest("pi-radio-input-group") || r.closest("pi-text-area-input");
+        l ? l.tagName == "PI-RADIO-INPUT-GROUP" || (o[n][l.name] = l.getValue()) : r.tagName != "PI-FORM-GROUP" && (o[n][r.name] = r.value);
       } else {
-        const l = s.closest("pi-base-form-element") || s.closest("pi-text-input") || s.closest("pi-select-input") || s.closest("pi-checkbox-input") || s.closest("pi-toggle-switch") || s.closest("pi-radio-input-group") || s.closest("pi-text-area-input");
-        l ? l.tagName == "PI-RADIO-INPUT" || (o[l.name] = l.getValue()) : o[s.name] = s.value;
+        const l = r.closest("pi-base-form-element") || r.closest("pi-text-input") || r.closest("pi-select-input") || r.closest("pi-checkbox-input") || r.closest("pi-toggle-switch") || r.closest("pi-radio-input-group") || r.closest("pi-text-area-input");
+        l ? l.tagName == "PI-RADIO-INPUT" || (o[l.name] = l.getValue()) : o[r.name] = r.value;
       }
     }), o;
   }
   _handleReset(t) {
-    t.preventDefault(), this.querySelectorAll("[name]").forEach((s) => {
-      const n = s.closest("pi-base-form-element") || s.closest("pi-text-input") || s.closest("pi-select-input") || s.closest("pi-checkbox-input") || s.closest("pi-toggle-switch") || s.closest("pi-radio-input-group") || s.closest("pi-text-area-input");
-      n ? n.setValue("") : (s.tagName === "PI-TEXT-INPUT" || s.tagName === "PI-SELECT-INPUT" || s.tagName === "PI-TEXT-AREA-INPUT" || s.tagName === "PI-TOGGLE-INPUT" || s.tagName === "PI-RADIO-INPUT" || s.tagName === "PI-CHECKBOX-INPUT") && (s.value = "");
+    t.preventDefault(), this.querySelectorAll("[name]").forEach((r) => {
+      const n = r.closest("pi-base-form-element") || r.closest("pi-text-input") || r.closest("pi-select-input") || r.closest("pi-checkbox-input") || r.closest("pi-toggle-switch") || r.closest("pi-radio-input-group") || r.closest("pi-text-area-input");
+      n ? n.setValue("") : (r.tagName === "PI-TEXT-INPUT" || r.tagName === "PI-SELECT-INPUT" || r.tagName === "PI-TEXT-AREA-INPUT" || r.tagName === "PI-TOGGLE-INPUT" || r.tagName === "PI-RADIO-INPUT" || r.tagName === "PI-CHECKBOX-INPUT") && (r.value = "");
     }), this.formData = {};
   }
   _handleSlotChange() {
@@ -2572,7 +2542,7 @@ class Zt extends r {
   ];
 }
 customElements.get("pi-form") || customElements.define("pi-form", Zt);
-class te extends r {
+class te extends s {
   static get properties() {
     return {
       name: { type: String }
@@ -2593,7 +2563,7 @@ class te extends r {
   ];
 }
 customElements.get("pi-form-group") || customElements.define("pi-form-group", te);
-class ee extends r {
+class ee extends s {
   static get properties() {
     return {
       cols: { type: Number }
@@ -2620,7 +2590,7 @@ class ee extends r {
   ];
 }
 customElements.get("pi-col") || customElements.define("pi-col", ee);
-class ie extends r {
+class ie extends s {
   static get properties() {
     return {
       gutter: { type: String, reflect: !0 }
@@ -2662,7 +2632,7 @@ class ie extends r {
   ];
 }
 customElements.get("pi-grid") || customElements.define("pi-grid", ie);
-class oe extends r {
+class oe extends s {
   static get properties() {
     return {};
   }
@@ -2699,7 +2669,7 @@ class oe extends r {
   ];
 }
 customElements.get("pi-row") || customElements.define("pi-row", oe);
-class ae extends r {
+class ae extends s {
   static get properties() {
     return {
       disabled: { type: Boolean },
@@ -2741,7 +2711,7 @@ class ae extends r {
   ];
 }
 customElements.get("pi-paginator-nav-item") || customElements.define("pi-paginator-nav-item", ae);
-class se extends r {
+class re extends s {
   static get properties() {
     return {
       rows: { type: Number },
@@ -2776,8 +2746,8 @@ class se extends r {
     super.connectedCallback(), this.updatePagerNav(), this.generateTemplate();
   }
   updatePagerNav() {
-    const t = this.currentPage > 0 ? this.currentPage - 1 : 0, o = t + this.pagerNavNumberCount, s = Math.ceil(this.totalRecords / this.rows);
-    this.pagerNavNumberStart = t, this.pagerNavNumberStop = o, this.totalPages = s;
+    const t = this.currentPage > 0 ? this.currentPage - 1 : 0, o = t + this.pagerNavNumberCount, r = Math.ceil(this.totalRecords / this.rows);
+    this.pagerNavNumberStart = t, this.pagerNavNumberStop = o, this.totalPages = r;
   }
   handlePageNavNumberClick(t) {
     t < 0 && (t = 0), t > this.pageCount && (t = this.pageCount), this.currentPage = t, this.updatePagerNav(), this.generateTemplate();
@@ -2806,7 +2776,7 @@ class se extends r {
                 value="&lt;"
                 ></pi-paginator-nav-item>
             `), this.useNumericLinks)
-      for (let o = this.pagerNavNumberStart, s = this.pagerNavNumberStop; o < s; o++)
+      for (let o = this.pagerNavNumberStart, r = this.pagerNavNumberStop; o < r; o++)
         o < this.totalPages && t.push(e`
                         <pi-paginator-nav-item 
                         @click="${() => this.handlePageNavNumberClick(o)}"
@@ -2846,11 +2816,11 @@ class se extends r {
         `
   ];
 }
-customElements.get("pi-paginator") || customElements.define("pi-paginator", se);
-function re(i, t) {
-  return i.reduce((o, s, n) => (n % t === 0 && o.push(i.slice(n, n + t)), o), []);
+customElements.get("pi-paginator") || customElements.define("pi-paginator", re);
+function se(i, t) {
+  return i.reduce((o, r, n) => (n % t === 0 && o.push(i.slice(n, n + t)), o), []);
 }
-class ne extends r {
+class ne extends s {
   static get properties() {
     return {
       rows: { type: Array },
@@ -2877,7 +2847,7 @@ class ne extends r {
   }
   initPagination() {
     if (this.rowsPerPage > 0) {
-      const t = re(this.rows, this.rowsPerPage);
+      const t = se(this.rows, this.rowsPerPage);
       this.pages = t, this.handlePaginationChange();
     }
   }
@@ -2913,7 +2883,7 @@ function le(i, t, o) {
     return o === "asc" ? u : -u;
   });
 }
-class ce extends r {
+class ce extends s {
   static get properties() {
     return {};
   }
@@ -2934,7 +2904,7 @@ class ce extends r {
   ];
 }
 customElements.get("pi-table-tr") || customElements.define("pi-table-tr", ce);
-class pe extends r {
+class pe extends s {
   static get properties() {
     return {
       sortDirection: { type: String }
@@ -2963,7 +2933,7 @@ class pe extends r {
   ];
 }
 customElements.get("pi-table-sort-icon") || customElements.define("pi-table-sort-icon", pe);
-class de extends r {
+class de extends s {
   static get properties() {
     return {
       sortable: { type: Boolean },
@@ -2979,7 +2949,7 @@ class de extends r {
     };
     return e`
             <div 
-            class="table_th ${b(t)}"
+            class="table_th ${h(t)}"
             @click=${this.handleSortClick}
             >
                 <slot></slot>
@@ -3043,7 +3013,7 @@ class de extends r {
   ];
 }
 customElements.get("pi-table-th") || customElements.define("pi-table-th", de);
-class he extends r {
+class be extends s {
   static get properties() {
     return {
       columns: { type: Array },
@@ -3062,7 +3032,7 @@ class he extends r {
     };
     return e`
             <pi-table-tr
-            class=${b(t)}
+            class=${h(t)}
             >
                 <slot>
                     ${this.columns.map((o) => e`
@@ -3088,8 +3058,8 @@ class he extends r {
         `
   ];
 }
-customElements.get("pi-table-thead") || customElements.define("pi-table-thead", he);
-class be extends r {
+customElements.get("pi-table-thead") || customElements.define("pi-table-thead", be);
+class he extends s {
   static get properties() {
     return {
       colspan: { type: Number }
@@ -3136,8 +3106,8 @@ class be extends r {
         `
   ];
 }
-customElements.get("pi-table-td") || customElements.define("pi-table-td", be);
-class ue extends r {
+customElements.get("pi-table-td") || customElements.define("pi-table-td", he);
+class ue extends s {
   static get properties() {
     return {
       columns: { type: Array },
@@ -3158,10 +3128,10 @@ class ue extends r {
     return e`
             ${this.rows.map((o) => e`
                 <pi-table-tr
-                class=${b(t)}
+                class=${h(t)}
                 >
-                    ${this.columns.map((s) => e`
-                        <pi-table-td>${o[s.key]}</pi-table-td>
+                    ${this.columns.map((r) => e`
+                        <pi-table-td>${o[r.key]}</pi-table-td>
                     `)}
                 </pi-table-tr>
             `)}
@@ -3189,7 +3159,7 @@ class ue extends r {
   ];
 }
 customElements.get("pi-table-tbody") || customElements.define("pi-table-tbody", ue);
-class ge extends r {
+class ge extends s {
   static get properties() {
     return {};
   }
@@ -3216,7 +3186,7 @@ class ge extends r {
   ];
 }
 customElements.get("pi-table-tfoot") || customElements.define("pi-table-tfoot", ge);
-class me extends r {
+class ve extends s {
   static get properties() {
     return {
       columns: { type: Array },
@@ -3244,8 +3214,8 @@ class me extends r {
         `
   ];
 }
-customElements.get("pi-base-table") || customElements.define("pi-base-table", me);
-class ve extends r {
+customElements.get("pi-base-table") || customElements.define("pi-base-table", ve);
+class me extends s {
   static get properties() {
     return {
       columns: { type: Array, attribute: !1 },
@@ -3315,8 +3285,8 @@ class ve extends r {
     this.sortedRows = le(this.rows, t, o), this.updateColumnSorters(t, o), this.paginate || (this.activeRows = [...this.sortedRows]);
   }
   updateColumnSorters(t, o) {
-    this.slottedColumns.forEach((s) => {
-      s.dispatchEvent(new CustomEvent("updateSorter", {
+    this.slottedColumns.forEach((r) => {
+      r.dispatchEvent(new CustomEvent("updateSorter", {
         detail: { sortKey: t, sortDirection: o },
         bubbles: !0,
         composed: !0
@@ -3327,10 +3297,10 @@ class ve extends r {
     this.sortKey != "" && this.sortDirection != "" && this.handleSortRequest(this.sortKey, this.sortDirection);
   }
   captureColumnData() {
-    const t = [], o = [], s = this.shadowRoot.querySelector("slot");
-    if (s == null)
+    const t = [], o = [], r = this.shadowRoot.querySelector("slot");
+    if (r == null)
       return !1;
-    s.assignedElements({ flatten: !0 }).forEach((l) => {
+    r.assignedElements({ flatten: !0 }).forEach((l) => {
       if (l.nodeName == "PI-TABLE-COLUMN") {
         const p = {};
         o.push(l), Array.from(l.attributes).forEach((d) => {
@@ -3357,8 +3327,8 @@ class ve extends r {
         `
   ];
 }
-customElements.get("pi-table") || customElements.define("pi-table", ve);
-class fe extends r {
+customElements.get("pi-table") || customElements.define("pi-table", me);
+class fe extends s {
   static get properties() {
     return {
       sortable: { type: Boolean },
@@ -3382,7 +3352,7 @@ class fe extends r {
     };
     return e`
             <div 
-            class="table_th ${b(t)}"
+            class="table_th ${h(t)}"
             @click=${this.handleSortClick}
             >
                 ${this.label}
@@ -3400,17 +3370,17 @@ class fe extends r {
   }
   handleSortClick(t) {
     if (this.sortable == !0) {
-      const o = this.sortDirection, s = o == "asc" ? "desc" : "asc", n = new CustomEvent("sortRequested", {
+      const o = this.sortDirection, r = o == "asc" ? "desc" : "asc", n = new CustomEvent("sortRequested", {
         detail: {
           key: this.key,
           label: this.label,
           currentSortDirection: o,
-          newSortDirection: s
+          newSortDirection: r
         },
         bubbles: !0,
         composed: !0
       });
-      this.dispatchEvent(n), this.sortDirection = s;
+      this.dispatchEvent(n), this.sortDirection = r;
     }
   }
   static styles = [
@@ -3449,7 +3419,7 @@ class fe extends r {
   ];
 }
 customElements.get("pi-table-column") || customElements.define("pi-table-column", fe);
-class ye extends r {
+class ye extends s {
   static properties = {};
   constructor() {
     super();
@@ -3479,7 +3449,7 @@ class ye extends r {
     `;
 }
 customElements.get("pi-tab") || customElements.define("pi-tab", ye);
-class xe extends r {
+class xe extends s {
   static get properties() {
     return {
       selectedTab: { type: String },
@@ -3509,8 +3479,8 @@ class xe extends r {
     this.dispatchEvent(t);
   }
   updateTabList() {
-    this.shadowRoot.querySelector("slot").assignedElements().forEach((s) => {
-      s.tagName == "PI-TAB" && (this.tabList.push(s), this.assignTabListener(s));
+    this.shadowRoot.querySelector("slot").assignedElements().forEach((r) => {
+      r.tagName == "PI-TAB" && (this.tabList.push(r), this.assignTabListener(r));
     }), this.initSelectedTab();
   }
   initSelectedTab() {
@@ -3532,7 +3502,7 @@ class xe extends r {
   ];
 }
 customElements.get("pi-tab-list") || customElements.define("pi-tab-list", xe);
-class _e extends r {
+class _e extends s {
   static properties = {};
   constructor() {
     super();
@@ -3557,7 +3527,7 @@ class _e extends r {
     `;
 }
 customElements.get("pi-tab-panel") || customElements.define("pi-tab-panel", _e);
-class ke extends r {
+class ke extends s {
   static get properties() {
     return {
       selectedTab: { type: String },
@@ -3581,8 +3551,8 @@ class ke extends r {
     });
   }
   updatePanelList() {
-    this.shadowRoot.querySelector("slot").assignedElements().forEach((s) => {
-      s.tagName == "PI-TAB-PANEL" && this.panelList.push(s);
+    this.shadowRoot.querySelector("slot").assignedElements().forEach((r) => {
+      r.tagName == "PI-TAB-PANEL" && this.panelList.push(r);
     }), this.setActivePanel(this.selectedTab);
   }
   static styles = [
@@ -3592,7 +3562,7 @@ class ke extends r {
   ];
 }
 customElements.get("pi-tab-panels") || customElements.define("pi-tab-panels", ke);
-class we extends r {
+class we extends s {
   static get properties() {
     return {
       selectedTab: { type: String },
@@ -3612,8 +3582,8 @@ class we extends r {
     this.selectedTab = t.detail, this.panelListEl.updateSelectedTab(this.selectedTab);
   }
   handleSlotChange() {
-    this.shadowRoot.querySelector("slot").assignedElements({ flatten: !0 }).forEach((s) => {
-      s.tagName == "PI-TAB-LIST" && (s.addEventListener("tabSelected", (n) => this.handleTabListSelection(n)), this.tabListEl = s), s.tagName == "PI-TAB-PANELS" && (this.panelListEl = s);
+    this.shadowRoot.querySelector("slot").assignedElements({ flatten: !0 }).forEach((r) => {
+      r.tagName == "PI-TAB-LIST" && (r.addEventListener("tabSelected", (n) => this.handleTabListSelection(n)), this.tabListEl = r), r.tagName == "PI-TAB-PANELS" && (this.panelListEl = r);
     });
   }
   static styles = [
@@ -3628,9 +3598,9 @@ class we extends r {
 customElements.get("pi-tabs") || customElements.define("pi-tabs", we);
 export {
   At as PiBadge,
-  jt as PiButton,
+  Ht as PiButton,
   Yt as PiCard,
-  Vt as PiCheckboxInput,
+  Jt as PiCheckboxInput,
   Zt as PiForm,
   te as PiFormGroup,
   ie as PiGrid,
@@ -3639,22 +3609,22 @@ export {
   it as PiIconAlertTriangleDark,
   ot as PiIconAlertTriangleLight,
   at as PiIconAreaChartStand,
-  st as PiIconAvatarGenericLight,
+  rt as PiIconAvatarGenericLight,
   Y as PiIconBase,
   et as PiIconChainLink,
-  rt as PiIconCloseSquareDark,
+  st as PiIconCloseSquareDark,
   nt as PiIconEditImage,
   lt as PiIconEditPageFilled,
   ct as PiIconEditVideo,
   pt as PiIconGearSolid,
   Z as PiIconHandler,
   dt as PiIconInfoChatBubbleDark,
-  ht as PiIconInfoChatBubbleLight,
-  bt as PiIconInfoFilled,
+  bt as PiIconInfoChatBubbleLight,
+  ht as PiIconInfoFilled,
   ut as PiIconInfoLight,
   gt as PiIconInfoRoundedDark,
-  mt as PiIconInfoRoundedLight,
-  vt as PiIconInfoSimpleDark,
+  vt as PiIconInfoRoundedLight,
+  mt as PiIconInfoSimpleDark,
   ft as PiIconInfoSimpleLight,
   tt as PiIconLeftArrowCircled,
   yt as PiIconLogout,
@@ -3664,38 +3634,38 @@ export {
   wt as PiIconPaperAirplaneSolid,
   Dt as PiIconSlackLogoSlanted,
   Et as PiIconStopExDark,
-  Pt as PiIconStopExLight,
-  Lt as PiIconThumbsDownDark,
-  St as PiIconThumbsDownLight,
-  $t as PiIconThumbsUpDark,
-  Ct as PiIconThumbsUpLight,
-  It as PiIconToggleOff,
-  zt as PiIconToggleOn,
-  Nt as PiIconUserRoundedDark,
+  Lt as PiIconStopExLight,
+  St as PiIconThumbsDownDark,
+  $t as PiIconThumbsDownLight,
+  Pt as PiIconThumbsUpDark,
+  zt as PiIconThumbsUpLight,
+  Ct as PiIconToggleOff,
+  It as PiIconToggleOn,
+  Rt as PiIconUserRoundedDark,
   Tt as PiIconUserRoundedLight,
-  Rt as PiLabel,
-  se as PiPaginator,
+  Nt as PiLabel,
+  re as PiPaginator,
   ae as PiPaginatorNavItem,
-  Jt as PiRadioInput,
+  Vt as PiRadioInput,
   Xt as PiRadioInputGroup,
   Gt as PiSelectInput,
   ye as PiTab,
   xe as PiTabList,
   _e as PiTabPanel,
   ke as PiTabPanels,
-  ve as PiTable,
+  me as PiTable,
   fe as PiTableColumn,
   ne as PiTablePaginator,
   pe as PiTableSortIcon,
   ue as PiTableTbody,
-  be as PiTableTd,
+  he as PiTableTd,
   ge as PiTableTfoot,
   de as PiTableTh,
-  he as PiTableThead,
+  be as PiTableThead,
   ce as PiTableTr,
   we as PiTabs,
-  Wt as PiTextAreaInput,
+  Qt as PiTextAreaInput,
   Kt as PiTextInput,
-  Qt as PiToggleSwitch
+  Wt as PiToggleSwitch
 };
 //# sourceMappingURL=pi_components.js.map
