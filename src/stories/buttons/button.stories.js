@@ -89,6 +89,14 @@ export default {
                 type: { summary: 'boolean' },
                 defaultValue: { summary: 'false'}
             }
+        },
+        fullWidth: {
+            control: 'boolean',
+            description: 'Makes the button as wide as its container',
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: 'false'}
+            }
         }
     },
 /*     args: {
@@ -96,7 +104,7 @@ export default {
     } */
 }
 
-const Template = ({ slotContent, variant, severity, raised, rounded, squared, badge, icon, disabled }) => html`
+const Template = ({ slotContent, variant, severity, raised, rounded, squared, badge, icon, disabled, fullWidth }) => html`
     <pi-button 
     variant="${variant}" 
     severity="${severity}" 
@@ -104,6 +112,7 @@ const Template = ({ slotContent, variant, severity, raised, rounded, squared, ba
     ?rounded=${rounded}
     ?squared=${squared}
     ?disabled=${disabled}
+    ?fullWidth=${fullWidth}
     badge=${ifDefined(badge > 0 ? badge : undefined)}
     icon=${ifDefined(icon != '' ? icon : undefined)}
     >${slotContent}</pi-button>
@@ -112,6 +121,11 @@ const Template = ({ slotContent, variant, severity, raised, rounded, squared, ba
 export const Default = Template.bind();
 Default.args = {
     slotContent: 'Button'
+}
+
+export const FullWidth = Template.bind();
+FullWidth.args = {
+    fullWidth: true
 }
 
 export const Severity = Template.bind();
