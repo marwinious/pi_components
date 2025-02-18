@@ -126,7 +126,7 @@ import{a as e,i as o,r as i,x as r}from"./lit-element-qJpPW6A9.js";import{e as a
     }
 
     
-`,p=o`
+`,d=o`
 
     .btn_variant_iconOnly.rounded {
         border-radius: 50%;
@@ -206,7 +206,7 @@ import{a as e,i as o,r as i,x as r}from"./lit-element-qJpPW6A9.js";import{e as a
         fill: var(--pi-button-bg-color-disabled) !important;
     }
 
-`,d=o`
+`,p=o`
 
     :host([badge]) .btn_variant_text pi-badge {
         background-color: var(--pi-button-bg-color-default);
@@ -292,11 +292,15 @@ import{a as e,i as o,r as i,x as r}from"./lit-element-qJpPW6A9.js";import{e as a
                 </span>
                 
             </button>
-        `}_handleClick(n){this.type!=="submit"?this.dispatchEvent(new CustomEvent("click",{detail:n})):this.dispatchEvent(new CustomEvent("pi-submit",{detail:n,composed:!0,bubbles:!0}))}static styles=[s,u,p,d,e(b),o`
+        `}_handleClick(n){this.type!=="submit"?this.dispatchEvent(new CustomEvent("click",{detail:n})):this.dispatchEvent(new CustomEvent("pi-submit",{detail:n,composed:!0,bubbles:!0}))}static styles=[s,u,d,p,e(b),o`
             :host {
                 display: inline-flex;
                 align-items: flex-start;
                 justify-content: center;
+            }
+
+            :host([fullWidth]) {
+                width: 100%;
             }
 
             button {
@@ -340,6 +344,7 @@ import{a as e,i as o,r as i,x as r}from"./lit-element-qJpPW6A9.js";import{e as a
                 align-items: center;
                 gap: 0;
                 padding: var(--pi-button-padding, 7px 12px);
+                justify-content: center;
             }
 
             :host([icon]:not([variant="iconOnly"])) .button_content_container,
