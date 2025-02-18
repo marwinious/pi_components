@@ -107,6 +107,10 @@ export class PiButton extends LitElement {
                 justify-content: center;
             }
 
+            :host([fullWidth]) {
+                width: 100%;
+            }
+
             button {
                 display: block;
                 height: 100%;
@@ -148,6 +152,7 @@ export class PiButton extends LitElement {
                 align-items: center;
                 gap: 0;
                 padding: var(--pi-button-padding, 7px 12px);
+                justify-content: center;
             }
 
             :host([icon]:not([variant="iconOnly"])) .button_content_container,
