@@ -100,6 +100,11 @@ export class PiCard extends LitElement {
                 background: var(--pi-card-background, #FFF);
             }
 
+            :host([autoWidth]) {
+                display: inline-block;
+                width: auto;
+            }
+
             slot {
                 display: block;
             }

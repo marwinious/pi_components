@@ -25,6 +25,15 @@ export default {
                 defaultValue: { summary: ''}
             } 
         },
+        autoWidth: { 
+            control: 'boolean', 
+            name: 'autoWidth (optional)',
+            description: 'Sizes the card to its content',
+            table: {
+                type: { summary: 'string' },
+                defaultValue: { summary: ''}
+            } 
+        },
         headerSlot: { 
             control: 'text', 
             name: 'header slot (optional)',
@@ -63,12 +72,15 @@ export default {
         }
     },
     args: {
-        slotContent: 'The contents of your card will show here via the default slot.'
+        slotContent: 'The contents of your card will show here via the default slot.',
+        autoWidth: false
     }
 }
 
-const Template = ({ slotContent, headerSlot, footerSlot }) => html`
-    <pi-card>
+const Template = ({ slotContent, headerSlot, footerSlot, autoWidth }) => html`
+    <pi-card
+    ?autoWidth=${autoWidth}
+    >
 
         <div
         slot="header"
@@ -83,8 +95,10 @@ const Template = ({ slotContent, headerSlot, footerSlot }) => html`
     </pi-card>
 `;
 
-const TemplateTitle = ({ slotContent, titleSlot, subTitleSlot }) => html`
-    <pi-card>
+const TemplateTitle = ({ slotContent, titleSlot, subTitleSlot, autoWidth }) => html`
+    <pi-card
+    ?autoWidth=${autoWidth}
+    >
 
         <div
         slot="title"
