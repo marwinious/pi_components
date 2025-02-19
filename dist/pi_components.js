@@ -2405,6 +2405,11 @@ class Yt extends s {
                 background: var(--pi-card-background, #FFF);
             }
 
+            :host([autoWidth]) {
+                display: inline-block;
+                width: auto;
+            }
+
             slot {
                 display: block;
             }
