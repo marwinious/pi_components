@@ -52,6 +52,11 @@ import{r as t,x as e,i as o}from"./lit-element-qJpPW6A9.js";import{d as i}from".
                 background: var(--pi-card-background, #FFF);
             }
 
+            :host([autoWidth]) {
+                display: inline-block;
+                width: auto;
+            }
+
             slot {
                 display: block;
             }
