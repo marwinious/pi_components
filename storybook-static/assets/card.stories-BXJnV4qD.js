@@ -1,4 +1,4 @@
-import{x as u}from"./lit-element-qJpPW6A9.js";import{o as d}from"./iconUserRoundedLight-DAA4Ng5V.js";import"./card-89nsmxAm.js";import"./defaultCss-aEcf2KJM.js";const c=`
+import{x as u}from"./lit-element-qJpPW6A9.js";import{o as d}from"./iconUserRoundedLight-DAA4Ng5V.js";import"./card-1Ym2qmk8.js";import"./defaultCss-aEcf2KJM.js";const c=`
 <div slot="header" style="background-color: #eee;">
     This is the header area of a card. By default, it has no padding and is intended to be full filled with a background color or image. Text will work too of course. If using an image without text, add the <code>slot="header"</code> attritbute directly to the img tag for better control. The background-color on this demo was added as an example and is not there by default.
 </div>

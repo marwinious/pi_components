@@ -80,6 +80,10 @@ import{r as t,x as e,i as o}from"./lit-element-qJpPW6A9.js";import{d as i}from".
                 font-weight: var(--pi-card-title-font-weight, bold);
                 color: var(--pi-card-title-color, #555);
                 font-size: var(--pi-card-title-font-size, 1.2rem);
+
+                slot {
+                    /* border-bottom: solid 1px #ddd; */
+                }
             }
 
             .sub_title {
@@ -89,7 +93,7 @@ import{r as t,x as e,i as o}from"./lit-element-qJpPW6A9.js";import{d as i}from".
             }
 
             .content {
-                padding: var(--pi-card-content-padding, 1rem);
+                padding: 0.5rem var(--pi-card-content-padding, 1rem);
             }
 
             .footer {
