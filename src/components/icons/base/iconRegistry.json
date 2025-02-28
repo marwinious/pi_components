@@ -154,5 +154,13 @@
     {
         "className": "PiIconLayoutDark",
         "handlerCode": "layout-dark"
+    },
+    {
+        "className": "PiIconFilePaperLight",
+        "handlerCode": "file-paper-light"
+    },
+    {
+        "className": "PiIconFilePaperDark",
+        "handlerCode": "file-paper-dark"
     }
 ]
