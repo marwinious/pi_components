@@ -162,5 +162,177 @@
     {
         "className": "PiIconFilePaperDark",
         "handlerCode": "file-paper-dark"
+    },
+    {
+        "className": "PiIconCaretCircleDownDark",
+        "handlerCode": "caret-circle-down-dark"
+    },
+    {
+        "className": "PiIconCaretCircleDownLight",
+        "handlerCode": "caret-circle-down-light"
+    },
+    {
+        "className": "PiIconCaretCircleLeftDark",
+        "handlerCode": "caret-circle-left-dark"
+    },
+    {
+        "className": "PiIconCaretCircleLeftLight",
+        "handlerCode": "caret-circle-left-light"
+    },
+    {
+        "className": "PiIconCaretCircleRightDark",
+        "handlerCode": "caret-circle-right-dark"
+    },
+    {
+        "className": "PiIconCaretCircleRightLight",
+        "handlerCode": "caret-circle-right-light"
+    },
+    {
+        "className": "PiIconCaretCircleUpDark",
+        "handlerCode": "caret-circle-up-dark"
+    },
+    {
+        "className": "PiIconCaretCircleUpLight",
+        "handlerCode": "caret-circle-up-light"
+    },
+    {
+        "className": "PiIconCaretDownDark",
+        "handlerCode": "caret-down-dark"
+    },
+    {
+        "className": "PiIconCaretDownLight",
+        "handlerCode": "caret-down-light"
+    },
+    {
+        "className": "PiIconCaretLeftDark",
+        "handlerCode": "caret-left-dark"
+    },
+    {
+        "className": "PiIconCaretLeftLight",
+        "handlerCode": "caret-left-light"
+    },
+    {
+        "className": "PiIconCaretRightDark",
+        "handlerCode": "caret-right-dark"
+    },
+    {
+        "className": "PiIconCaretRightLight",
+        "handlerCode": "caret-right-light"
+    },
+    {
+        "className": "PiIconCaretUpDark",
+        "handlerCode": "caret-up-dark"
+    },
+    {
+        "className": "PiIconCaretUpLight",
+        "handlerCode": "caret-up-light"
+    },
+    {
+        "className": "PiIconCoinDark",
+        "handlerCode": "coin-dark"
+    },
+    {
+        "className": "PiIconCoinLight",
+        "handlerCode": "coin-light"
+    },
+    {
+        "className": "PiIconFlagDark",
+        "handlerCode": "flag-dark"
+    },
+    {
+        "className": "PiIconFlagLight",
+        "handlerCode": "flag-light"
+    },
+    {
+        "className": "PiIconFlagFancyDark",
+        "handlerCode": "flag-fancy-dark"
+    },
+    {
+        "className": "PiIconFlagFancyLight",
+        "handlerCode": "flag-fancy-light"
+    },
+    {
+        "className": "PiIconFlagWavyDark",
+        "handlerCode": "flag-wavy-dark"
+    },
+    {
+        "className": "PiIconFlagWavyLight",
+        "handlerCode": "flag-wavy-light"
+    },
+    {
+        "className": "PiIconGlobeDark",
+        "handlerCode": "globe-dark"
+    },
+    {
+        "className": "PiIconGlobeLight",
+        "handlerCode": "globe-light"
+    },
+    {
+        "className": "PiIconListBulletsLight",
+        "handlerCode": "list-bullets-light"
+    },
+    {
+        "className": "PiIconListSquaresDark",
+        "handlerCode": "list-squares-dark"
+    },
+    {
+        "className": "PiIconListSquaresLight",
+        "handlerCode": "list-squares-light"
+    },
+    {
+        "className": "PiIconPaperDark",
+        "handlerCode": "paper-dark"
+    },
+    {
+        "className": "PiIconPaperLight",
+        "handlerCode": "paper-light"
+    },
+    {
+        "className": "PiIconSquarePaperLight",
+        "handlerCode": "square-paper-light"
+    },
+    {
+        "className": "PiIconPaperStackFancyDark",
+        "handlerCode": "paper-stack-fancy-dark"
+    },
+    {
+        "className": "PiIconPaperStackFancyLight",
+        "handlerCode": "paper-stack-fancy-light"
+    },
+    {
+        "className": "PiIconStarDark",
+        "handlerCode": "star-dark"
+    },
+    {
+        "className": "PiIconStarLight",
+        "handlerCode": "star-light"
+    },
+    {
+        "className": "PiIconStarHalfFilled",
+        "handlerCode": "star-half-filled"
+    },
+    {
+        "className": "PiIconTagDark",
+        "handlerCode": "tag-dark"
+    },
+    {
+        "className": "PiIconTagLight",
+        "handlerCode": "tag-light"
+    },
+    {
+        "className": "PiIconTagStackDark",
+        "handlerCode": "tag-stack-dark"
+    },
+    {
+        "className": "PiIconTagStackLight",
+        "handlerCode": "tag-stack-light"
+    },
+    {
+        "className": "PiIconWebGlobeDark",
+        "handlerCode": "web-globe-dark"
+    },
+    {
+        "className": "PiIconWebGlobeLight",
+        "handlerCode": "web-globe-light"
     }
 ]
