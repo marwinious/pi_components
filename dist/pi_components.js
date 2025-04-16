@@ -4001,11 +4001,12 @@ class Ui extends o {
 
                 <div class="button_row">
                     
+                    ${this.showSubmit ? e`
                         <slot name="submitButton">
                             <button type="submit">Submit</button>
                         </slot>
-                    
-                    
+                    ` : null}
+                        
                     ${this.showReset ? e`
                         <slot name="resetButton">
                             <button type="reset">Reset</button>
