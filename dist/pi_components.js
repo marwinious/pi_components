@@ -3027,7 +3027,7 @@ class Ti extends o {
         `;
   }
   _handleClick(t) {
-    this.type !== "submit" ? this.dispatchEvent(new CustomEvent("click", {
+    t.stopPropagation(), this.type !== "submit" ? this.dispatchEvent(new CustomEvent("click", {
       detail: t
     })) : this.dispatchEvent(new CustomEvent("pi-submit", {
       detail: t,
