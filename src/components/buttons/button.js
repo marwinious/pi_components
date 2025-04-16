@@ -80,6 +80,7 @@ export class PiButton extends LitElement {
     }
 
     _handleClick(e) {
+        e.stopPropagation();
         if (this.type !== 'submit') { // Only handle clicks for non-submit buttons
             this.dispatchEvent(new CustomEvent('click', { 
                 detail: e
