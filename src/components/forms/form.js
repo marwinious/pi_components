@@ -38,11 +38,12 @@ export class PiForm extends LitElement {
 
                 <div class="button_row">
                     
+                    ${this.showSubmit ? html`
                         <slot name="submitButton">
                             <button type="submit">Submit</button>
                         </slot>
-                    
-                    
+                    ` : null}
+                        
                     ${this.showReset ? html `
                         <slot name="resetButton">
                             <button type="reset">Reset</button>
