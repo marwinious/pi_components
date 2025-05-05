@@ -44,7 +44,7 @@ export class PiNotificationItem extends LitElement {
         css`
             :host {
                 width: 100%;
-                background: var(--pi-notification-bg--color, #333);
+                background: var(--pi-notifications-bg-color, #FFF);
                 display: flex;
                 gap: 5px;
                 margin: 0.5rem 0;
@@ -53,7 +53,7 @@ export class PiNotificationItem extends LitElement {
                 border-radius: var(--pi-notifications-border-radius, 7px);
                 box-sizing: border-box;
                 border: var(--pi-notifications-border, 1px solid #eee);
-                box-shadow: var(--pi-notifications-box-shadow, 0 0 12px rgba(0, 0, 0, 0.12))''
+                box-shadow: var(--pi-notifications-box-shadow, 0 0 12px rgba(0, 0, 0, 0.12));
             }
 
             .pi_notification_icon {
