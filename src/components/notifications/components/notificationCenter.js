@@ -18,9 +18,18 @@ export class PiNotificationCenter extends LitElement {
         super.connectedCallback();
     }
 
+    updated(changedProperties) {
+        super.updated(changedProperties);
+
+        // Check for notifications changes
+        if (changedProperties.has('notifications')) {
+            // Hide notification center if zero notifications present
+            this.hidden = this.notifications.length < 1;
+        }
+    }
+
     render() {
         return html`
-        <p>TEST: ${this.notifications.length}</p>
             ${this.notifications.map((notification) => html`
                 <pi-notification-item
                 title=${notification.title}
@@ -57,10 +66,14 @@ export class PiNotificationCenter extends LitElement {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
-                pointer-events: none;
-                width: 300px;
+                /* pointer-events: none; */
+                width: var(--pi-notifications-width, 330px);
                 height: 100%;
-                background: yellow;
+                background: transparent;
+            }
+
+            :host([hidden]) {
+                display: none;
             }
         `
     ]
