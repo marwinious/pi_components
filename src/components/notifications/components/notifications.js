@@ -1,16 +1,18 @@
 import { LitElement, css, html } from 'lit'
 import { PiNotificationCenter } from './notificationCenter';
 
-export class PiNotification extends LitElement {
+export class PiNotifications extends LitElement {
 
     static get properties() {
         return {
-            
+            notificationCenter: { type: Object },
         }
     }
 
     constructor() {
         super()
+        this.notificationCenter = null;
+
         // Init
         this.initNotifications();
     }
@@ -29,10 +31,14 @@ export class PiNotification extends LitElement {
             const notificationCenter = document.createElement('pi-notification-center');
             document.body.appendChild(notificationCenter);
         }
+
+        this.notificationCenter = document.querySelector('pi-notification-center');
     }
 
     create(notificationData) {
+        console.log({notificationData});
 
+        document.querySelector('pi-notification-center').addNotification(notificationData);
     }
 
     render() {
@@ -49,4 +55,4 @@ export class PiNotification extends LitElement {
     
 }
 
-if(!customElements.get('pi-notification')) { customElements.define('pi-notification', PiNotification); }
+if(!customElements.get('pi-notifications')) { customElements.define('pi-notifications', PiNotifications); }

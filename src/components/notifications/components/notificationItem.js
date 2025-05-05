@@ -41,9 +41,10 @@ export class PiNotificationItem extends LitElement {
     static styles = [
         css`
             :host {
-                position: fixed;
-                top: 16px;
-                z-index: 10000;
+                width: 100%;
+                background: #FFF;
+                display: flex;
+                gap: 5px;
             }
 
 

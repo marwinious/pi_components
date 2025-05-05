@@ -20,8 +20,9 @@ export class PiNotificationCenter extends LitElement {
 
     render() {
         return html`
+        <p>TEST: ${this.notifications.length}</p>
             ${this.notifications.map((notification) => html`
-                <notification-item
+                <pi-notification-item
                 title=${notification.title}
                 message=${notification.message}
                 ?icon=${notification.icon}
@@ -31,13 +32,15 @@ export class PiNotificationCenter extends LitElement {
                 ?autoCloseDuration=${notification.autoCloseDuration}
                 ?closeIcon=${notification.closeIcon}
                 @removeNotification=${() => this.removeNotification(notification.id)}
-                ></notification-item>
+                ></pi-notification-item>
             `)}
         `;
     }
 
     addNotification(notificationData) {
         this.notifications = [...this.notifications, {...notificationData, id: Date.now()}];
+
+        console.log("this.notifications: ", this.notifications);
     }
 
     removeNotification(notificationId) {
@@ -48,12 +51,16 @@ export class PiNotificationCenter extends LitElement {
         css`
             :host {
                 position: fixed;
-                top: 16px;
+                top: 0;
+                right: 0;
                 z-index: 10000;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
                 pointer-events: none;
+                width: 300px;
+                height: 100%;
+                background: yellow;
             }
         `
     ]

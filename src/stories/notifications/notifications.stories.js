@@ -1,7 +1,6 @@
 import { html } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
-import '../../components/notifications/index'
-
+import { PiNotifications } from "../../components/notifications/components/notifications";
 
 export default {
     title: 'Components/Notifications',
@@ -96,8 +95,28 @@ export default {
     }
 }
 
-const Template = ({ title, message, severity, position, offset, icon, closeIcon, autoCloseDuration }) => html`
+const triggerAlert = () => {
+    const notifications = document.querySelector('pi-notifications');
     
+    notifications.create({
+        title: 'Title text',
+        message: 'Message text',
+        severity: 'primary',
+        position: 'top-right',
+        offset: 0,
+        icon: '',
+        closeIcon: '',
+        autoCloseDuration: 5000
+    });
+}
+
+const Template = ({ title, message, severity, position, offset, icon, closeIcon, autoCloseDuration }) => html`
+    <pi-notifications></pi-notifications>
+
+    <button
+    type="button"
+    @click=${() => triggerAlert()}
+    >Trigger Alert</button>
 `;
 
 export const Default = Template.bind();
