@@ -44,14 +44,16 @@ export class PiNotificationItem extends LitElement {
         css`
             :host {
                 width: 100%;
-                background: #FFF;
+                background: var(--pi-notification-bg--color, #333);
                 display: flex;
                 gap: 5px;
-                margin: 0.3rem 0;
+                margin: 0.5rem 0;
                 justify-content: space-between;
                 padding: var(--pi-notifications-padding, 1rem);
                 border-radius: var(--pi-notifications-border-radius, 7px);
                 box-sizing: border-box;
+                border: var(--pi-notifications-border, 1px solid #eee);
+                box-shadow: var(--pi-notifications-box-shadow, 0 0 12px rgba(0, 0, 0, 0.12))''
             }
 
             .pi_notification_icon {
@@ -64,6 +66,20 @@ export class PiNotificationItem extends LitElement {
                 flex-direction: column;
                 align-items: flex-start;
                 width: 100%;
+                margin: var(--pi-notification-content-margin, 0 8px 0 13px);
+            }
+
+            .pi_notification_title {
+                font-size: var(--pi-notification-title-font-size, 16px);
+                font-weight: bold;
+                color: var(--pi-notification-title-text-color, #333);
+                line-height: var(--pi-notification-title-line-height, 24px);
+            }
+
+            .pi_notification_message {
+                font-size: var(--pi-notification-content-font-size, 14px);
+                color: var(--pi-notification-content-text-color, #666);
+                line-height: var(--pi-notification-content-line-height, 24px);
             }
 
             .pi_notification_close_icon {
