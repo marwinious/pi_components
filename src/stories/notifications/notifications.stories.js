@@ -104,7 +104,7 @@ const triggerAlert = () => {
         severity: 'primary',
         position: 'top-right',
         offset: 0,
-        icon: '',
+        icon: 'info-filled',
         closeIcon: '',
         autoCloseDuration: 5000
     });

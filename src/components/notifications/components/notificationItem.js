@@ -30,7 +30,11 @@ export class PiNotificationItem extends LitElement {
 
     render() {
         return html`
-            <div class="pi_notification_icon">icon</div>
+            ${this.icon == '' ? null : html`
+                <div class="pi_notification_icon">
+                    <pi-icon-handler icon="info-filled"></pi-icon-handler>
+                </div>
+            `}
             <div class="pi_notification_group">
                 <div class="pi_notification_title">${this.title}</div>
                 <div class="pi_notification_message">${this.message}</div>

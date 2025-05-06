@@ -31,15 +31,16 @@ export class PiNotificationCenter extends LitElement {
     render() {
         return html`
             ${this.notifications.map((notification) => html`
+                <!-- <div>Data: ${JSON.stringify(notification)}</div> -->
                 <pi-notification-item
                 title=${notification.title}
                 message=${notification.message}
-                ?icon=${notification.icon}
-                ?severity=${notification.severity}
-                ?position=${notification.position}
-                ?offset=${notification.offset}
-                ?autoCloseDuration=${notification.autoCloseDuration}
-                ?closeIcon=${notification.closeIcon}
+                icon=${notification.icon}
+                severity=${notification.severity}
+                position=${notification.position}
+                offset=${notification.offset}
+                autoCloseDuration=${notification.autoCloseDuration}
+                closeIcon=${notification.closeIcon}
                 @removeNotification=${() => this.removeNotification(notification.id)}
                 ></pi-notification-item>
             `)}
