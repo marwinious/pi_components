@@ -49,7 +49,9 @@ export class PiNotificationItem extends LitElement {
                 <div class="pi_notification_title">${this.title}</div>
                 <div class="pi_notification_message">${this.message}</div>
             </div>
-            <div class="pi_notification_close_icon">x${this.closeIcon}</div>
+            <div class="pi_notification_close_icon">
+                <pi-icon-handler icon="close-square-dark"></pi-icon-handler>
+            </div>
         `;
     }
 
@@ -97,9 +99,19 @@ export class PiNotificationItem extends LitElement {
             }
 
             .pi_notification_close_icon {
-                width: var(--pi-notification-close-icon-size, 16px);
+                width: var(--pi-notification-close-icon-size, 20px);
                 color: var(--pi-notification-close-icon-color, #999);
                 cursor: pointer;
+
+                pi-icon-handler {
+                    width: var(--pi-notification-close-icon-size, 20px);
+                    height: auto;
+                    fill: #ccc;
+
+                    &:hover {
+                        fill: #888;
+                    }
+                }
             }
 
         `
