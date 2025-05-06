@@ -36,6 +36,7 @@ export class PiNotificationCenter extends LitElement {
                 title=${notification.title}
                 message=${notification.message}
                 icon=${notification.icon}
+                iconColor=${notification.iconColor}
                 severity=${notification.severity}
                 position=${notification.position}
                 offset=${notification.offset}
