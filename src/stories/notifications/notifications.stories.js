@@ -65,6 +65,15 @@ export default {
                 defaultValue: { summary: ''}
             } 
         },
+        iconColor: { 
+            control: 'text', 
+            name: 'Icon color',
+            description: 'Specific icon color for notification (overrides severity)',
+            table: {
+                type: { summary: 'string' },
+                defaultValue: { summary: ''}
+            } 
+        },
         closeIcon: { 
             control: 'text', 
             name: 'Close Icon',
@@ -90,33 +99,34 @@ export default {
         position: 'top-right',
         offset: 0,
         icon: '',
+        iconColor: '',
         closeIcon: '',
         autoCloseDuration: 5000
     }
 }
 
-const triggerAlert = () => {
+const triggerAlert = (title, message, severity, position, offset, icon, iconColor, closeIcon, autoCloseDuration) => {
     const notifications = document.querySelector('pi-notifications');
     
     notifications.create({
-        title: 'Title text',
-        message: 'Message text',
-        severity: '',
-        position: 'top-right',
-        offset: 0,
-        icon: '',
+        title: title,
+        message: message,
+        severity: severity,
+        position: position,
+        offset: offset,
+        icon: icon,
         iconColor: '',
-        closeIcon: '',
-        autoCloseDuration: 5000
+        closeIcon: closeIcon,
+        autoCloseDuration: autoCloseDuration
     });
 }
 
-const Template = ({ title, message, severity, position, offset, icon, closeIcon, autoCloseDuration }) => html`
+const Template = ({ title, message, severity, position, offset, icon, iconColor, closeIcon, autoCloseDuration }) => html`
     <pi-notifications></pi-notifications>
 
     <button
     type="button"
-    @click=${() => triggerAlert()}
+    @click=${() => triggerAlert(title, message, severity, position, offset, icon, iconColor, closeIcon, autoCloseDuration)}
     >Trigger Alert</button>
 `;
 
