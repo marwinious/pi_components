@@ -49,10 +49,25 @@ export class PiNotificationItem extends LitElement {
                 <div class="pi_notification_title">${this.title}</div>
                 <div class="pi_notification_message">${this.message}</div>
             </div>
-            <div class="pi_notification_close_icon">
+            <div 
+            class="pi_notification_close_icon"
+            @click=${this._handleCloseClick}
+            >
                 <pi-icon-handler icon="close-square-dark"></pi-icon-handler>
             </div>
         `;
+    }
+
+    _handleCloseClick() {
+        const closeEvent = new CustomEvent('removeNotification', {
+            detail: {
+                title: this.title
+            },
+            bubbles: true,
+            composed: true,
+        });
+
+        this.dispatchEvent(closeEvent);
     }
 
     static styles = [

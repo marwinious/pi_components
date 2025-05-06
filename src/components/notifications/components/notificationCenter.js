@@ -55,6 +55,8 @@ export class PiNotificationCenter extends LitElement {
     }
 
     removeNotification(notificationId) {
+        console.log("notificationId: ", notificationId);
+        
         this.notifications = this.notifications.filter(notification => notification.id !== notificationId);
     }
 
