@@ -63,7 +63,7 @@ export class PiNotificationCenter extends LitElement {
             :host {
                 position: fixed;
                 top: 0;
-                right: 0;
+                right: 15px;
                 z-index: 10000;
                 display: flex;
                 flex-direction: column;
