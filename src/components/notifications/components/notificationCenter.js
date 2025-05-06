@@ -49,13 +49,28 @@ export class PiNotificationCenter extends LitElement {
     }
 
     addNotification(notificationData) {
-        this.notifications = [...this.notifications, {...notificationData, id: Date.now()}];
+        // Create unique id for notification
+        const notificationId = Date.now();
+
+        // Add notification to local array of notifications
+        this.notifications = [...this.notifications, {...notificationData, id: notificationId}];
+
+        // If notification duration > 0, set auto-close timeout
+        if(notificationData.autoCloseDuration > 0) {
+            this.autoCloseNotification(notificationId, notificationData.autoCloseDuration);
+        }
 
         console.log("this.notifications: ", this.notifications);
     }
 
     removeNotification(notificationId) {
         this.notifications = this.notifications.filter(notification => notification.id !== notificationId);
+    }
+
+    autoCloseNotification(notificationId, duration) {
+        setTimeout(() => {
+            this.removeNotification(notificationId);
+        }, duration)
     }
 
     static styles = [
