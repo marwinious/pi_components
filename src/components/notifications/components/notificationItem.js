@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import defaultCss from '../../../css/defaultCss';
+import { styleMap } from 'lit/directives/style-map.js';
 
 export class PiNotificationItem extends LitElement {
 
@@ -11,6 +12,7 @@ export class PiNotificationItem extends LitElement {
             position: { type: String },
             offset: { type: Number },
             icon: { type: String },
+            iconColor: { type: String },
             closeIcon: { type: String },
             autoCloseDuration: { type: Number }
         }
@@ -24,15 +26,23 @@ export class PiNotificationItem extends LitElement {
         this.position = 'top-right';
         this.offset = 0;
         this.icon = '';
+        this.iconColor = '';
         this.closeIcon = '';
         this.autoCloseDuration = 5000;
     }
 
     render() {
+        const manualColor = this.iconColor == '' ? 'var(--pi-notification-icon-color, #333)' : this.iconColor;
+
+        const iconStyles = {
+            color: manualColor,
+            fill: manualColor,
+        };
+
         return html`
             ${this.icon == '' ? null : html`
-                <div class="pi_notification_icon">
-                    <pi-icon-handler icon="info-filled"></pi-icon-handler>
+                <div class="pi_notification_icon" style=${styleMap(iconStyles)}>
+                    <pi-icon-handler icon=${this.icon}></pi-icon-handler>
                 </div>
             `}
             <div class="pi_notification_group">
