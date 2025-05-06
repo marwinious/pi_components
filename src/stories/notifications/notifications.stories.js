@@ -101,10 +101,11 @@ const triggerAlert = () => {
     notifications.create({
         title: 'Title text',
         message: 'Message text',
-        severity: 'primary',
+        severity: 'danger',
         position: 'top-right',
         offset: 0,
-        icon: 'info-filled',
+        icon: '',
+        iconColor: '',
         closeIcon: '',
         autoCloseDuration: 5000
     });
