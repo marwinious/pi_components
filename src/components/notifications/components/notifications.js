@@ -15,6 +15,37 @@ export class PiNotifications extends LitElement {
 
         // Init
         this.initNotifications();
+
+        this.severityMap = {
+            'primary': {
+                icon: 'flag-wavy-dark',
+                color: 'var(--pi-severity-bg-color-primary, #117ab4)'
+            },
+            'secondary': {
+                icon: 'star-dark',
+                color: 'var(--pi-severity-bg-color-secondary, #ccc)'
+            },
+            'success': {
+                icon: 'thumbs-up-dark',
+                color: 'var(--pi-severity-bg-color-success, #208c39)'
+            },
+            'info': {
+                icon: 'info-sample-dark',
+                color: 'var(--pi-severity-bg-color-info, #17A2B9)'
+            },
+            'warn': {
+                icon: 'alert-triangle-dark',
+                color: 'var(--pi-severity-bg-color-warn, #d28809)'
+            },
+            'help': {
+                icon: 'globe-dark',
+                color: 'var(--pi-severity-bg-color-help, #A855F8)'
+            },
+            'danger': {
+                icon: 'stop-ex-dark',
+                color: 'var(--pi-severity-bg-color-danger, #F04544)'
+            },
+        }
     }
 
     connectedCallback() {
@@ -36,9 +67,24 @@ export class PiNotifications extends LitElement {
     }
 
     create(notificationData) {
+        const finalNotificationData = this.finalizeNotificationData(notificationData);
         console.log({notificationData});
+        console.log({finalNotificationData});
 
-        document.querySelector('pi-notification-center').addNotification(notificationData);
+        document.querySelector('pi-notification-center').addNotification(finalNotificationData);
+    }
+
+    finalizeNotificationData(data) {
+        // Check for severity
+        if(data.severity && typeof this.severityMap[data.severity] != 'undefined') {
+            // Only do something if no custom icon has been specified
+            if(data.icon == '') {
+                data.icon = this.severityMap[data.severity].icon;
+                data.iconColor = this.severityMap[data.severity].color;
+            }
+        }
+
+        return data;
     }
 
     render() {
