@@ -74,17 +74,52 @@ export class PiNotificationItem extends LitElement {
         defaultCss,
         css`
             :host {
-                width: 100%;
-                background: var(--pi-notifications-bg-color, #FFF);
+                /* width: 100%; */
+                background: var(--pi-notification-bg-color, #FFF);
                 display: flex;
                 gap: 5px;
                 margin: 0.5rem 0;
                 justify-content: space-between;
-                padding: var(--pi-notifications-padding, 1rem);
-                border-radius: var(--pi-notifications-border-radius, 7px);
+                padding: var(--pi-notification-padding, 1rem);
+                border-radius: var(--pi-notification-border-radius, 7px);
                 box-sizing: border-box;
-                border: var(--pi-notifications-border, 1px solid #eee);
-                box-shadow: var(--pi-notifications-box-shadow, 0 0 12px rgba(0, 0, 0, 0.12));
+                border: var(--pi-notification-border, 1px solid #eee);
+                box-shadow: var(--pi-notification-box-shadow, 0 0 12px rgba(0, 0, 0, 0.12));
+                position: fixed;
+                z-index: 10000;
+                width: var(--pi-notification-width, 330px);
+            }
+
+            :host(.top-left) {
+                top: 0;
+                left: 15px;
+            }
+
+            :host(.top-right) {
+                top: 0;
+                right: 15px;
+            }
+
+            :host(.bottom-left) {
+                bottom: 0;
+                left: 15px;
+            }
+
+            :host(.bottom-right) {
+                bottom: 0;
+                right: 15px;
+            }
+
+            :host(.bottom) {
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%);
+            }
+
+            :host(.top) {
+                top: 0;
+                left: 50%;
+                transform: translate(-50%);
             }
 
             .pi_notification_icon {

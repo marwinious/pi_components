@@ -51,9 +51,24 @@ export class PiNotificationCenter extends LitElement {
     addNotification(notificationData) {
         // Create unique id for notification
         const notificationId = Date.now();
+        notificationData.id = notificationId;
 
         // Add notification to local array of notifications
-        this.notifications = [...this.notifications, {...notificationData, id: notificationId}];
+        // this.notifications = [...this.notifications, {...notificationData}];
+
+        const newNotification = document.createElement('pi-notification-item');
+        newNotification.setAttribute('title', notificationData.title);
+        newNotification.setAttribute('message', notificationData.message);
+        newNotification.setAttribute('icon', notificationData.icon);
+        newNotification.setAttribute('iconColor', notificationData.iconColor);
+        newNotification.setAttribute('severity', notificationData.severity);
+        newNotification.setAttribute('position', notificationData.position);
+        newNotification.setAttribute('offset', notificationData.offset);
+        newNotification.setAttribute('autoCloseDuration', notificationData.autoCloseDuration);
+        newNotification.setAttribute('closeIcon', notificationData.closeIcon);
+        newNotification.classList.add(notificationData.position);
+        newNotification.addEventListener('removeNotification', (e) => this.removeNotification(notificationData.id));
+        document.body.appendChild(newNotification);
 
         // If notification duration > 0, set auto-close timeout
         if(notificationData.autoCloseDuration > 0) {
@@ -84,7 +99,7 @@ export class PiNotificationCenter extends LitElement {
                 flex-direction: column;
                 align-items: flex-end;
                 /* pointer-events: none; */
-                width: var(--pi-notifications-width, 330px);
+                width: var(--pi-notification-width, 330px);
                 height: 100%;
                 background: transparent;
             }
