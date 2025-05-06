@@ -84,10 +84,10 @@ export default {
             } 
         },
         autoCloseDuration: { 
-            control: 'boolean',
-            description: 'Duration notification is visible (0 = until closed)',
+            control: 'number',
+            description: 'Duration notification is visible in milliseconds (0 = until closed)',
             table: {
-                type: { summary: 'boolean' },
+                type: { summary: 'number' },
                 defaultValue: { summary: '5000'}
             }
         },
