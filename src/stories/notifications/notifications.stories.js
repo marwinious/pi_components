@@ -101,7 +101,7 @@ const triggerAlert = () => {
     notifications.create({
         title: 'Title text',
         message: 'Message text',
-        severity: 'danger',
+        severity: '',
         position: 'top-right',
         offset: 0,
         icon: '',
