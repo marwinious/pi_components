@@ -1,13 +1,13 @@
 :root {
 
     /* General */
-    --pi-notifications-width: 330px;
-    --pi-notifications-padding: 1rem;
-    --pi-notifications-border-radius: 7px;
-    --pi-notifications-border: solid 1px #eee;
-    --pi-notifications-bg-color: #FFF;
-    --pi-notifications-box-shadow: 0px 0px 12px rgba(0,0,0,.12);
-    --pi-notifications-transition: opacity .3s, transform .3s, left .3s, right .3s, top .4s, bottom .3s;
+    --pi-notification-width: 330px;
+    --pi-notification-padding: 1rem;
+    --pi-notification-border-radius: 7px;
+    --pi-notification-border: solid 1px #eee;
+    --pi-notification-bg-color: #FFF;
+    --pi-notification-box-shadow: 0px 0px 12px rgba(0,0,0,.12);
+    --pi-notification-transition: opacity .3s, transform .3s, left .3s, right .3s, top .4s, bottom .3s;
     --pi-notification-title-font-size: 16px;
     --pi-notification-title-line-height: 24px;
     --pi-notification-title-text-color: #333;
