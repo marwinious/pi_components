@@ -115,7 +115,7 @@ const triggerAlert = (title, message, severity, position, offset, icon, iconColo
         position: position,
         offset: offset,
         icon: icon,
-        iconColor: '',
+        iconColor: iconColor,
         closeIcon: closeIcon,
         autoCloseDuration: autoCloseDuration
     });
