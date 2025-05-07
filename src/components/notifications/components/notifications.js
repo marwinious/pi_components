@@ -68,8 +68,8 @@ export class PiNotifications extends LitElement {
 
     create(notificationData) {
         const finalNotificationData = this.finalizeNotificationData(notificationData);
-        console.log({notificationData});
-        console.log({finalNotificationData});
+        // console.log({notificationData});
+        // console.log({finalNotificationData});
 
         document.querySelector('pi-notification-center').addNotification(finalNotificationData);
     }

@@ -42,7 +42,7 @@ export class PiNotificationCenter extends LitElement {
             this.autoCloseNotification(notificationId, notificationData.autoCloseDuration, notificationData.position);
         }
 
-        console.log("notificationsByPosition: ", this.notificationsByPosition);
+        // console.log("notificationsByPosition: ", this.notificationsByPosition);
     }
 
     _handleNotificationClosed(notificationId, position) {
