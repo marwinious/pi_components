@@ -40,7 +40,7 @@ export class PiNotificationCenter extends LitElement {
         notificationData.id = notificationId;
 
         // Add notification to local array of notifications
-        // this.notifications = [...this.notifications, {...notificationData}];
+        this.notifications = [...this.notifications, {...notificationData}];
 
         const newNotification = document.createElement('pi-notification-item');
         newNotification.setAttribute('data-id', notificationId);
