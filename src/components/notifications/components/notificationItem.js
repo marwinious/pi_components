@@ -14,7 +14,8 @@ export class PiNotificationItem extends LitElement {
             icon: { type: String },
             iconColor: { type: String },
             closeIcon: { type: String },
-            autoCloseDuration: { type: Number }
+            autoCloseDuration: { type: Number },
+            visible: { type: Boolean, reflect: true }, // For animation control
         }
     }
 
@@ -29,6 +30,7 @@ export class PiNotificationItem extends LitElement {
         this.iconColor = '';
         this.closeIcon = '';
         this.autoCloseDuration = 5000;
+        this.visible = false;
     }
 
     render() {
