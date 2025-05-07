@@ -1,0 +1,102 @@
+:root {
+
+    /* Defaults */
+    --pi-severity-bg-color-default: #333;
+    --pi-severity-text-color-default: #FFF;
+    --pi-severity-accent-color-default: #333;
+    --pi-severity-hover-bg-color-default: #666;
+    --pi-severity-hover-text-color-default: #FFF;
+    --pi-severity-hover-text-color-default-outlined: #383838;
+    --pi-severity-hover-border-color-default: #666;
+    --pi-severity-active-bg-color-default: #FFF;
+    --pi-severity-active-text-color-default: #000;
+    --pi-severity-active-border-color-default: #000;
+
+    /* Primary Severity */
+    --pi-severity-bg-color-primary: #117ab4;
+    --pi-severity-accent-primary: var(--pi-severity-bg-color-primary);
+    --pi-severity-text-color-primary: #FFF;
+    --pi-severity-hover-bg-color-primary: color-mix(in srgb, var(--pi-severity-bg-color-primary) 70%, black);
+    --pi-severity-hover-text-color-primary: #FFF;
+    --pi-severity-hover-border-color-primary: #0a486a;
+    --pi-severity-active-bg-color-primary: #FFF;
+    --pi-severity-active-text-color-primary: #0a486a;
+    --pi-severity-active-border-color-primary: #0a486a;
+
+    /* Secondary Severity */
+    --pi-severity-bg-color-secondary: #ccc;
+    --pi-severity-border-secondary: solid 1px #aaa;
+    --pi-severity-text-color-secondary: #333;
+    --pi-severity-hover-bg-color-secondary: color-mix(in srgb, var(--pi-severity-bg-color-secondary) 70%, black);
+    --pi-severity-hover-text-color-secondary: #FFF;
+    --pi-severity-hover-border-color-secondary: #aaa;
+    --pi-severity-active-bg-color-secondary: #FFF;
+    --pi-severity-active-text-color-secondary: #333;
+    --pi-severity-active-border-color-secondary: #333;
+
+    /* Success Severity */
+    --pi-severity-bg-color-success: #208c39;
+    --pi-severity-border-success: solid 1px #208c39;
+    --pi-severity-text-color-success: #FFF;
+    --pi-severity-hover-bg-color-success: color-mix(in srgb, var(--pi-severity-bg-color-success) 70%, black);
+    --pi-severity-hover-text-color-success: #FFF;
+    --pi-severity-hover-border-color-success: #208c39;
+    --pi-severity-active-bg-color-success: #FFF;
+    --pi-severity-active-text-color-success: #208c39;
+    --pi-severity-active-border-color-success: #208c39;
+
+    /* Info Severity */
+    --pi-severity-bg-color-info: #17A2B9;
+    --pi-severity-border-info: solid 1px #17A2B9;
+    --pi-severity-text-color-info: #FFF;
+    --pi-severity-hover-bg-color-info: color-mix(in srgb, var(--pi-severity-bg-color-info) 70%, black);
+    --pi-severity-hover-text-color-info: #FFF;
+    --pi-severity-hover-border-color-info: #17A2B9;
+    --pi-severity-active-bg-color-info: #FFF;
+    --pi-severity-active-text-color-info: #17A2B9;
+    --pi-severity-active-border-color-info: #17A2B9;
+
+    /* Warn Severity */
+    --pi-severity-bg-color-warn: #d28809;
+    --pi-severity-border-warn: solid 1px #d28809;
+    --pi-severity-text-color-warn: #FFF;
+    --pi-severity-hover-bg-color-warn: color-mix(in srgb, var(--pi-severity-bg-color-warn) 70%, black);
+    --pi-severity-hover-text-color-warn: #FFF;
+    --pi-severity-hover-border-color-warn: #d28809;
+    --pi-severity-active-bg-color-warn: #FFF;
+    --pi-severity-active-text-color-warn: #d28809;
+    --pi-severity-active-border-color-warn: #d28809;
+
+    /* Help Severity */
+    --pi-severity-bg-color-help: #A855F8;
+    --pi-severity-border-help: solid 1px #A855F8;
+    --pi-severity-text-color-help: #FFF;
+    --pi-severity-hover-bg-color-help: color-mix(in srgb, var(--pi-severity-bg-color-help) 70%, black);
+    --pi-severity-hover-text-color-help: #FFF;
+    --pi-severity-hover-border-color-help: #A855F8;
+    --pi-severity-active-bg-color-help: #FFF;
+    --pi-severity-active-text-color-help: #A855F8;
+    --pi-severity-active-border-color-help: #A855F8;
+
+    /* Danger Severity */
+    --pi-severity-bg-color-danger: #F04544;
+    --pi-severity-border-danger: solid 1px #F04544;
+    --pi-severity-text-color-danger: #FFF;
+    --pi-severity-hover-bg-color-danger: color-mix(in srgb, var(--pi-severity-bg-color-danger) 70%, black);
+    --pi-severity-hover-text-color-danger: #FFF;
+    --pi-severity-hover-border-color-danger: #F04544;
+    --pi-severity-active-bg-color-danger: #FFF;
+    --pi-severity-active-text-color-danger: #F04544;
+    --pi-severity-active-border-color-danger: #F04544;
+
+    /* Disabled */
+    --pi-severity-bg-color-disabled: #bbb;
+    --pi-severity-border-disabled: solid 1px #bbb;
+    --pi-severity-text-color-disabled: #FFF;
+    --pi-severity-hover-bg-color-disabled: #bbb;
+    --pi-severity-hover-text-color-disabled: #FFF;
+    --pi-severity-hover-border-color-disabled: #bbb;
+    --pi-severity-active-bg-color-disabled: #FFF;
+    --pi-severity-active-text-color-disabled: #bbb;
+    --pi-severity-active-border-color-disabled: #bbb;
+}
