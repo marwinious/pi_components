@@ -88,38 +88,15 @@ export class PiNotificationItem extends LitElement {
                 position: fixed;
                 z-index: 10000;
                 width: var(--pi-notification-width, 330px);
+
+                opacity: 0; /* Initially invisible for fade-in */
+                transform: translateY(-20px); /* Initial position slightly off for slide-in */
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, top 0.3s ease-in-out, bottom 0.3s ease-in-out, right 0.3s ease-in-out, left 0.3s ease-in-out; /* Apply transition to relevant properties */
             }
 
-            :host(.top-left) {
-                top: 0;
-                left: 15px;
-            }
-
-            :host(.top-right) {
-                top: 0;
-                right: 15px;
-            }
-
-            :host(.bottom-left) {
-                bottom: 0;
-                left: 15px;
-            }
-
-            :host(.bottom-right) {
-                bottom: 0;
-                right: 15px;
-            }
-
-            :host(.bottom) {
-                bottom: 0;
-                left: 50%;
-                transform: translate(-50%);
-            }
-
-            :host(.top) {
-                top: 0;
-                left: 50%;
-                transform: translate(-50%);
+            :host(.visible) {
+                opacity: 1;
+                transform: translateY(0); /* Slide into final position */
             }
 
             .pi_notification_icon {
