@@ -133,40 +133,40 @@ export class PiNotificationCenter extends LitElement {
     }
 
     _calculatePositionStyles(position, offset) {
-        const styles = { position: 'fixed', zIndex: 10001 };
+        const styles = {};
 
         switch (position) {
             case 'top-left':
                 styles.top = offset;
                 styles.left = '15px';
-                styles.alignItems = 'flex-start';
+                // styles.alignItems = 'flex-start';
                 break;
             case 'top-right':
                 styles.top = offset;
                 styles.right = '15px';
-                styles.alignItems = 'flex-end';
+                // styles.alignItems = 'flex-end';
                 break;
             case 'bottom-left':
                 styles.bottom = offset;
                 styles.left = '15px';
-                styles.alignItems = 'flex-start';
+                // styles.alignItems = 'flex-start';
                 break;
             case 'bottom-right':
                 styles.bottom = offset;
                 styles.right = '15px';
-                styles.alignItems = 'flex-end';
+                // styles.alignItems = 'flex-end';
                 break;
             case 'top':
                 styles.top = offset;
                 styles.left = '50%';
                 styles.transform = 'translateX(-50%)';
-                styles.alignItems = 'center';
+                // styles.alignItems = 'center';
                 break;
             case 'bottom':
                 styles.bottom = offset;
                 styles.left = '50%';
                 styles.transform = 'translateX(-50%)';
-                styles.alignItems = 'center';
+                // styles.alignItems = 'center';
                 break;
         }
         return styles;
