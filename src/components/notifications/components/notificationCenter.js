@@ -30,21 +30,7 @@ export class PiNotificationCenter extends LitElement {
 
     render() {
         return html`
-            ${this.notifications.map((notification) => html`
-                <!-- <div>Data: ${JSON.stringify(notification)}</div> -->
-                <pi-notification-item
-                title=${notification.title}
-                message=${notification.message}
-                icon=${notification.icon}
-                iconColor=${notification.iconColor}
-                severity=${notification.severity}
-                position=${notification.position}
-                offset=${notification.offset}
-                autoCloseDuration=${notification.autoCloseDuration}
-                closeIcon=${notification.closeIcon}
-                @removeNotification=${() => this.removeNotification(notification.id)}
-                ></pi-notification-item>
-            `)}
+            
         `;
     }
 
@@ -57,6 +43,7 @@ export class PiNotificationCenter extends LitElement {
         // this.notifications = [...this.notifications, {...notificationData}];
 
         const newNotification = document.createElement('pi-notification-item');
+        newNotification.setAttribute('data-id', notificationId);
         newNotification.setAttribute('title', notificationData.title);
         newNotification.setAttribute('message', notificationData.message);
         newNotification.setAttribute('icon', notificationData.icon);
@@ -75,11 +62,15 @@ export class PiNotificationCenter extends LitElement {
             this.autoCloseNotification(notificationId, notificationData.autoCloseDuration);
         }
 
-        console.log("this.notifications: ", this.notifications);
+        // console.log("this.notifications: ", this.notifications);
     }
 
     removeNotification(notificationId) {
-        this.notifications = this.notifications.filter(notification => notification.id !== notificationId);
+        const notificationToRemove = document.querySelector(`pi-notification-item[data-id="${notificationId}"]`);
+
+        if (notificationToRemove) {
+            document.body.removeChild(notificationToRemove);
+        }
     }
 
     autoCloseNotification(notificationId, duration) {
