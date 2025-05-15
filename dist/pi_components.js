@@ -3318,6 +3318,7 @@ class Mi extends h {
             >
                 ${this.defaultText != "" ? e`
                     <option 
+                    value=""
                     ?disabled="${this.preventDefaultSelection}"
                     ?selected="${this.value == ""}">${this.defaultText}</option>
                 ` : e``}
@@ -3344,7 +3345,7 @@ class Mi extends h {
   }
   _handleInputChange(t) {
     const s = t.target.value;
-    this.valueKey != "" ? this.value = this.options[s][this.valueKey] : this.value = this.options[s], this._dispatchChangeEvent(this.value);
+    this.valueKey != "" ? typeof this.options[s] < "u" ? this.value = this.options[s][this.valueKey] : this.value = "" : this.value = this.options[s], this._dispatchChangeEvent(this.value);
   }
   static styles = [
     l,
