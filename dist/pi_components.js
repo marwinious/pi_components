@@ -3293,17 +3293,13 @@ class Mi extends h {
       selectedObject: { type: Object },
       disabled: { type: Boolean },
       value: { type: String },
-      label: { type: String }
-      // resetAvailable: { type: Boolean }
+      label: { type: String },
+      preventDefaultSelection: { type: Boolean }
     };
   }
   constructor() {
-    super(), this.defaultText = "Choose an option", this.options = [], this.selectedIndex = -1, this.labelKey = "", this.valueKey = "", this.selectedObject = {}, this.disabled = !1, this.value = "", this.label = "";
+    super(), this.defaultText = "Choose an option", this.options = [], this.selectedIndex = -1, this.labelKey = "", this.valueKey = "", this.selectedObject = {}, this.disabled = !1, this.value = "", this.label = "", this.preventDefaultSelection = !1;
   }
-  /* firstUpdated() {
-      console.log('firstupdated');
-      this.resetAvailable = true;
-  } */
   // willUpdate hook: Detect property changes before re-render
   willUpdate(t) {
     t.has("selectedObject") && (this.selectedIndex = this.determineDefaultSelectedIndex(this.options, this.selectedObject));
@@ -3321,12 +3317,16 @@ class Mi extends h {
             ?disabled="${this.disabled}"
             >
                 ${this.defaultText != "" ? e`
-                    <option disabled ?selected="${this.value == ""}">${this.defaultText}</option>
+                    <option 
+                    ?disabled="${this.preventDefaultSelection}"
+                    ?selected="${this.value == ""}">${this.defaultText}</option>
                 ` : e``}
                     
                 ${this.options.length > 0 ? e`
                     ${this.options.map((t, s) => e`
-                        <option value="${s}" ?selected="${this.selectedIndex === s}">${t[this.labelKey]}</option>
+                        <option 
+                        value="${s}" 
+                        ?selected="${this.selectedIndex === s}">${t[this.labelKey]}</option>
                     `)}
                 ` : e``}
             </select>
@@ -3342,11 +3342,6 @@ class Mi extends h {
     }
     return -1;
   }
-  /* _handleReset() {
-      this.selectedIndex = -1;  
-      this.selectedObject = {};
-      this._dispatchChangeEvent(this.value);
-  } */
   _handleInputChange(t) {
     const s = t.target.value;
     this.valueKey != "" ? this.value = this.options[s][this.valueKey] : this.value = this.options[s], this._dispatchChangeEvent(this.value);
