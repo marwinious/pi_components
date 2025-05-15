@@ -79,6 +79,14 @@ export default {
                 defaultValue: { summary: 'false'}
             }
         },
+        preventDefaultSelection: {
+            control: 'boolean',
+            description: 'Prevents initial default option from being re-selected',
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: 'false'}
+            }
+        },
     },
     args: {
         label: '',
@@ -86,7 +94,8 @@ export default {
         disabled: false,
         selectedObject: '',
         labelKey: 'country',
-        valueKey: 'country'
+        valueKey: 'country',
+        preventDefaultSelection: false
     }
 }
 
@@ -102,6 +111,7 @@ const Template = ({ label, options, labelKey, valueKey, defaultText, selectedObj
     defaultText=${ifDefined(defaultText != '' ? defaultText : undefined)}
     .selectedObject=${ifDefined(selectedObject != '' ? selectedObject : undefined)}
     ?disabled=${disabled}
+    ?preventDefaultSelection=${preventDefaultSelection}
     @change=${(e) => action('Selection changed')(e.detail)}
     ></pi-select-input>
 `;
