@@ -101,7 +101,7 @@ export default {
 
 
 
-const Template = ({ label, options, labelKey, valueKey, defaultText, selectedObject, disabled }) => html`
+const Template = ({ label, options, labelKey, valueKey, defaultText, selectedObject, disabled, preventDefaultSelection }) => html`
     <pi-select-input
     name="piSelect"
     .options="${options}"

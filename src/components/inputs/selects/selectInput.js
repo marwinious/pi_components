@@ -55,6 +55,7 @@ export class PiSelectInput extends PiBaseFormElement {
             >
                 ${this.defaultText != '' ? html`
                     <option 
+                    value=""
                     ?disabled="${this.preventDefaultSelection}"
                     ?selected="${this.value == ''}">${this.defaultText}</option>
                 ` : html``}
@@ -92,18 +93,26 @@ export class PiSelectInput extends PiBaseFormElement {
     }
 
     _handleInputChange(e) {
+        // console.log(e);
+        
         const selectedIndex = e.target.value;
 
         // If a valueKey was provided, use that value from selected object
         if(this.valueKey != '') {
-            this.value = this.options[selectedIndex][this.valueKey];
+            // Check if valueKey property exists
+            if(typeof this.options[selectedIndex] != 'undefined') {
+                this.value = this.options[selectedIndex][this.valueKey];
+            }
+            else {
+                // If it doesn't exist, set value to empty
+                this.value = '';
+            }
         }
         else {
             // Otherwise, use entire selected object
             this.value = this.options[selectedIndex];
         }
         
-
         this._dispatchChangeEvent(this.value)
     }
 
