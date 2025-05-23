@@ -366,5 +366,25 @@
     {
         "className": "PiIconMenuDotVerticalThin",
         "handlerCode": "menu-dot-vertical-thin"
+    },
+    {
+        "className": "PiIconMenuHamburgerRounded",
+        "handlerCode": "menu-hamburger-rounded"
+    },
+    {
+        "className": "PiIconMenuHamburgerCorners",
+        "handlerCode": "menu-hamburger-corners"
+    },
+    {
+        "className": "PiIconMenuHamburgerCornersThick",
+        "handlerCode": "menu-hamburger-corners-thick"
+    },
+    {
+        "className": "PiIconMenuHamburgerCircledLight",
+        "handlerCode": "menu-hamburger-circled-light"
+    },
+    {
+        "className": "PiIconMenuHamburgerCircledDark",
+        "handlerCode": "menu-hamburger-circled-dark"
     }
 ]

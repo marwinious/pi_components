@@ -93,3 +93,8 @@ import { PiIconMenuDotHorizontalThick } from '../components/iconMenuDotHorizonta
 import { PiIconMenuDotVerticalThick } from '../components/iconMenuDotVerticalThick'
 import { PiIconMenuDotHorizontalThin } from '../components/iconMenuDotHorizontalThin'
 import { PiIconMenuDotVerticalThin } from '../components/iconMenuDotVerticalThin'
+import { PiIconMenuHamburgerRounded } from '../components/iconMenuHamburgerRounded'
+import { PiIconMenuHamburgerCorners } from '../components/iconMenuHamburgerCorners'
+import { PiIconMenuHamburgerCornersThick } from '../components/iconMenuHamburgerCornersThick'
+import { PiIconMenuHamburgerCircledLight } from '../components/iconMenuHamburgerCircledLight'
+import { PiIconMenuHamburgerCircledDark } from '../components/iconMenuHamburgerCircledDark'
