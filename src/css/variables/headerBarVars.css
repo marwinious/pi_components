@@ -4,5 +4,9 @@
     --pi-header-bar-padding: 0.8rem;
     --pi-header-bar-box-shadow: 0px 1px 2px #666;
     --pi-header-bar-content-font-size: 1.4rem;
+    --pi-header-bar-content-text-color: #333;
     --pi-header-bar-background-color: #FFF;
+    --pi-header-bar-nav-icon-color: #333;
+    --pi-header-bar-nav-icon-hover-color: #333;
+    --pi-header-bar-nav-icon-hover-bg-color: rgba(0,0,0,0.1);
 }
