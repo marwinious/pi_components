@@ -30,12 +30,14 @@ export class PiHeaderBar extends LitElement {
         return html`
             <div class="prepend_container">
                 <slot name="prepend">
-                    <div 
-                    class="nav_icon"
-                    @click=${this.handleNavIconClick}
-                    >
-                        <pi-icon-handler icon="menu-hamburger-rounded"></pi-icon-handler>
-                    </div>
+                    ${this.showNavIcon ? html`
+                        <div 
+                        class="nav_icon"
+                        @click=${this.handleNavIconClick}
+                        >
+                            <pi-icon-handler icon="menu-hamburger-rounded"></pi-icon-handler>
+                        </div>
+                    ` : null}
                 </slot>
             </div>
 
@@ -46,7 +48,7 @@ export class PiHeaderBar extends LitElement {
             </div>
 
             <div class="append_container">
-                <slot name="append">Test</slot>
+                <slot name="append"></slot>
             </div>
         `;
     }
@@ -65,6 +67,7 @@ export class PiHeaderBar extends LitElement {
         defaultCss,
         css`
             :host {
+                box-sizing: border-box;
                 display: flex;
                 align-items: center;
                 /* border: solid 1px blue; */
@@ -72,6 +75,13 @@ export class PiHeaderBar extends LitElement {
                 box-shadow: var(--pi-header-bar-box-shadow, 0px 1px 2px #666);
                 gap: 1.2rem;
                 background-color: var(--pi-header-bar-background-color, #fff);
+                width: 100%;
+            }
+
+            :host([sticky]) {
+                position: fixed;
+                top: 0;
+                left: 0;
             }
 
             .nav_icon {
@@ -81,15 +91,18 @@ export class PiHeaderBar extends LitElement {
                 border-radius: 50%;
                 padding: 5px;
                 transition: all 0.25s ease-in-out;
+                fill: var(--pi-header-bar-nav-icon-color, #333);
 
                 &:hover {
-                    background: rgba(0,0,0,0.1);
+                    background: var(--pi-header-bar-nav-icon-hover-bg-color, rgba(0,0,0,0.1));
+                    fill: var(--pi-header-bar-nav-icon-hover-color, #333);
                 }
             }
 
             .header_content {
                 font-size: var(--pi-header-bar-content-font-size, 1.4rem);
                 flex-grow: 1;
+                color: var(--pi-header-bar-content-text-color, #333);
             }
 
             .append_container {
