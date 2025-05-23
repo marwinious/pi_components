@@ -40,7 +40,7 @@ export default {
     args: {
         title: 'Header Bar Title',
         sticky: false,
-        showNavIcon: false
+        showNavIcon: true
     }
 }
 
@@ -54,13 +54,3 @@ const Template = ({ title, sticky, showNavIcon }) => html`
 
 export const Default = Template.bind();
 Default.args = {}
-
-export const Sticky = Template.bind();
-Sticky.args = {
-    sticky: true
-}
-
-export const ShowNavIcon = Template.bind();
-ShowNavIcon.args = {
-    showNavIcon: true
-}
