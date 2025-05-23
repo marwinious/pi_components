@@ -5758,12 +5758,24 @@ class Ua extends o {
   }
   closeDrawer() {
     this.showDrawer = !1;
+    const i = new CustomEvent("drawerClosed", {
+      detail: this.showDrawer,
+      bubbles: !0,
+      composed: !0
+    });
+    this.dispatchEvent(i);
   }
   openDrawer() {
     this.showDrawer = !0;
+    const i = new CustomEvent("drawerOpened", {
+      detail: this.showDrawer,
+      bubbles: !0,
+      composed: !0
+    });
+    this.dispatchEvent(i);
   }
   toggleDrawer() {
-    this.showDrawer = !this.showDrawer;
+    this.showDrawer ? this.closeDrawer() : this.openDrawer();
   }
   static styles = [
     l,
