@@ -98,3 +98,4 @@ import { PiIconMenuHamburgerCorners } from '../components/iconMenuHamburgerCorne
 import { PiIconMenuHamburgerCornersThick } from '../components/iconMenuHamburgerCornersThick'
 import { PiIconMenuHamburgerCircledLight } from '../components/iconMenuHamburgerCircledLight'
 import { PiIconMenuHamburgerCircledDark } from '../components/iconMenuHamburgerCircledDark'
+import { PiIconMagnifyingGlass } from '../components/iconMagnifyingGlass'

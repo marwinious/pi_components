@@ -386,5 +386,9 @@
     {
         "className": "PiIconMenuHamburgerCircledDark",
         "handlerCode": "menu-hamburger-circled-dark"
+    },
+    {
+        "className": "PiIconMagnifyingGlass",
+        "handlerCode": "magnifying-glass"
     }
 ]
