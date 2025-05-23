@@ -334,5 +334,37 @@
     {
         "className": "PiIconWebGlobeLight",
         "handlerCode": "web-globe-light"
+    },
+    {
+        "className": "PiIconMenuDotHorizontalCircledLight",
+        "handlerCode": "menu-dot-horizontal-circled-light"
+    },
+    {
+        "className": "PiIconMenuDotHorizontalCircledDark",
+        "handlerCode": "menu-dot-horizontal-circled-dark"
+    },
+    {
+        "className": "PiIconMenuDotHorizontalSolid",
+        "handlerCode": "menu-dot-horizontal-solid"
+    },
+    {
+        "className": "PiIconMenuDotVerticalSolid",
+        "handlerCode": "menu-dot-vertical-solid"
+    },
+    {
+        "className": "PiIconMenuDotHorizontalThick",
+        "handlerCode": "menu-dot-horizontal-thick"
+    },
+    {
+        "className": "PiIconMenuDotVerticalThick",
+        "handlerCode": "menu-dot-vertical-thick"
+    },
+    {
+        "className": "PiIconMenuDotHorizontalThin",
+        "handlerCode": "menu-dot-horizontal-thin"
+    },
+    {
+        "className": "PiIconMenuDotVerticalThin",
+        "handlerCode": "menu-dot-vertical-thin"
     }
 ]
