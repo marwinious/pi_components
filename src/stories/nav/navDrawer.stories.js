@@ -9,28 +9,10 @@ export default {
     component: 'pi-nav-drawer',
     tags: ['autodocs'],
     argTypes: {
-        title: {
+        contents: {
             control: 'text', 
-            name: 'title (optional)',
-            description: 'Title for bar',
-            table: {
-                type: { summary: 'string' },
-                defaultValue: { summary: ''}
-            }
-        },
-        sticky: { 
-            control: 'boolean', 
-            name: 'sticky (optional)',
-            description: 'Enables sticky mode',
-            table: {
-                type: { summary: 'boolean' },
-                defaultValue: { summary: ''}
-            } 
-        },
-        showNavIcon: {
-            control: 'boolean', 
-            name: 'showNavIcon (optional)',
-            description: 'Shows the nav icon at front of bar',
+            name: 'content slot (optional)',
+            description: 'Slot for content',
             table: {
                 type: { summary: 'string' },
                 defaultValue: { summary: ''}
@@ -38,18 +20,23 @@ export default {
         },
     },
     args: {
-        title: 'Header Bar Title',
-        sticky: false,
-        showNavIcon: true
+        contents: 'Nav drawer contents',
     }
 }
 
-const Template = ({ title, sticky, showNavIcon }) => html`
-    <pi-header-bar
-    title=${ifDefined(title != '' ? title : undefined)}
-    ?sticky=${sticky}
-    ?showNavIcon=${showNavIcon}
-    ></pi-header-bar>
+const toggleDrawer = () => {
+    const drawer = document.querySelector('pi-nav-drawer');
+    
+    drawer.toggleDrawer();
+}
+
+const Template = ({ contents }) => html`
+    <button @click=${() => toggleDrawer()}>Toggle Drawer</button>
+
+    <pi-nav-drawer
+    contents=${ifDefined(contents != '' ? contents : undefined)}
+    ?showDrawer=${false}
+    ></pi-nav-drawer>
 `;
 
 export const Default = Template.bind();
