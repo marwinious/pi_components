@@ -11,7 +11,7 @@ export default {
     argTypes: {
         contents: {
             control: 'text', 
-            name: 'content slot (optional)',
+            name: 'content slot',
             description: 'Slot for content',
             table: {
                 type: { summary: 'string' },
@@ -20,7 +20,7 @@ export default {
         },
     },
     args: {
-        contents: 'Nav drawer contents',
+        contents: '',
     }
 }
 
@@ -34,9 +34,8 @@ const Template = ({ contents }) => html`
     <button @click=${() => toggleDrawer()}>Toggle Drawer</button>
 
     <pi-nav-drawer
-    contents=${ifDefined(contents != '' ? contents : undefined)}
     ?showDrawer=${false}
-    ></pi-nav-drawer>
+    >${contents}</pi-nav-drawer>
 `;
 
 export const Default = Template.bind();
