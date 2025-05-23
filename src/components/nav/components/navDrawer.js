@@ -38,14 +38,31 @@ export class PiNavDrawer extends LitElement {
 
     closeDrawer() {
         this.showDrawer = false;
+
+        const event = new CustomEvent('drawerClosed', {
+            detail: this.showDrawer,
+            bubbles: true,
+            composed: true,
+        });
+
+        this.dispatchEvent(event);
     }
 
     openDrawer() {
         this.showDrawer = true;
+
+        const event = new CustomEvent('drawerOpened', {
+            detail: this.showDrawer,
+            bubbles: true,
+            composed: true,
+        });
+
+        this.dispatchEvent(event);
     }
 
     toggleDrawer() {
-        this.showDrawer = !this.showDrawer;
+        if(this.showDrawer) { this.closeDrawer(); } 
+        else { this.openDrawer(); }
     }
 
     static styles = [
