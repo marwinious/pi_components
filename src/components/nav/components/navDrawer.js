@@ -21,7 +21,17 @@ export class PiNavDrawer extends LitElement {
             </div>
 
             <div class="content_container">
-                <slot>Demo Slot</slot>
+                <slot>
+                    <p>
+                        The drawer is controlled by the showDrawer boolean attribute on this component. Change that value from the parent to control the drawer's visbility. 
+                    </p>
+                    <p>
+                        Alternatively, you may select this component from a querySelector and call closeDrawer(), openDrawer(), or toggleDrawer() on that element.
+                    </p>
+                    <p>
+                        There is an default slot in the drawer where you can pass in content to override this message.
+                    </p>
+                </slot>
             </div>
         `;
     }
@@ -52,9 +62,9 @@ export class PiNavDrawer extends LitElement {
                 min-width: 256px;
                 transform: translateX(-260px);
                 transition: all 0.25s ease-in-out;
-                background: #FFF;
-                box-shadow: 1px 1px 2px #666;
-                padding: 1.2rem;
+                background: var(--pi-nav-drawer-bg-color, #FFF);
+                box-shadow: var(--pi-nav-drawer-box-shadow, 1px 1px 2px #666);
+                padding: var(--pi-nav-drawer-padding, 1.2rem);
             }
 
             :host([showDrawer]) {
@@ -69,7 +79,8 @@ export class PiNavDrawer extends LitElement {
                 cursor: pointer;
                 font-size: 1.4rem;
                 user-select: none;
-                padding: 0.2rem 0.40rem;
+                padding: var(--pi-nav-drawer-padding, 0.2rem 0.4rem);
+                color: var(--pi-nav-drawer-close-color, #333);
             }
         `
     ]
