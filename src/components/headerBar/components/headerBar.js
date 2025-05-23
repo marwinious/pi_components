@@ -27,8 +27,20 @@ export class PiHeaderBar extends LitElement {
 
     render() {
         return html`
-            <div class="nav_icon">
-                
+            <div class="prepend_container">
+                <slot name="prepend">
+                    <div class="nav_icon">
+                        <pi-icon-handler icon="menu-hamburger-rounded"></pi-icon-handler>
+                    </div>
+                </slot>
+            </div>
+
+            <div class="header_title">
+                ${this.title}
+            </div>
+
+            <div class="append_container">
+                <slot name="append"></slot>
             </div>
         `;
     }
