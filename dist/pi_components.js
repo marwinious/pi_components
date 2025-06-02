@@ -5242,8 +5242,7 @@ class Ta extends o {
 
             ${this.paginate ? t`
                 <pi-table-paginator
-                .rows=${this.sortedRows}
-                .rowsPerPage=${this.rowsPerPage}
+                .rows=${this.rowsPerPage}
                 @updatedPageRows=${(i) => this.handleUpdatedPageRows(i.detail.rows)}
                 ></pi-table-paginator>
             ` : null}
