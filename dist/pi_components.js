@@ -3166,17 +3166,17 @@ const ne = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)
   "warn",
   "help",
   "danger"
-], aa = () => ia.map((e) => `
-    .btn_severity_${e} {
-        --pi-button-bg-color: var(--pi-button-bg-color-${e});
-        --pi-button-text-color: var(--pi-button-text-color-${e});
-        --pi-button-border: var(--pi-button-border-${e});
-        --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-${e});
-        --pi-button-hover-text-color: var(--pi-button-hover-text-color-${e}, #FFF);
-        --pi-button-hover-border-color: var(--pi-button-hover-border-color-${e});
-        --pi-button-active-bg-color: var(--pi-button-active-bg-color-${e});
-        --pi-button-active-text-color: var(--pi-button-active-text-color-${e});
-        --pi-button-active-border-color: var(--pi-button-active-border-color-${e});
+], aa = () => ia.map((i) => `
+    .btn_severity_${i} {
+        --pi-button-bg-color: var(--pi-button-bg-color-${i});
+        --pi-button-text-color: var(--pi-button-text-color-${i});
+        --pi-button-border: var(--pi-button-border-${i});
+        --pi-button-hover-bg-color: var(--pi-button-hover-bg-color-${i});
+        --pi-button-hover-text-color: var(--pi-button-hover-text-color-${i}, #FFF);
+        --pi-button-hover-border-color: var(--pi-button-hover-border-color-${i});
+        --pi-button-active-bg-color: var(--pi-button-active-bg-color-${i});
+        --pi-button-active-text-color: var(--pi-button-active-text-color-${i});
+        --pi-button-active-border-color: var(--pi-button-active-border-color-${i});
     }
 `).join(""), oa = a`
 
@@ -3440,7 +3440,7 @@ class ca extends o {
   }
   /* <div class="icon">${unsafeHTML(this.icon)}</div> */
   render() {
-    const i = {
+    const e = {
       [`btn_severity_${this.severity}`]: !0,
       [`btn_variant_${this.variant}`]: !0,
       raised: this.raised === !0,
@@ -3450,7 +3450,7 @@ class ca extends o {
     return t`
             <button 
             type=${this.type}
-            class=${u(i)}
+            class=${u(e)}
             ?disabled=${this.disabled}
             @click=${this._handleClick}
             >
@@ -3474,11 +3474,11 @@ class ca extends o {
             </button>
         `;
   }
-  _handleClick(i) {
-    i.stopPropagation(), this.type !== "submit" ? this.dispatchEvent(new CustomEvent("click", {
-      detail: i
+  _handleClick(e) {
+    e.stopPropagation(), this.type !== "submit" ? this.dispatchEvent(new CustomEvent("click", {
+      detail: e
     })) : this.dispatchEvent(new CustomEvent("pi-submit", {
-      detail: i,
+      detail: e,
       composed: !0,
       bubbles: !0
     }));
@@ -3600,11 +3600,11 @@ class h extends o {
     throw new Error("renderInput() must be implemented in child class");
   }
   // Method to dispatch the 'change' event
-  _dispatchChangeEvent(i) {
+  _dispatchChangeEvent(e) {
     const s = new CustomEvent("change", {
       detail: {
         name: this.name,
-        value: i,
+        value: e,
         group: this.closest("pi-form-group")?.name || null
       },
       // Include name for easy identification
@@ -3614,16 +3614,16 @@ class h extends o {
     this.dispatchEvent(s);
   }
   // Example input change handler (override in child classes if needed)
-  _handleInputChange(i) {
-    this.value = i.target.value, this._dispatchChangeEvent(this.value);
+  _handleInputChange(e) {
+    this.value = e.target.value, this._dispatchChangeEvent(this.value);
   }
   // Get value (for form submit)
   getValue() {
     return this.value;
   }
   // Set value (for form reset and initial value)
-  setValue(i) {
-    this.value = i, this._dispatchChangeEvent(this.value);
+  setValue(e) {
+    this.value = e, this._dispatchChangeEvent(this.value);
   }
   static styles = [
     a`
@@ -3749,8 +3749,8 @@ class pa extends h {
     super(), this.defaultText = "Choose an option", this.options = [], this.selectedIndex = -1, this.labelKey = "", this.valueKey = "", this.selectedObject = {}, this.disabled = !1, this.value = "", this.label = "", this.preventDefaultSelection = !1;
   }
   // willUpdate hook: Detect property changes before re-render
-  willUpdate(i) {
-    i.has("selectedObject") && (this.selectedIndex = this.determineDefaultSelectedIndex(this.options, this.selectedObject));
+  willUpdate(e) {
+    e.has("selectedObject") && (this.selectedIndex = this.determineDefaultSelectedIndex(this.options, this.selectedObject));
   }
   renderInput() {
     return t`
@@ -3772,27 +3772,27 @@ class pa extends h {
                 ` : t``}
                     
                 ${this.options.length > 0 ? t`
-                    ${this.options.map((i, s) => t`
+                    ${this.options.map((e, s) => t`
                         <option 
                         value="${s}" 
-                        ?selected="${this.selectedIndex === s}">${i[this.labelKey]}</option>
+                        ?selected="${this.selectedIndex === s}">${e[this.labelKey]}</option>
                     `)}
                 ` : t``}
             </select>
         `;
   }
-  determineDefaultSelectedIndex(i, s) {
-    if (i.length > 0) {
+  determineDefaultSelectedIndex(e, s) {
+    if (e.length > 0) {
       const n = this.labelKey, r = this.valueKey;
       let c = -1;
-      return i.some((p, d) => {
+      return e.some((p, d) => {
         p[n] == s[n] && p[r] == s[r] && (c = d);
       }), c;
     }
     return -1;
   }
-  _handleInputChange(i) {
-    const s = i.target.value;
+  _handleInputChange(e) {
+    const s = e.target.value;
     this.valueKey != "" ? typeof this.options[s] < "u" ? this.value = this.options[s][this.valueKey] : this.value = "" : this.value = this.options[s], this._dispatchChangeEvent(this.value);
   }
   static styles = [
@@ -3972,8 +3972,8 @@ class ha extends h {
             
         `;
   }
-  _handleInputChange(i) {
-    this.value = i.target.value, this.checked = !this.checked;
+  _handleInputChange(e) {
+    this.value = e.target.value, this.checked = !this.checked;
     const s = new CustomEvent("radio-change", {
       detail: {
         name: this.name,
@@ -4079,10 +4079,10 @@ class ua extends h {
     super(), this.label = "", this.name = "", this.value = "", this.radios = [], this.disabled = !1;
   }
   connectedCallback() {
-    super.connectedCallback(), this.addEventListener("radio-change", (i) => this._handleRadioElementChange(i));
+    super.connectedCallback(), this.addEventListener("radio-change", (e) => this._handleRadioElementChange(e));
   }
   disconnectedCallback() {
-    super.disconnectedCallback(), this.removeEventListener("radio-change", (i) => this._handleRadioElementChange(i));
+    super.disconnectedCallback(), this.removeEventListener("radio-change", (e) => this._handleRadioElementChange(e));
   }
   render() {
     return t`
@@ -4096,18 +4096,18 @@ class ua extends h {
             <slot @slotchange=${this._handleSlotChange}></slot>
         `;
   }
-  _handleRadioElementChange(i) {
-    this.disabled || (typeof i.detail?.value < "u" && (this.value = i.detail.value, this._dispatchChangeEvent(i.detail.value)), this.syncCheckedRadio());
+  _handleRadioElementChange(e) {
+    this.disabled || (typeof e.detail?.value < "u" && (this.value = e.detail.value, this._dispatchChangeEvent(e.detail.value)), this.syncCheckedRadio());
   }
   syncCheckedRadio() {
-    this.radios.forEach((i) => {
-      i.value !== this.value && (i.checked = !1);
+    this.radios.forEach((e) => {
+      e.value !== this.value && (e.checked = !1);
     });
   }
   _collectRadioData() {
-    const i = this.querySelectorAll("[name]");
+    const e = this.querySelectorAll("[name]");
     let s = "";
-    return i.forEach((n) => {
+    return e.forEach((n) => {
       const r = n.closest("pi-radio-input");
       r ? r.checked && (s = r.getValue()) : s = n.value;
     }), s;
@@ -4116,8 +4116,8 @@ class ua extends h {
     this.radios = this.querySelectorAll("pi-radio-input"), this.disabled && this.radios.forEach((s) => {
       s.disabled = !0;
     });
-    const i = this._collectRadioData();
-    this.value = i;
+    const e = this._collectRadioData();
+    this.value = e;
   }
   static styles = [
     l,
@@ -4433,10 +4433,10 @@ class va extends o {
     super(), this.formData = {}, this.showReset = !1, this.showSubmit = !0;
   }
   connectedCallback() {
-    super.connectedCallback(), this.addEventListener("change", (i) => this._handleFormElementChange(i)), this.addEventListener("pi-submit", (i) => this._handleSubmit(i));
+    super.connectedCallback(), this.addEventListener("change", (e) => this._handleFormElementChange(e)), this.addEventListener("pi-submit", (e) => this._handleSubmit(e));
   }
   disconnectedCallback() {
-    super.disconnectedCallback(), this.removeEventListener("change", (i) => this._handleFormElementChange(i)), this.removeEventListener("pi-submit", (i) => this._handleSubmit(i));
+    super.disconnectedCallback(), this.removeEventListener("change", (e) => this._handleFormElementChange(e)), this.removeEventListener("pi-submit", (e) => this._handleSubmit(e));
   }
   render() {
     return t`
@@ -4462,8 +4462,8 @@ class va extends o {
             </form>
         `;
   }
-  _handleFormElementChange(i) {
-    i.detail?.group ? (typeof this.formData[i.detail.group] > "u" && (this.formData[i.detail.group] = {}), this.formData[i.detail.group][i.detail.name] = i.detail.value) : this.formData = { ...this.formData, [i.detail.name]: i.detail.value };
+  _handleFormElementChange(e) {
+    e.detail?.group ? (typeof this.formData[e.detail.group] > "u" && (this.formData[e.detail.group] = {}), this.formData[e.detail.group][e.detail.name] = e.detail.value) : this.formData = { ...this.formData, [e.detail.name]: e.detail.value };
     const s = new CustomEvent("formDataUpdated", {
       detail: this.formData,
       bubbles: !0,
@@ -4471,8 +4471,8 @@ class va extends o {
     });
     this.dispatchEvent(s);
   }
-  _handleSubmit(i) {
-    i.preventDefault();
+  _handleSubmit(e) {
+    e.preventDefault();
     const s = this._collectFormData(), n = new CustomEvent("formSubmitted", {
       detail: s,
       bubbles: !0,
@@ -4481,8 +4481,8 @@ class va extends o {
     this.dispatchEvent(n);
   }
   _collectFormData() {
-    const i = this.querySelectorAll("[name]"), s = {};
-    return i.forEach((n) => {
+    const e = this.querySelectorAll("[name]"), s = {};
+    return e.forEach((n) => {
       const r = n.closest("pi-form-group")?.name;
       if (r) {
         s[r] || (s[r] = {});
@@ -4494,15 +4494,15 @@ class va extends o {
       }
     }), s;
   }
-  _handleReset(i) {
-    i.preventDefault(), this.querySelectorAll("[name]").forEach((n) => {
+  _handleReset(e) {
+    e.preventDefault(), this.querySelectorAll("[name]").forEach((n) => {
       const r = n.closest("pi-base-form-element") || n.closest("pi-text-input") || n.closest("pi-select-input") || n.closest("pi-checkbox-input") || n.closest("pi-toggle-switch") || n.closest("pi-radio-input-group") || n.closest("pi-text-area-input");
       r ? r.setValue("") : (n.tagName === "PI-TEXT-INPUT" || n.tagName === "PI-SELECT-INPUT" || n.tagName === "PI-TEXT-AREA-INPUT" || n.tagName === "PI-TOGGLE-INPUT" || n.tagName === "PI-RADIO-INPUT" || n.tagName === "PI-CHECKBOX-INPUT") && (n.value = "");
     }), this.formData = {};
   }
   _handleSlotChange() {
-    const i = this._collectFormData();
-    this.formData = i;
+    const e = this._collectFormData();
+    this.formData = e;
   }
   static styles = [
     a`
@@ -4717,15 +4717,15 @@ class ka extends o {
     super.connectedCallback(), this.updatePagerNav(), this.generateTemplate();
   }
   updatePagerNav() {
-    const i = this.currentPage > 0 ? this.currentPage - 1 : 0, s = i + this.pagerNavNumberCount, n = Math.ceil(this.totalRecords / this.rows);
-    this.pagerNavNumberStart = i, this.pagerNavNumberStop = s, this.totalPages = n;
+    const e = this.currentPage > 0 ? this.currentPage - 1 : 0, s = e + this.pagerNavNumberCount, n = Math.ceil(this.totalRecords / this.rows);
+    this.pagerNavNumberStart = e, this.pagerNavNumberStop = s, this.totalPages = n;
   }
-  handlePageNavNumberClick(i) {
-    i < 0 && (i = 0), i > this.pageCount && (i = this.pageCount), this.currentPage = i, this.updatePagerNav(), this.generateTemplate();
+  handlePageNavNumberClick(e) {
+    e < 0 && (e = 0), e > this.pageCount && (e = this.pageCount), this.currentPage = e, this.updatePagerNav(), this.generateTemplate();
     const s = new CustomEvent("navClick", {
       detail: {
-        navIndex: i,
-        pageNumber: i + 1
+        navIndex: e,
+        pageNumber: e + 1
       },
       bubbles: !0,
       composed: !0
@@ -4733,14 +4733,14 @@ class ka extends o {
     this.dispatchEvent(s);
   }
   generateTemplate() {
-    const i = [];
-    if (this.useStartEndLinks && i.push(t`
+    const e = [];
+    if (this.useStartEndLinks && e.push(t`
                 <pi-paginator-nav-item 
                 @click="${() => this.handlePageNavNumberClick(0)}"
                 ?disabled=${this.currentPage == 0}
                 value="&lt;&lt;"
                 ></pi-paginator-nav-item>
-            `), this.useNextPrevLinks && i.push(t`
+            `), this.useNextPrevLinks && e.push(t`
                 <pi-paginator-nav-item 
                 @click="${() => this.handlePageNavNumberClick(this.currentPage - 1)}"
                 ?disabled=${this.currentPage - 1 < 0}
@@ -4748,26 +4748,26 @@ class ka extends o {
                 ></pi-paginator-nav-item>
             `), this.useNumericLinks)
       for (let s = this.pagerNavNumberStart, n = this.pagerNavNumberStop; s < n; s++)
-        s < this.totalPages && i.push(t`
+        s < this.totalPages && e.push(t`
                         <pi-paginator-nav-item 
                         @click="${() => this.handlePageNavNumberClick(s)}"
                         ?active=${s === this.currentPage}
                         .value=${s + 1}
                         ></pi-paginator-nav-item>
                     `);
-    this.useNextPrevLinks && i.push(t`
+    this.useNextPrevLinks && e.push(t`
                 <pi-paginator-nav-item 
                 @click="${() => this.handlePageNavNumberClick(this.currentPage + 1)}"
                 ?disabled=${this.currentPage + 1 >= this.totalPages}
                 value="&gt;"
                 ></pi-paginator-nav-item>
-            `), this.useStartEndLinks && i.push(t`
+            `), this.useStartEndLinks && e.push(t`
                 <pi-paginator-nav-item 
                 @click="${() => this.handlePageNavNumberClick(this.totalPages - 1)}"
                 ?disabled=${this.currentPage + 1 >= this.totalPages}
                 value="&gt;&gt;"
                 ></pi-paginator-nav-item>
-            `), this.template = i;
+            `), this.template = e;
   }
   render() {
     return t`
@@ -4788,8 +4788,8 @@ class ka extends o {
   ];
 }
 customElements.get("pi-paginator") || customElements.define("pi-paginator", ka);
-function za(e, i) {
-  return e.reduce((s, n, r) => (r % i === 0 && s.push(e.slice(r, r + i)), s), []);
+function za(i, e) {
+  return i.reduce((s, n, r) => (r % e === 0 && s.push(i.slice(r, r + e)), s), []);
 }
 class Ea extends o {
   static get properties() {
@@ -4804,39 +4804,39 @@ class Ea extends o {
   constructor() {
     super(), this.rows = [], this.rowsPerPage = -1, this.activeRows = [], this.pages = [], this.activePageIndex = 0;
   }
-  willUpdate(i) {
-    i.has("rows") && this.initPagination();
+  willUpdate(e) {
+    e.has("rows") && this.initPagination();
   }
   render() {
     return t`
             <pi-paginator
             .rows=${this.rowsPerPage}
             .totalRecords=${this.rows.length}
-            @navClick=${(i) => this.handlePagerNavClick(i.detail)}
+            @navClick=${(e) => this.handlePagerNavClick(e.detail)}
             ></pi-paginator>
         `;
   }
   initPagination() {
     if (this.rowsPerPage > 0) {
-      const i = za(this.rows, this.rowsPerPage);
-      this.pages = i, this.handlePaginationChange();
+      const e = za(this.rows, this.rowsPerPage);
+      this.pages = e, this.handlePaginationChange();
     }
   }
   handlePaginationChange() {
     this.emitPageRows(this.pages[this.activePageIndex]);
   }
-  emitPageRows(i) {
+  emitPageRows(e) {
     const s = new CustomEvent("updatedPageRows", {
       detail: {
-        rows: i
+        rows: e
       },
       bubbles: !0,
       composed: !0
     });
     this.dispatchEvent(s);
   }
-  handlePagerNavClick(i) {
-    Number(i.navIndex * this.rowsPerPage) + Number(this.rowsPerPage), this.activePageIndex = i.navIndex, this.handlePaginationChange();
+  handlePagerNavClick(e) {
+    Number(e.navIndex * this.rowsPerPage) + Number(this.rowsPerPage), this.activePageIndex = e.navIndex, this.handlePaginationChange();
   }
   static styles = [
     a`
@@ -4848,9 +4848,9 @@ class Ea extends o {
   ];
 }
 customElements.get("pi-table-paginator") || customElements.define("pi-table-paginator", Ea);
-function wa(e, i, s) {
-  return [...e].sort((r, c) => {
-    const p = r[i], d = c[i], m = typeof p == "string" && typeof d == "string" ? p.localeCompare(d, void 0, { numeric: !0 }) : Number(p) - Number(d);
+function wa(i, e, s) {
+  return [...i].sort((r, c) => {
+    const p = r[e], d = c[e], m = typeof p == "string" && typeof d == "string" ? p.localeCompare(d, void 0, { numeric: !0 }) : Number(p) - Number(d);
     return s === "asc" ? m : -m;
   });
 }
@@ -4915,12 +4915,12 @@ class Sa extends o {
     super(), this.sortable = !1, this.sortDirection = "";
   }
   render() {
-    const i = {
+    const e = {
       isSortable: this.sortable
     };
     return t`
             <div 
-            class="table_th ${u(i)}"
+            class="table_th ${u(e)}"
             @click=${this.handleSortClick}
             >
                 <slot></slot>
@@ -4933,7 +4933,7 @@ class Sa extends o {
             
         `;
   }
-  handleSortClick(i) {
+  handleSortClick(e) {
     const s = new CustomEvent("tableSortIconClicked", {
       detail: {
         currentSortDirection: this.sortDirection
@@ -4998,12 +4998,12 @@ class Pa extends o {
     super(), this.columns = [], this.sortable = !1, this.gridlines = !1, this.sortKey = "", this.sortDirection = "";
   }
   render() {
-    const i = {
+    const e = {
       gridlines: this.gridlines
     };
     return t`
             <pi-table-tr
-            class=${u(i)}
+            class=${u(e)}
             >
                 <slot>
                     ${this.columns.map((s) => t`
@@ -5092,14 +5092,14 @@ class Ca extends o {
     super(), this.columns = [], this.rows = [], this.striped = !1, this.sortable = !1, this.gridlines = !1;
   }
   render() {
-    const i = {
+    const e = {
       striped: this.striped,
       gridlines: this.gridlines
     };
     return t`
             ${this.rows.map((s) => t`
                 <pi-table-tr
-                class=${u(i)}
+                class=${u(e)}
                 >
                     ${this.columns.map((n) => t`
                         <pi-table-td>${s[n.key]}</pi-table-td>
@@ -5206,16 +5206,16 @@ class Ta extends o {
     super(), this.columns = [], this.rows = [], this.striped = !1, this.gridlines = !1, this.sortKey = "", this.sortDirection = "", this.activeRows = [], this.slottedColumns = [], this.paginate = !1, this.rowsPerPage = -1, this.sortedRows = [];
   }
   connectedCallback() {
-    super.connectedCallback(), this.initTable(), this.addEventListener("sortRequested", (i) => this.handleSortRequest(i.detail.key, i.detail.newSortDirection));
+    super.connectedCallback(), this.initTable(), this.addEventListener("sortRequested", (e) => this.handleSortRequest(e.detail.key, e.detail.newSortDirection));
   }
   disconnectedCallback() {
-    super.disconnectedCallback(), this.removeEventListener("sortRequested");
+    super.disconnectedCallback(), this.removeEventListener("sortRequested", (e) => this.handleSortRequest(e.detail.key, e.detail.newSortDirection));
   }
   firstUpdated() {
     this.captureColumnData(), this.handleDefaultSort();
   }
-  willUpdate(i) {
-    i.has("rows") && this.captureColumnData();
+  willUpdate(e) {
+    e.has("rows") && this.captureColumnData();
   }
   render() {
     return t`
@@ -5242,22 +5242,23 @@ class Ta extends o {
 
             ${this.paginate ? t`
                 <pi-table-paginator
-                .rows=${this.rowsPerPage}
-                @updatedPageRows=${(i) => this.handleUpdatedPageRows(i.detail.rows)}
+                .rows=${this.sortedRows}
+                .rowsPerPage=${this.rowsPerPage}
+                @updatedPageRows=${(e) => this.handleUpdatedPageRows(e.detail.rows)}
                 ></pi-table-paginator>
             ` : null}
         `;
   }
-  handleUpdatedPageRows(i) {
-    this.activeRows = [...i];
+  handleUpdatedPageRows(e) {
+    this.activeRows = [...e];
   }
-  handleSortRequest(i, s) {
-    this.sortedRows = wa(this.rows, i, s), this.updateColumnSorters(i, s), this.paginate || (this.activeRows = [...this.sortedRows]);
+  handleSortRequest(e, s) {
+    this.sortedRows = wa(this.rows, e, s), this.updateColumnSorters(e, s), this.paginate || (this.activeRows = [...this.sortedRows]);
   }
-  updateColumnSorters(i, s) {
+  updateColumnSorters(e, s) {
     this.slottedColumns.forEach((n) => {
       n.dispatchEvent(new CustomEvent("updateSorter", {
-        detail: { sortKey: i, sortDirection: s },
+        detail: { sortKey: e, sortDirection: s },
         bubbles: !0,
         composed: !0
       }));
@@ -5267,7 +5268,7 @@ class Ta extends o {
     this.sortKey != "" && this.sortDirection != "" && this.handleSortRequest(this.sortKey, this.sortDirection);
   }
   captureColumnData() {
-    const i = [], s = [], n = this.shadowRoot.querySelector("slot");
+    const e = [], s = [], n = this.shadowRoot.querySelector("slot");
     if (n == null)
       return !1;
     n.assignedElements({ flatten: !0 }).forEach((c) => {
@@ -5275,9 +5276,9 @@ class Ta extends o {
         const p = {};
         s.push(c), Array.from(c.attributes).forEach((d) => {
           p[d.name] = d.value;
-        }), i.push(p);
+        }), e.push(p);
       }
-    }), this.columns = i, s.length > 0 && (this.slottedColumns = s);
+    }), this.columns = e, s.length > 0 && (this.slottedColumns = s);
   }
   initTable() {
     this.activeRows = [...this.rows], this.sortedRows = [...this.rows];
@@ -5311,18 +5312,18 @@ class Na extends o {
     super(), this.sortable = !1, this.sortDirection = "", this.key = "", this.label = "";
   }
   connectedCallback() {
-    super.connectedCallback(), this.addEventListener("updateSorter", (i) => this.handleUpdateSorter(i.detail));
+    super.connectedCallback(), this.addEventListener("updateSorter", (e) => this.handleUpdateSorter(e.detail));
   }
   disconnectedCallback() {
-    super.disconnectedCallback(), this.removeEventListener("updateSorter");
+    super.disconnectedCallback(), this.removeEventListener("updateSorter", (e) => this.handleUpdateSorter(e.detail));
   }
   render() {
-    const i = {
+    const e = {
       isSortable: this.sortable
     };
     return t`
             <div 
-            class="table_th ${u(i)}"
+            class="table_th ${u(e)}"
             @click=${this.handleSortClick}
             >
                 ${this.label}
@@ -5335,10 +5336,10 @@ class Na extends o {
             
         `;
   }
-  handleUpdateSorter(i) {
-    i.sortKey != this.key ? this.sortDirection = "" : this.sortDirection = i.sortDirection;
+  handleUpdateSorter(e) {
+    e.sortKey != this.key ? this.sortDirection = "" : this.sortDirection = e.sortDirection;
   }
-  handleSortClick(i) {
+  handleSortClick(e) {
     if (this.sortable == !0) {
       const s = this.sortDirection, n = s == "asc" ? "desc" : "asc", r = new CustomEvent("sortRequested", {
         detail: {
@@ -5434,19 +5435,19 @@ class Fa extends o {
             <slot @slotchange=${this.updateTabList}></slot>
         `;
   }
-  handleTabClick(i) {
-    this.selectedTab = i.getAttribute("value"), this.updateSelectedTab();
+  handleTabClick(e) {
+    this.selectedTab = e.getAttribute("value"), this.updateSelectedTab();
   }
   updateSelectedTab() {
     this.tabList.forEach((s) => {
       s.getAttribute("value") === this.selectedTab ? s.setAttribute("selected", !0) : s.removeAttribute("selected");
     });
-    const i = new CustomEvent("tabSelected", {
+    const e = new CustomEvent("tabSelected", {
       detail: this.selectedTab,
       bubbles: !0,
       composed: !0
     });
-    this.dispatchEvent(i);
+    this.dispatchEvent(e);
   }
   updateTabList() {
     this.shadowRoot.querySelector("slot").assignedElements().forEach((n) => {
@@ -5456,8 +5457,8 @@ class Fa extends o {
   initSelectedTab() {
     !this.selectedTab && this.tabList.length > 0 && (this.selectedTab = this.tabList[0].getAttribute("value"), this.updateSelectedTab());
   }
-  assignTabListener(i) {
-    i.addEventListener("click", () => this.handleTabClick(i));
+  assignTabListener(e) {
+    e.addEventListener("click", () => this.handleTabClick(e));
   }
   static styles = [
     a`
@@ -5512,12 +5513,12 @@ class Ja extends o {
             <slot @slotchange=${this.updatePanelList}></slot>
         `;
   }
-  updateSelectedTab(i) {
-    this.selectedTab = i, this.setActivePanel(this.selectedTab);
+  updateSelectedTab(e) {
+    this.selectedTab = e, this.setActivePanel(this.selectedTab);
   }
-  setActivePanel(i) {
+  setActivePanel(e) {
     this.panelList.forEach((s) => {
-      s.getAttribute("value") === i ? s.setAttribute("active", !0) : s.removeAttribute("active");
+      s.getAttribute("value") === e ? s.setAttribute("active", !0) : s.removeAttribute("active");
     });
   }
   updatePanelList() {
@@ -5548,8 +5549,8 @@ class Oa extends o {
             <slot @slotchange=${this.handleSlotChange}></slot>
         `;
   }
-  handleTabListSelection(i) {
-    this.selectedTab = i.detail, this.panelListEl.updateSelectedTab(this.selectedTab);
+  handleTabListSelection(e) {
+    this.selectedTab = e.detail, this.panelListEl.updateSelectedTab(this.selectedTab);
   }
   handleSlotChange() {
     this.shadowRoot.querySelector("slot").assignedElements({ flatten: !0 }).forEach((n) => {
@@ -5669,12 +5670,12 @@ class Ha extends o {
         `;
   }
   handleNavIconClick() {
-    const i = new CustomEvent("navIconClick", {
+    const e = new CustomEvent("navIconClick", {
       detail: !1,
       bubbles: !0,
       composed: !0
     });
-    this.dispatchEvent(i);
+    this.dispatchEvent(e);
   }
   static styles = [
     l,
@@ -5757,21 +5758,21 @@ class Ua extends o {
   }
   closeDrawer() {
     this.showDrawer = !1;
-    const i = new CustomEvent("drawerClosed", {
+    const e = new CustomEvent("drawerClosed", {
       detail: this.showDrawer,
       bubbles: !0,
       composed: !0
     });
-    this.dispatchEvent(i);
+    this.dispatchEvent(e);
   }
   openDrawer() {
     this.showDrawer = !0;
-    const i = new CustomEvent("drawerOpened", {
+    const e = new CustomEvent("drawerOpened", {
       detail: this.showDrawer,
       bubbles: !0,
       composed: !0
     });
-    this.dispatchEvent(i);
+    this.dispatchEvent(e);
   }
   toggleDrawer() {
     this.showDrawer ? this.closeDrawer() : this.openDrawer();
