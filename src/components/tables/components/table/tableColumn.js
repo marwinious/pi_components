@@ -28,7 +28,7 @@ export class PiTableColumn extends LitElement {
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.removeEventListener('updateSorter');
+        this.removeEventListener('updateSorter', (e) => this.handleUpdateSorter(e.detail));
     }
 
     render() {

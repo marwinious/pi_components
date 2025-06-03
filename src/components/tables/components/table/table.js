@@ -54,7 +54,7 @@ export class PiTable extends LitElement {
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.removeEventListener('sortRequested')
+        this.removeEventListener('sortRequested', (e) => this.handleSortRequest(e.detail.key, e.detail.newSortDirection))
     }
 
     firstUpdated() {
