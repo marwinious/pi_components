@@ -5690,6 +5690,7 @@ class Ha extends o {
                 gap: 1.2rem;
                 background-color: var(--pi-header-bar-background-color, #fff);
                 width: 100%;
+                z-index: 9999;
             }
 
             :host([sticky]) {
