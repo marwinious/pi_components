@@ -73,7 +73,7 @@ export class PiNavDrawer extends LitElement {
                 position: fixed;
                 top: 0;
                 left: 0;
-                z-index: 1000;
+                z-index: 10000;
                 height: 100%;
                 width: 256px;
                 min-width: 256px;
