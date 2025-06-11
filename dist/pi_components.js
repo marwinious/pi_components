@@ -4789,7 +4789,10 @@ class ka extends o {
 }
 customElements.get("pi-paginator") || customElements.define("pi-paginator", ka);
 function za(i, e) {
-  return i.reduce((s, n, r) => (r % e === 0 && s.push(i.slice(r, r + e)), s), []);
+  const s = [];
+  for (let n = 0; n < i.length; n += Number(e))
+    s.push(i.slice(n, n + Number(e)));
+  return s;
 }
 class Ea extends o {
   static get properties() {
