@@ -1,8 +1,7 @@
 export function chunkArray(array, chunkSize) {
-    return array.reduce((acc, _, index) => {
-        if (index % chunkSize === 0) {
-            acc.push(array.slice(index, index + chunkSize));
-        }
-        return acc;
-    }, []);
+    const chunkedArray = [];
+    for (let i = 0; i < array.length; i += Number(chunkSize)) {
+        chunkedArray.push(array.slice(i, i + Number(chunkSize)));
+    }
+    return chunkedArray;
 }
