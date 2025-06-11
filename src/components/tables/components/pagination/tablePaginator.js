@@ -44,7 +44,7 @@ export class PiTablePaginator extends LitElement {
             // Split rows into an array of rows for easy reference
             const pagesOfRows = chunkArray(this.rows, this.rowsPerPage);
             this.pages = pagesOfRows;
-            
+
             this.handlePaginationChange();
         }
     }
@@ -71,6 +71,7 @@ export class PiTablePaginator extends LitElement {
         const rowStop = rowStart + Number(this.rowsPerPage);
 
         this.activePageIndex = navData.navIndex;
+
         this.handlePaginationChange();
     }
 
