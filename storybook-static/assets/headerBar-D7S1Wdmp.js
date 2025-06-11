@@ -1,4 +1,4 @@
-import{r,x as e,i as o}from"./lit-element-qJpPW6A9.js";import{d as i}from"./defaultCss-aEcf2KJM.js";class t extends r{static get properties(){return{sticky:{type:Boolean},showNavIcon:{type:Boolean},title:{type:String}}}constructor(){super(),this.sticky=!1,this.showNavIcon=!1,this.title=""}connectedCallback(){super.connectedCallback()}disconnectedCallback(){super.disconnectedCallback()}render(){return e`
+import{r,x as e,i as o}from"./lit-element-qJpPW6A9.js";import{d as i}from"./defaultCss-aEcf2KJM.js";class n extends r{static get properties(){return{sticky:{type:Boolean},showNavIcon:{type:Boolean},title:{type:String}}}constructor(){super(),this.sticky=!1,this.showNavIcon=!1,this.title=""}connectedCallback(){super.connectedCallback()}disconnectedCallback(){super.disconnectedCallback()}render(){return e`
             <div class="prepend_container">
                 <slot name="prepend">
                     ${this.showNavIcon?e`
@@ -32,6 +32,7 @@ import{r,x as e,i as o}from"./lit-element-qJpPW6A9.js";import{d as i}from"./defa
                 gap: 1.2rem;
                 background-color: var(--pi-header-bar-background-color, #fff);
                 width: 100%;
+                z-index: 9999;
             }
 
             :host([sticky]) {
@@ -64,4 +65,4 @@ import{r,x as e,i as o}from"./lit-element-qJpPW6A9.js";import{d as i}from"./defa
             .append_container {
                 /* margin-left: auto; */
             }
-        `]}customElements.get("pi-header-bar")||customElements.define("pi-header-bar",t);
+        `]}customElements.get("pi-header-bar")||customElements.define("pi-header-bar",n);

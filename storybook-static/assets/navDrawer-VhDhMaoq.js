@@ -1,4 +1,4 @@
-import{r as e,x as r,i as t}from"./lit-element-qJpPW6A9.js";import{d as o}from"./defaultCss-aEcf2KJM.js";class a extends e{static get properties(){return{showDrawer:{type:Boolean,reflect:!0}}}constructor(){super(),this.showDrawer=!1}render(){return r`
+import{r,x as t,i as o}from"./lit-element-qJpPW6A9.js";import{d as s}from"./defaultCss-aEcf2KJM.js";class a extends r{static get properties(){return{showDrawer:{type:Boolean,reflect:!0}}}constructor(){super(),this.showDrawer=!1}render(){return t`
             <div class="close_container">
                 <span @click="${this.closeDrawer}">x</span>
             </div>
@@ -16,13 +16,13 @@ import{r as e,x as r,i as t}from"./lit-element-qJpPW6A9.js";import{d as o}from".
                     </p>
                 </slot>
             </div>
-        `}closeDrawer(){this.showDrawer=!1}openDrawer(){this.showDrawer=!0}toggleDrawer(){this.showDrawer=!this.showDrawer}static styles=[o,t`
+        `}closeDrawer(){this.showDrawer=!1;const e=new CustomEvent("drawerClosed",{detail:this.showDrawer,bubbles:!0,composed:!0});this.dispatchEvent(e)}openDrawer(){this.showDrawer=!0;const e=new CustomEvent("drawerOpened",{detail:this.showDrawer,bubbles:!0,composed:!0});this.dispatchEvent(e)}toggleDrawer(){this.showDrawer?this.closeDrawer():this.openDrawer()}static styles=[s,o`
             :host {
                 box-sizing: border-box;
                 position: fixed;
                 top: 0;
                 left: 0;
-                z-index: 1000;
+                z-index: 10000;
                 height: 100%;
                 width: 256px;
                 min-width: 256px;

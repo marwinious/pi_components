@@ -1,4 +1,4 @@
-import{r as i,x as s,i as a}from"./lit-element-qJpPW6A9.js";import{d as h}from"./defaultCss-aEcf2KJM.js";import{e as p}from"./class-map-j0Yd3Bp3.js";import"./paginator-B6elyfOC.js";function u(r,t){return r.reduce((e,o,l)=>(l%t===0&&e.push(r.slice(l,l+t)),e),[])}class g extends i{static get properties(){return{rows:{type:Array},rowsPerPage:{type:[Number,String]},activeRows:{type:Array,attribute:!1},pages:{type:Array,attribute:!1},activePageIndex:{type:Number,attribute:!1}}}constructor(){super(),this.rows=[],this.rowsPerPage=-1,this.activeRows=[],this.pages=[],this.activePageIndex=0}willUpdate(t){t.has("rows")&&this.initPagination()}render(){return s`
+import{r as i,x as s,i as a}from"./lit-element-qJpPW6A9.js";import{d as h}from"./defaultCss-aEcf2KJM.js";import{e as p}from"./class-map-j0Yd3Bp3.js";import"./paginator-B6elyfOC.js";function u(r,t){const e=[];for(let o=0;o<r.length;o+=Number(t))e.push(r.slice(o,o+Number(t)));return e}class g extends i{static get properties(){return{rows:{type:Array},rowsPerPage:{type:[Number,String]},activeRows:{type:Array,attribute:!1},pages:{type:Array,attribute:!1},activePageIndex:{type:Number,attribute:!1}}}constructor(){super(),this.rows=[],this.rowsPerPage=-1,this.activeRows=[],this.pages=[],this.activePageIndex=0}willUpdate(t){t.has("rows")&&this.initPagination()}render(){return s`
             <pi-paginator
             .rows=${this.rowsPerPage}
             .totalRecords=${this.rows.length}
@@ -9,7 +9,7 @@ import{r as i,x as s,i as a}from"./lit-element-qJpPW6A9.js";import{d as h}from".
                 display: block;
                 width: 100%;
             }
-        `]}customElements.get("pi-table-paginator")||customElements.define("pi-table-paginator",g);function m(r,t,e){return[...r].sort((l,d)=>{const n=l[t],c=d[t],b=typeof n=="string"&&typeof c=="string"?n.localeCompare(c,void 0,{numeric:!0}):Number(n)-Number(c);return e==="asc"?b:-b})}class f extends i{static get properties(){return{}}constructor(){super()}render(){return s`
+        `]}customElements.get("pi-table-paginator")||customElements.define("pi-table-paginator",g);function m(r,t,e){return[...r].sort((d,c)=>{const l=d[t],n=c[t],b=typeof l=="string"&&typeof n=="string"?l.localeCompare(n,void 0,{numeric:!0}):Number(l)-Number(n);return e==="asc"?b:-b})}class f extends i{static get properties(){return{}}constructor(){super()}render(){return s`
             <slot></slot>
         `}static styles=[a`
             :host {
@@ -168,7 +168,7 @@ import{r as i,x as s,i as a}from"./lit-element-qJpPW6A9.js";import{d as h}from".
                 display: block;
                 padding: 0.5rem 0 0.5rem 0;
             } */
-        `]}customElements.get("pi-table-tfoot")||customElements.define("pi-table-tfoot",k);class E extends i{static get properties(){return{columns:{type:Array},rows:{type:Array}}}constructor(){super(),this.columns=[],this.rows=[]}render(){return s`
+        `]}customElements.get("pi-table-tfoot")||customElements.define("pi-table-tfoot",k);class S extends i{static get properties(){return{columns:{type:Array},rows:{type:Array}}}constructor(){super(),this.columns=[],this.rows=[]}render(){return s`
             <slot></slot>
         `}static styles=[a`
             :host {
@@ -179,7 +179,7 @@ import{r as i,x as s,i as a}from"./lit-element-qJpPW6A9.js";import{d as h}from".
                 text-align: left;
                 white-space: nowrap;
             }
-        `]}customElements.get("pi-base-table")||customElements.define("pi-base-table",E);class S extends i{static get properties(){return{columns:{type:Array,attribute:!1},rows:{type:Array},striped:{type:Boolean},gridlines:{type:Boolean},sortKey:{type:String},sortDirection:{type:String},activeRows:{type:Array,attribute:!1},slottedColumns:{type:Array,attribute:!1},paginate:{type:Boolean},rowsPerPage:{type:[Number,String]},sortedRows:{type:Array,attribute:!1}}}constructor(){super(),this.columns=[],this.rows=[],this.striped=!1,this.gridlines=!1,this.sortKey="",this.sortDirection="",this.activeRows=[],this.slottedColumns=[],this.paginate=!1,this.rowsPerPage=-1,this.sortedRows=[]}connectedCallback(){super.connectedCallback(),this.initTable(),this.addEventListener("sortRequested",t=>this.handleSortRequest(t.detail.key,t.detail.newSortDirection))}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("sortRequested")}firstUpdated(){this.captureColumnData(),this.handleDefaultSort()}willUpdate(t){t.has("rows")&&this.captureColumnData()}render(){return s`
+        `]}customElements.get("pi-base-table")||customElements.define("pi-base-table",S);class E extends i{static get properties(){return{columns:{type:Array,attribute:!1},rows:{type:Array},striped:{type:Boolean},gridlines:{type:Boolean},sortKey:{type:String},sortDirection:{type:String},activeRows:{type:Array,attribute:!1},slottedColumns:{type:Array,attribute:!1},paginate:{type:Boolean},rowsPerPage:{type:[Number,String]},sortedRows:{type:Array,attribute:!1}}}constructor(){super(),this.columns=[],this.rows=[],this.striped=!1,this.gridlines=!1,this.sortKey="",this.sortDirection="",this.activeRows=[],this.slottedColumns=[],this.paginate=!1,this.rowsPerPage=-1,this.sortedRows=[]}connectedCallback(){super.connectedCallback(),this.initTable(),this.addEventListener("sortRequested",t=>this.handleSortRequest(t.detail.key,t.detail.newSortDirection))}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("sortRequested",t=>this.handleSortRequest(t.detail.key,t.detail.newSortDirection))}firstUpdated(){this.captureColumnData(),this.handleDefaultSort()}willUpdate(t){t.has("rows")&&this.captureColumnData()}render(){return s`
             <pi-base-table>
                 <pi-table-thead
                 ?gridlines=${this.gridlines}
@@ -208,7 +208,7 @@ import{r as i,x as s,i as a}from"./lit-element-qJpPW6A9.js";import{d as h}from".
                 @updatedPageRows=${t=>this.handleUpdatedPageRows(t.detail.rows)}
                 ></pi-table-paginator>
             `:null}
-        `}handleUpdatedPageRows(t){this.activeRows=[...t]}handleSortRequest(t,e){this.sortedRows=m(this.rows,t,e),this.updateColumnSorters(t,e),this.paginate||(this.activeRows=[...this.sortedRows])}updateColumnSorters(t,e){this.slottedColumns.forEach(o=>{o.dispatchEvent(new CustomEvent("updateSorter",{detail:{sortKey:t,sortDirection:e},bubbles:!0,composed:!0}))})}handleDefaultSort(){this.sortKey!=""&&this.sortDirection!=""&&this.handleSortRequest(this.sortKey,this.sortDirection)}captureColumnData(){const t=[],e=[],o=this.shadowRoot.querySelector("slot");if(o==null)return!1;o.assignedElements({flatten:!0}).forEach(d=>{if(d.nodeName=="PI-TABLE-COLUMN"){const n={};e.push(d),Array.from(d.attributes).forEach(c=>{n[c.name]=c.value}),t.push(n)}}),this.columns=t,e.length>0&&(this.slottedColumns=e)}initTable(){this.activeRows=[...this.rows],this.sortedRows=[...this.rows]}static styles=[h,a`
+        `}handleUpdatedPageRows(t){this.activeRows=[...t]}handleSortRequest(t,e){this.sortedRows=m(this.rows,t,e),this.updateColumnSorters(t,e),this.paginate||(this.activeRows=[...this.sortedRows])}updateColumnSorters(t,e){this.slottedColumns.forEach(o=>{o.dispatchEvent(new CustomEvent("updateSorter",{detail:{sortKey:t,sortDirection:e},bubbles:!0,composed:!0}))})}handleDefaultSort(){this.sortKey!=""&&this.sortDirection!=""&&this.handleSortRequest(this.sortKey,this.sortDirection)}captureColumnData(){const t=[],e=[],o=this.shadowRoot.querySelector("slot");if(o==null)return!1;o.assignedElements({flatten:!0}).forEach(c=>{if(c.nodeName=="PI-TABLE-COLUMN"){const l={};e.push(c),Array.from(c.attributes).forEach(n=>{l[n.name]=n.value}),t.push(l)}}),this.columns=t,e.length>0&&(this.slottedColumns=e)}initTable(){this.activeRows=[...this.rows],this.sortedRows=[...this.rows]}static styles=[h,a`
             :host {
                 display: table;
                 overflow-x: var(--pi-table-overflow-x, auto);
@@ -218,7 +218,7 @@ import{r as i,x as s,i as a}from"./lit-element-qJpPW6A9.js";import{d as h}from".
                 text-align: var(--pi-table-text-align, left);
                 white-space: var(--pi-table-white-space, nowrap);
             }
-        `]}customElements.get("pi-table")||customElements.define("pi-table",S);class C extends i{static get properties(){return{sortable:{type:Boolean},sortDirection:{type:String},key:{type:String},label:{type:String}}}constructor(){super(),this.sortable=!1,this.sortDirection="",this.key="",this.label=""}connectedCallback(){super.connectedCallback(),this.addEventListener("updateSorter",t=>this.handleUpdateSorter(t.detail))}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("updateSorter")}render(){const t={isSortable:this.sortable};return s`
+        `]}customElements.get("pi-table")||customElements.define("pi-table",E);class C extends i{static get properties(){return{sortable:{type:Boolean},sortDirection:{type:String},key:{type:String},label:{type:String}}}constructor(){super(),this.sortable=!1,this.sortDirection="",this.key="",this.label=""}connectedCallback(){super.connectedCallback(),this.addEventListener("updateSorter",t=>this.handleUpdateSorter(t.detail))}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("updateSorter",t=>this.handleUpdateSorter(t.detail))}render(){const t={isSortable:this.sortable};return s`
             <div 
             class="table_th ${p(t)}"
             @click=${this.handleSortClick}
@@ -231,7 +231,7 @@ import{r as i,x as s,i as a}from"./lit-element-qJpPW6A9.js";import{d as h}from".
                 `:null}
             </div>
             
-        `}handleUpdateSorter(t){t.sortKey!=this.key?this.sortDirection="":this.sortDirection=t.sortDirection}handleSortClick(t){if(this.sortable==!0){const e=this.sortDirection,o=e=="asc"?"desc":"asc",l=new CustomEvent("sortRequested",{detail:{key:this.key,label:this.label,currentSortDirection:e,newSortDirection:o},bubbles:!0,composed:!0});this.dispatchEvent(l),this.sortDirection=o}}static styles=[a`
+        `}handleUpdateSorter(t){t.sortKey!=this.key?this.sortDirection="":this.sortDirection=t.sortDirection}handleSortClick(t){if(this.sortable==!0){const e=this.sortDirection,o=e=="asc"?"desc":"asc",d=new CustomEvent("sortRequested",{detail:{key:this.key,label:this.label,currentSortDirection:e,newSortDirection:o},bubbles:!0,composed:!0});this.dispatchEvent(d),this.sortDirection=o}}static styles=[a`
             :host {
                 display: table-cell;
                 padding: var(--pi-table-th-padding, 0.75em);
