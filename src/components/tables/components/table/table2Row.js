@@ -21,23 +21,23 @@ export class PiTable2Row extends LitElement {
 
     render() {
         return html`
-            <tr role="row">
-                ${repeat(this.columns, (col) => col.key, (col) => html`
-                    <td role="cell">
-                        ${
-                            // If a render function is provided for the column, use it.
-                            // Otherwise, display the data directly from the item.
-                            col.render ? col.render(this.item, this.rowIndex) : this.item[col.key]
-                        }
-                    </td>
-                `)}
-            </tr>
+            ${repeat(this.columns, (col) => col.key, (col) => html`
+                <td role="cell">
+                    ${
+                        // If a render function is provided for the column, use it.
+                        // Otherwise, display the data directly from the item.
+                        col.render ? col.render(this.item, this.rowIndex) : this.item[col.key]
+                    }
+                </td>
+            `)}
         `;
     }
 
     static styles = [
         css`
-            
+            :host {
+                display: table-row;
+            }
         `
     ]
     

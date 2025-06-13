@@ -11,11 +11,18 @@ import { PiTable2 } from "../../components/tables/components/table/table2";
     { label: 'Income', key: 'income', sortKey: 'rawIncome' },
 ] */
 
-const sampleColumns = [
+/* const sampleColumns = [
     { label: 'Category', key: 'category', sortKey: 'category' },
     { label: 'Title', key: 'title', sortKey: 'title' },
     { label: 'Brand', key: 'brand', sortKey: 'brand' },
     { label: 'Price', key: 'price', sortKey: 'price' },
+] */
+
+const sampleColumns = [
+    { header: 'Category', key: 'category', sortKey: 'category' },
+    { header: 'Title', key: 'title', sortKey: 'title' },
+    { header: 'Brand', key: 'brand', sortKey: 'brand' },
+    { header: 'Price', key: 'price', sortKey: 'price' },
 ]
 
 /* const sampleRows = [
@@ -103,18 +110,14 @@ export default {
 const Template = ({ striped, gridlines, paginate, rowsPerPage, sortKey, sortDirection }) => html`
     <pi-table-2 
     .rows=${sampleRows}
+    .columns=${sampleColumns}
     .striped=${striped}
     .gridlines=${gridlines}
     .paginate=${paginate}
     rowsPerPage=${ifDefined(paginate == true ? rowsPerPage : undefined)}
     sortKey=${ifDefined(sortKey != '' ? sortKey : undefined)}
     sortDirection=${ifDefined(sortDirection != '' ? sortDirection : undefined)}
-    >
-        <pi-table-column key="category" label="Category"></pi-table-column>
-        <pi-table-column key="title" label="Title"></pi-table-column>
-        <pi-table-column key="brand" label="Brand"></pi-table-column>
-        <pi-table-column key="price" label="Price"></pi-table-column>
-    </pi-table-2>
+    ></pi-table-2>
 `;
 
 export const Default = Template.bind();

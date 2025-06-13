@@ -6,7 +6,7 @@ export class PiTable2 extends LitElement {
 
     static get properties() {
         return {
-            data: { type: Array },
+            rows: { type: Array },
             columns: { type: Array },
             striped: { type: Boolean },
             compact: { type: Boolean },
@@ -16,7 +16,7 @@ export class PiTable2 extends LitElement {
     constructor() {
         super()
 
-        this.data = [];
+        this.rows = [];
         this.columns = undefined; // Use undefined to differentiate from an empty array
         this.striped = false;
         this.compact = false;
@@ -28,8 +28,8 @@ export class PiTable2 extends LitElement {
         }
 
         // Infer columns from the first item if data exists
-        if (this.data && this.data.length > 0) {
-            return Object.keys(this.data[0]).map(key => ({
+        if (this.rows && this.rows.length > 0) {
+            return Object.keys(this.rows[0]).map(key => ({
                 key: key,
                 header: key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1'), // Basic capitalization
             }));
@@ -39,9 +39,9 @@ export class PiTable2 extends LitElement {
     }
 
     render() {
-        const resolvedColumns = this._resolveColumns();
+        const resolvedColumns = this.resolveColumns();
 
-        if (!this.data || this.data.length === 0) {
+        if (!this.rows || this.rows.length === 0) {
             return html`<div class="empty-table-message">No data to display.</div>`;
         }
 
@@ -55,7 +55,7 @@ export class PiTable2 extends LitElement {
                     </tr>
                 </thead>
                 <tbody role="rowgroup">
-                    ${repeat(this.data, (item, index) => item.id || index, (item, index) => html`
+                    ${repeat(this.rows, (item, index) => item.id || index, (item, index) => html`
                         <pi-table-2-row
                             .item=${item}
                             .columns=${resolvedColumns}
