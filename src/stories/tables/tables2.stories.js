@@ -22,7 +22,12 @@ const sampleColumns = [
     { header: 'Category', key: 'category', sortKey: 'category' },
     { header: 'Title', key: 'title', sortKey: 'title' },
     { header: 'Brand', key: 'brand', sortKey: 'brand' },
-    { header: 'Price', key: 'price', sortKey: 'price' },
+    { 
+        header: 'Price', key: 'price', sortKey: 'price',
+        render: (item) =>  html`
+            &dollar;${item.price}
+        `
+    },
 ]
 
 /* const sampleRows = [
