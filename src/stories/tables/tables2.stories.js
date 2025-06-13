@@ -19,7 +19,7 @@ import { PiTable2 } from "../../components/tables/components/table/table2";
 ] */
 
 const sampleColumns = [
-    { header: 'Category', key: 'category', sortKey: 'category' },
+    { header: 'Category', key: 'category', sortKey: 'category', sortable: true },
     { header: 'Title', key: 'title', sortKey: 'title' },
     { header: 'Brand', key: 'brand', sortKey: 'brand' },
     { 

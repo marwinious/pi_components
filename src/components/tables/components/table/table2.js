@@ -1,6 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { repeat } from 'lit/directives/repeat.js';
 import { PiTable2Row } from './table2Row';
+import { PiTableColumn } from './tableColumn';
+import defaultCss from '../../../../css/defaultCss';
 
 export class PiTable2 extends LitElement {
 
@@ -50,7 +52,12 @@ export class PiTable2 extends LitElement {
                 <thead role="rowgroup">
                     <tr role="row">
                         ${repeat(resolvedColumns, (col) => col.key, (col) => html`
-                            <th role="columnheader">${col.header}</th>
+                            <pi-table-column
+                            ?sortable=${this.sortable && col.sortKey}
+                            .label=${col.header}
+                            .key=${col.key}
+                            .sortKey=${col.sortKey}
+                            >${col.header}</pi-table-column>
                         `)}
                     </tr>
                 </thead>
@@ -68,10 +75,11 @@ export class PiTable2 extends LitElement {
     }
 
     static styles = [
+        defaultCss,
         css`
             :host {
                 display: block;
-                font-family: 'Inter', sans-serif;
+                /* font-family: 'Inter', sans-serif;
                 --table-border-color: #e0e0e0;
                 --table-header-bg: #f5f5f5;
                 --table-row-hover-bg: #f9f9f9;
@@ -79,17 +87,22 @@ export class PiTable2 extends LitElement {
                 --table-text-color: #333;
                 --table-header-text-color: #555;
                 --table-cell-padding: 12px;
-                --table-compact-cell-padding: 8px;
+                --table-compact-cell-padding: 8px; */
             }
 
             table {
-                width: 100%;
-                border-collapse: collapse;
-                border-radius: 8px;
-                overflow: hidden; /* Ensures border-radius applies to borders */
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                background-color: white;
-                color: var(--table-text-color);
+                overflow-x: var(--pi-table-overflow-x, auto);
+                overflow-y: var(--pi-table-overflow-y, visible);
+                width: var(--pi-table-width, 100%);
+                border-collapse: var(--pi-table-border-collapse, collapse);
+                text-align: var(--pi-table-text-align, left);
+                white-space: var(--pi-table-white-space, nowrap);
+            }
+
+            .gridlines {
+                --pi-table-th-border-right: var(--pi-table-th-border-bottom, 1px solid #ddd);
+                --pi-table-th-border-left: var(--pi-table-th-border-bottom, 1px solid #ddd);
+                --pi-table-th-border-top: var(--pi-table-th-border-bottom, 1px solid #ddd);
             }
 
             th, td {
