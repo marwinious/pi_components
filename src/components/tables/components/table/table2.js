@@ -53,7 +53,7 @@ export class PiTable2 extends LitElement {
                     <tr role="row">
                         ${repeat(resolvedColumns, (col) => col.key, (col) => html`
                             <pi-table-column
-                            ?sortable=${this.sortable && col.sortKey}
+                            ?sortable=${col.sortable && col.sortKey}
                             .label=${col.header}
                             .key=${col.key}
                             .sortKey=${col.sortKey}

@@ -85,7 +85,7 @@ export default {
             control: 'select', 
             name: 'sortKey',
             description: 'Pre-sorted table sort key',
-            options: ['', 'name', 'age', 'country', 'income', 'rawIncome'],
+            options: ['', 'category', 'title', 'brand', 'price'],
             table: {
                 type: { summary: 'string' },
                 defaultValue: { summary: ''}
