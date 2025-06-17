@@ -43,6 +43,33 @@ export class PiTable2 extends LitElement {
         return []; // No data and no column config
     }
 
+    handleSortRequest(sortKey, sortDirection) {
+            this.sortedRows = sortArrayOfObjects(this.rows, sortKey, sortDirection);
+            this.updateColumnSorters(sortKey, sortDirection)
+    
+            // If paginator is not enabled
+            if(!this.paginate) {
+                // Update activeRows (otherwise the paginator handles that)
+                this.activeRows = [...this.sortedRows];
+            }
+        }
+    
+        updateColumnSorters(sortKey, sortDirection) {
+            this.slottedColumns.forEach(el => {
+                el.dispatchEvent(new CustomEvent('updateSorter', { 
+                    detail: { sortKey, sortDirection },
+                    bubbles: true,
+                    composed: true
+                }));
+            })
+        }
+    
+        handleDefaultSort() {
+            if(this.sortKey != '' && this.sortDirection != '') {
+                this.handleSortRequest(this.sortKey, this.sortDirection);
+            }
+        }
+
     render() {
         const resolvedColumns = this.resolveColumns();
 
