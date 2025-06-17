@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import { classMap } from 'lit/directives/class-map.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { PiTable2Row } from './table2Row';
 import { PiTableColumn } from './tableColumn';
@@ -43,6 +44,12 @@ export class PiTable2 extends LitElement {
     render() {
         const resolvedColumns = this.resolveColumns();
 
+        // Define dynamic classes
+        const rowClasses = {
+            striped: this.striped,
+            gridlines: this.gridlines
+        }
+
         if (!this.rows || this.rows.length === 0) {
             return html`<div class="empty-table-message">No data to display.</div>`;
         }
@@ -64,9 +71,10 @@ export class PiTable2 extends LitElement {
                 <tbody role="rowgroup">
                     ${repeat(this.rows, (item, index) => item.id || index, (item, index) => html`
                         <pi-table-2-row
-                            .item=${item}
-                            .columns=${resolvedColumns}
-                            .rowIndex=${index}
+                        class=${classMap(rowClasses)}
+                        .item=${item}
+                        .columns=${resolvedColumns}
+                        .rowIndex=${index}
                         ></pi-table-2-row>
                     `)}
                 </tbody>
@@ -97,6 +105,14 @@ export class PiTable2 extends LitElement {
                 border-collapse: var(--pi-table-border-collapse, collapse);
                 text-align: var(--pi-table-text-align, left);
                 white-space: var(--pi-table-white-space, nowrap);
+            }
+
+            .striped:nth-child(even) {
+                background-color: var(--pi-table-row-bg-color-striped-even, #f8f8f8);
+            }
+
+            .striped:nth-child(odd) {
+                background-color: var(--pi-table-row-bg-color-striped-odd, #fff);
             }
 
             .gridlines {
