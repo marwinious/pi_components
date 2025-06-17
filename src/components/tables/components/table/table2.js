@@ -13,6 +13,7 @@ export class PiTable2 extends LitElement {
             columns: { type: Array },
             striped: { type: Boolean },
             compact: { type: Boolean },
+            gridlines: { type: Boolean },
         }
     }
 
@@ -23,6 +24,7 @@ export class PiTable2 extends LitElement {
         this.columns = undefined; // Use undefined to differentiate from an empty array
         this.striped = false;
         this.compact = false;
+        this.gridlines = false;
     }
 
     resolveColumns() {
@@ -116,9 +118,8 @@ export class PiTable2 extends LitElement {
             }
 
             .gridlines {
-                --pi-table-th-border-right: var(--pi-table-th-border-bottom, 1px solid #ddd);
-                --pi-table-th-border-left: var(--pi-table-th-border-bottom, 1px solid #ddd);
-                --pi-table-th-border-top: var(--pi-table-th-border-bottom, 1px solid #ddd);
+                --pi-table-cell-border-right: var(--pi-table-cell-border-top, 1px solid #ddd);
+                --pi-table-cell-border-left: var(--pi-table-cell-border-top, 1px solid #ddd);
             }
 
             th, td {
