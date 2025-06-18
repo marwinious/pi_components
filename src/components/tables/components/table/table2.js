@@ -4,12 +4,15 @@ import { repeat } from 'lit/directives/repeat.js';
 import { PiTable2Row } from './table2Row';
 import { PiTableColumn } from './tableColumn';
 import defaultCss from '../../../../css/defaultCss';
+import { sortArrayOfObjects } from '../../../../lib/utility/sorters';
 
 export class PiTable2 extends LitElement {
 
     static get properties() {
         return {
             rows: { type: Array },
+            sortedRows: { type: Array },
+            activeRows: { type: Array },
             columns: { type: Array },
             striped: { type: Boolean },
             compact: { type: Boolean },
@@ -17,14 +20,35 @@ export class PiTable2 extends LitElement {
         }
     }
 
+    connectedCallback() {
+        super.connectedCallback();
+        this.initTable();
+
+        this.addEventListener('sortRequested', (e) => this.handleSortRequest(e.detail.key, e.detail.newSortDirection))
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        
+        this.removeEventListener('sortRequested', (e) => this.handleSortRequest(e.detail.key, e.detail.newSortDirection))
+    }
+
     constructor() {
         super()
 
         this.rows = [];
+        this.sortedRows = [];
+        this.activeRows = [];
         this.columns = undefined; // Use undefined to differentiate from an empty array
         this.striped = false;
         this.compact = false;
         this.gridlines = false;
+    }
+
+    initTable() {
+        // Copy rows prop to activeRows for manipulation
+        this.activeRows = [...this.rows];
+        this.sortedRows = [...this.rows];
     }
 
     resolveColumns() {
@@ -44,31 +68,20 @@ export class PiTable2 extends LitElement {
     }
 
     handleSortRequest(sortKey, sortDirection) {
-            this.sortedRows = sortArrayOfObjects(this.rows, sortKey, sortDirection);
-            this.updateColumnSorters(sortKey, sortDirection)
-    
-            // If paginator is not enabled
-            if(!this.paginate) {
-                // Update activeRows (otherwise the paginator handles that)
-                this.activeRows = [...this.sortedRows];
-            }
+        this.sortedRows = sortArrayOfObjects(this.rows, sortKey, sortDirection);
+
+        // If paginator is not enabled
+        if(!this.paginate) {
+            // Update activeRows (otherwise the paginator handles that)
+            this.activeRows = [...this.sortedRows];
         }
-    
-        updateColumnSorters(sortKey, sortDirection) {
-            this.slottedColumns.forEach(el => {
-                el.dispatchEvent(new CustomEvent('updateSorter', { 
-                    detail: { sortKey, sortDirection },
-                    bubbles: true,
-                    composed: true
-                }));
-            })
+    }
+
+    handleDefaultSort() {
+        if(this.sortKey != '' && this.sortDirection != '') {
+            this.handleSortRequest(this.sortKey, this.sortDirection);
         }
-    
-        handleDefaultSort() {
-            if(this.sortKey != '' && this.sortDirection != '') {
-                this.handleSortRequest(this.sortKey, this.sortDirection);
-            }
-        }
+    }
 
     render() {
         const resolvedColumns = this.resolveColumns();
@@ -98,7 +111,7 @@ export class PiTable2 extends LitElement {
                     </tr>
                 </thead>
                 <tbody role="rowgroup">
-                    ${repeat(this.rows, (item, index) => item.id || index, (item, index) => html`
+                    ${repeat(this.activeRows, (item, index) => item.id || index, (item, index) => html`
                         <pi-table-2-row
                         class=${classMap(rowClasses)}
                         .item=${item}
