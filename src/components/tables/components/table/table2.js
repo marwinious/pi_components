@@ -33,6 +33,10 @@ export class PiTable2 extends LitElement {
         this.removeEventListener('sortRequested', (e) => this.handleSortRequest(e.detail.key, e.detail.newSortDirection))
     }
 
+    firstUpdated() {
+        this.handleDefaultSort();
+    }
+
     constructor() {
         super()
 
