@@ -17,6 +17,8 @@ export class PiTable2 extends LitElement {
             striped: { type: Boolean },
             compact: { type: Boolean },
             gridlines: { type: Boolean },
+            defaultSortKey: { type: String },
+            defaultSortDirection: { type: String },
         }
     }
 
@@ -47,6 +49,8 @@ export class PiTable2 extends LitElement {
         this.striped = false;
         this.compact = false;
         this.gridlines = false;
+        this.defaultSortKey = null;
+        this.defaultSortDirection = null;
     }
 
     initTable() {
@@ -82,8 +86,10 @@ export class PiTable2 extends LitElement {
     }
 
     handleDefaultSort() {
-        if(this.sortKey != '' && this.sortDirection != '') {
-            this.handleSortRequest(this.sortKey, this.sortDirection);
+        if(this.defaultSortKey != '' && this.defaultSortDirection != '') {
+            console.log('handling default sort: ', this.defaultSortKey, this.defaultSortDirection);
+            
+            this.handleSortRequest(this.defaultSortKey, this.defaultSortDirection);
         }
     }
 

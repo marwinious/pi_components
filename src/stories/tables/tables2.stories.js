@@ -120,8 +120,8 @@ const Template = ({ striped, gridlines, paginate, rowsPerPage, sortKey, sortDire
     .gridlines=${gridlines}
     .paginate=${paginate}
     rowsPerPage=${ifDefined(paginate == true ? rowsPerPage : undefined)}
-    sortKey=${ifDefined(sortKey != '' ? sortKey : undefined)}
-    sortDirection=${ifDefined(sortDirection != '' ? sortDirection : undefined)}
+    defaultSortKey=${ifDefined(sortKey != '' ? sortKey : undefined)}
+    defaultSortDirection=${ifDefined(sortDirection != '' ? sortDirection : undefined)}
     ></pi-table-2>
 `;
 
