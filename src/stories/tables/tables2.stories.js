@@ -23,7 +23,7 @@ const sampleColumns = [
     { header: 'Title', key: 'title', sortKey: 'title' },
     { header: 'Brand', key: 'brand', sortKey: 'brand' },
     { 
-        header: 'Price', key: 'price', sortKey: 'price',
+        header: 'Price', key: 'price', sortKey: 'price', sortKey: 'price', sortable: true,
         render: (item) =>  html`
             &dollar;${item.price}
         `
