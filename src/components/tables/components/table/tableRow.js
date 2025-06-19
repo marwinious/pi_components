@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { repeat } from 'lit/directives/repeat.js';
 
-export class PiTable2Row extends LitElement {
+export class PiTableRow extends LitElement {
 
     static get properties() {
         return {
@@ -56,4 +56,4 @@ export class PiTable2Row extends LitElement {
     
 }
 
-if(!customElements.get('pi-table-2-row')) { customElements.define('pi-table-2-row', PiTable2Row); }
+if(!customElements.get('pi-table-row')) { customElements.define('pi-table-row', PiTableRow); }
