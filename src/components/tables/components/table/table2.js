@@ -141,6 +141,13 @@ export class PiTable2 extends LitElement {
                         ></pi-table-2-row>
                     `)}
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan=10000>
+                            <slot name="tfoot"></slot>
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
         `;
     }
@@ -168,6 +175,10 @@ export class PiTable2 extends LitElement {
                 border-collapse: var(--pi-table-border-collapse, collapse);
                 text-align: var(--pi-table-text-align, left);
                 white-space: var(--pi-table-white-space, nowrap);
+            }
+
+            tfoot {
+                white-space: wrap;
             }
 
             .striped:nth-child(even) {
