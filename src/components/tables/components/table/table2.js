@@ -77,6 +77,7 @@ export class PiTable2 extends LitElement {
 
     handleSortRequest(sortKey, sortDirection) {
         this.sortedRows = sortArrayOfObjects(this.rows, sortKey, sortDirection);
+        this.updateColumnSorters(sortKey, sortDirection)
 
         // If paginator is not enabled
         if(!this.paginate) {
@@ -86,11 +87,21 @@ export class PiTable2 extends LitElement {
     }
 
     handleDefaultSort() {
-        if(this.defaultSortKey != '' && this.defaultSortDirection != '') {
-            console.log('handling default sort: ', this.defaultSortKey, this.defaultSortDirection);
-            
+        if(this.defaultSortKey != null && this.defaultSortDirection != null) {
             this.handleSortRequest(this.defaultSortKey, this.defaultSortDirection);
         }
+    }
+
+    updateColumnSorters(sortKey, sortDirection) {
+        const columnHeaders = this.shadowRoot.querySelectorAll('pi-table-column');
+        
+        columnHeaders.forEach(el => {
+            el.dispatchEvent(new CustomEvent('updateSorter', { 
+                detail: { sortKey, sortDirection },
+                bubbles: true,
+                composed: true
+            }));
+        })
     }
 
     render() {
