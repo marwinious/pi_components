@@ -1,9 +1,8 @@
 import { html } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
 import '../../components/icons/index'
-import { PiTable } from "../../components/tables/components/table/table";
-import { PiTableColumn } from "../../components/tables/components/table/tableColumn";
 import sampleProductList from "../../components/tables/sampleData/sampleProductsList.json"
+import { PiTable } from "../../components/tables/components/table/table";
 
 /* const sampleColumns = [
     { label: 'Name', key: 'name', sortKey: 'name' },
@@ -12,11 +11,23 @@ import sampleProductList from "../../components/tables/sampleData/sampleProducts
     { label: 'Income', key: 'income', sortKey: 'rawIncome' },
 ] */
 
-const sampleColumns = [
+/* const sampleColumns = [
     { label: 'Category', key: 'category', sortKey: 'category' },
     { label: 'Title', key: 'title', sortKey: 'title' },
     { label: 'Brand', key: 'brand', sortKey: 'brand' },
     { label: 'Price', key: 'price', sortKey: 'price' },
+] */
+
+const sampleColumns = [
+    { header: 'Category', key: 'category', sortKey: 'category', sortable: true },
+    { header: 'Title', key: 'title', sortKey: 'title' },
+    { header: 'Brand', key: 'brand', sortKey: 'brand' },
+    { 
+        header: 'Price', key: 'price', sortKey: 'price', sortKey: 'price', sortable: true,
+        render: (item) =>  html`
+            &dollar;${item.price}
+        `
+    },
 ]
 
 /* const sampleRows = [
@@ -74,7 +85,7 @@ export default {
             control: 'select', 
             name: 'sortKey',
             description: 'Pre-sorted table sort key',
-            options: ['', 'name', 'age', 'country', 'income', 'rawIncome'],
+            options: ['', 'category', 'title', 'brand', 'price'],
             table: {
                 type: { summary: 'string' },
                 defaultValue: { summary: ''}
@@ -95,70 +106,24 @@ export default {
         striped: false,
         gridlines: false,
         paginate: false,
-        rowsPerPage: 3,
+        rowsPerPage: 5,
         sortKey: '',
         sortDirection: ''
     }
 }
 
 const Template = ({ striped, gridlines, paginate, rowsPerPage, sortKey, sortDirection }) => html`
-    <pi-table 
+    <pi-table
     .rows=${sampleRows}
+    .columns=${sampleColumns}
     .striped=${striped}
     .gridlines=${gridlines}
     .paginate=${paginate}
     rowsPerPage=${ifDefined(paginate == true ? rowsPerPage : undefined)}
-    sortKey=${ifDefined(sortKey != '' ? sortKey : undefined)}
-    sortDirection=${ifDefined(sortDirection != '' ? sortDirection : undefined)}
-    >
-        <pi-table-column key="category" label="Category"></pi-table-column>
-        <pi-table-column key="title" label="Title"></pi-table-column>
-        <pi-table-column key="brand" label="Brand"></pi-table-column>
-        <pi-table-column key="price" label="Price"></pi-table-column>
-    </pi-table>
-`;
-
-const TemplateSortColumn = ({ striped, gridlines, paginate, rowsPerPage, sortKey, sortDirection }) => html`
-    <pi-table 
-    .rows=${sampleRows}
-    .striped=${striped}
-    .gridlines=${gridlines}
-    .paginate=${paginate}
-    rowsPerPage=${ifDefined(paginate == true ? rowsPerPage : undefined)}
-    sortKey=${ifDefined(sortKey != '' ? sortKey : undefined)}
-    sortDirection=${ifDefined(sortDirection != '' ? sortDirection : undefined)}
-    >
-        <pi-table-column key="category" label="Category" sortable sortKey="category"></pi-table-column>
-        <pi-table-column key="title" label="Title"></pi-table-column>
-        <pi-table-column key="brand" label="Brand"></pi-table-column>
-        <pi-table-column key="price" label="Price"></pi-table-column>
-    </pi-table>
+    defaultSortKey=${ifDefined(sortKey != '' ? sortKey : undefined)}
+    defaultSortDirection=${ifDefined(sortDirection != '' ? sortDirection : undefined)}
+    ></pi-table>
 `;
 
 export const Default = Template.bind();
 Default.args = {}
-
-export const Striped = Template.bind();
-Striped.args = {
-    striped: true
-}
-
-export const Gridlines = Template.bind();
-Gridlines.args = {
-    gridlines: true
-}
-
-export const SelectiveSorting = TemplateSortColumn.bind();
-SelectiveSorting.args = {}
-
-export const PreSorted = Template.bind();
-PreSorted.args = {
-    sortKey: 'age',
-    sortDirection: 'asc'
-}
-
-export const Paginated = Template.bind();
-Paginated.args = {
-    paginate: true,
-    rowsPerPage: 3
-}
