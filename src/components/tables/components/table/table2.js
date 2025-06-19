@@ -3,6 +3,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { PiTable2Row } from './table2Row';
 import { PiTableColumn } from './tableColumn';
+import { PiTablePaginator } from '../pagination/tablePaginator';
 import defaultCss from '../../../../css/defaultCss';
 import { sortArrayOfObjects } from '../../../../lib/utility/sorters';
 
@@ -19,6 +20,8 @@ export class PiTable2 extends LitElement {
             gridlines: { type: Boolean },
             defaultSortKey: { type: String },
             defaultSortDirection: { type: String },
+            paginate: { type: Boolean },
+            rowsPerPage: { type: Number|String },
         }
     }
 
@@ -51,6 +54,8 @@ export class PiTable2 extends LitElement {
         this.gridlines = false;
         this.defaultSortKey = null;
         this.defaultSortDirection = null;
+        this.paginate = false;
+        this.rowsPerPage = 5;
     }
 
     initTable() {
@@ -104,6 +109,10 @@ export class PiTable2 extends LitElement {
         })
     }
 
+    handleUpdatedPageRows(updatedRows) {
+        this.activeRows = [...updatedRows];
+    }
+
     render() {
         const resolvedColumns = this.resolveColumns();
 
@@ -149,6 +158,14 @@ export class PiTable2 extends LitElement {
                     </tr>
                 </tfoot>
             </table>
+
+            ${this.paginate ? html`
+                <pi-table-paginator
+                .rows=${this.sortedRows}
+                .rowsPerPage=${this.rowsPerPage}
+                @updatedPageRows=${(e) => this.handleUpdatedPageRows(e.detail.rows)}
+                ></pi-table-paginator>
+            ` : null}
         `;
     }
 
