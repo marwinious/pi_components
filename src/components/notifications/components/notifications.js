@@ -76,9 +76,13 @@ export class PiNotifications extends LitElement {
 
     finalizeNotificationData(data) {
         // Check for severity
-        if(data.severity && typeof this.severityMap[data.severity] != 'undefined') {
+        if(typeof data.severity != 'undefined' && typeof this.severityMap[data.severity] != 'undefined') {
+            // console.log('made it to the first check');
+            
             // Only do something if no custom icon has been specified
-            if(data.icon == '') {
+            if(data.icon == '' || typeof data.icon == 'undefined') {
+                // console.log('made it to the second check');
+                
                 data.icon = this.severityMap[data.severity].icon;
                 data.iconColor = this.severityMap[data.severity].color;
             }
