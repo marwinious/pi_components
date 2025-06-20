@@ -5934,7 +5934,7 @@ class Uo extends a {
     document.querySelector("pi-notification-center").addNotification(n);
   }
   finalizeNotificationData(t) {
-    return t.severity && typeof this.severityMap[t.severity] < "u" && t.icon == "" && (t.icon = this.severityMap[t.severity].icon, t.iconColor = this.severityMap[t.severity].color), t;
+    return typeof t.severity < "u" && typeof this.severityMap[t.severity] < "u" && (t.icon == "" || typeof t.icon > "u") && (t.icon = this.severityMap[t.severity].icon, t.iconColor = this.severityMap[t.severity].color), t;
   }
   render() {
     return e`
