@@ -390,5 +390,61 @@
     {
         "className": "PiIconMagnifyingGlass",
         "handlerCode": "magnifying-glass"
+    },
+    {
+        "className": "PiIconCheckmarkCircleDark",
+        "handlerCode": "checkmark-circle-dark"
+    },
+    {
+        "className": "PiIconCheckmarkCircleLight",
+        "handlerCode": "checkmark-circle-light"
+    },
+    {
+        "className": "PiIconCheckmarkCircleLight2",
+        "handlerCode": "checkmark-circle-light-2"
+    },
+    {
+        "className": "PiIconCheckmarkCommentDark",
+        "handlerCode": "checkmark-comment-dark"
+    },
+    {
+        "className": "PiIconCheckmarkCommentLight",
+        "handlerCode": "checkmark-comment-light"
+    },
+    {
+        "className": "PiIconCheckmarkLight",
+        "handlerCode": "checkmark-light"
+    },
+    {
+        "className": "PiIconCheckmarkLight2",
+        "handlerCode": "checkmark-light-2"
+    },
+    {
+        "className": "PiIconCheckmarkLight3",
+        "handlerCode": "checkmark-light-3"
+    },
+    {
+        "className": "PiIconCheckmarkSquareDark",
+        "handlerCode": "checkmark-square-dark"
+    },
+    {
+        "className": "PiIconCheckmarkSquareDark2",
+        "handlerCode": "checkmark-square-dark-2"
+    },
+    {
+        "className": "PiIconCheckmarkSquareLight",
+        "handlerCode": "checkmark-square-light"
+    },
+    {
+        "className": "PiIconCheckmarkSquareLight2",
+        "handlerCode": "checkmark-square-light-2"
+    },
+    {
+        "className": "PiIconCheckmarkSquareLight3",
+        "handlerCode": "checkmark-square-light-3"
+    },
+    {
+        "className": "PiIconCheckmarkSquareLight4",
+        "handlerCode": "checkmark-square-light-4"
     }
 ]
