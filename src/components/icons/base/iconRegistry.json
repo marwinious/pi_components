@@ -446,5 +446,13 @@
     {
         "className": "PiIconCheckmarkSquareLight4",
         "handlerCode": "checkmark-square-light-4"
+    },
+    {
+        "className": "PiIconAvatarHandLight",
+        "handlerCode": "avatar-hand-light"
+    },
+    {
+        "className": "PiIconAvatarHandDark",
+        "handlerCode": "avatar-hand-dark"
     }
 ]

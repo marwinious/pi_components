@@ -113,3 +113,5 @@ import { PiIconCheckmarkSquareLight } from '../components/iconCheckmarkSquareLig
 import { PiIconCheckmarkSquareLight2 } from '../components/iconCheckmarkSquareLight2'
 import { PiIconCheckmarkSquareLight3 } from '../components/iconCheckmarkSquareLight3'
 import { PiIconCheckmarkSquareLight4 } from '../components/iconCheckmarkSquareLight4'
+import { PiIconAvatarHandLight } from '../components/iconAvatarHandLight'
+import { PiIconAvatarHandDark } from '../components/iconAvatarHandDark'
