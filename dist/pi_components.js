@@ -1,9 +1,9 @@
 import { LitElement as o, html as e, css as a, unsafeCSS as b } from "lit";
-import { unsafeHTML as Le } from "lit/directives/unsafe-html.js";
+import { unsafeHTML as ze } from "lit/directives/unsafe-html.js";
 import { classMap as m } from "lit/directives/class-map.js";
 import { repeat as u } from "lit/directives/repeat.js";
-import { styleMap as ke } from "lit/directives/style-map.js";
-class ze extends o {
+import { styleMap as Ee } from "lit/directives/style-map.js";
+class _e extends o {
   static get properties() {
     return {
       viewBox: {
@@ -65,8 +65,8 @@ class ze extends o {
         `
   ];
 }
-customElements.get("pi-icon-base") || customElements.define("pi-icon-base", ze);
-class Ee extends o {
+customElements.get("pi-icon-base") || customElements.define("pi-icon-base", _e);
+class we extends o {
   static get properties() {
     return {
       icon: {
@@ -79,7 +79,7 @@ class Ee extends o {
   }
   render() {
     return e`
-            <div class="icon">${Le("<pi-icon-" + this.icon + "></pi-icon-" + this.icon)}</div>
+            <div class="icon">${ze("<pi-icon-" + this.icon + "></pi-icon-" + this.icon)}</div>
         `;
   }
   static styles = [
@@ -103,11 +103,11 @@ class Ee extends o {
         `
   ];
 }
-customElements.get("pi-icon-handler") || customElements.define("pi-icon-handler", Ee);
+customElements.get("pi-icon-handler") || customElements.define("pi-icon-handler", we);
 const v = {
   iconLabel: "pi-icon-left-arrow-circled"
 };
-class _e extends o {
+class $e extends o {
   static get properties() {
     return {
       pathData: {
@@ -136,11 +136,11 @@ class _e extends o {
         `
   ];
 }
-customElements.get(v.iconLabel) || customElements.define(v.iconLabel, _e);
+customElements.get(v.iconLabel) || customElements.define(v.iconLabel, $e);
 const f = {
   iconLabel: "pi-icon-chain-link"
 };
-class we extends o {
+class Se extends o {
   static get properties() {
     return {
       pathData: {
@@ -162,11 +162,11 @@ class we extends o {
         `
   ];
 }
-customElements.get(f.iconLabel) || customElements.define(f.iconLabel, we);
+customElements.get(f.iconLabel) || customElements.define(f.iconLabel, Se);
 const y = {
   iconLabel: "pi-icon-alert-triangle-dark"
 };
-class $e extends o {
+class Pe extends o {
   static get properties() {
     return {
       pathData: {
@@ -190,11 +190,11 @@ class $e extends o {
         `
   ];
 }
-customElements.get(y.iconLabel) || customElements.define(y.iconLabel, $e);
+customElements.get(y.iconLabel) || customElements.define(y.iconLabel, Pe);
 const D = {
   iconLabel: "pi-icon-alert-triangle-light"
 };
-class Se extends o {
+class Re extends o {
   static get properties() {
     return {
       pathData: {
@@ -218,11 +218,11 @@ class Se extends o {
         `
   ];
 }
-customElements.get(D.iconLabel) || customElements.define(D.iconLabel, Se);
+customElements.get(D.iconLabel) || customElements.define(D.iconLabel, Re);
 const x = {
   iconLabel: "pi-icon-area-chart-stand"
 };
-class Pe extends o {
+class Ce extends o {
   static get properties() {
     return {
       pathData: {
@@ -244,11 +244,11 @@ class Pe extends o {
         `
   ];
 }
-customElements.get(x.iconLabel) || customElements.define(x.iconLabel, Pe);
+customElements.get(x.iconLabel) || customElements.define(x.iconLabel, Ce);
 const L = {
   iconLabel: "pi-icon-avatar-generic-light"
 };
-class Ce extends o {
+class Ie extends o {
   static get properties() {
     return {
       pathData: {
@@ -274,11 +274,11 @@ class Ce extends o {
         `
   ];
 }
-customElements.get(L.iconLabel) || customElements.define(L.iconLabel, Ce);
+customElements.get(L.iconLabel) || customElements.define(L.iconLabel, Ie);
 const k = {
   iconLabel: "pi-icon-close-square-dark"
 };
-class Re extends o {
+class Me extends o {
   static get properties() {
     return {
       pathData: {
@@ -307,11 +307,11 @@ class Re extends o {
         `
   ];
 }
-customElements.get(k.iconLabel) || customElements.define(k.iconLabel, Re);
+customElements.get(k.iconLabel) || customElements.define(k.iconLabel, Me);
 const z = {
   iconLabel: "pi-icon-edit-image"
 };
-class Ie extends o {
+class Ne extends o {
   static get properties() {
     return {
       pathData: {
@@ -335,11 +335,11 @@ class Ie extends o {
         `
   ];
 }
-customElements.get(z.iconLabel) || customElements.define(z.iconLabel, Ie);
+customElements.get(z.iconLabel) || customElements.define(z.iconLabel, Ne);
 const E = {
   iconLabel: "pi-icon-edit-page-filled"
 };
-class Me extends o {
+class Te extends o {
   static get properties() {
     return {
       pathData: {
@@ -368,11 +368,11 @@ class Me extends o {
         `
   ];
 }
-customElements.get(E.iconLabel) || customElements.define(E.iconLabel, Me);
+customElements.get(E.iconLabel) || customElements.define(E.iconLabel, Te);
 const _ = {
   iconLabel: "pi-icon-edit-video"
 };
-class Ne extends o {
+class Ae extends o {
   static get properties() {
     return {
       pathData: {
@@ -396,11 +396,11 @@ class Ne extends o {
         `
   ];
 }
-customElements.get(_.iconLabel) || customElements.define(_.iconLabel, Ne);
+customElements.get(_.iconLabel) || customElements.define(_.iconLabel, Ae);
 const w = {
   iconLabel: "pi-icon-gear-solid"
 };
-class Te extends o {
+class Fe extends o {
   static get properties() {
     return {
       pathData: {
@@ -424,11 +424,11 @@ class Te extends o {
         `
   ];
 }
-customElements.get(w.iconLabel) || customElements.define(w.iconLabel, Te);
+customElements.get(w.iconLabel) || customElements.define(w.iconLabel, Fe);
 const $ = {
   iconLabel: "pi-icon-info-chat-bubble-dark"
 };
-class Fe extends o {
+class Be extends o {
   static get properties() {
     return {
       pathData: {
@@ -452,11 +452,11 @@ class Fe extends o {
         `
   ];
 }
-customElements.get($.iconLabel) || customElements.define($.iconLabel, Fe);
+customElements.get($.iconLabel) || customElements.define($.iconLabel, Be);
 const S = {
   iconLabel: "pi-icon-info-chat-bubble-light"
 };
-class Ae extends o {
+class Je extends o {
   static get properties() {
     return {
       pathData: {
@@ -480,11 +480,11 @@ class Ae extends o {
         `
   ];
 }
-customElements.get(S.iconLabel) || customElements.define(S.iconLabel, Ae);
+customElements.get(S.iconLabel) || customElements.define(S.iconLabel, Je);
 const P = {
   iconLabel: "pi-icon-info-filled"
 };
-class Be extends o {
+class Oe extends o {
   static get properties() {
     return {
       pathData: {
@@ -508,11 +508,11 @@ class Be extends o {
         `
   ];
 }
-customElements.get(P.iconLabel) || customElements.define(P.iconLabel, Be);
-const C = {
+customElements.get(P.iconLabel) || customElements.define(P.iconLabel, Oe);
+const R = {
   iconLabel: "pi-icon-info-light"
 };
-class Je extends o {
+class qe extends o {
   static get properties() {
     return {
       pathData: {
@@ -536,11 +536,11 @@ class Je extends o {
         `
   ];
 }
-customElements.get(C.iconLabel) || customElements.define(C.iconLabel, Je);
-const R = {
+customElements.get(R.iconLabel) || customElements.define(R.iconLabel, qe);
+const C = {
   iconLabel: "pi-icon-info-rounded-dark"
 };
-class Oe extends o {
+class He extends o {
   static get properties() {
     return {
       pathData: {
@@ -564,11 +564,11 @@ class Oe extends o {
         `
   ];
 }
-customElements.get(R.iconLabel) || customElements.define(R.iconLabel, Oe);
+customElements.get(C.iconLabel) || customElements.define(C.iconLabel, He);
 const I = {
   iconLabel: "pi-icon-info-rounded-light"
 };
-class qe extends o {
+class Ue extends o {
   static get properties() {
     return {
       pathData: {
@@ -592,11 +592,11 @@ class qe extends o {
         `
   ];
 }
-customElements.get(I.iconLabel) || customElements.define(I.iconLabel, qe);
+customElements.get(I.iconLabel) || customElements.define(I.iconLabel, Ue);
 const M = {
   iconLabel: "pi-icon-info-sample-dark"
 };
-class He extends o {
+class je extends o {
   static get properties() {
     return {
       pathData: {
@@ -625,11 +625,11 @@ class He extends o {
         `
   ];
 }
-customElements.get(M.iconLabel) || customElements.define(M.iconLabel, He);
+customElements.get(M.iconLabel) || customElements.define(M.iconLabel, je);
 const N = {
   iconLabel: "pi-icon-info-simple-light"
 };
-class Ue extends o {
+class Ge extends o {
   static get properties() {
     return {
       pathData: {
@@ -658,11 +658,11 @@ class Ue extends o {
         `
   ];
 }
-customElements.get(N.iconLabel) || customElements.define(N.iconLabel, Ue);
+customElements.get(N.iconLabel) || customElements.define(N.iconLabel, Ge);
 const T = {
   iconLabel: "pi-icon-logout"
 };
-class je extends o {
+class Ke extends o {
   static get properties() {
     return {
       pathData: {
@@ -686,11 +686,11 @@ class je extends o {
         `
   ];
 }
-customElements.get(T.iconLabel) || customElements.define(T.iconLabel, je);
-const F = {
+customElements.get(T.iconLabel) || customElements.define(T.iconLabel, Ke);
+const A = {
   iconLabel: "pi-icon-magnify-text"
 };
-class Ge extends o {
+class Ve extends o {
   static get properties() {
     return {
       pathData: {
@@ -714,11 +714,11 @@ class Ge extends o {
         `
   ];
 }
-customElements.get(F.iconLabel) || customElements.define(F.iconLabel, Ge);
-const A = {
+customElements.get(A.iconLabel) || customElements.define(A.iconLabel, Ve);
+const F = {
   iconLabel: "pi-icon-notification-box-dark"
 };
-class Ke extends o {
+class Xe extends o {
   static get properties() {
     return {
       pathData: {
@@ -747,11 +747,11 @@ class Ke extends o {
         `
   ];
 }
-customElements.get(A.iconLabel) || customElements.define(A.iconLabel, Ke);
+customElements.get(F.iconLabel) || customElements.define(F.iconLabel, Xe);
 const B = {
   iconLabel: "pi-icon-notification-box-light"
 };
-class Ve extends o {
+class We extends o {
   static get properties() {
     return {
       pathData: {
@@ -780,11 +780,11 @@ class Ve extends o {
         `
   ];
 }
-customElements.get(B.iconLabel) || customElements.define(B.iconLabel, Ve);
+customElements.get(B.iconLabel) || customElements.define(B.iconLabel, We);
 const J = {
   iconLabel: "pi-icon-paper-airplane-solid"
 };
-class Xe extends o {
+class Ye extends o {
   static get properties() {
     return {
       pathData: {
@@ -808,11 +808,11 @@ class Xe extends o {
         `
   ];
 }
-customElements.get(J.iconLabel) || customElements.define(J.iconLabel, Xe);
+customElements.get(J.iconLabel) || customElements.define(J.iconLabel, Ye);
 const O = {
   iconLabel: "pi-icon-slack-logo-slanted"
 };
-class We extends o {
+class Ze extends o {
   static get properties() {
     return {
       pathData: {
@@ -838,11 +838,11 @@ class We extends o {
         `
   ];
 }
-customElements.get(O.iconLabel) || customElements.define(O.iconLabel, We);
+customElements.get(O.iconLabel) || customElements.define(O.iconLabel, Ze);
 const q = {
   iconLabel: "pi-icon-stop-ex-dark"
 };
-class Ye extends o {
+class Qe extends o {
   static get properties() {
     return {
       pathData: {
@@ -866,11 +866,11 @@ class Ye extends o {
         `
   ];
 }
-customElements.get(q.iconLabel) || customElements.define(q.iconLabel, Ye);
+customElements.get(q.iconLabel) || customElements.define(q.iconLabel, Qe);
 const H = {
   iconLabel: "pi-icon-stop-ex-light"
 };
-class Ze extends o {
+class ti extends o {
   static get properties() {
     return {
       pathData: {
@@ -894,11 +894,11 @@ class Ze extends o {
         `
   ];
 }
-customElements.get(H.iconLabel) || customElements.define(H.iconLabel, Ze);
+customElements.get(H.iconLabel) || customElements.define(H.iconLabel, ti);
 const U = {
   iconLabel: "pi-icon-thumbs-down-dark"
 };
-class Qe extends o {
+class ei extends o {
   static get properties() {
     return {
       pathData: {
@@ -922,11 +922,11 @@ class Qe extends o {
         `
   ];
 }
-customElements.get(U.iconLabel) || customElements.define(U.iconLabel, Qe);
+customElements.get(U.iconLabel) || customElements.define(U.iconLabel, ei);
 const j = {
   iconLabel: "pi-icon-thumbs-down-light"
 };
-class ti extends o {
+class ii extends o {
   static get properties() {
     return {
       pathData: {
@@ -950,11 +950,11 @@ class ti extends o {
         `
   ];
 }
-customElements.get(j.iconLabel) || customElements.define(j.iconLabel, ti);
+customElements.get(j.iconLabel) || customElements.define(j.iconLabel, ii);
 const G = {
   iconLabel: "pi-icon-thumbs-up-dark"
 };
-class ei extends o {
+class ai extends o {
   static get properties() {
     return {
       pathData: {
@@ -978,11 +978,11 @@ class ei extends o {
         `
   ];
 }
-customElements.get(G.iconLabel) || customElements.define(G.iconLabel, ei);
+customElements.get(G.iconLabel) || customElements.define(G.iconLabel, ai);
 const K = {
   iconLabel: "pi-icon-thumbs-up-light"
 };
-class ii extends o {
+class oi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1006,11 +1006,11 @@ class ii extends o {
         `
   ];
 }
-customElements.get(K.iconLabel) || customElements.define(K.iconLabel, ii);
+customElements.get(K.iconLabel) || customElements.define(K.iconLabel, oi);
 const V = {
   iconLabel: "pi-icon-toggle-off"
 };
-class ai extends o {
+class si extends o {
   static get properties() {
     return {
       pathData: {
@@ -1036,11 +1036,11 @@ class ai extends o {
         `
   ];
 }
-customElements.get(V.iconLabel) || customElements.define(V.iconLabel, ai);
+customElements.get(V.iconLabel) || customElements.define(V.iconLabel, si);
 const X = {
   iconLabel: "pi-icon-toggle-on"
 };
-class oi extends o {
+class ni extends o {
   static get properties() {
     return {
       pathData: {
@@ -1066,11 +1066,11 @@ class oi extends o {
         `
   ];
 }
-customElements.get(X.iconLabel) || customElements.define(X.iconLabel, oi);
+customElements.get(X.iconLabel) || customElements.define(X.iconLabel, ni);
 const W = {
   iconLabel: "pi-icon-user-rounded-dark"
 };
-class si extends o {
+class ri extends o {
   static get properties() {
     return {
       pathData: {
@@ -1094,11 +1094,11 @@ class si extends o {
         `
   ];
 }
-customElements.get(W.iconLabel) || customElements.define(W.iconLabel, si);
+customElements.get(W.iconLabel) || customElements.define(W.iconLabel, ri);
 const Y = {
   iconLabel: "pi-icon-user-rounded-light"
 };
-class ni extends o {
+class ci extends o {
   static get properties() {
     return {
       pathData: {
@@ -1122,11 +1122,11 @@ class ni extends o {
         `
   ];
 }
-customElements.get(Y.iconLabel) || customElements.define(Y.iconLabel, ni);
+customElements.get(Y.iconLabel) || customElements.define(Y.iconLabel, ci);
 const Z = {
   iconLabel: "pi-icon-grid-light"
 };
-class ri extends o {
+class li extends o {
   static get properties() {
     return {
       pathData: {
@@ -1155,11 +1155,11 @@ class ri extends o {
         `
   ];
 }
-customElements.get(Z.iconLabel) || customElements.define(Z.iconLabel, ri);
+customElements.get(Z.iconLabel) || customElements.define(Z.iconLabel, li);
 const Q = {
   iconLabel: "pi-icon-grid-dark"
 };
-class ci extends o {
+class pi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1188,11 +1188,11 @@ class ci extends o {
         `
   ];
 }
-customElements.get(Q.iconLabel) || customElements.define(Q.iconLabel, ci);
+customElements.get(Q.iconLabel) || customElements.define(Q.iconLabel, pi);
 const tt = {
   iconLabel: "pi-icon-layout-light"
 };
-class li extends o {
+class di extends o {
   static get properties() {
     return {
       pathData: {
@@ -1221,11 +1221,11 @@ class li extends o {
         `
   ];
 }
-customElements.get(tt.iconLabel) || customElements.define(tt.iconLabel, li);
+customElements.get(tt.iconLabel) || customElements.define(tt.iconLabel, di);
 const et = {
   iconLabel: "pi-icon-layout-dark"
 };
-class pi extends o {
+class hi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1254,11 +1254,11 @@ class pi extends o {
         `
   ];
 }
-customElements.get(et.iconLabel) || customElements.define(et.iconLabel, pi);
+customElements.get(et.iconLabel) || customElements.define(et.iconLabel, hi);
 const it = {
   iconLabel: "pi-icon-file-paper-light"
 };
-class di extends o {
+class ui extends o {
   static get properties() {
     return {
       pathData: {
@@ -1282,11 +1282,11 @@ class di extends o {
         `
   ];
 }
-customElements.get(it.iconLabel) || customElements.define(it.iconLabel, di);
+customElements.get(it.iconLabel) || customElements.define(it.iconLabel, ui);
 const at = {
   iconLabel: "pi-icon-file-paper-dark"
 };
-class hi extends o {
+class bi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1310,11 +1310,11 @@ class hi extends o {
         `
   ];
 }
-customElements.get(at.iconLabel) || customElements.define(at.iconLabel, hi);
+customElements.get(at.iconLabel) || customElements.define(at.iconLabel, bi);
 const ot = {
   iconLabel: "pi-icon-caret-circle-down-dark"
 };
-class ui extends o {
+class mi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1343,11 +1343,11 @@ class ui extends o {
         `
   ];
 }
-customElements.get(ot.iconLabel) || customElements.define(ot.iconLabel, ui);
+customElements.get(ot.iconLabel) || customElements.define(ot.iconLabel, mi);
 const st = {
   iconLabel: "pi-icon-caret-circle-down-light"
 };
-class bi extends o {
+class gi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1376,11 +1376,11 @@ class bi extends o {
         `
   ];
 }
-customElements.get(st.iconLabel) || customElements.define(st.iconLabel, bi);
+customElements.get(st.iconLabel) || customElements.define(st.iconLabel, gi);
 const nt = {
   iconLabel: "pi-icon-caret-circle-left-dark"
 };
-class mi extends o {
+class vi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1409,11 +1409,11 @@ class mi extends o {
         `
   ];
 }
-customElements.get(nt.iconLabel) || customElements.define(nt.iconLabel, mi);
+customElements.get(nt.iconLabel) || customElements.define(nt.iconLabel, vi);
 const rt = {
   iconLabel: "pi-icon-caret-circle-left-light"
 };
-class gi extends o {
+class fi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1442,11 +1442,11 @@ class gi extends o {
         `
   ];
 }
-customElements.get(rt.iconLabel) || customElements.define(rt.iconLabel, gi);
+customElements.get(rt.iconLabel) || customElements.define(rt.iconLabel, fi);
 const ct = {
   iconLabel: "pi-icon-caret-circle-right-dark"
 };
-class vi extends o {
+class yi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1475,11 +1475,11 @@ class vi extends o {
         `
   ];
 }
-customElements.get(ct.iconLabel) || customElements.define(ct.iconLabel, vi);
+customElements.get(ct.iconLabel) || customElements.define(ct.iconLabel, yi);
 const lt = {
   iconLabel: "pi-icon-caret-circle-right-light"
 };
-class fi extends o {
+class Di extends o {
   static get properties() {
     return {
       pathData: {
@@ -1508,11 +1508,11 @@ class fi extends o {
         `
   ];
 }
-customElements.get(lt.iconLabel) || customElements.define(lt.iconLabel, fi);
+customElements.get(lt.iconLabel) || customElements.define(lt.iconLabel, Di);
 const pt = {
   iconLabel: "pi-icon-caret-circle-up-dark"
 };
-class yi extends o {
+class xi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1541,11 +1541,11 @@ class yi extends o {
         `
   ];
 }
-customElements.get(pt.iconLabel) || customElements.define(pt.iconLabel, yi);
+customElements.get(pt.iconLabel) || customElements.define(pt.iconLabel, xi);
 const dt = {
   iconLabel: "pi-icon-caret-circle-up-light"
 };
-class Di extends o {
+class Li extends o {
   static get properties() {
     return {
       pathData: {
@@ -1574,11 +1574,11 @@ class Di extends o {
         `
   ];
 }
-customElements.get(dt.iconLabel) || customElements.define(dt.iconLabel, Di);
+customElements.get(dt.iconLabel) || customElements.define(dt.iconLabel, Li);
 const ht = {
   iconLabel: "pi-icon-caret-down-dark"
 };
-class xi extends o {
+class ki extends o {
   static get properties() {
     return {
       pathData: {
@@ -1606,11 +1606,11 @@ class xi extends o {
         `
   ];
 }
-customElements.get(ht.iconLabel) || customElements.define(ht.iconLabel, xi);
+customElements.get(ht.iconLabel) || customElements.define(ht.iconLabel, ki);
 const ut = {
   iconLabel: "pi-icon-caret-down-light"
 };
-class Li extends o {
+class zi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1639,11 +1639,11 @@ class Li extends o {
         `
   ];
 }
-customElements.get(ut.iconLabel) || customElements.define(ut.iconLabel, Li);
+customElements.get(ut.iconLabel) || customElements.define(ut.iconLabel, zi);
 const bt = {
   iconLabel: "pi-icon-caret-left-dark"
 };
-class ki extends o {
+class Ei extends o {
   static get properties() {
     return {
       pathData: {
@@ -1672,11 +1672,11 @@ class ki extends o {
         `
   ];
 }
-customElements.get(bt.iconLabel) || customElements.define(bt.iconLabel, ki);
+customElements.get(bt.iconLabel) || customElements.define(bt.iconLabel, Ei);
 const mt = {
   iconLabel: "pi-icon-caret-left-light"
 };
-class zi extends o {
+class _i extends o {
   static get properties() {
     return {
       pathData: {
@@ -1705,11 +1705,11 @@ class zi extends o {
         `
   ];
 }
-customElements.get(mt.iconLabel) || customElements.define(mt.iconLabel, zi);
+customElements.get(mt.iconLabel) || customElements.define(mt.iconLabel, _i);
 const gt = {
   iconLabel: "pi-icon-caret-right-dark"
 };
-class Ei extends o {
+class wi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1738,11 +1738,11 @@ class Ei extends o {
         `
   ];
 }
-customElements.get(gt.iconLabel) || customElements.define(gt.iconLabel, Ei);
+customElements.get(gt.iconLabel) || customElements.define(gt.iconLabel, wi);
 const vt = {
   iconLabel: "pi-icon-caret-right-light"
 };
-class _i extends o {
+class $i extends o {
   static get properties() {
     return {
       pathData: {
@@ -1771,11 +1771,11 @@ class _i extends o {
         `
   ];
 }
-customElements.get(vt.iconLabel) || customElements.define(vt.iconLabel, _i);
+customElements.get(vt.iconLabel) || customElements.define(vt.iconLabel, $i);
 const ft = {
   iconLabel: "pi-icon-caret-up-dark"
 };
-class wi extends o {
+class Si extends o {
   static get properties() {
     return {
       pathData: {
@@ -1804,11 +1804,11 @@ class wi extends o {
         `
   ];
 }
-customElements.get(ft.iconLabel) || customElements.define(ft.iconLabel, wi);
+customElements.get(ft.iconLabel) || customElements.define(ft.iconLabel, Si);
 const yt = {
   iconLabel: "pi-icon-caret-up-light"
 };
-class $i extends o {
+class Pi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1837,11 +1837,11 @@ class $i extends o {
         `
   ];
 }
-customElements.get(yt.iconLabel) || customElements.define(yt.iconLabel, $i);
+customElements.get(yt.iconLabel) || customElements.define(yt.iconLabel, Pi);
 const Dt = {
   iconLabel: "pi-icon-coin-dark"
 };
-class Si extends o {
+class Ri extends o {
   static get properties() {
     return {
       pathData: {
@@ -1865,11 +1865,11 @@ class Si extends o {
         `
   ];
 }
-customElements.get(Dt.iconLabel) || customElements.define(Dt.iconLabel, Si);
+customElements.get(Dt.iconLabel) || customElements.define(Dt.iconLabel, Ri);
 const xt = {
   iconLabel: "pi-icon-coin-light"
 };
-class Pi extends o {
+class Ci extends o {
   static get properties() {
     return {
       pathData: {
@@ -1893,11 +1893,11 @@ class Pi extends o {
         `
   ];
 }
-customElements.get(xt.iconLabel) || customElements.define(xt.iconLabel, Pi);
+customElements.get(xt.iconLabel) || customElements.define(xt.iconLabel, Ci);
 const Lt = {
   iconLabel: "pi-icon-flag-dark"
 };
-class Ci extends o {
+class Ii extends o {
   static get properties() {
     return {
       pathData: {
@@ -1923,11 +1923,11 @@ class Ci extends o {
         `
   ];
 }
-customElements.get(Lt.iconLabel) || customElements.define(Lt.iconLabel, Ci);
+customElements.get(Lt.iconLabel) || customElements.define(Lt.iconLabel, Ii);
 const kt = {
   iconLabel: "pi-icon-flag-light"
 };
-class Ri extends o {
+class Mi extends o {
   static get properties() {
     return {
       pathData: {
@@ -1953,11 +1953,11 @@ class Ri extends o {
         `
   ];
 }
-customElements.get(kt.iconLabel) || customElements.define(kt.iconLabel, Ri);
+customElements.get(kt.iconLabel) || customElements.define(kt.iconLabel, Mi);
 const zt = {
   iconLabel: "pi-icon-flag-fancy-dark"
 };
-class Ii extends o {
+class Ni extends o {
   static get properties() {
     return {
       pathData: {
@@ -1981,11 +1981,11 @@ class Ii extends o {
         `
   ];
 }
-customElements.get(zt.iconLabel) || customElements.define(zt.iconLabel, Ii);
+customElements.get(zt.iconLabel) || customElements.define(zt.iconLabel, Ni);
 const Et = {
   iconLabel: "pi-icon-flag-fancy-light"
 };
-class Mi extends o {
+class Ti extends o {
   static get properties() {
     return {
       pathData: {
@@ -2009,11 +2009,11 @@ class Mi extends o {
         `
   ];
 }
-customElements.get(Et.iconLabel) || customElements.define(Et.iconLabel, Mi);
+customElements.get(Et.iconLabel) || customElements.define(Et.iconLabel, Ti);
 const _t = {
   iconLabel: "pi-icon-flag-wavy-dark"
 };
-class Ni extends o {
+class Ai extends o {
   static get properties() {
     return {
       pathData: {
@@ -2037,11 +2037,11 @@ class Ni extends o {
         `
   ];
 }
-customElements.get(_t.iconLabel) || customElements.define(_t.iconLabel, Ni);
+customElements.get(_t.iconLabel) || customElements.define(_t.iconLabel, Ai);
 const wt = {
   iconLabel: "pi-icon-flag-wavy-light"
 };
-class Ti extends o {
+class Fi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2065,11 +2065,11 @@ class Ti extends o {
         `
   ];
 }
-customElements.get(wt.iconLabel) || customElements.define(wt.iconLabel, Ti);
+customElements.get(wt.iconLabel) || customElements.define(wt.iconLabel, Fi);
 const $t = {
   iconLabel: "pi-icon-globe-dark"
 };
-class Fi extends o {
+class Bi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2093,11 +2093,11 @@ class Fi extends o {
         `
   ];
 }
-customElements.get($t.iconLabel) || customElements.define($t.iconLabel, Fi);
+customElements.get($t.iconLabel) || customElements.define($t.iconLabel, Bi);
 const St = {
   iconLabel: "pi-icon-globe-light"
 };
-class Ai extends o {
+class Ji extends o {
   static get properties() {
     return {
       pathData: {
@@ -2121,11 +2121,11 @@ class Ai extends o {
         `
   ];
 }
-customElements.get(St.iconLabel) || customElements.define(St.iconLabel, Ai);
+customElements.get(St.iconLabel) || customElements.define(St.iconLabel, Ji);
 const Pt = {
   iconLabel: "pi-icon-list-bullets-light"
 };
-class Bi extends o {
+class Oi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2154,11 +2154,11 @@ class Bi extends o {
         `
   ];
 }
-customElements.get(Pt.iconLabel) || customElements.define(Pt.iconLabel, Bi);
-const Ct = {
+customElements.get(Pt.iconLabel) || customElements.define(Pt.iconLabel, Oi);
+const Rt = {
   iconLabel: "pi-icon-list-squares-dark"
 };
-class Ji extends o {
+class qi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2187,11 +2187,11 @@ class Ji extends o {
         `
   ];
 }
-customElements.get(Ct.iconLabel) || customElements.define(Ct.iconLabel, Ji);
-const Rt = {
+customElements.get(Rt.iconLabel) || customElements.define(Rt.iconLabel, qi);
+const Ct = {
   iconLabel: "pi-icon-list-squares-light"
 };
-class Oi extends o {
+class Hi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2220,11 +2220,11 @@ class Oi extends o {
         `
   ];
 }
-customElements.get(Rt.iconLabel) || customElements.define(Rt.iconLabel, Oi);
+customElements.get(Ct.iconLabel) || customElements.define(Ct.iconLabel, Hi);
 const It = {
   iconLabel: "pi-icon-paper-dark"
 };
-class qi extends o {
+class Ui extends o {
   static get properties() {
     return {
       pathData: {
@@ -2248,11 +2248,11 @@ class qi extends o {
         `
   ];
 }
-customElements.get(It.iconLabel) || customElements.define(It.iconLabel, qi);
+customElements.get(It.iconLabel) || customElements.define(It.iconLabel, Ui);
 const Mt = {
   iconLabel: "pi-icon-paper-light"
 };
-class Hi extends o {
+class ji extends o {
   static get properties() {
     return {
       pathData: {
@@ -2276,11 +2276,11 @@ class Hi extends o {
         `
   ];
 }
-customElements.get(Mt.iconLabel) || customElements.define(Mt.iconLabel, Hi);
+customElements.get(Mt.iconLabel) || customElements.define(Mt.iconLabel, ji);
 const Nt = {
   iconLabel: "pi-icon-square-paper-light"
 };
-class Ui extends o {
+class Gi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2304,11 +2304,11 @@ class Ui extends o {
         `
   ];
 }
-customElements.get(Nt.iconLabel) || customElements.define(Nt.iconLabel, Ui);
+customElements.get(Nt.iconLabel) || customElements.define(Nt.iconLabel, Gi);
 const Tt = {
   iconLabel: "pi-icon-paper-stack-fancy-dark"
 };
-class ji extends o {
+class Ki extends o {
   static get properties() {
     return {
       pathData: {
@@ -2332,11 +2332,11 @@ class ji extends o {
         `
   ];
 }
-customElements.get(Tt.iconLabel) || customElements.define(Tt.iconLabel, ji);
-const Ft = {
+customElements.get(Tt.iconLabel) || customElements.define(Tt.iconLabel, Ki);
+const At = {
   iconLabel: "pi-icon-paper-stack-fancy-light"
 };
-class Gi extends o {
+class Vi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2360,11 +2360,11 @@ class Gi extends o {
         `
   ];
 }
-customElements.get(Ft.iconLabel) || customElements.define(Ft.iconLabel, Gi);
-const At = {
+customElements.get(At.iconLabel) || customElements.define(At.iconLabel, Vi);
+const Ft = {
   iconLabel: "pi-icon-star-dark"
 };
-class Ki extends o {
+class Xi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2393,11 +2393,11 @@ class Ki extends o {
         `
   ];
 }
-customElements.get(At.iconLabel) || customElements.define(At.iconLabel, Ki);
+customElements.get(Ft.iconLabel) || customElements.define(Ft.iconLabel, Xi);
 const Bt = {
   iconLabel: "pi-icon-star-light"
 };
-class Vi extends o {
+class Wi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2426,11 +2426,11 @@ class Vi extends o {
         `
   ];
 }
-customElements.get(Bt.iconLabel) || customElements.define(Bt.iconLabel, Vi);
+customElements.get(Bt.iconLabel) || customElements.define(Bt.iconLabel, Wi);
 const Jt = {
   iconLabel: "pi-icon-star-half-filled"
 };
-class Xi extends o {
+class Yi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2459,11 +2459,11 @@ class Xi extends o {
         `
   ];
 }
-customElements.get(Jt.iconLabel) || customElements.define(Jt.iconLabel, Xi);
+customElements.get(Jt.iconLabel) || customElements.define(Jt.iconLabel, Yi);
 const Ot = {
   iconLabel: "pi-icon-tag-dark"
 };
-class Wi extends o {
+class Zi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2487,11 +2487,11 @@ class Wi extends o {
         `
   ];
 }
-customElements.get(Ot.iconLabel) || customElements.define(Ot.iconLabel, Wi);
+customElements.get(Ot.iconLabel) || customElements.define(Ot.iconLabel, Zi);
 const qt = {
   iconLabel: "pi-icon-tag-light"
 };
-class Yi extends o {
+class Qi extends o {
   static get properties() {
     return {
       pathData: {
@@ -2519,11 +2519,11 @@ class Yi extends o {
         `
   ];
 }
-customElements.get(qt.iconLabel) || customElements.define(qt.iconLabel, Yi);
+customElements.get(qt.iconLabel) || customElements.define(qt.iconLabel, Qi);
 const Ht = {
   iconLabel: "pi-icon-tag-stack-dark"
 };
-class Zi extends o {
+class ta extends o {
   static get properties() {
     return {
       pathData: {
@@ -2549,11 +2549,11 @@ class Zi extends o {
         `
   ];
 }
-customElements.get(Ht.iconLabel) || customElements.define(Ht.iconLabel, Zi);
+customElements.get(Ht.iconLabel) || customElements.define(Ht.iconLabel, ta);
 const Ut = {
   iconLabel: "pi-icon-tag-stack-light"
 };
-class Qi extends o {
+class ea extends o {
   static get properties() {
     return {
       pathData: {
@@ -2579,11 +2579,11 @@ class Qi extends o {
         `
   ];
 }
-customElements.get(Ut.iconLabel) || customElements.define(Ut.iconLabel, Qi);
+customElements.get(Ut.iconLabel) || customElements.define(Ut.iconLabel, ea);
 const jt = {
   iconLabel: "pi-icon-web-globe-dark"
 };
-class ta extends o {
+class ia extends o {
   static get properties() {
     return {
       pathData: {
@@ -2609,11 +2609,11 @@ class ta extends o {
         `
   ];
 }
-customElements.get(jt.iconLabel) || customElements.define(jt.iconLabel, ta);
+customElements.get(jt.iconLabel) || customElements.define(jt.iconLabel, ia);
 const Gt = {
   iconLabel: "pi-icon-web-globe-light"
 };
-class ea extends o {
+class aa extends o {
   static get properties() {
     return {
       pathData: {
@@ -2639,11 +2639,11 @@ class ea extends o {
         `
   ];
 }
-customElements.get(Gt.iconLabel) || customElements.define(Gt.iconLabel, ea);
+customElements.get(Gt.iconLabel) || customElements.define(Gt.iconLabel, aa);
 const Kt = {
   iconLabel: "pi-icon-menu-dot-horizontal-circled-light"
 };
-class ia extends o {
+class oa extends o {
   static get properties() {
     return {
       pathData: {
@@ -2671,11 +2671,11 @@ class ia extends o {
         `
   ];
 }
-customElements.get(Kt.iconLabel) || customElements.define(Kt.iconLabel, ia);
+customElements.get(Kt.iconLabel) || customElements.define(Kt.iconLabel, oa);
 const Vt = {
   iconLabel: "pi-icon-menu-dot-horizontal-circled-dark"
 };
-class aa extends o {
+class sa extends o {
   static get properties() {
     return {
       pathData: {
@@ -2703,11 +2703,11 @@ class aa extends o {
         `
   ];
 }
-customElements.get(Vt.iconLabel) || customElements.define(Vt.iconLabel, aa);
+customElements.get(Vt.iconLabel) || customElements.define(Vt.iconLabel, sa);
 const Xt = {
   iconLabel: "pi-icon-menu-dot-horizontal-solid"
 };
-class oa extends o {
+class na extends o {
   static get properties() {
     return {
       pathData: {
@@ -2735,11 +2735,11 @@ class oa extends o {
         `
   ];
 }
-customElements.get(Xt.iconLabel) || customElements.define(Xt.iconLabel, oa);
+customElements.get(Xt.iconLabel) || customElements.define(Xt.iconLabel, na);
 const Wt = {
   iconLabel: "pi-icon-menu-dot-vertical-solid"
 };
-class sa extends o {
+class ra extends o {
   static get properties() {
     return {
       pathData: {
@@ -2767,11 +2767,11 @@ class sa extends o {
         `
   ];
 }
-customElements.get(Wt.iconLabel) || customElements.define(Wt.iconLabel, sa);
+customElements.get(Wt.iconLabel) || customElements.define(Wt.iconLabel, ra);
 const Yt = {
   iconLabel: "pi-icon-menu-dot-horizontal-thick"
 };
-class na extends o {
+class ca extends o {
   static get properties() {
     return {
       pathData: {
@@ -2799,11 +2799,11 @@ class na extends o {
         `
   ];
 }
-customElements.get(Yt.iconLabel) || customElements.define(Yt.iconLabel, na);
+customElements.get(Yt.iconLabel) || customElements.define(Yt.iconLabel, ca);
 const Zt = {
   iconLabel: "pi-icon-menu-dot-vertical-thick"
 };
-class ra extends o {
+class la extends o {
   static get properties() {
     return {
       pathData: {
@@ -2831,11 +2831,11 @@ class ra extends o {
         `
   ];
 }
-customElements.get(Zt.iconLabel) || customElements.define(Zt.iconLabel, ra);
+customElements.get(Zt.iconLabel) || customElements.define(Zt.iconLabel, la);
 const Qt = {
   iconLabel: "pi-icon-menu-dot-horizontal-thin"
 };
-class ca extends o {
+class pa extends o {
   static get properties() {
     return {
       pathData: {
@@ -2863,11 +2863,11 @@ class ca extends o {
         `
   ];
 }
-customElements.get(Qt.iconLabel) || customElements.define(Qt.iconLabel, ca);
+customElements.get(Qt.iconLabel) || customElements.define(Qt.iconLabel, pa);
 const te = {
   iconLabel: "pi-icon-menu-dot-vertical-thin"
 };
-class la extends o {
+class da extends o {
   static get properties() {
     return {
       pathData: {
@@ -2895,11 +2895,11 @@ class la extends o {
         `
   ];
 }
-customElements.get(te.iconLabel) || customElements.define(te.iconLabel, la);
+customElements.get(te.iconLabel) || customElements.define(te.iconLabel, da);
 const ee = {
   iconLabel: "pi-icon-menu-hamburger-rounded"
 };
-class pa extends o {
+class ha extends o {
   static get properties() {
     return {
       pathData: {
@@ -2927,11 +2927,11 @@ class pa extends o {
         `
   ];
 }
-customElements.get(ee.iconLabel) || customElements.define(ee.iconLabel, pa);
+customElements.get(ee.iconLabel) || customElements.define(ee.iconLabel, ha);
 const ie = {
   iconLabel: "pi-icon-menu-hamburger-corners"
 };
-class da extends o {
+class ua extends o {
   static get properties() {
     return {
       pathData: {
@@ -2959,11 +2959,11 @@ class da extends o {
         `
   ];
 }
-customElements.get(ie.iconLabel) || customElements.define(ie.iconLabel, da);
+customElements.get(ie.iconLabel) || customElements.define(ie.iconLabel, ua);
 const ae = {
   iconLabel: "pi-icon-menu-hamburger-corners-thick"
 };
-class ha extends o {
+class ba extends o {
   static get properties() {
     return {
       pathData: {
@@ -2991,11 +2991,11 @@ class ha extends o {
         `
   ];
 }
-customElements.get(ae.iconLabel) || customElements.define(ae.iconLabel, ha);
+customElements.get(ae.iconLabel) || customElements.define(ae.iconLabel, ba);
 const oe = {
   iconLabel: "pi-icon-menu-hamburger-circled-light"
 };
-class ua extends o {
+class ma extends o {
   static get properties() {
     return {
       pathData: {
@@ -3023,11 +3023,11 @@ class ua extends o {
         `
   ];
 }
-customElements.get(oe.iconLabel) || customElements.define(oe.iconLabel, ua);
+customElements.get(oe.iconLabel) || customElements.define(oe.iconLabel, ma);
 const se = {
   iconLabel: "pi-icon-menu-hamburger-circled-dark"
 };
-class ba extends o {
+class ga extends o {
   static get properties() {
     return {
       pathData: {
@@ -3055,11 +3055,11 @@ class ba extends o {
         `
   ];
 }
-customElements.get(se.iconLabel) || customElements.define(se.iconLabel, ba);
+customElements.get(se.iconLabel) || customElements.define(se.iconLabel, ga);
 const ne = {
   iconLabel: "pi-icon-magnifying-glass"
 };
-class ma extends o {
+class va extends o {
   static get properties() {
     return {
       pathData: {
@@ -3087,11 +3087,11 @@ class ma extends o {
         `
   ];
 }
-customElements.get(ne.iconLabel) || customElements.define(ne.iconLabel, ma);
+customElements.get(ne.iconLabel) || customElements.define(ne.iconLabel, va);
 const re = {
   iconLabel: "pi-icon-checkmark-circle-dark"
 };
-class ga extends o {
+class fa extends o {
   static get properties() {
     return {
       pathData: {
@@ -3115,11 +3115,11 @@ class ga extends o {
         `
   ];
 }
-customElements.get(re.iconLabel) || customElements.define(re.iconLabel, ga);
+customElements.get(re.iconLabel) || customElements.define(re.iconLabel, fa);
 const ce = {
   iconLabel: "pi-icon-checkmark-circle-light"
 };
-class va extends o {
+class ya extends o {
   static get properties() {
     return {
       pathData: {
@@ -3148,11 +3148,11 @@ class va extends o {
         `
   ];
 }
-customElements.get(ce.iconLabel) || customElements.define(ce.iconLabel, va);
+customElements.get(ce.iconLabel) || customElements.define(ce.iconLabel, ya);
 const le = {
   iconLabel: "pi-icon-checkmark-circle-light-2"
 };
-class fa extends o {
+class Da extends o {
   static get properties() {
     return {
       pathData: {
@@ -3176,11 +3176,11 @@ class fa extends o {
         `
   ];
 }
-customElements.get(le.iconLabel) || customElements.define(le.iconLabel, fa);
+customElements.get(le.iconLabel) || customElements.define(le.iconLabel, Da);
 const pe = {
   iconLabel: "pi-icon-checkmark-comment-dark"
 };
-class ya extends o {
+class xa extends o {
   static get properties() {
     return {
       pathData: {
@@ -3206,11 +3206,11 @@ class ya extends o {
         `
   ];
 }
-customElements.get(pe.iconLabel) || customElements.define(pe.iconLabel, ya);
+customElements.get(pe.iconLabel) || customElements.define(pe.iconLabel, xa);
 const de = {
   iconLabel: "pi-icon-checkmark-comment-light"
 };
-class Da extends o {
+class La extends o {
   static get properties() {
     return {
       pathData: {
@@ -3236,11 +3236,11 @@ class Da extends o {
         `
   ];
 }
-customElements.get(de.iconLabel) || customElements.define(de.iconLabel, Da);
+customElements.get(de.iconLabel) || customElements.define(de.iconLabel, La);
 const he = {
   iconLabel: "pi-icon-checkmark-light"
 };
-class xa extends o {
+class ka extends o {
   static get properties() {
     return {
       pathData: {
@@ -3266,11 +3266,11 @@ class xa extends o {
         `
   ];
 }
-customElements.get(he.iconLabel) || customElements.define(he.iconLabel, xa);
+customElements.get(he.iconLabel) || customElements.define(he.iconLabel, ka);
 const ue = {
   iconLabel: "pi-icon-checkmark-light-2"
 };
-class La extends o {
+class za extends o {
   static get properties() {
     return {
       pathData: {
@@ -3294,11 +3294,11 @@ class La extends o {
         `
   ];
 }
-customElements.get(ue.iconLabel) || customElements.define(ue.iconLabel, La);
+customElements.get(ue.iconLabel) || customElements.define(ue.iconLabel, za);
 const be = {
   iconLabel: "pi-icon-checkmark-light-3"
 };
-class ka extends o {
+class Ea extends o {
   static get properties() {
     return {
       pathData: {
@@ -3322,11 +3322,11 @@ class ka extends o {
         `
   ];
 }
-customElements.get(be.iconLabel) || customElements.define(be.iconLabel, ka);
+customElements.get(be.iconLabel) || customElements.define(be.iconLabel, Ea);
 const me = {
   iconLabel: "pi-icon-checkmark-square-dark"
 };
-class za extends o {
+class _a extends o {
   static get properties() {
     return {
       pathData: {
@@ -3355,11 +3355,11 @@ class za extends o {
         `
   ];
 }
-customElements.get(me.iconLabel) || customElements.define(me.iconLabel, za);
+customElements.get(me.iconLabel) || customElements.define(me.iconLabel, _a);
 const ge = {
   iconLabel: "pi-icon-checkmark-square-dark-2"
 };
-class Ea extends o {
+class wa extends o {
   static get properties() {
     return {
       pathData: {
@@ -3383,11 +3383,11 @@ class Ea extends o {
         `
   ];
 }
-customElements.get(ge.iconLabel) || customElements.define(ge.iconLabel, Ea);
+customElements.get(ge.iconLabel) || customElements.define(ge.iconLabel, wa);
 const ve = {
   iconLabel: "pi-icon-checkmark-square-light"
 };
-class _a extends o {
+class $a extends o {
   static get properties() {
     return {
       pathData: {
@@ -3416,11 +3416,11 @@ class _a extends o {
         `
   ];
 }
-customElements.get(ve.iconLabel) || customElements.define(ve.iconLabel, _a);
+customElements.get(ve.iconLabel) || customElements.define(ve.iconLabel, $a);
 const fe = {
   iconLabel: "pi-icon-checkmark-square-light-2"
 };
-class wa extends o {
+class Sa extends o {
   static get properties() {
     return {
       pathData: {
@@ -3446,11 +3446,11 @@ class wa extends o {
         `
   ];
 }
-customElements.get(fe.iconLabel) || customElements.define(fe.iconLabel, wa);
+customElements.get(fe.iconLabel) || customElements.define(fe.iconLabel, Sa);
 const ye = {
   iconLabel: "pi-icon-checkmark-square-light-3"
 };
-class $a extends o {
+class Pa extends o {
   static get properties() {
     return {
       pathData: {
@@ -3474,11 +3474,11 @@ class $a extends o {
         `
   ];
 }
-customElements.get(ye.iconLabel) || customElements.define(ye.iconLabel, $a);
+customElements.get(ye.iconLabel) || customElements.define(ye.iconLabel, Pa);
 const De = {
   iconLabel: "pi-icon-checkmark-square-light-4"
 };
-class Sa extends o {
+class Ra extends o {
   static get properties() {
     return {
       pathData: {
@@ -3502,8 +3502,68 @@ class Sa extends o {
         `
   ];
 }
-customElements.get(De.iconLabel) || customElements.define(De.iconLabel, Sa);
-class Pa extends o {
+customElements.get(De.iconLabel) || customElements.define(De.iconLabel, Ra);
+const xe = {
+  iconLabel: "pi-icon-avatar-hand-light"
+};
+class Ca extends o {
+  static get properties() {
+    return {
+      pathData: {
+        type: String
+      }
+    };
+  }
+  constructor() {
+    super(), this.pathData = "M6.994 15.026v-1.833c-.004-1.295-.168-2.66 2.502-3.268 1.01-.229 2.395-.544 2.622-1.046.024-.051.095-.209-.106-.582-1.431-2.638-1.698-4.965-.754-6.552.65-1.092 1.834-1.719 3.248-1.719 1.403 0 2.579.618 3.228 1.694.943 1.568.684 3.902-.731 6.573-.198.376-.125.535-.101.587.231.502 1.571.808 2.647 1.053 2.77.631 2.416 2.236 2.451 3.279v3.958c0 .49-.201.977-.609 1.356-1.378 1.28-4.453 4.026-4.935 4.467-.749.687-1.518 1.006-2.421 1.006-.405 0-.832-.065-1.308-.2-2.773-.783-4.484-1.036-5.727-1.105v1.332h-5v-9h4.994zm-.994 1h-3v7h3v-7zm1 5.664c2.092.118 4.405.696 5.999 1.147.817.231 1.761.354 2.782-.581 1.279-1.172 2.722-2.413 4.929-4.463.824-.765-.178-1.783-1.022-1.113 0 0-2.961 2.299-3.689 2.843-.379.285-.695.519-1.148.519-.36 0-2.232-.467-3.104-.743-.575-.183-.371-.993.268-.858.447.093 1.594.35 2.201.52 1.017.281 1.276-.867.422-1.152-.562-.19-.537-.198-1.889-.665-1.301-.451-2.214-.753-3.585-.156-.639.278-1.432.616-2.164.814v3.888zm14.006-6.066v-2.422c.008-1.858-.269-1.972-1.679-2.294-1.49-.34-2.898-.66-3.334-1.611-.201-.438-.158-.933.126-1.472 1.244-2.349 1.513-4.334.757-5.59-.469-.779-1.31-1.209-2.37-1.209-1.068 0-1.916.437-2.389 1.23-.757 1.272-.482 3.248.774 5.565.291.537.338 1.032.138 1.471-.432.955-1.897 1.287-3.312 1.608-1.402.321-1.724.415-1.717 2.297v3.2l.765-.325c.642-.28 1.259-.417 1.887-.417 1.214 0 2.205.499 4.303 1.205.64.214 1.076.716 1.175 1.306 1.124-.863 2.92-2.257 2.937-2.27.357-.284.773-.434 1.2-.434.262 0 .513.058.739.162z";
+  }
+  render() {
+    return e`
+            <pi-icon-base 
+            pathData=${this.pathData}
+            fillRule="evenodd"
+            clipRule="evenodd"
+            ></pi-icon-base>
+        `;
+  }
+  static styles = [
+    a`
+            
+        `
+  ];
+}
+customElements.get(xe.iconLabel) || customElements.define(xe.iconLabel, Ca);
+const Le = {
+  iconLabel: "pi-icon-avatar-hand-dark"
+};
+class Ia extends o {
+  static get properties() {
+    return {
+      pathData: {
+        type: String
+      }
+    };
+  }
+  constructor() {
+    super(), this.pathData = "M7 16.488l1.526-.723c1.792-.81 2.851-.344 4.349.232 1.716.661 2.365.883 3.077 1.164 1.278.506.688 2.177-.592 1.838-.778-.206-2.812-.795-3.38-.931-.64-.154-.93.602-.323.818 1.106.393 2.663.79 3.494 1.007.831.218 1.295-.145 1.881-.611.906-.72 2.968-2.909 2.968-2.909.842-.799 1.991-.135 1.991.72 0 .23-.083.474-.276.707-2.328 2.793-3.06 3.642-4.568 5.226-.623.655-1.342.974-2.204.974-.442 0-.922-.084-1.443-.25-1.825-.581-4.172-1.313-6.5-1.6v-5.662zm-1 6.538h-4v-8h4v8zm1-7.869v-1.714c-.006-1.557.062-2.447 1.854-2.861 1.963-.453 4.315-.859 3.384-2.577-2.761-5.092-.787-7.979 2.177-7.979 2.907 0 4.93 2.78 2.177 7.979-.904 1.708 1.378 2.114 3.384 2.577 1.799.415 1.859 1.311 1.853 2.879 0 .13-.011 1.171 0 1.665-.483-.309-1.442-.552-2.187.106-.535.472-.568.504-1.783 1.629-1.75-.831-4.456-1.883-6.214-2.478-.896-.304-2.04-.308-2.962.075l-1.683.699z";
+  }
+  render() {
+    return e`
+            <pi-icon-base 
+            pathData=${this.pathData}
+            fillRule="evenodd"
+            clipRule="evenodd"
+            ></pi-icon-base>
+        `;
+  }
+  static styles = [
+    a`
+            
+        `
+  ];
+}
+customElements.get(Le.iconLabel) || customElements.define(Le.iconLabel, Ia);
+class Ma extends o {
   static get properties() {
     return {
       text: { type: String }
@@ -3544,8 +3604,8 @@ class Pa extends o {
         `
   ];
 }
-customElements.get("pi-label") || customElements.define("pi-label", Pa);
-class Ca extends o {
+customElements.get("pi-label") || customElements.define("pi-label", Ma);
+class Na extends o {
   static get properties() {
     return {};
   }
@@ -3574,8 +3634,8 @@ class Ca extends o {
         `
   ];
 }
-customElements.get("pi-badge") || customElements.define("pi-badge", Ca);
-const xe = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)}.rounded{border-radius:var(--pi-rounded-border-radius, 2rem)}.squared{border-radius:var(--pi-squared-border-radius, 0rem)}", Ra = [
+customElements.get("pi-badge") || customElements.define("pi-badge", Na);
+const ke = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)}.rounded{border-radius:var(--pi-rounded-border-radius, 2rem)}.squared{border-radius:var(--pi-squared-border-radius, 0rem)}", Ta = [
   "primary",
   "secondary",
   "success",
@@ -3583,7 +3643,7 @@ const xe = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)
   "warn",
   "help",
   "danger"
-], Ia = () => Ra.map((i) => `
+], Aa = () => Ta.map((i) => `
     .btn_severity_${i} {
         --pi-button-bg-color: var(--pi-button-bg-color-${i});
         --pi-button-text-color: var(--pi-button-text-color-${i});
@@ -3595,12 +3655,12 @@ const xe = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)
         --pi-button-active-text-color: var(--pi-button-active-text-color-${i});
         --pi-button-active-border-color: var(--pi-button-active-border-color-${i});
     }
-`).join(""), Ma = a`
+`).join(""), Fa = a`
 
-    ${b(Ia())}
+    ${b(Aa())}
 
 
-`, Na = a`
+`, Ba = a`
 
     /**
     TEXT VARIANT
@@ -3711,7 +3771,7 @@ const xe = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)
     }
 
     
-`, Ta = a`
+`, Ja = a`
 
     .btn_variant_iconOnly.rounded {
         border-radius: 50%;
@@ -3791,7 +3851,7 @@ const xe = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)
         fill: var(--pi-button-bg-color-disabled) !important;
     }
 
-`, Fa = a`
+`, Oa = a`
 
     :host([badge]) .btn_variant_text pi-badge {
         background-color: var(--pi-button-bg-color-default);
@@ -3838,7 +3898,7 @@ const xe = ".raised{box-shadow:var(--pi-raised-box-shadow, 0px 1px 2px 1px #aaa)
     }
 
 `;
-class Aa extends o {
+class qa extends o {
   static get properties() {
     return {
       disabled: { type: Boolean },
@@ -3901,11 +3961,11 @@ class Aa extends o {
     }));
   }
   static styles = [
-    Ma,
-    Na,
-    Ta,
     Fa,
-    b(xe),
+    Ba,
+    Ja,
+    Oa,
+    b(ke),
     a`
             :host {
                 display: inline-flex;
@@ -3998,7 +4058,7 @@ class Aa extends o {
         `
   ];
 }
-customElements.define("pi-button", Aa);
+customElements.define("pi-button", qa);
 class d extends o {
   static get properties() {
     return {
@@ -4067,7 +4127,7 @@ const l = a`
     }
 
 `;
-class Ba extends d {
+class Ha extends d {
   static get properties() {
     return {
       placeholder: { type: String },
@@ -4146,8 +4206,8 @@ class Ba extends d {
         `
   ];
 }
-customElements.get("pi-text-input") || customElements.define("pi-text-input", Ba);
-class Ja extends d {
+customElements.get("pi-text-input") || customElements.define("pi-text-input", Ha);
+class Ua extends d {
   static get properties() {
     return {
       options: { type: Array },
@@ -4252,8 +4312,8 @@ class Ja extends d {
         `
   ];
 }
-customElements.get("pi-select-input") || customElements.define("pi-select-input", Ja);
-class Oa extends d {
+customElements.get("pi-select-input") || customElements.define("pi-select-input", Ua);
+class ja extends d {
   static get properties() {
     return {
       checked: { type: Boolean, reflect: !0 },
@@ -4342,8 +4402,8 @@ class Oa extends d {
         `
   ];
 }
-customElements.get("pi-checkbox-input") || customElements.define("pi-checkbox-input", Oa);
-class qa extends d {
+customElements.get("pi-checkbox-input") || customElements.define("pi-checkbox-input", ja);
+class Ga extends d {
   static get properties() {
     return {
       placeholder: { type: String },
@@ -4481,8 +4541,8 @@ class qa extends d {
         `
   ];
 }
-customElements.get("pi-radio-input") || customElements.define("pi-radio-input", qa);
-class Ha extends d {
+customElements.get("pi-radio-input") || customElements.define("pi-radio-input", Ga);
+class Ka extends d {
   static get properties() {
     return {
       label: { type: String },
@@ -4547,8 +4607,8 @@ class Ha extends d {
         `
   ];
 }
-customElements.get("pi-radio-input-group") || customElements.define("pi-radio-input-group", Ha);
-class Ua extends d {
+customElements.get("pi-radio-input-group") || customElements.define("pi-radio-input-group", Ka);
+class Va extends d {
   static get properties() {
     return {
       checked: { type: Boolean, reflect: !0 },
@@ -4633,8 +4693,8 @@ class Ua extends d {
         `
   ];
 }
-customElements.get("pi-toggle-switch") || customElements.define("pi-toggle-switch", Ua);
-class ja extends d {
+customElements.get("pi-toggle-switch") || customElements.define("pi-toggle-switch", Va);
+class Xa extends d {
   static get properties() {
     return {
       label: { type: String },
@@ -4705,8 +4765,8 @@ class ja extends d {
         `
   ];
 }
-customElements.get("pi-text-area-input") || customElements.define("pi-text-area-input", ja);
-class Ga extends o {
+customElements.get("pi-text-area-input") || customElements.define("pi-text-area-input", Xa);
+class Wa extends o {
   static get properties() {
     return {
       headerHasContent: { type: Boolean },
@@ -4837,8 +4897,8 @@ class Ga extends o {
         `
   ];
 }
-customElements.get("pi-card") || customElements.define("pi-card", Ga);
-class Ka extends o {
+customElements.get("pi-card") || customElements.define("pi-card", Wa);
+class Ya extends o {
   static get properties() {
     return {
       formData: { type: Object },
@@ -4929,8 +4989,8 @@ class Ka extends o {
         `
   ];
 }
-customElements.get("pi-form") || customElements.define("pi-form", Ka);
-class Va extends o {
+customElements.get("pi-form") || customElements.define("pi-form", Ya);
+class Za extends o {
   static get properties() {
     return {
       name: { type: String }
@@ -4950,8 +5010,8 @@ class Va extends o {
         `
   ];
 }
-customElements.get("pi-form-group") || customElements.define("pi-form-group", Va);
-class Xa extends o {
+customElements.get("pi-form-group") || customElements.define("pi-form-group", Za);
+class Qa extends o {
   static get properties() {
     return {
       cols: { type: Number }
@@ -4977,8 +5037,8 @@ class Xa extends o {
         `
   ];
 }
-customElements.get("pi-col") || customElements.define("pi-col", Xa);
-class Wa extends o {
+customElements.get("pi-col") || customElements.define("pi-col", Qa);
+class to extends o {
   static get properties() {
     return {
       gutter: { type: String, reflect: !0 }
@@ -5019,8 +5079,8 @@ class Wa extends o {
         `
   ];
 }
-customElements.get("pi-grid") || customElements.define("pi-grid", Wa);
-class Ya extends o {
+customElements.get("pi-grid") || customElements.define("pi-grid", to);
+class eo extends o {
   static get properties() {
     return {};
   }
@@ -5056,8 +5116,8 @@ class Ya extends o {
         `
   ];
 }
-customElements.get("pi-row") || customElements.define("pi-row", Ya);
-class Za extends o {
+customElements.get("pi-row") || customElements.define("pi-row", eo);
+class io extends o {
   static get properties() {
     return {
       disabled: { type: Boolean },
@@ -5098,8 +5158,8 @@ class Za extends o {
         `
   ];
 }
-customElements.get("pi-paginator-nav-item") || customElements.define("pi-paginator-nav-item", Za);
-class Qa extends o {
+customElements.get("pi-paginator-nav-item") || customElements.define("pi-paginator-nav-item", io);
+class ao extends o {
   static get properties() {
     return {
       rows: { type: Number },
@@ -5204,14 +5264,14 @@ class Qa extends o {
         `
   ];
 }
-customElements.get("pi-paginator") || customElements.define("pi-paginator", Qa);
-function to(i, t) {
+customElements.get("pi-paginator") || customElements.define("pi-paginator", ao);
+function oo(i, t) {
   const n = [];
   for (let s = 0; s < i.length; s += Number(t))
     n.push(i.slice(s, s + Number(t)));
   return n;
 }
-class eo extends o {
+class so extends o {
   static get properties() {
     return {
       rows: { type: Array },
@@ -5238,7 +5298,7 @@ class eo extends o {
   }
   initPagination() {
     if (this.rowsPerPage > 0) {
-      const t = to(this.rows, this.rowsPerPage);
+      const t = oo(this.rows, this.rowsPerPage);
       this.pages = t, this.handlePaginationChange();
     }
   }
@@ -5267,8 +5327,8 @@ class eo extends o {
         `
   ];
 }
-customElements.get("pi-table-paginator") || customElements.define("pi-table-paginator", eo);
-class io extends o {
+customElements.get("pi-table-paginator") || customElements.define("pi-table-paginator", so);
+class no extends o {
   static get properties() {
     return {
       item: { type: Object },
@@ -5311,8 +5371,8 @@ class io extends o {
         `
   ];
 }
-customElements.get("pi-table-row") || customElements.define("pi-table-row", io);
-class ao extends o {
+customElements.get("pi-table-row") || customElements.define("pi-table-row", no);
+class ro extends o {
   static get properties() {
     return {
       sortDirection: { type: String }
@@ -5340,8 +5400,8 @@ class ao extends o {
         `
   ];
 }
-customElements.get("pi-table-sort-icon") || customElements.define("pi-table-sort-icon", ao);
-class oo extends o {
+customElements.get("pi-table-sort-icon") || customElements.define("pi-table-sort-icon", ro);
+class co extends o {
   static get properties() {
     return {
       sortable: { type: Boolean },
@@ -5431,14 +5491,14 @@ class oo extends o {
         `
   ];
 }
-customElements.get("pi-table-column") || customElements.define("pi-table-column", oo);
-function so(i, t, n) {
+customElements.get("pi-table-column") || customElements.define("pi-table-column", co);
+function lo(i, t, n) {
   return [...i].sort((r, c) => {
     const p = r[t], h = c[t], g = typeof p == "string" && typeof h == "string" ? p.localeCompare(h, void 0, { numeric: !0 }) : Number(p) - Number(h);
     return n === "asc" ? g : -g;
   });
 }
-class no extends o {
+class po extends o {
   static get properties() {
     return {
       rows: { type: Array },
@@ -5477,7 +5537,7 @@ class no extends o {
     })) : [];
   }
   handleSortRequest(t, n) {
-    this.sortedRows = so(this.rows, t, n), this.updateColumnSorters(t, n), this.paginate || (this.activeRows = [...this.sortedRows]);
+    this.sortedRows = lo(this.rows, t, n), this.updateColumnSorters(t, n), this.paginate || (this.activeRows = [...this.sortedRows]);
   }
   handleDefaultSort() {
     this.defaultSortKey != null && this.defaultSortDirection != null && this.handleSortRequest(this.defaultSortKey, this.defaultSortDirection);
@@ -5626,8 +5686,8 @@ class no extends o {
         `
   ];
 }
-customElements.get("pi-table") || customElements.define("pi-table", no);
-class ro extends o {
+customElements.get("pi-table") || customElements.define("pi-table", po);
+class ho extends o {
   static properties = {};
   constructor() {
     super();
@@ -5656,8 +5716,8 @@ class ro extends o {
         }
     `;
 }
-customElements.get("pi-tab") || customElements.define("pi-tab", ro);
-class co extends o {
+customElements.get("pi-tab") || customElements.define("pi-tab", ho);
+class uo extends o {
   static get properties() {
     return {
       selectedTab: { type: String },
@@ -5709,8 +5769,8 @@ class co extends o {
         `
   ];
 }
-customElements.get("pi-tab-list") || customElements.define("pi-tab-list", co);
-class lo extends o {
+customElements.get("pi-tab-list") || customElements.define("pi-tab-list", uo);
+class bo extends o {
   static properties = {};
   constructor() {
     super();
@@ -5734,8 +5794,8 @@ class lo extends o {
         }
     `;
 }
-customElements.get("pi-tab-panel") || customElements.define("pi-tab-panel", lo);
-class po extends o {
+customElements.get("pi-tab-panel") || customElements.define("pi-tab-panel", bo);
+class mo extends o {
   static get properties() {
     return {
       selectedTab: { type: String },
@@ -5769,8 +5829,8 @@ class po extends o {
         `
   ];
 }
-customElements.get("pi-tab-panels") || customElements.define("pi-tab-panels", po);
-class ho extends o {
+customElements.get("pi-tab-panels") || customElements.define("pi-tab-panels", mo);
+class go extends o {
   static get properties() {
     return {
       selectedTab: { type: String },
@@ -5803,8 +5863,8 @@ class ho extends o {
         `
   ];
 }
-customElements.get("pi-tabs") || customElements.define("pi-tabs", ho);
-class uo extends o {
+customElements.get("pi-tabs") || customElements.define("pi-tabs", go);
+class vo extends o {
   static get properties() {
     return {
       label: { type: String },
@@ -5831,7 +5891,7 @@ class uo extends o {
   }
   static styles = [
     l,
-    b(xe),
+    b(ke),
     a`
             :host {
                 display: inline-flex;
@@ -5862,8 +5922,8 @@ class uo extends o {
         `
   ];
 }
-customElements.get("pi-chip") || customElements.define("pi-chip", uo);
-class bo extends o {
+customElements.get("pi-chip") || customElements.define("pi-chip", vo);
+class fo extends o {
   static get properties() {
     return {
       sticky: { type: Boolean },
@@ -5963,8 +6023,8 @@ class bo extends o {
         `
   ];
 }
-customElements.get("pi-header-bar") || customElements.define("pi-header-bar", bo);
-class mo extends o {
+customElements.get("pi-header-bar") || customElements.define("pi-header-bar", fo);
+class yo extends o {
   static get properties() {
     return {
       showDrawer: { type: Boolean, reflect: !0 }
@@ -6052,8 +6112,8 @@ class mo extends o {
         `
   ];
 }
-customElements.get("pi-nav-drawer") || customElements.define("pi-nav-drawer", mo);
-class go extends o {
+customElements.get("pi-nav-drawer") || customElements.define("pi-nav-drawer", yo);
+class Do extends o {
   static get properties() {
     return {
       title: { type: String },
@@ -6079,7 +6139,7 @@ class go extends o {
     };
     return e`
             ${this.icon == "" ? null : e`
-                <div class="pi_notification_icon" style=${ke(n)}>
+                <div class="pi_notification_icon" style=${Ee(n)}>
                     <pi-icon-handler icon=${this.icon}></pi-icon-handler>
                 </div>
             `}
@@ -6179,8 +6239,8 @@ class go extends o {
         `
   ];
 }
-customElements.get("pi-notification-item") || customElements.define("pi-notification-item", go);
-class vo extends o {
+customElements.get("pi-notification-item") || customElements.define("pi-notification-item", Do);
+class xo extends o {
   static get properties() {
     return {
       notificationsByPosition: { type: Object }
@@ -6292,8 +6352,8 @@ class vo extends o {
         `
   ];
 }
-customElements.get("pi-notification-center") || customElements.define("pi-notification-center", vo);
-class fo extends o {
+customElements.get("pi-notification-center") || customElements.define("pi-notification-center", xo);
+class Lo extends o {
   static get properties() {
     return {
       notificationCenter: { type: Object }
@@ -6362,43 +6422,43 @@ class fo extends o {
         `
   ];
 }
-customElements.get("pi-notifications") || customElements.define("pi-notifications", fo);
+customElements.get("pi-notifications") || customElements.define("pi-notifications", Lo);
 export {
-  Ca as PiBadge,
-  Aa as PiButton,
-  Ga as PiCard,
-  Oa as PiCheckboxInput,
-  uo as PiChip,
-  Ka as PiForm,
-  Va as PiFormGroup,
-  Wa as PiGrid,
-  Xa as PiGridColumn,
-  Ya as PiGridRow,
-  bo as PiHeaderBar,
-  ze as PiIconBase,
-  Ee as PiIconHandler,
-  Pa as PiLabel,
-  mo as PiNavDrawer,
-  vo as PiNotificationCenter,
-  go as PiNotificationItem,
-  fo as PiNotifications,
-  Qa as PiPaginator,
-  Za as PiPaginatorNavItem,
-  qa as PiRadioInput,
-  Ha as PiRadioInputGroup,
-  Ja as PiSelectInput,
-  ro as PiTab,
-  co as PiTabList,
-  lo as PiTabPanel,
-  po as PiTabPanels,
-  no as PiTable,
-  oo as PiTableColumn,
-  eo as PiTablePaginator,
-  io as PiTableRow,
-  ao as PiTableSortIcon,
-  ho as PiTabs,
-  ja as PiTextAreaInput,
-  Ba as PiTextInput,
-  Ua as PiToggleSwitch
+  Na as PiBadge,
+  qa as PiButton,
+  Wa as PiCard,
+  ja as PiCheckboxInput,
+  vo as PiChip,
+  Ya as PiForm,
+  Za as PiFormGroup,
+  to as PiGrid,
+  Qa as PiGridColumn,
+  eo as PiGridRow,
+  fo as PiHeaderBar,
+  _e as PiIconBase,
+  we as PiIconHandler,
+  Ma as PiLabel,
+  yo as PiNavDrawer,
+  xo as PiNotificationCenter,
+  Do as PiNotificationItem,
+  Lo as PiNotifications,
+  ao as PiPaginator,
+  io as PiPaginatorNavItem,
+  Ga as PiRadioInput,
+  Ka as PiRadioInputGroup,
+  Ua as PiSelectInput,
+  ho as PiTab,
+  uo as PiTabList,
+  bo as PiTabPanel,
+  mo as PiTabPanels,
+  po as PiTable,
+  co as PiTableColumn,
+  so as PiTablePaginator,
+  no as PiTableRow,
+  ro as PiTableSortIcon,
+  go as PiTabs,
+  Xa as PiTextAreaInput,
+  Ha as PiTextInput,
+  Va as PiToggleSwitch
 };
 //# sourceMappingURL=pi_components.js.map
