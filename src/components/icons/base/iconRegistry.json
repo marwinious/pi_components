@@ -454,5 +454,101 @@
     {
         "className": "PiIconAvatarHandDark",
         "handlerCode": "avatar-hand-dark"
+    },
+    {
+        "className": "PiIconVideoCameraLight",
+        "handlerCode": "video-camera-light"
+    },
+    {
+        "className": "PiIconVideoCameraDark",
+        "handlerCode": "video-camera-dark"
+    },
+    {
+        "className": "PiIconVideoFilmStripLight",
+        "handlerCode": "video-film-strip-light"
+    },
+    {
+        "className": "PiIconVideoFilmStripDark",
+        "handlerCode": "video-film-strip-dark"
+    },
+    {
+        "className": "PiIconEmailCircledLight",
+        "handlerCode": "email-circled-light"
+    },
+    {
+        "className": "PiIconEmailCircledDark",
+        "handlerCode": "email-circled-dark"
+    },
+    {
+        "className": "PiIconPlayCircledLight",
+        "handlerCode": "play-circled-light"
+    },
+    {
+        "className": "PiIconPlayCircledDark",
+        "handlerCode": "play-circled-dark"
+    },
+    {
+        "className": "PiIconFacebookMessengerCircledLight",
+        "handlerCode": "facebook-messenger-circled-light"
+    },
+    {
+        "className": "PiIconFacebookMessengerCircledDark",
+        "handlerCode": "facebook-messenger-circled-dark"
+    },
+    {
+        "className": "PiIconFacebookDark",
+        "handlerCode": "facebook-dark"
+    },
+    {
+        "className": "PiIconFacebookLetter",
+        "handlerCode": "facebook-letter"
+    },
+    {
+        "className": "PiIconFacebookCircledLight",
+        "handlerCode": "facebook-circled-light"
+    },
+    {
+        "className": "PiIconFacebookCircledDark",
+        "handlerCode": "facebook-circled-dark"
+    },
+    {
+        "className": "PiIconFacebookThumbsUpCircledLight",
+        "handlerCode": "facebook-thumbs-up-circled-light"
+    },
+    {
+        "className": "PiIconFacebookThumbsUpCircledDark",
+        "handlerCode": "facebook-thumbs-up-circled-dark"
+    },
+    {
+        "className": "PiIconInstagramCircledLight",
+        "handlerCode": "instagram-circled-light"
+    },
+    {
+        "className": "PiIconInstagramCircledDark",
+        "handlerCode": "instagram-circled-dark"
+    },
+    {
+        "className": "PiIconYoutubePlayCircledLight",
+        "handlerCode": "youtube-play-circled-light"
+    },
+    {
+        "className": "PiIconYoutubePlayCircledDark",
+        "handlerCode": "youtube-play-circled-dark"
+    },
+    {
+        "className": "PiIconYoutubePlayButton",
+        "handlerCode": "youtube-play-button"
+    },
+    {
+        "className": "PiIconLinkedinCircledLight",
+        "handlerCode": "linkedin-circled-light"
+    },
+    {
+        "className": "PiIconLinkedinCircledDark",
+        "handlerCode": "linkedin-circled-dark"
+    },
+    {
+        "className": "PiIconXLogo",
+        "handlerCode": "x-logo"
     }
 ]
