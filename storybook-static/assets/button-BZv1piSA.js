@@ -1,4 +1,4 @@
-import{a as e,i as o,r as i,x as r}from"./lit-element-55XysmYc.js";import{c as a}from"./common-Bdu-62Ky.js";import{e as b}from"./class-map-CZwkYLGW.js";import"./iconAvatarHandDark-BLQ6bgDj.js";import"./iconHandler-Bvyw3-YZ.js";const c=["primary","secondary","success","info","warn","help","danger"],l=()=>c.map(t=>`
+import{a as e,i as o,r as i,x as r}from"./lit-element-55XysmYc.js";import{c as a}from"./common-Bdu-62Ky.js";import{e as b}from"./class-map-CZwkYLGW.js";import"./iconXLogo-DaIC5BmN.js";import"./iconHandler-Bvyw3-YZ.js";const c=["primary","secondary","success","info","warn","help","danger"],l=()=>c.map(t=>`
     .btn_severity_${t} {
         --pi-button-bg-color: var(--pi-button-bg-color-${t});
         --pi-button-text-color: var(--pi-button-text-color-${t});
