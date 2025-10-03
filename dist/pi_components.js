@@ -4233,6 +4233,7 @@ class wo extends o {
     return e`
             <pi-icon-base 
             pathData=${this.pathData}
+            viewBox="0 0 1200 1227"
             ></pi-icon-base>
         `;
   }
