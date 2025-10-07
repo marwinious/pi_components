@@ -1,9 +1,12 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+// import Sonda from 'sonda/vite'; 
 
 export default defineConfig({
     plugins: [
-        
+        /* Sonda({
+            open: true
+        }) */
     ],
     /* resolve: {
         alias: {
