@@ -105,4 +105,4 @@ export class PiNotifications extends LitElement {
     
 }
 
-if(!customElements.get('pi-notifications')) { customElements.define('pi-notifications', PiNotifications); }
+// if(!customElements.get('pi-notifications')) { customElements.define('pi-notifications', PiNotifications); }

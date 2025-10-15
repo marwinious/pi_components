@@ -56,4 +56,4 @@ export class PiTableRow extends LitElement {
     
 }
 
-if(!customElements.get('pi-table-row')) { customElements.define('pi-table-row', PiTableRow); }
+// if(!customElements.get('pi-table-row')) { customElements.define('pi-table-row', PiTableRow); }

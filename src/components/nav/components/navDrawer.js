@@ -104,4 +104,4 @@ export class PiNavDrawer extends LitElement {
     
 }
 
-if(!customElements.get('pi-nav-drawer')) { customElements.define('pi-nav-drawer', PiNavDrawer); }
+// if(!customElements.get('pi-nav-drawer')) { customElements.define('pi-nav-drawer', PiNavDrawer); }

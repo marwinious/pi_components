@@ -122,7 +122,7 @@ export class PiPaginator extends LitElement {
                         <pi-paginator-nav-item 
                         @click="${() => this.handlePageNavNumberClick(i)}"
                         ?active=${i === this.currentPage}
-                        .value=${i+1}
+                        value=${i+1}
                         ></pi-paginator-nav-item>
                     `)
                 }
@@ -176,4 +176,4 @@ export class PiPaginator extends LitElement {
     
 }
 
-if(!customElements.get('pi-paginator')) { customElements.define('pi-paginator', PiPaginator); }
+// if(!customElements.get('pi-paginator')) { customElements.define('pi-paginator', PiPaginator); }

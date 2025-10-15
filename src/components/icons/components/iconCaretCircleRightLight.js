@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+// import { LitElement, css, html } from 'lit'
 
 const iconData = {
     iconLabel: 'pi-icon-caret-circle-right-light',
@@ -40,4 +40,4 @@ export class PiIconCaretCircleRightLight extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCaretCircleRightLight); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCaretCircleRightLight); }

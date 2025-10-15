@@ -190,6 +190,4 @@ export class PiNotificationCenter extends LitElement {
     ];
 }
 
-if (!customElements.get('pi-notification-center')) {
-    customElements.define('pi-notification-center', PiNotificationCenter);
-}
+// if (!customElements.get('pi-notification-center')) { customElements.define('pi-notification-center', PiNotificationCenter); }

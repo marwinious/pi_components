@@ -62,4 +62,4 @@ export class PiBaseFormElement extends LitElement {
     
 }
 
-if(!customElements.get('pi-base-form-element')) { customElements.define('pi-base-form-element', PiBaseFormElement); }
+// if(!customElements.get('pi-base-form-element')) { customElements.define('pi-base-form-element', PiBaseFormElement); }

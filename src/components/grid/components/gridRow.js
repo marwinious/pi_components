@@ -44,4 +44,4 @@ export class PiGridRow extends LitElement {
     
 }
 
-if(!customElements.get('pi-row')) { customElements.define('pi-row', PiGridRow); }
+// if(!customElements.get('pi-row')) { customElements.define('pi-row', PiGridRow); }

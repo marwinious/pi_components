@@ -35,4 +35,4 @@ export class PiIconYoutubePlayButton extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconYoutubePlayButton); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconYoutubePlayButton); }

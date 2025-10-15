@@ -37,4 +37,4 @@ export class PiIconVideoFilmStripLight extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconVideoFilmStripLight); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconVideoFilmStripLight); }

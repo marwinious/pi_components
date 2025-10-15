@@ -35,4 +35,4 @@ export class PiIconVideoFilmStripDark extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconVideoFilmStripDark); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconVideoFilmStripDark); }

@@ -40,4 +40,4 @@ export class PiIconEditPageFilled extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconEditPageFilled); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconEditPageFilled); }

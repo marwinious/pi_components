@@ -221,4 +221,4 @@ export class PiForm extends LitElement {
     
 }
 
-if(!customElements.get('pi-form')) { customElements.define('pi-form', PiForm); }
+// if(!customElements.get('pi-form')) { customElements.define('pi-form', PiForm); }

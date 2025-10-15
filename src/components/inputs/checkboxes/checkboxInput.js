@@ -107,4 +107,4 @@ export class PiCheckboxInput extends PiBaseFormElement {
     
 }
 
-if(!customElements.get('pi-checkbox-input')) { customElements.define('pi-checkbox-input', PiCheckboxInput); }
+// if(!customElements.get('pi-checkbox-input')) { customElements.define('pi-checkbox-input', PiCheckboxInput); }

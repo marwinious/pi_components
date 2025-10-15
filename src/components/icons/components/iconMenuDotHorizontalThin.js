@@ -39,4 +39,4 @@ export class PiIconMenuDotHorizontalThin extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMenuDotHorizontalThin); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMenuDotHorizontalThin); }

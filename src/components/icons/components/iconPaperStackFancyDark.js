@@ -35,4 +35,4 @@ export class PiIconPaperStackFancyDark extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconPaperStackFancyDark); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconPaperStackFancyDark); }

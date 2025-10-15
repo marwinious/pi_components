@@ -195,6 +195,4 @@ export class PiButton extends LitElement {
     
 }
 
-if(!customElements.get('pi-button')) {
-    customElements.define('pi-button', PiButton);
-}
+// if(!customElements.get('pi-button')) { customElements.define('pi-button', PiButton); }

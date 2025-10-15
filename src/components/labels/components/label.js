@@ -48,4 +48,4 @@ export class PiLabel extends LitElement {
     
 }
 
-if(!customElements.get('pi-label')) { customElements.define('pi-label', PiLabel); }
+// if(!customElements.get('pi-label')) { customElements.define('pi-label', PiLabel); }

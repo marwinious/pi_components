@@ -256,4 +256,4 @@ export class PiTable extends LitElement {
     
 }
 
-if(!customElements.get('pi-table')) { customElements.define('pi-table', PiTable); }
+// if(!customElements.get('pi-table')) { customElements.define('pi-table', PiTable); }

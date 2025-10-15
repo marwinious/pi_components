@@ -44,4 +44,4 @@ export class PiIconHandler extends LitElement {
     ]
 }
 
-if(!customElements.get('pi-icon-handler')) { customElements.define('pi-icon-handler', PiIconHandler); }
+// if(!customElements.get('pi-icon-handler')) { customElements.define('pi-icon-handler', PiIconHandler); }

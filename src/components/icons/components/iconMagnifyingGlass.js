@@ -39,4 +39,4 @@ export class PiIconMagnifyingGlass extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMagnifyingGlass); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMagnifyingGlass); }

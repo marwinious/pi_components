@@ -115,4 +115,4 @@ export class PiRadioInputGroup extends PiBaseFormElement {
     
 }
 
-if(!customElements.get('pi-radio-input-group')) { customElements.define('pi-radio-input-group', PiRadioInputGroup); }
+// if(!customElements.get('pi-radio-input-group')) { customElements.define('pi-radio-input-group', PiRadioInputGroup); }
