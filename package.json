@@ -1,25 +1,25 @@
 {
   "name": "pi_components",
   "private": true,
-  "version": "0.2.0001",
+  "version": "0.2.0005",
   "type": "module",
   "directories": {
     "test": "tests"
   },
-  "main": "dist/pi_components.umd.js",
-  "module": "dist/pi_components.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "sideEffects": true,
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/pi_components.js",
-      "require": "./dist/pi_components.umd.js"
+      "import": "./dist/index.js"
     },
-    "./*": {
+    "./components/*": {
       "import": "./dist/*.js"
-    }
+    },
+    "./styles.css": "./dist/styles/styles.css"
   },
   "scripts": {
     "dev": "vite",
