@@ -4589,7 +4589,7 @@ class Fo extends o {
       rounded: { type: Boolean },
       squared: { type: Boolean },
       variant: { type: String },
-      badge: { type: [Number, String] },
+      badge: { type: String },
       type: { type: String }
     };
   }
@@ -4607,7 +4607,7 @@ class Fo extends o {
     };
     return e`
             <button 
-            type=${this.type}
+            type="${this.type}"
             class=${m(t)}
             ?disabled=${this.disabled}
             @click=${this._handleClick}
@@ -4739,7 +4739,7 @@ class Fo extends o {
         `
   ];
 }
-customElements.define("pi-button", Fo);
+customElements.get("pi-button") || customElements.define("pi-button", Fo);
 class h extends o {
   static get properties() {
     return {
