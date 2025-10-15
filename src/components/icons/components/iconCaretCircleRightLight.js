@@ -1,4 +1,4 @@
-// import { LitElement, css, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 
 const iconData = {
     iconLabel: 'pi-icon-caret-circle-right-light',
