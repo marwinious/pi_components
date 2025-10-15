@@ -21,7 +21,7 @@ export class PiButton extends LitElement {
             rounded: { type: Boolean },
             squared: { type: Boolean },
             variant: { type: String },
-            badge: { type: [Number, String] },
+            badge: { type: String },
             type: { type: String }
         }
     }
@@ -53,7 +53,7 @@ export class PiButton extends LitElement {
 
         return html`
             <button 
-            type=${this.type}
+            type="${this.type}"
             class=${classMap(buttonClasses)}
             ?disabled=${this.disabled}
             @click=${this._handleClick}
@@ -195,4 +195,6 @@ export class PiButton extends LitElement {
     
 }
 
-customElements.define('pi-button', PiButton);
+if(!customElements.get('pi-button')) {
+    customElements.define('pi-button', PiButton);
+}
