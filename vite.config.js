@@ -9,17 +9,21 @@ export default defineConfig({
         outDir: 'dist',
         sourcemap: true,
         target: 'esnext',
-        minify: true, // or 'terser' if specified
-        
-        // 1. REMOVE 'lib' entirely. Vite's default build mode is now used.
-        //    The output is configured via rollupOptions.
+        minify: true, 
         
         rollupOptions: {
-            // 2. Specify all your components/files as entry points
+            // FIX 1: Explicitly set preserveEntrySignatures to a compatible value 
+            // This resolves the error caused by implicit 'false' when using preserveModules.
+            preserveEntrySignatures: 'allow-extension', 
+            
+            // FIX 2: Re-add preserveModulesRoot to ensure the output file structure 
+            // (inside dist) correctly mirrors the source file structure (inside src)
+            preserveModulesRoot: resolve(__dirname, 'src'),
+
+            // Specify all your components/files as entry points (This block remains correct)
             input: {
-                // 'index' is for the main package entry, like 'src/main.js' or 'src/index.js'
+                // 'index' is for the main package entry
                 index: resolve(__dirname, 'src/main.js'), 
-                
                 // Add an entry for *each* component
                 'piBadge': resolve(__dirname, 'src/components/badges/badge.js'),
                 'piButton': resolve(__dirname, 'src/components/buttons/button.js'),
@@ -57,7 +61,7 @@ export default defineConfig({
                 'piTabs': resolve(__dirname, 'src/components/tabs/tabs.js'),
             },
             
-            // 3. Keep external configuration for Lit dependencies
+            // Keep external configuration for Lit dependencies
             external: [
                 /^lit\/.*/,
                 'lit',
@@ -66,37 +70,30 @@ export default defineConfig({
             ],
             
             output: {
-                // 4. Configure output file naming
-                //    [name] will correspond to the keys in the 'input' object (e.g., my-button.js)
-                entryFileNames: ({ name }) => {
-                    // Ensures that components are in a specific folder, e.g., 'dist/components/my-button.js'
-                    if (name === 'index') {
-                        return 'index.js'; // or 'pi_components.js' if you prefer a single main file
-                    }
-                    return 'components/[name].js';
-                },
+                // **CRITICAL FIX 1: preserveModules MUST be in the output block**
+                preserveModules: true,
+                
+                // **CRITICAL FIX 2: Simplify naming when using preserveModules**
+                // This pattern ensures the output file path is just the name (e.g., piInputSelect.js) 
+                // and Rollup handles the folder structure relative to the 'dist' folder.
+                entryFileNames: `[name].js`,
                 
                 // Name for any shared code-split chunks (e.g., utilities)
-                chunkFileNames: 'chunks/[name].js', 
+                chunkFileNames: `chunks/[name].js`, 
                 
-                // 5. Ensure ES module format
+                // Ensure ES module format
                 format: 'es',
                 
-                // 6. Keep globals if necessary (though less common for ES module libraries)
+                // Keep globals if necessary (though less common for ES module libraries)
                 globals: {
                     lit: 'lit'
                 },
 
-                // This forces the CSS file to be named `styles.css` and placed in the `dist` root.
+                // This forces the CSS file to be named `styles.css` and placed in the `dist/styles` folder.
                 assetFileNames: (assetInfo) => {
-                    // assetInfo.name contains the original asset name (e.g., 'style.css')
-                    
                     if (assetInfo.name.endsWith('.css')) {
-                        // **REMOVE [hash]** and provide a static path/name
                         return 'styles/styles.css'; 
                     }
-                    
-                    // Default behavior for other assets (e.g., images, fonts)
                     return 'assets/[name].[ext]';
                 },
             }
