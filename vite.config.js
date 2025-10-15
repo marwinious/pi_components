@@ -86,6 +86,19 @@ export default defineConfig({
                 globals: {
                     lit: 'lit'
                 },
+
+                // This forces the CSS file to be named `styles.css` and placed in the `dist` root.
+                assetFileNames: (assetInfo) => {
+                    // assetInfo.name contains the original asset name (e.g., 'style.css')
+                    
+                    if (assetInfo.name.endsWith('.css')) {
+                        // **REMOVE [hash]** and provide a static path/name
+                        return 'styles/styles.css'; 
+                    }
+                    
+                    // Default behavior for other assets (e.g., images, fonts)
+                    return 'assets/[name].[ext]';
+                },
             }
         }
     }
