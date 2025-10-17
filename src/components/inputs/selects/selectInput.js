@@ -50,7 +50,7 @@ export class PiSelectInput extends PiBaseFormElement {
 
             <select 
             @change=${this._handleInputChange} 
-            .value="${this.selectedIndex}"
+            value="${this.selectedIndex}"
             ?disabled="${this.disabled}"
             >
                 ${this.defaultText != '' ? html`
