@@ -1,6 +1,6 @@
 import { html } from "lit";
 import { ifDefined } from "lit/directives/if-defined.js";
-import '../../components/icons/index'
+// import '../../components/icons/index'
 import { PiButton } from '../../components/buttons/button'
 // import '../../index.css'
 
