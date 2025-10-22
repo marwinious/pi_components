@@ -6,7 +6,7 @@ import{html as i,css as d}from"lit";import n from"./css/defaultCss.js";import{Pi
 
             <select 
             @change=${this._handleInputChange} 
-            .value="${this.selectedIndex}"
+            value="${this.selectedIndex}"
             ?disabled="${this.disabled}"
             >
                 ${this.defaultText!=""?i`
