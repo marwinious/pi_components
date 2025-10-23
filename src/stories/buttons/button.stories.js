@@ -1,8 +1,21 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { ifDefined } from "lit/directives/if-defined.js";
 // import '../../components/icons/index'
+import { PiIconBase } from "pi_icons/components/components/icons/base/iconBase";
+import { PiIconHandler } from "pi_icons/components/components/icons/base/iconHandler";
+import { PiIconAlertTriangleLight } from "pi_icons/components/components/icons/components/alerts/iconAlertTriangleLight"
+import { PiIconGearSolid } from "pi_icons/components/components/icons/components/gears/iconGearSolid";
+import { PiIconInfoFilled } from "pi_icons/components/components/icons/components/info/iconInfoFilled";
 import { PiButton } from '../../components/buttons/button'
 import '../../index.css'
+
+register('pi-icon-base', PiIconBase)
+register('pi-icon-handler', PiIconHandler)
+register('pi-button', PiButton)
+register('pi-icon-alert-triangle-light', PiIconAlertTriangleLight)
+register('pi-icon-gear-solid', PiIconGearSolid)
+register('pi-icon-info-filled', PiIconInfoFilled)
 
 export default {
     title: 'Components/Button',
@@ -115,7 +128,15 @@ const Template = ({ slotContent, variant, severity, raised, rounded, squared, ba
     ?fullWidth=${fullWidth}
     badge=${ifDefined(badge > 0 ? badge : undefined)}
     icon=${ifDefined(icon != '' ? icon : undefined)}
-    >${slotContent}</pi-button>
+    >
+        ${slotContent}
+
+        ${icon != '' ? html`
+            
+                <pi-icon-handler icon="${icon}" slot="icon"></pi-icon-handler>
+            
+        ` : null}
+    </pi-button>
 `;
 
 export const Default = Template.bind();
