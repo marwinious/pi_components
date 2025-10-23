@@ -1,8 +1,6 @@
 import { html } from "lit";
 import { register } from "../../registerWebComp";
 import { ifDefined } from "lit/directives/if-defined.js";
-// import '../../components/icons/index'
-import { PiIconBase } from "pi_icons/components/components/icons/base/iconBase";
 import { PiIconHandler } from "pi_icons/components/components/icons/base/iconHandler";
 import { PiIconAlertTriangleLight } from "pi_icons/components/components/icons/components/alerts/iconAlertTriangleLight"
 import { PiIconGearSolid } from "pi_icons/components/components/icons/components/gears/iconGearSolid";
@@ -10,7 +8,6 @@ import { PiIconInfoFilled } from "pi_icons/components/components/icons/component
 import { PiButton } from '../../components/buttons/button'
 import '../../index.css'
 
-register('pi-icon-base', PiIconBase)
 register('pi-icon-handler', PiIconHandler)
 register('pi-button', PiButton)
 register('pi-icon-alert-triangle-light', PiIconAlertTriangleLight)
