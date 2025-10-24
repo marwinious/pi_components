@@ -1,6 +1,9 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../../registerWebComp';
 import { chunkArray } from '../../../../lib/utility/arrays';
 import { PiPaginator } from '../../../paginators/components/paginator';
+
+register('pi-paginator', PiPaginator)
 
 export class PiTablePaginator extends LitElement {
 
