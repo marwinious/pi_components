@@ -1,5 +1,8 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../registerWebComp';
 import { PiNotificationCenter } from './notificationCenter';
+
+register('pi-notification-center', PiNotificationCenter)
 
 export class PiNotifications extends LitElement {
 
