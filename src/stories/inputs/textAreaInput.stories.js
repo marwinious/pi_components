@@ -1,8 +1,11 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { action } from '@storybook/addon-actions'
 import { ifDefined } from "lit/directives/if-defined.js";
 import '../../components/icons/index'
 import { PiTextAreaInput } from "../../components/inputs/textareas/textAreaInput";
+
+register('pi-text-area-input', PiTextAreaInput)
 
 export default {
     title: 'Components/Inputs/Textarea',
