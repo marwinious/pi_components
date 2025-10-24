@@ -1,8 +1,11 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { action } from '@storybook/addon-actions'
 import '../../components/icons/index'
 import { PiPaginator } from "../../components/paginators/components/paginator";
+
+register('pi-paginator', PiPaginator)
 
 export default {
     title: 'Components/Paginator',
