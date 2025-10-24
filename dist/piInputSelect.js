@@ -1,4 +1,4 @@
-import{html as i,css as d}from"lit";import n from"./css/defaultCss.js";import{PiBaseFormElement as p}from"./components/inputs/base/baseFormElement.js";import"./piLabel.js";class f extends p{static get properties(){return{options:{type:Array},selectedIndex:{type:Number},defaultText:{type:String},labelKey:{type:String},valueKey:{type:String},selectedObject:{type:Object},disabled:{type:Boolean},value:{type:String},label:{type:String},preventDefaultSelection:{type:Boolean}}}constructor(){super(),this.defaultText="Choose an option",this.options=[],this.selectedIndex=-1,this.labelKey="",this.valueKey="",this.selectedObject={},this.disabled=!1,this.value="",this.label="",this.preventDefaultSelection=!1}willUpdate(t){t.has("selectedObject")&&(this.selectedIndex=this.determineDefaultSelectedIndex(this.options,this.selectedObject))}renderInput(){return i`
+import{html as i,css as p}from"lit";import{register as r}from"./src/registerWebComp.js";import c from"./src/css/defaultCss.js";import{PiBaseFormElement as d}from"./src/components/inputs/base/baseFormElement.js";import{PiLabel as u}from"./piLabel.js";r("pi-base-form-element",d);r("pi-label",u);class g extends d{static get properties(){return{options:{type:Array},selectedIndex:{type:Number},defaultText:{type:String},labelKey:{type:String},valueKey:{type:String},selectedObject:{type:Object},disabled:{type:Boolean},value:{type:String},label:{type:String},preventDefaultSelection:{type:Boolean}}}constructor(){super(),this.defaultText="Choose an option",this.options=[],this.selectedIndex=-1,this.labelKey="",this.valueKey="",this.selectedObject={},this.disabled=!1,this.value="",this.label="",this.preventDefaultSelection=!1}willUpdate(t){t.has("selectedObject")&&(this.selectedIndex=this.determineDefaultSelectedIndex(this.options,this.selectedObject))}renderInput(){return i`
             <pi-label 
             text=${this.label}
             ?hidden=${this.label==""}
@@ -24,7 +24,7 @@ import{html as i,css as d}from"lit";import n from"./css/defaultCss.js";import{Pi
                     `)}
                 `:i``}
             </select>
-        `}determineDefaultSelectedIndex(t,e){if(t.length>0){const s=this.labelKey,l=this.valueKey;let o=-1;return t.some((a,r)=>{a[s]==e[s]&&a[l]==e[l]&&(o=r)}),o}return-1}_handleInputChange(t){const e=t.target.value;this.valueKey!=""?typeof this.options[e]<"u"?this.value=this.options[e][this.valueKey]:this.value="":this.value=this.options[e],this._dispatchChangeEvent(this.value)}static styles=[n,d`
+        `}determineDefaultSelectedIndex(t,e){if(t.length>0){const s=this.labelKey,l=this.valueKey;let o=-1;return t.some((a,n)=>{a[s]==e[s]&&a[l]==e[l]&&(o=n)}),o}return-1}_handleInputChange(t){const e=t.target.value;this.valueKey!=""?typeof this.options[e]<"u"?this.value=this.options[e][this.valueKey]:this.value="":this.value=this.options[e],this._dispatchChangeEvent(this.value)}static styles=[c,p`
             :host {
                 width: var(--pi-select-input-width, 100%);
                 display: var(--pi-select-input-display, inline-block);
@@ -59,5 +59,5 @@ import{html as i,css as d}from"lit";import n from"./css/defaultCss.js";import{Pi
                     box-shadow: var(--pi-select-input-box-shadow-focus, 1px 1px 1px #ddd);
                 }
             }
-        `]}export{f as PiSelectInput};
+        `]}export{g as PiSelectInput};
 //# sourceMappingURL=piInputSelect.js.map

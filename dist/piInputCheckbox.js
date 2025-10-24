@@ -1,4 +1,4 @@
-import{html as e,css as r}from"lit";import o from"./css/defaultCss.js";import{PiBaseFormElement as c}from"./components/inputs/base/baseFormElement.js";import"./piLabel.js";class h extends c{static get properties(){return{checked:{type:Boolean,reflect:!0},label:{type:String},value:{type:Boolean}}}constructor(){super(),this.checked=!1,this.label="",this.value=!1}renderInput(){return e`
+import{html as o,css as c}from"lit";import{register as e}from"./src/registerWebComp.js";import i from"./src/css/defaultCss.js";import{PiBaseFormElement as r}from"./src/components/inputs/base/baseFormElement.js";import{PiLabel as t}from"./piLabel.js";e("pi-base-form-element",r);e("pi-label",t);class p extends r{static get properties(){return{checked:{type:Boolean,reflect:!0},label:{type:String},value:{type:Boolean}}}constructor(){super(),this.checked=!1,this.label="",this.value=!1}renderInput(){return o`
             <div 
             class="checkbox-container" 
             @click=${this._handleInputChange}
@@ -12,7 +12,7 @@ import{html as e,css as r}from"lit";import o from"./css/defaultCss.js";import{Pi
             @click=${this._handleInputChange}
             no-margin
             ></pi-label>
-        `}_handleInputChange(){this.disabled||(this.checked=!this.checked,this.value=this.checked,this._dispatchChangeEvent(this.value))}static styles=[o,r`
+        `}_handleInputChange(){this.disabled||(this.checked=!this.checked,this.value=this.checked,this._dispatchChangeEvent(this.value))}static styles=[i,c`
             :host {
                 display: inline-flex; /* Use inline-flex for label alignment */
                 align-items: center; /* Vertically align checkbox and label */
@@ -65,5 +65,5 @@ import{html as e,css as r}from"lit";import o from"./css/defaultCss.js";import{Pi
                     background-color: var(--pi-input-bg-color-disabled);
                 }
             }
-        `]}export{h as PiCheckboxInput};
+        `]}export{p as PiCheckboxInput};
 //# sourceMappingURL=piInputCheckbox.js.map

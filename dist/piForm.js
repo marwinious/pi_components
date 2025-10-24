@@ -1,4 +1,4 @@
-import{LitElement as r,html as i,css as n}from"lit";import"./components/inputs/base/baseFormElement.js";class p extends r{static get properties(){return{formData:{type:Object},showReset:{type:Boolean},showSubmit:{type:Boolean}}}constructor(){super(),this.formData={},this.showReset=!1,this.showSubmit=!0}connectedCallback(){super.connectedCallback(),this.addEventListener("change",s=>this._handleFormElementChange(s)),this.addEventListener("pi-submit",s=>this._handleSubmit(s))}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("change",s=>this._handleFormElementChange(s)),this.removeEventListener("pi-submit",s=>this._handleSubmit(s))}render(){return i`
+import{LitElement as r,html as i,css as n}from"lit";import{register as l}from"./src/registerWebComp.js";import{PiBaseFormElement as c}from"./src/components/inputs/base/baseFormElement.js";l("pi-base-form-element",c);class d extends r{static get properties(){return{formData:{type:Object},showReset:{type:Boolean},showSubmit:{type:Boolean}}}constructor(){super(),this.formData={},this.showReset=!1,this.showSubmit=!0}connectedCallback(){super.connectedCallback(),this.addEventListener("change",s=>this._handleFormElementChange(s)),this.addEventListener("pi-submit",s=>this._handleSubmit(s))}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("change",s=>this._handleFormElementChange(s)),this.removeEventListener("pi-submit",s=>this._handleSubmit(s))}render(){return i`
             <form @submit=${this._handleSubmit} @reset=${this._handleReset}>
                 <slot @slotchange=${this._handleSlotChange}></slot>
 
@@ -23,5 +23,5 @@ import{LitElement as r,html as i,css as n}from"lit";import"./components/inputs/b
             .button_row {
                 margin: var(--pi-form-button-row-margin, 1rem 0);
             }
-        `]}export{p as PiForm};
+        `]}export{d as PiForm};
 //# sourceMappingURL=piForm.js.map

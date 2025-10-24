@@ -1,4 +1,4 @@
-import{html as t,css as e}from"lit";import{PiBaseFormElement as o}from"./components/inputs/base/baseFormElement.js";import"./piLabel.js";import r from"./css/defaultCss.js";class s extends o{static get properties(){return{placeholder:{type:String},value:{type:String},disabled:{type:Boolean},label:{type:String}}}constructor(){super(),this.placeholder="",this.value="",this.disabled=!1,this.label=""}render(){return t`
+import{html as r,css as o}from"lit";import{register as t}from"./src/registerWebComp.js";import{PiBaseFormElement as e}from"./src/components/inputs/base/baseFormElement.js";import{PiLabel as i}from"./piLabel.js";import a from"./src/css/defaultCss.js";t("pi-base-form-element",e);t("pi-label",i);class x extends e{static get properties(){return{placeholder:{type:String},value:{type:String},disabled:{type:Boolean},label:{type:String}}}constructor(){super(),this.placeholder="",this.value="",this.disabled=!1,this.label=""}render(){return r`
             <pi-label 
             text=${this.label}
             ?hidden=${this.label==""}
@@ -11,7 +11,7 @@ import{html as t,css as e}from"lit";import{PiBaseFormElement as o}from"./compone
             .value=${this.value}
             ?disabled=${this.disabled}
             >
-        `}static styles=[r,e`
+        `}static styles=[a,o`
             :host {
                 display: block;
                 width: 100%;
@@ -57,5 +57,5 @@ import{html as t,css as e}from"lit";import{PiBaseFormElement as o}from"./compone
                 }
             }
 
-        `]}export{s as PiTextInput};
+        `]}export{x as PiTextInput};
 //# sourceMappingURL=piInputText.js.map

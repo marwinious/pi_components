@@ -1,4 +1,4 @@
-import{html as e,css as t}from"lit";import i from"./css/defaultCss.js";import{PiBaseFormElement as l}from"./components/inputs/base/baseFormElement.js";import"./piLabel.js";class n extends l{static get properties(){return{checked:{type:Boolean,reflect:!0},value:{type:Boolean},label:{type:String}}}constructor(){super(),this.checked=!1,this.value=!1,this.label=""}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this._handleInputChange),this.checked&&(this.value=this.checked)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("click",this._handleInputChange)}renderInput(){return e`
+import{html as i,css as l}from"lit";import{register as e}from"./src/registerWebComp.js";import o from"./src/css/defaultCss.js";import{PiBaseFormElement as t}from"./src/components/inputs/base/baseFormElement.js";import{PiLabel as r}from"./piLabel.js";e("pi-base-form-element",t);e("pi-label",r);class p extends t{static get properties(){return{checked:{type:Boolean,reflect:!0},value:{type:Boolean},label:{type:String}}}constructor(){super(),this.checked=!1,this.value=!1,this.label=""}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this._handleInputChange),this.checked&&(this.value=this.checked)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("click",this._handleInputChange)}renderInput(){return i`
             <div 
             class="toggle_container" 
             >
@@ -10,7 +10,7 @@ import{html as e,css as t}from"lit";import i from"./css/defaultCss.js";import{Pi
             ?hidden=${this.label==""}
             no-margin
             ></pi-label>
-        `}_handleInputChange(){this.disabled||(this.checked=!this.checked,this.value=this.checked,this._dispatchChangeEvent(this.value))}static styles=[i,t`
+        `}_handleInputChange(){this.disabled||(this.checked=!this.checked,this.value=this.checked,this._dispatchChangeEvent(this.value))}static styles=[o,l`
             :host {
                 display: inline-flex;
                 align-items: center;
@@ -55,5 +55,5 @@ import{html as e,css as t}from"lit";import i from"./css/defaultCss.js";import{Pi
                     background-color: var(--pi-input-bg-color-disabled)
                 }
             }
-        `]}export{n as PiToggleSwitch};
+        `]}export{p as PiToggleSwitch};
 //# sourceMappingURL=piInputSwitch.js.map

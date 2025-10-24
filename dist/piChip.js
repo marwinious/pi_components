@@ -1,4 +1,4 @@
-import{LitElement as i,html as e,unsafeCSS as s,css as r}from"lit";import t from"./css/defaultCss.js";import l from"./css/common.css.js";class c extends i{static get properties(){return{label:{type:String},removable:{type:Boolean},isVisible:{type:Boolean}}}constructor(){super(),this.label="",this.removable=!1,this.isVisible=!0}render(){return e`
+import{LitElement as i,html as e,unsafeCSS as s,css as r}from"lit";import t from"./src/css/defaultCss.js";import l from"./src/css/common.css.js";class c extends i{static get properties(){return{label:{type:String},removable:{type:Boolean},isVisible:{type:Boolean}}}constructor(){super(),this.label="",this.removable=!1,this.isVisible=!0}render(){return e`
             <!-- <div class="icon"></div> -->
             <!-- <div class="image"></div> -->
             <div class="label">${this.label}</div>

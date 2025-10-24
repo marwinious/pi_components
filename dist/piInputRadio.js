@@ -1,4 +1,4 @@
-import{html as t,css as r}from"lit";import o from"./css/defaultCss.js";import{PiBaseFormElement as a}from"./components/inputs/base/baseFormElement.js";import"./piLabel.js";class p extends a{static get properties(){return{placeholder:{type:String},showLabel:{type:Boolean,attribute:!1},value:{type:String},disabled:{type:Boolean,reflect:!0},label:{type:String},checked:{type:Boolean,reflect:!0},name:{type:String}}}constructor(){super(),this.placeholder="",this.showLabel=!1,this.value="",this.disabled=!1,this.label="",this.checked=!1,this._group=[],this.name=""}connectedCallback(){super.connectedCallback()}disconnectedCallback(){super.disconnectedCallback()}render(){return t`
+import{html as o,css as a}from"lit";import{register as e}from"./src/registerWebComp.js";import l from"./src/css/defaultCss.js";import{PiBaseFormElement as i}from"./src/components/inputs/base/baseFormElement.js";import{PiLabel as n}from"./piLabel.js";e("pi-base-form-element",i);e("pi-label",n);class b extends i{static get properties(){return{placeholder:{type:String},showLabel:{type:Boolean,attribute:!1},value:{type:String},disabled:{type:Boolean,reflect:!0},label:{type:String},checked:{type:Boolean,reflect:!0},name:{type:String}}}constructor(){super(),this.placeholder="",this.showLabel=!1,this.value="",this.disabled=!1,this.label="",this.checked=!1,this._group=[],this.name=""}connectedCallback(){super.connectedCallback()}disconnectedCallback(){super.disconnectedCallback()}render(){return o`
             <div class="container">
                 <input 
                 type="radio" 
@@ -20,7 +20,7 @@ import{html as t,css as r}from"lit";import o from"./css/defaultCss.js";import{Pi
                 ></pi-label>
             </div>
             
-        `}_handleInputChange(e){this.value=e.target.value,this.checked=!this.checked;const i=new CustomEvent("radio-change",{detail:{name:this.name,value:this.value,group:null},bubbles:!0,composed:!0});this.dispatchEvent(i)}static styles=[o,r`
+        `}_handleInputChange(r){this.value=r.target.value,this.checked=!this.checked;const t=new CustomEvent("radio-change",{detail:{name:this.name,value:this.value,group:null},bubbles:!0,composed:!0});this.dispatchEvent(t)}static styles=[l,a`
             :host {
                 display: inline-block;
                 position: relative;
@@ -93,5 +93,5 @@ import{html as t,css as r}from"lit";import o from"./css/defaultCss.js";import{Pi
                 }
             }
 
-        `]}export{p as PiRadioInput};
+        `]}export{b as PiRadioInput};
 //# sourceMappingURL=piInputRadio.js.map

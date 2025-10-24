@@ -1,6 +1,6 @@
-import{LitElement as a,html as o,css as s}from"lit";import{classMap as l}from"lit/directives/class-map.js";import"./piTableSortIcon.js";class h extends a{static get properties(){return{sortable:{type:Boolean},sortDirection:{type:String},key:{type:String},label:{type:String}}}constructor(){super(),this.sortable=!1,this.sortDirection="",this.key="",this.label=""}connectedCallback(){super.connectedCallback(),this.addEventListener("updateSorter",t=>this.handleUpdateSorter(t.detail))}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("updateSorter",t=>this.handleUpdateSorter(t.detail))}render(){const t={isSortable:this.sortable};return o`
+import{LitElement as a,html as o,css as s}from"lit";import{register as l}from"./src/registerWebComp.js";import{classMap as n}from"lit/directives/class-map.js";import{PiTableSortIcon as c}from"./piTableSortIcon.js";l("pi-table-sort-icon",c);class m extends a{static get properties(){return{sortable:{type:Boolean},sortDirection:{type:String},key:{type:String},label:{type:String}}}constructor(){super(),this.sortable=!1,this.sortDirection="",this.key="",this.label=""}connectedCallback(){super.connectedCallback(),this.addEventListener("updateSorter",t=>this.handleUpdateSorter(t.detail))}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("updateSorter",t=>this.handleUpdateSorter(t.detail))}render(){const t={isSortable:this.sortable};return o`
             <div 
-            class="table_th ${l(t)}"
+            class="table_th ${n(t)}"
             @click=${this.handleSortClick}
             >
                 ${this.label}
@@ -42,5 +42,5 @@ import{LitElement as a,html as o,css as s}from"lit";import{classMap as l}from"li
                     font-size: var(--pi-table-th-font-size-sm, 0.9em);
                 }
             }
-        `]}export{h as PiTableColumn};
+        `]}export{m as PiTableColumn};
 //# sourceMappingURL=piTableColumn.js.map

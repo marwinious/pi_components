@@ -1,4 +1,4 @@
-import{LitElement as t,html as e,css as o}from"lit";import i from"./css/defaultCss.js";class r extends t{static get properties(){return{headerHasContent:{type:Boolean},titleHasContent:{type:Boolean},subTitleHasContent:{type:Boolean},footerHasContent:{type:Boolean}}}constructor(){super(),this.headerHasContent=!1,this.titleHasContent=!1,this.subTitleHasContent=!1,this.footerHasContent=!1}firstUpdated(){this.determineSlotContents()}render(){return e`
+import{LitElement as t,html as e,css as o}from"lit";import i from"./src/css/defaultCss.js";class r extends t{static get properties(){return{headerHasContent:{type:Boolean},titleHasContent:{type:Boolean},subTitleHasContent:{type:Boolean},footerHasContent:{type:Boolean}}}constructor(){super(),this.headerHasContent=!1,this.titleHasContent=!1,this.subTitleHasContent=!1,this.footerHasContent=!1}firstUpdated(){this.determineSlotContents()}render(){return e`
 
             <!-- Conditionally show header if slot is not empty -->
             <div 

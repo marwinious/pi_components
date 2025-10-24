@@ -1,6 +1,6 @@
-import{LitElement as t,html as r,css as e}from"lit";import"./components/inputs/base/baseFormElement.js";class n extends t{static get properties(){return{name:{type:String}}}constructor(){super(),this.name=""}render(){return r`
+import{LitElement as t,html as e,css as r}from"lit";class n extends t{static get properties(){return{name:{type:String}}}constructor(){super(),this.name=""}render(){return e`
             <slot></slot>
-        `}static styles=[e`
+        `}static styles=[r`
             
         `]}export{n as PiFormGroup};
 //# sourceMappingURL=piFormGroup.js.map

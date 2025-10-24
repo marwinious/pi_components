@@ -1,4 +1,4 @@
-import{LitElement as o,html as e,css as r}from"lit";import i from"./css/defaultCss.js";class c extends o{static get properties(){return{sticky:{type:Boolean},showNavIcon:{type:Boolean},title:{type:String}}}constructor(){super(),this.sticky=!1,this.showNavIcon=!1,this.title=""}connectedCallback(){super.connectedCallback()}disconnectedCallback(){super.disconnectedCallback()}render(){return e`
+import{LitElement as o,html as e,css as t}from"lit";import r from"./src/css/defaultCss.js";class c extends o{static get properties(){return{sticky:{type:Boolean},showNavIcon:{type:Boolean},title:{type:String}}}constructor(){super(),this.sticky=!1,this.showNavIcon=!1,this.title=""}connectedCallback(){super.connectedCallback()}disconnectedCallback(){super.disconnectedCallback()}render(){return e`
             <div class="prepend_container">
                 <slot name="prepend">
                     ${this.showNavIcon?e`
@@ -6,7 +6,7 @@ import{LitElement as o,html as e,css as r}from"lit";import i from"./css/defaultC
                         class="nav_icon"
                         @click=${this.handleNavIconClick}
                         >
-                            <pi-icon-handler icon="menu-hamburger-rounded"></pi-icon-handler>
+                            <slot name="menuIcon"></slot>
                         </div>
                     `:null}
                 </slot>
@@ -21,7 +21,7 @@ import{LitElement as o,html as e,css as r}from"lit";import i from"./css/defaultC
             <div class="append_container">
                 <slot name="append"></slot>
             </div>
-        `}handleNavIconClick(){const a=new CustomEvent("navIconClick",{detail:!1,bubbles:!0,composed:!0});this.dispatchEvent(a)}static styles=[i,r`
+        `}handleNavIconClick(){const a=new CustomEvent("navIconClick",{detail:!1,bubbles:!0,composed:!0});this.dispatchEvent(a)}static styles=[r,t`
             :host {
                 box-sizing: border-box;
                 display: flex;

@@ -1,4 +1,4 @@
-import{LitElement as r,html as a,css as s}from"lit";import"lit/directives/class-map.js";import n from"./css/defaultCss.js";import"./piPaginatorNavItem.js";class h extends r{static get properties(){return{rows:{type:Number},totalRecords:{type:Number},totalPages:{type:Number},rowsPerPageOptions:{type:Array},currentPage:{type:Number,attribute:!1},pagerNavNumberStart:{type:Number,attribute:!1},pagerNavNumberStop:{type:Number,attribute:!1},pagerNavNumberCount:{type:Number,attribute:!1},useStartEndLinks:{type:Boolean},useNextPrevLinks:{type:Boolean},useNumericLinks:{type:Boolean},template:{type:Object,attribute:!1}}}constructor(){super(),this.rows=0,this.totalRecords=0,this.totalPages=0,this.rowsPerPageOptions=[],this.currentPage=0,this.pagerNavNumberStart=0,this.pagerNavNumberStop=3,this.pagerNavNumberCount=3,this.useStartEndLinks=!0,this.useNextPrevLinks=!0,this.useNumericLinks=!0,this.template={}}connectedCallback(){super.connectedCallback(),this.updatePagerNav(),this.generateTemplate()}updatePagerNav(){const t=this.currentPage>0?this.currentPage-1:0,e=t+this.pagerNavNumberCount,i=Math.ceil(this.totalRecords/this.rows);this.pagerNavNumberStart=t,this.pagerNavNumberStop=e,this.totalPages=i}handlePageNavNumberClick(t){t<0&&(t=0),t>this.pageCount&&(t=this.pageCount),this.currentPage=t,this.updatePagerNav(),this.generateTemplate();const e=new CustomEvent("navClick",{detail:{navIndex:t,pageNumber:t+1},bubbles:!0,composed:!0});this.dispatchEvent(e)}generateTemplate(){const t=[];if(this.useStartEndLinks&&t.push(a`
+import{LitElement as r,html as a,css as s}from"lit";import{register as n}from"./src/registerWebComp.js";import"lit/directives/class-map.js";import p from"./src/css/defaultCss.js";import{PiPaginatorNavItem as u}from"./piPaginatorNavItem.js";n("pi-paginator-nav-item",u);class N extends r{static get properties(){return{rows:{type:Number},totalRecords:{type:Number},totalPages:{type:Number},rowsPerPageOptions:{type:Array},currentPage:{type:Number,attribute:!1},pagerNavNumberStart:{type:Number,attribute:!1},pagerNavNumberStop:{type:Number,attribute:!1},pagerNavNumberCount:{type:Number,attribute:!1},useStartEndLinks:{type:Boolean},useNextPrevLinks:{type:Boolean},useNumericLinks:{type:Boolean},template:{type:Object,attribute:!1}}}constructor(){super(),this.rows=0,this.totalRecords=0,this.totalPages=0,this.rowsPerPageOptions=[],this.currentPage=0,this.pagerNavNumberStart=0,this.pagerNavNumberStop=3,this.pagerNavNumberCount=3,this.useStartEndLinks=!0,this.useNextPrevLinks=!0,this.useNumericLinks=!0,this.template={}}connectedCallback(){super.connectedCallback(),this.updatePagerNav(),this.generateTemplate()}updatePagerNav(){const t=this.currentPage>0?this.currentPage-1:0,e=t+this.pagerNavNumberCount,i=Math.ceil(this.totalRecords/this.rows);this.pagerNavNumberStart=t,this.pagerNavNumberStop=e,this.totalPages=i}handlePageNavNumberClick(t){t<0&&(t=0),t>this.pageCount&&(t=this.pageCount),this.currentPage=t,this.updatePagerNav(),this.generateTemplate();const e=new CustomEvent("navClick",{detail:{navIndex:t,pageNumber:t+1},bubbles:!0,composed:!0});this.dispatchEvent(e)}generateTemplate(){const t=[];if(this.useStartEndLinks&&t.push(a`
                 <pi-paginator-nav-item 
                 @click="${()=>this.handlePageNavNumberClick(0)}"
                 ?disabled=${this.currentPage==0}
@@ -30,7 +30,7 @@ import{LitElement as r,html as a,css as s}from"lit";import"lit/directives/class-
                 ></pi-paginator-nav-item>
             `),this.template=t}render(){return a`
             ${this.template}
-        `}static styles=[n,s`
+        `}static styles=[p,s`
             :host {
                 display: flex;
                 width: 100%;
@@ -38,5 +38,5 @@ import{LitElement as r,html as a,css as s}from"lit";import"lit/directives/class-
                 margin: var(--pi-paginator-margin, 1rem 0 0 0);
                 gap: var(--pi-paginator-gap, 10px);
             }
-        `]}export{h as PiPaginator};
+        `]}export{N as PiPaginator};
 //# sourceMappingURL=piPaginator.js.map

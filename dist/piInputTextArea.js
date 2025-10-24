@@ -1,4 +1,4 @@
-import{html as e,css as r}from"lit";import t from"./css/defaultCss.js";import{PiBaseFormElement as a}from"./components/inputs/base/baseFormElement.js";import"./piLabel.js";class s extends a{static get properties(){return{label:{type:String},value:{type:String},placeholder:{type:String}}}constructor(){super(),this.label="",this.value="",this.placeholder=""}render(){return e`
+import{html as t,css as a}from"lit";import{register as e}from"./src/registerWebComp.js";import o from"./src/css/defaultCss.js";import{PiBaseFormElement as r}from"./src/components/inputs/base/baseFormElement.js";import{PiLabel as i}from"./piLabel.js";e("pi-base-form-element",r);e("pi-label",i);class x extends r{static get properties(){return{label:{type:String},value:{type:String},placeholder:{type:String}}}constructor(){super(),this.label="",this.value="",this.placeholder=""}render(){return t`
             <pi-label 
             text=${this.label}
             ?hidden=${this.label==""}
@@ -10,7 +10,7 @@ import{html as e,css as r}from"lit";import t from"./css/defaultCss.js";import{Pi
             ?disabled=${this.disabled}
             @input=${this._handleInputChange}
             ></textarea>
-        `}static styles=[t,r`
+        `}static styles=[o,a`
             :host { 
                 display: inline-block;
                 min-width: 250px;
@@ -50,5 +50,5 @@ import{html as e,css as r}from"lit";import t from"./css/defaultCss.js";import{Pi
                     box-shadow: var(--pi-textarea-input-box-shadow-focus, 1px 1px 1px #ddd);
                 }
             }
-        `]}export{s as PiTextAreaInput};
+        `]}export{x as PiTextAreaInput};
 //# sourceMappingURL=piInputTextArea.js.map
