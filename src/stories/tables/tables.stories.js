@@ -1,8 +1,10 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { ifDefined } from "lit/directives/if-defined.js";
-import '../../components/icons/index'
 import sampleProductList from "../../components/tables/sampleData/sampleProductsList.json"
 import { PiTable } from "../../components/tables/components/table/table";
+
+register('pi-table', PiTable)
 
 /* const sampleColumns = [
     { label: 'Name', key: 'name', sortKey: 'name' },
