@@ -1,8 +1,11 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { action } from '@storybook/addon-actions'
 import { ifDefined } from "lit/directives/if-defined.js";
 import '../../components/icons/index'
 import { PiNavDrawer } from "../../components/nav/components/navDrawer";
+
+register('pi-nav-drawer', PiNavDrawer)
 
 export default {
     title: 'Components/Navigation/Nav Drawer',
