@@ -1,14 +1,31 @@
 import { LitElement, css, html } from 'lit'
 import { register } from '../../../registerWebComp';
 import { PiNotificationCenter } from './notificationCenter';
+import { PiIconHandler } from 'pi_icons/components/components/icons/base/iconHandler';
+import { PiIconFlagWavyDark } from 'pi_icons/components/components/icons/components/flags/iconFlagWavyDark';
+import { PiIconStarDark } from 'pi_icons/components/components/icons/components/stars/iconStarDark';
+import { PiIconThumbsUpDark } from 'pi_icons/components/components/icons/components/ratings/iconThumbsUpDark';
+import { PiIconInfoSimpleDark } from 'pi_icons/components/components/icons/components/info/iconInfoSimpleDark';
+import { PiIconAlertTriangleDark } from 'pi_icons/components/components/icons/components/alerts/iconAlertTriangleDark';
+import { PiIconGlobeDark } from 'pi_icons/components/components/icons/components/globes/iconGlobeDark';
+import { PiIconStopExDark } from 'pi_icons/components/components/icons/components/actions/iconStopExDark';
 
 register('pi-notification-center', PiNotificationCenter)
+register('pi-icon-handler', PiIconHandler);
+register('pi-icon-flag-wavy-dark', PiIconFlagWavyDark);
+register('pi-icon-star-dark', PiIconStarDark);
+register('pi-icon-thumbs-up-dark', PiIconThumbsUpDark);
+register('pi-icon-info-simple-dark', PiIconInfoSimpleDark);
+register('pi-icon-alert-triangle-dark', PiIconAlertTriangleDark);
+register('pi-icon-globe-dark', PiIconGlobeDark);
+register('pi-icon-stop-ex-dark', PiIconStopExDark);
 
 export class PiNotifications extends LitElement {
 
     static get properties() {
         return {
             notificationCenter: { type: Object },
+            severityMap: { type: Object },
         }
     }
 
@@ -33,7 +50,7 @@ export class PiNotifications extends LitElement {
                 color: 'var(--pi-severity-bg-color-success, #208c39)'
             },
             'info': {
-                icon: 'info-sample-dark',
+                icon: 'info-simple-dark',
                 color: 'var(--pi-severity-bg-color-info, #17A2B9)'
             },
             'warn': {
