@@ -6,6 +6,9 @@ import variantCss from './css/buttonVariantCss'
 import iconsCss from './css/buttonIconsCss'
 import badgeCss from './css/buttonBadgeCss'
 import { PiBadge } from '../badges/badge';
+import { register } from '../../registerWebComp';
+
+register('pi-badge', PiBadge);
 
 // commonCss = css`${unsafeCSS(commonCss)}`;
 
