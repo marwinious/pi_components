@@ -5,8 +5,10 @@ import severityCss from './css/buttonSeverityCss'
 import variantCss from './css/buttonVariantCss'
 import iconsCss from './css/buttonIconsCss'
 import badgeCss from './css/buttonBadgeCss'
-import { PiIconHandler } from '../icons';
 import { PiBadge } from '../badges/badge';
+import { register } from '../../registerWebComp';
+
+register('pi-badge', PiBadge);
 
 // commonCss = css`${unsafeCSS(commonCss)}`;
 
@@ -21,7 +23,7 @@ export class PiButton extends LitElement {
             rounded: { type: Boolean },
             squared: { type: Boolean },
             variant: { type: String },
-            badge: { type: [Number, String] },
+            badge: { type: String },
             type: { type: String }
         }
     }
@@ -36,7 +38,7 @@ export class PiButton extends LitElement {
         this.squared = false;
         this.variant = false;
         this.badge = null;
-        this.type = 'button';
+        this.type = "button";
     }
 
     /* <div class="icon">${unsafeHTML(this.icon)}</div> */
@@ -53,7 +55,7 @@ export class PiButton extends LitElement {
 
         return html`
             <button 
-            type=${this.type}
+            type="${this.type}"
             class=${classMap(buttonClasses)}
             ?disabled=${this.disabled}
             @click=${this._handleClick}
@@ -62,7 +64,7 @@ export class PiButton extends LitElement {
                 <span class="button_content_container">
                     <!-- Optional icon -->
                     <span class="button_icon_container">
-                        <pi-icon-handler .icon=${this.icon}></pi-icon-handler>
+                        <slot name="icon"></slot>
                     </span>
 
                     <!-- Button text -->
@@ -80,6 +82,7 @@ export class PiButton extends LitElement {
     }
 
     _handleClick(e) {
+        e.stopPropagation();
         if (this.type !== 'submit') { // Only handle clicks for non-submit buttons
             this.dispatchEvent(new CustomEvent('click', { 
                 detail: e
@@ -105,6 +108,10 @@ export class PiButton extends LitElement {
                 display: inline-flex;
                 align-items: flex-start;
                 justify-content: center;
+            }
+
+            :host([fullWidth]) {
+                width: 100%;
             }
 
             button {
@@ -148,6 +155,7 @@ export class PiButton extends LitElement {
                 align-items: center;
                 gap: 0;
                 padding: var(--pi-button-padding, 7px 12px);
+                justify-content: center;
             }
 
             :host([icon]:not([variant="iconOnly"])) .button_content_container,
@@ -188,4 +196,5 @@ export class PiButton extends LitElement {
     ]
     
 }
-customElements.define('pi-button', PiButton);
+
+// if(!customElements.get('pi-button')) { customElements.define('pi-button', PiButton); }

@@ -1,5 +1,8 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../registerWebComp';
 import { PiBaseFormElement } from '../inputs/base/baseFormElement';
+
+register('pi-base-form-element', PiBaseFormElement)
 
 export class PiForm extends LitElement {
 
@@ -38,11 +41,12 @@ export class PiForm extends LitElement {
 
                 <div class="button_row">
                     
+                    ${this.showSubmit ? html`
                         <slot name="submitButton">
                             <button type="submit">Submit</button>
                         </slot>
-                    
-                    
+                    ` : null}
+                        
                     ${this.showReset ? html `
                         <slot name="resetButton">
                             <button type="reset">Reset</button>
@@ -220,4 +224,4 @@ export class PiForm extends LitElement {
     
 }
 
-if(!customElements.get('pi-form')) { customElements.define('pi-form', PiForm); }
+// if(!customElements.get('pi-form')) { customElements.define('pi-form', PiForm); }

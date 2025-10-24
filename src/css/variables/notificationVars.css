@@ -1,0 +1,22 @@
+:root {
+
+    /* General */
+    --pi-notification-width: 330px;
+    --pi-notification-padding: 1rem;
+    --pi-notification-border-radius: 7px;
+    --pi-notification-border: solid 1px #eee;
+    --pi-notification-bg-color: #FFF;
+    --pi-notification-box-shadow: 0px 0px 12px rgba(0,0,0,.2);
+    --pi-notification-transition: opacity .3s, transform .3s, left .3s, right .3s, top .4s, bottom .3s;
+    --pi-notification-title-font-size: 16px;
+    --pi-notification-title-line-height: 24px;
+    --pi-notification-title-text-color: #333;
+    --pi-notification-content-font-size: 14px;
+    --pi-notification-content-line-height: 24px;
+    --pi-notification-content-text-color: #666;
+    --pi-notification-content-margin: 0 8px 0 13px;
+    --pi-notification-close-icon-color: #999;
+    --pi-notification-close-icon-size: 20px;
+    --pi-notification-icon-color: #333;
+    --pi-notification-icon-size: 24px;
+}

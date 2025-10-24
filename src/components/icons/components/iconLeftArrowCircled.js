@@ -40,4 +40,4 @@ export class PiIconLeftArrowCircled extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconLeftArrowCircled); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconLeftArrowCircled); }

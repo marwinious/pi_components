@@ -40,4 +40,4 @@ export class PiIconNotificationBoxDark extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconNotificationBoxDark); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconNotificationBoxDark); }

@@ -32,4 +32,4 @@ export class PiTabPanel extends LitElement {
     
 }
 
-if(!customElements.get('pi-tab-panel')) { customElements.define('pi-tab-panel', PiTabPanel); }
+// if(!customElements.get('pi-tab-panel')) { customElements.define('pi-tab-panel', PiTabPanel); }

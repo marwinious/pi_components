@@ -100,6 +100,11 @@ export class PiCard extends LitElement {
                 background: var(--pi-card-background, #FFF);
             }
 
+            :host([autoWidth]) {
+                display: inline-block;
+                width: auto;
+            }
+
             slot {
                 display: block;
             }
@@ -132,7 +137,7 @@ export class PiCard extends LitElement {
             }
 
             .content {
-                padding: var(--pi-card-content-padding, 1rem);
+                padding: 0.5rem var(--pi-card-content-padding, 1rem);
             }
 
             .footer {
@@ -146,4 +151,4 @@ export class PiCard extends LitElement {
     ]
 }
 
-if(!customElements.get('pi-card')) { customElements.define('pi-card', PiCard); }
+// if(!customElements.get('pi-card')) { customElements.define('pi-card', PiCard); }

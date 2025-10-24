@@ -1,8 +1,11 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import '../../components/icons/index'
 import { PiCard } from "../../components/cards/components/card";
+
+register('pi-card', PiCard);
 
 const headerSample = `
 <div slot="header" style="background-color: #eee;">
@@ -20,6 +23,15 @@ export default {
             name: 'content slot',
             description: 'Main content area',
             defaultValue: 'The contents of your card will show here via the default slot.',
+            table: {
+                type: { summary: 'string' },
+                defaultValue: { summary: ''}
+            } 
+        },
+        autoWidth: { 
+            control: 'boolean', 
+            name: 'autoWidth (optional)',
+            description: 'Sizes the card to its content',
             table: {
                 type: { summary: 'string' },
                 defaultValue: { summary: ''}
@@ -63,12 +75,15 @@ export default {
         }
     },
     args: {
-        slotContent: 'The contents of your card will show here via the default slot.'
+        slotContent: 'The contents of your card will show here via the default slot.',
+        autoWidth: false
     }
 }
 
-const Template = ({ slotContent, headerSlot, footerSlot }) => html`
-    <pi-card>
+const Template = ({ slotContent, headerSlot, footerSlot, autoWidth }) => html`
+    <pi-card
+    ?autoWidth=${autoWidth}
+    >
 
         <div
         slot="header"
@@ -83,8 +98,10 @@ const Template = ({ slotContent, headerSlot, footerSlot }) => html`
     </pi-card>
 `;
 
-const TemplateTitle = ({ slotContent, titleSlot, subTitleSlot }) => html`
-    <pi-card>
+const TemplateTitle = ({ slotContent, titleSlot, subTitleSlot, autoWidth }) => html`
+    <pi-card
+    ?autoWidth=${autoWidth}
+    >
 
         <div
         slot="title"

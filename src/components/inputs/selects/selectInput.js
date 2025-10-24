@@ -1,7 +1,11 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../registerWebComp';
 import defaultCss from '../../../css/defaultCss';
 import { PiBaseFormElement } from '../base/baseFormElement';
 import { PiLabel } from '../../labels/components/label';
+
+register('pi-base-form-element', PiBaseFormElement)
+register('pi-label', PiLabel)
 
 export class PiSelectInput extends PiBaseFormElement {
 
@@ -15,8 +19,8 @@ export class PiSelectInput extends PiBaseFormElement {
             selectedObject: { type: Object },
             disabled: { type: Boolean },
             value: { type: String },
-            label: { type: String }
-            // resetAvailable: { type: Boolean }
+            label: { type: String },
+            preventDefaultSelection: { type: Boolean }
         }
     }
 
@@ -31,25 +35,14 @@ export class PiSelectInput extends PiBaseFormElement {
         this.disabled = false;
         this.value = '';
         this.label = '';
-        
-        // this.resetAvailable = false;
+        this.preventDefaultSelection = false;
     }
-
-    /* firstUpdated() {
-        console.log('firstupdated');
-        this.resetAvailable = true;
-    } */
 
     // willUpdate hook: Detect property changes before re-render
     willUpdate(changedProperties) {
         if(changedProperties.has('selectedObject')) {
             this.selectedIndex = this.determineDefaultSelectedIndex(this.options, this.selectedObject);  
         }
-        /* if(changedProperties.has('value')) {
-            if(this.value == '' && this.resetAvailable) {
-                this._handleReset();
-            } 
-        } */
     }
 
     renderInput() {
@@ -61,16 +54,21 @@ export class PiSelectInput extends PiBaseFormElement {
 
             <select 
             @change=${this._handleInputChange} 
-            .value="${this.selectedIndex}"
+            value="${this.selectedIndex}"
             ?disabled="${this.disabled}"
             >
                 ${this.defaultText != '' ? html`
-                    <option disabled ?selected="${this.value == ''}">${this.defaultText}</option>
+                    <option 
+                    value=""
+                    ?disabled="${this.preventDefaultSelection}"
+                    ?selected="${this.value == ''}">${this.defaultText}</option>
                 ` : html``}
                     
                 ${this.options.length > 0 ? html`
                     ${this.options.map((item, index) => html`
-                        <option value="${index}" ?selected="${this.selectedIndex === index}">${item[this.labelKey]}</option>
+                        <option 
+                        value="${index}" 
+                        ?selected="${this.selectedIndex === index}">${item[this.labelKey]}</option>
                     `)}
                 ` : html``}
             </select>
@@ -98,25 +96,27 @@ export class PiSelectInput extends PiBaseFormElement {
         return -1
     }
 
-    /* _handleReset() {
-        this.selectedIndex = -1;  
-        this.selectedObject = {};
-        this._dispatchChangeEvent(this.value);
-    } */
-
     _handleInputChange(e) {
+        // console.log(e);
+        
         const selectedIndex = e.target.value;
 
         // If a valueKey was provided, use that value from selected object
         if(this.valueKey != '') {
-            this.value = this.options[selectedIndex][this.valueKey];
+            // Check if valueKey property exists
+            if(typeof this.options[selectedIndex] != 'undefined') {
+                this.value = this.options[selectedIndex][this.valueKey];
+            }
+            else {
+                // If it doesn't exist, set value to empty
+                this.value = '';
+            }
         }
         else {
             // Otherwise, use entire selected object
             this.value = this.options[selectedIndex];
         }
         
-
         this._dispatchChangeEvent(this.value)
     }
 
@@ -161,4 +161,4 @@ export class PiSelectInput extends PiBaseFormElement {
     ]
 }
 
-if(!customElements.get('pi-select-input')) { customElements.define('pi-select-input', PiSelectInput); }
+// if(!customElements.get('pi-select-input')) { customElements.define('pi-select-input', PiSelectInput); }

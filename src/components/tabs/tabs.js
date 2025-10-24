@@ -69,4 +69,4 @@ export class PiTabs extends LitElement {
 
 }
 
-if(!customElements.get('pi-tabs')) { customElements.define('pi-tabs', PiTabs); }
+// if(!customElements.get('pi-tabs')) { customElements.define('pi-tabs', PiTabs); }

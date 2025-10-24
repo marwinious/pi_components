@@ -1,9 +1,13 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { action } from '@storybook/addon-actions'
 import { ifDefined } from "lit/directives/if-defined.js";
 import '../../components/icons/index'
 import { PiRadioInput } from "../../components/inputs/radios/radioInput";
 import { PiRadioInputGroup } from "../../components/inputs/radios/radioInputGroup";
+
+register('pi-radio-input', PiRadioInput);
+register('pi-radio-input-group', PiRadioInputGroup);
 
 export default {
     title: 'Components/Inputs/Radio',

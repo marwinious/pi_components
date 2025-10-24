@@ -33,4 +33,4 @@ export class PiIconAreaChartStand extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconAreaChartStand); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconAreaChartStand); }

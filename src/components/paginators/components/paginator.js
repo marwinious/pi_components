@@ -1,7 +1,10 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../registerWebComp';
 import { classMap } from 'lit/directives/class-map.js';
 import defaultCss from '../../../css/defaultCss';
 import { PiPaginatorNavItem } from './paginatorNavItem';
+
+register('pi-paginator-nav-item', PiPaginatorNavItem)
 
 export class PiPaginator extends LitElement {
 
@@ -122,7 +125,7 @@ export class PiPaginator extends LitElement {
                         <pi-paginator-nav-item 
                         @click="${() => this.handlePageNavNumberClick(i)}"
                         ?active=${i === this.currentPage}
-                        .value=${i+1}
+                        value=${i+1}
                         ></pi-paginator-nav-item>
                     `)
                 }
@@ -176,4 +179,4 @@ export class PiPaginator extends LitElement {
     
 }
 
-if(!customElements.get('pi-paginator')) { customElements.define('pi-paginator', PiPaginator); }
+// if(!customElements.get('pi-paginator')) { customElements.define('pi-paginator', PiPaginator); }

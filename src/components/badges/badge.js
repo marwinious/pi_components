@@ -37,4 +37,4 @@ export class PiBadge extends LitElement {
     
 }
 
-if(!customElements.get('pi-badge')) { customElements.define('pi-badge', PiBadge); }
+// if(!customElements.get('pi-badge')) { customElements.define('pi-badge', PiBadge); }

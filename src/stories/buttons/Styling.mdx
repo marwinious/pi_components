@@ -1,32 +1,47 @@
 import { Canvas, Meta, Story, Markdown } from '@storybook/addon-docs';
+import initialButtonProperties from './css/initialButtonProperties.json'
 import severityDefault from './css/severityDefault.json'
 import severityPrimary from './css/severityPrimary.json'
+import severitySecondary from './css/severitySecondary.json'
+import severitySuccess from './css/severitySuccess.json'
+import severityInfo from './css/severityInfo.json'
+import severityWarn from './css/severityWarn.json'
+import severityHelp from './css/severityHelp.json'
+import severityDanger from './css/severityDanger.json'
+import disabled from './css/disabled.json'
 
 import * as PiButtonStories from './button.stories.js'
 
 <Meta of={PiButtonStories}  />
 
-export const test = 'test2';
-
 # Button
-
-Button is implemented from `Box` component, comes with several variants and colors.
-
-## Simple
-<Story of={PiButtonStories.Default} />
-<Story of={PiButtonStories.Severity} />
-
-## Usage
-<Canvas of={PiButtonStories.Default} />
 
 ## CSS Property Mapping
 
-### Default (no severity)
+### Default Severity
 <Markdown>
 {`
 | Property | Default |
 | -------- | ------- |
 ${severityDefault.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### Initial Button Properties
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${initialButtonProperties.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Disabled"
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${disabled.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
 `}
 </Markdown>
 
@@ -36,5 +51,59 @@ ${severityDefault.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`
 | Property | Default |
 | -------- | ------- |
 ${severityPrimary.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Secondary" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severitySecondary.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Success" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severitySuccess.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Info" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severityInfo.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Warn" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severityWarn.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Help" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severityHelp.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
+`}
+</Markdown>
+
+### "Danger" Severity
+<Markdown>
+{`
+| Property | Default |
+| -------- | ------- |
+${severityDanger.map((item) => `| \`${item.property}\` | \`${item.value}\` |\n`).join('')}
 `}
 </Markdown>

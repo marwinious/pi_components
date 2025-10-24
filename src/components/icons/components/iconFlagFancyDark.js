@@ -1,0 +1,38 @@
+import { LitElement, css, html } from 'lit'
+
+const iconData = {
+    iconLabel: 'pi-icon-flag-fancy-dark',
+    className: 'PiIconFlagFancyDark'
+}
+
+export class PiIconFlagFancyDark extends LitElement {
+
+    static get properties() {
+        return {
+            pathData: {
+                type: String
+            }
+        }
+    }
+
+    constructor() {
+        super()
+        this.pathData = "M4 24h-2v-24h2v24zm18-21.387s-1.621 1.43-3.754 1.43c-3.361 0-3.436-2.895-7.337-2.895-2.108 0-4.075.98-4.909 1.694v12.085c1.183-.819 2.979-1.681 4.922-1.681 3.685 0 4.201 2.754 7.485 2.754 2.121 0 3.593-1.359 3.593-1.359-1.742-1.253-3.071-2.954-3.778-4.932 1.464-1.278 3.508-4.962 3.778-7.096z"
+    }
+
+    render() {
+        return html`
+            <pi-icon-base 
+            pathData=${this.pathData}
+            ></pi-icon-base>
+        `;
+    }
+
+    static styles = [
+        css`
+            
+        `
+    ]
+}
+
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconFlagFancyDark); }

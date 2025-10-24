@@ -1,21 +1,25 @@
 {
   "name": "pi_components",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.3.0",
   "type": "module",
   "directories": {
     "test": "tests"
   },
-  "main": "dist/pi_components.umd.js",
-  "module": "dist/pi_components.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "sideEffects": true,
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/pi_components.js",
-      "require": "./dist/pi_components.umd.js"
-    }
+      "import": "./dist/index.js"
+    },
+    "./components/*": {
+      "import": "./dist/*.js"
+    },
+    "./styles.css": "./dist/styles/styles.css"
   },
   "scripts": {
     "dev": "vite",
@@ -27,20 +31,25 @@
     "build-storybook": "storybook build"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.4",
-    "@storybook/addon-essentials": "^8.5.3",
-    "@storybook/blocks": "^8.5.3",
-    "@storybook/test": "^8.5.3",
-    "@storybook/web-components": "^8.5.3",
-    "@storybook/web-components-vite": "^8.5.3",
-    "@vitest/ui": "^3.0.4",
-    "lit": "^3.2.1",
-    "shiki": "^2.1.0",
-    "storybook": "^8.5.3",
-    "vite": "^6.0.11",
-    "vitest": "^3.0.4"
+    "@chromatic-com/storybook": "3",
+    "@storybook/addon-essentials": "8.6.14",
+    "@storybook/blocks": "8.6.14",
+    "@storybook/experimental-addon-test": "8.6.14",
+    "@storybook/test": "8.6.14",
+    "@storybook/web-components": "8.6.14",
+    "@storybook/web-components-vite": "8.6.14",
+    "@vitest/ui": "^3.2.4",
+    "lit": "^3.3.1",
+    "shiki": "^3.13.0",
+    "storybook": "8.6.14",
+    "vite": "^7.1.11",
+    "vitest": "^3.2.4"
   },
   "peerDependencies": {
     "lit": "^3.2.1"
+  },
+  "dependencies": {
+    "pi_icons": "file:../pi_icons",
+    "sonda": "^0.9.0"
   }
 }

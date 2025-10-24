@@ -1,6 +1,9 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../../registerWebComp';
 import { chunkArray } from '../../../../lib/utility/arrays';
 import { PiPaginator } from '../../../paginators/components/paginator';
+
+register('pi-paginator', PiPaginator)
 
 export class PiTablePaginator extends LitElement {
 
@@ -44,7 +47,7 @@ export class PiTablePaginator extends LitElement {
             // Split rows into an array of rows for easy reference
             const pagesOfRows = chunkArray(this.rows, this.rowsPerPage);
             this.pages = pagesOfRows;
-            
+
             this.handlePaginationChange();
         }
     }
@@ -71,6 +74,7 @@ export class PiTablePaginator extends LitElement {
         const rowStop = rowStart + Number(this.rowsPerPage);
 
         this.activePageIndex = navData.navIndex;
+
         this.handlePaginationChange();
     }
 
@@ -85,4 +89,4 @@ export class PiTablePaginator extends LitElement {
     
 }
 
-if(!customElements.get('pi-table-paginator')) { customElements.define('pi-table-paginator', PiTablePaginator); }
+// if(!customElements.get('pi-table-paginator')) { customElements.define('pi-table-paginator', PiTablePaginator); }

@@ -1,0 +1,38 @@
+import { LitElement, css, html } from 'lit'
+
+const iconData = {
+    iconLabel: 'pi-icon-facebook-circled-light',
+    className: 'PiIconFacebookCircledLight'
+}
+
+export class PiIconFacebookCircledLight extends LitElement {
+
+    static get properties() {
+        return {
+            pathData: {
+                type: String
+            }
+        }
+    }
+
+    constructor() {
+        super()
+        this.pathData = "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 10h-2v2h2v6h3v-6h1.82l.18-2h-2v-.833c0-.478.096-.667.558-.667h1.442v-2.5h-2.404c-1.798 0-2.596.792-2.596 2.308v1.692z"
+    }
+
+    render() {
+        return html`
+            <pi-icon-base 
+            pathData=${this.pathData}
+            ></pi-icon-base>
+        `;
+    }
+
+    static styles = [
+        css`
+            
+        `
+    ]
+}
+
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconFacebookCircledLight); }
