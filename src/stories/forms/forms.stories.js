@@ -1,4 +1,5 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { action } from '@storybook/addon-actions'
 import { ifDefined } from "lit/directives/if-defined.js";
 import '../../components/icons/index'
@@ -14,6 +15,19 @@ import { PiCheckboxInput } from "../../main";
 import { PiRadioInput } from "../../main";
 import { PiToggleSwitch } from "../../main";
 import { PiButton } from "../../main";
+
+register('pi-form', PiForm);
+register('pi-form-group', PiFormGroup);
+register('pi-grid', PiGrid);
+register('pi-col', PiGridColumn);
+register('pi-row', PiGridRow);
+register('pi-text-input', PiTextInput);
+register('pi-textarea-input', PiTextAreaInput);
+register('pi-select-input', PiSelectInput);
+register('pi-checkbox-input', PiCheckboxInput);
+register('pi-radio-input', PiRadioInput);
+register('pi-toggle-switch', PiToggleSwitch);
+register('pi-button', PiButton);
 
 const sampleData = [
     { name: 'Alice', age: 30, country: 'USA', income: '$100,000', rawIncome: '100000' },
