@@ -1,5 +1,4 @@
 import { LitElement, css, html } from 'lit'
-import { PiBaseFormElement } from '../inputs/base/baseFormElement';
 
 export class PiFormGroup extends LitElement {
 
