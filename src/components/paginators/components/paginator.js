@@ -1,7 +1,10 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../registerWebComp';
 import { classMap } from 'lit/directives/class-map.js';
 import defaultCss from '../../../css/defaultCss';
 import { PiPaginatorNavItem } from './paginatorNavItem';
+
+register('pi-paginator-nav-item', PiPaginatorNavItem)
 
 export class PiPaginator extends LitElement {
 
