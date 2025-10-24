@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../../registerWebComp';
 import { classMap } from 'lit/directives/class-map.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { PiTableRow } from './tableRow';
@@ -6,6 +7,10 @@ import { PiTableColumn } from './tableColumn';
 import { PiTablePaginator } from '../pagination/tablePaginator';
 import defaultCss from '../../../../css/defaultCss';
 import { sortArrayOfObjects } from '../../../../lib/utility/sorters';
+
+register('pi-table-row', PiTableRow)
+register('pi-table-column', PiTableColumn)
+register('pi-table-paginator', PiTablePaginator)
 
 export class PiTable extends LitElement {
 
