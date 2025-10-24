@@ -23,7 +23,7 @@ register('pi-grid', PiGrid);
 register('pi-col', PiGridColumn);
 register('pi-row', PiGridRow);
 register('pi-text-input', PiTextInput);
-register('pi-textarea-input', PiTextAreaInput);
+register('pi-text-area-input', PiTextAreaInput);
 register('pi-select-input', PiSelectInput);
 register('pi-checkbox-input', PiCheckboxInput);
 register('pi-radio-input', PiRadioInput);
