@@ -35,7 +35,7 @@ export class PiHeaderBar extends LitElement {
                         class="nav_icon"
                         @click=${this.handleNavIconClick}
                         >
-                            <pi-icon-handler icon="menu-hamburger-rounded"></pi-icon-handler>
+                            <slot name="menuIcon"></slot>
                         </div>
                     ` : null}
                 </slot>
