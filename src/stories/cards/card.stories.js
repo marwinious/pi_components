@@ -1,8 +1,11 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import '../../components/icons/index'
 import { PiCard } from "../../components/cards/components/card";
+
+register('pi-card', PiCard);
 
 const headerSample = `
 <div slot="header" style="background-color: #eee;">
