@@ -4,8 +4,8 @@ import { action } from '@storybook/addon-actions'
 import { ifDefined } from "lit/directives/if-defined.js";
 import '../../components/icons/index'
 import { PiHeaderBar } from "../../components/headerBar";
-import { PiIconHandler } from "pi_icons/components/components/icons/base/iconHandler";
-import { PiIconMenuHamburgerRounded } from "pi_icons/components/components/icons/components/menus/iconMenuHamburgerRounded";
+import { PiIconHandler } from "pi_icons/iconHandler";
+import { PiIconMenuHamburgerRounded } from "pi_icons/iconMenuHamburgerRounded";
 
 register('pi-icon-handler', PiIconHandler)
 register('pi-icon-menu-hamburger-rounded', PiIconMenuHamburgerRounded)
