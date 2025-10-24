@@ -6,7 +6,6 @@ import { PiIconAlertTriangleLight } from "pi_icons/components/components/icons/c
 import { PiIconGearSolid } from "pi_icons/components/components/icons/components/gears/iconGearSolid";
 import { PiIconInfoFilled } from "pi_icons/components/components/icons/components/info/iconInfoFilled";
 import { PiButton } from '../../components/buttons/button'
-import '../../index.css'
 
 register('pi-icon-handler', PiIconHandler)
 register('pi-button', PiButton)
