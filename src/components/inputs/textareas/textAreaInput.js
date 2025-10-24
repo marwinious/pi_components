@@ -1,7 +1,11 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../registerWebComp';
 import defaultCss from '../../../css/defaultCss';
 import { PiBaseFormElement } from '../base/baseFormElement';
 import { PiLabel } from '../../labels/components/label';
+
+register('pi-base-form-element', PiBaseFormElement)
+register('pi-label', PiLabel)
 
 export class PiTextAreaInput extends PiBaseFormElement {
 
