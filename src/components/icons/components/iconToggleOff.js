@@ -37,4 +37,4 @@ export class PiIconToggleOff extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconToggleOff); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconToggleOff); }

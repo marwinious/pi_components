@@ -1,8 +1,11 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { action } from '@storybook/addon-actions'
 import { ifDefined } from "lit/directives/if-defined.js";
 import '../../components/icons/index'
 import { PiSelectInput } from "../../components/inputs/selects/selectInput";
+
+register('pi-select-input', PiSelectInput)
 
 const sampleData = [
     { name: 'Alice', age: 30, country: 'USA', income: '$100,000', rawIncome: '100000' },

@@ -35,4 +35,4 @@ export class PiIconInstagramCircledLight extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconInstagramCircledLight); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconInstagramCircledLight); }

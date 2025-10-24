@@ -39,4 +39,4 @@ export class PiIconMenuDotVerticalThick extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMenuDotVerticalThick); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMenuDotVerticalThick); }

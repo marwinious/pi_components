@@ -40,4 +40,4 @@ export class PiIconStarHalfFilled extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconStarHalfFilled); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconStarHalfFilled); }

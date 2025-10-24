@@ -1,6 +1,9 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { PiNotifications } from "../../components/notifications/components/notifications";
+
+register('pi-notifications', PiNotifications)
 
 export default {
     title: 'Components/Notifications',

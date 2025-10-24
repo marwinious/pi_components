@@ -35,4 +35,4 @@ export class PiIconCheckmarkSquareDark2 extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCheckmarkSquareDark2); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCheckmarkSquareDark2); }

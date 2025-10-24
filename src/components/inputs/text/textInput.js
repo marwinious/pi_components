@@ -1,7 +1,11 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../registerWebComp';
 import { PiBaseFormElement } from '../base/baseFormElement';
 import { PiLabel } from '../../labels/components/label';
 import defaultCss from '../../../css/defaultCss';
+
+register('pi-base-form-element', PiBaseFormElement)
+register('pi-label', PiLabel)
 
 export class PiTextInput extends PiBaseFormElement {
 
@@ -91,4 +95,4 @@ export class PiTextInput extends PiBaseFormElement {
     ]
 }
 
-if(!customElements.get('pi-text-input')) { customElements.define('pi-text-input', PiTextInput); }
+// if(!customElements.get('pi-text-input')) { customElements.define('pi-text-input', PiTextInput); }

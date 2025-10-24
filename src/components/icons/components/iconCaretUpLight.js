@@ -40,4 +40,4 @@ export class PiIconCaretUpLight extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCaretUpLight); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCaretUpLight); }

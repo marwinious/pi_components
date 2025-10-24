@@ -72,4 +72,4 @@ export class PiChip extends LitElement {
     
 }
 
-if(!customElements.get('pi-chip')) { customElements.define('pi-chip', PiChip); }
+// if(!customElements.get('pi-chip')) { customElements.define('pi-chip', PiChip); }

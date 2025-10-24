@@ -37,4 +37,4 @@ export class PiIconVideoCameraLight extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconVideoCameraLight); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconVideoCameraLight); }

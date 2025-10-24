@@ -39,4 +39,4 @@ export class PiIconMenuHamburgerCircledLight extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMenuHamburgerCircledLight); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMenuHamburgerCircledLight); }

@@ -48,4 +48,4 @@ export class PiGrid extends LitElement {
     
 }
 
-if(!customElements.get('pi-grid')) { customElements.define('pi-grid', PiGrid); }
+// if(!customElements.get('pi-grid')) { customElements.define('pi-grid', PiGrid); }

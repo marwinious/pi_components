@@ -5,8 +5,10 @@ import severityCss from './css/buttonSeverityCss'
 import variantCss from './css/buttonVariantCss'
 import iconsCss from './css/buttonIconsCss'
 import badgeCss from './css/buttonBadgeCss'
-import { PiIconHandler } from '../icons';
 import { PiBadge } from '../badges/badge';
+import { register } from '../../registerWebComp';
+
+register('pi-badge', PiBadge);
 
 // commonCss = css`${unsafeCSS(commonCss)}`;
 
@@ -36,7 +38,7 @@ export class PiButton extends LitElement {
         this.squared = false;
         this.variant = false;
         this.badge = null;
-        this.type = 'button';
+        this.type = "button";
     }
 
     /* <div class="icon">${unsafeHTML(this.icon)}</div> */
@@ -62,7 +64,7 @@ export class PiButton extends LitElement {
                 <span class="button_content_container">
                     <!-- Optional icon -->
                     <span class="button_icon_container">
-                        <pi-icon-handler .icon=${this.icon}></pi-icon-handler>
+                        <slot name="icon"></slot>
                     </span>
 
                     <!-- Button text -->
@@ -195,6 +197,4 @@ export class PiButton extends LitElement {
     
 }
 
-if(!customElements.get('pi-button')) {
-    customElements.define('pi-button', PiButton);
-}
+// if(!customElements.get('pi-button')) { customElements.define('pi-button', PiButton); }

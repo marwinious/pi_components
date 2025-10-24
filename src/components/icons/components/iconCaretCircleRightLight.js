@@ -40,4 +40,4 @@ export class PiIconCaretCircleRightLight extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCaretCircleRightLight); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCaretCircleRightLight); }

@@ -1,5 +1,8 @@
 import { LitElement, css, html } from 'lit';
-import './notificationItem'; // Ensure PiNotificationItem is defined
+import { register } from '../../../registerWebComp';
+import { PiNotificationItem } from './notificationItem';
+
+register('pi-notification-item', PiNotificationItem);
 
 export class PiNotificationCenter extends LitElement {
     static get properties() {
@@ -190,6 +193,4 @@ export class PiNotificationCenter extends LitElement {
     ];
 }
 
-if (!customElements.get('pi-notification-center')) {
-    customElements.define('pi-notification-center', PiNotificationCenter);
-}
+// if (!customElements.get('pi-notification-center')) { customElements.define('pi-notification-center', PiNotificationCenter); }

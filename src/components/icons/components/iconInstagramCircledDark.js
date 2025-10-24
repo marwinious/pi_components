@@ -35,4 +35,4 @@ export class PiIconInstagramCircledDark extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconInstagramCircledDark); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconInstagramCircledDark); }

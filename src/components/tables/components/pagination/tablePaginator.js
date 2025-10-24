@@ -1,6 +1,9 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../../registerWebComp';
 import { chunkArray } from '../../../../lib/utility/arrays';
 import { PiPaginator } from '../../../paginators/components/paginator';
+
+register('pi-paginator', PiPaginator)
 
 export class PiTablePaginator extends LitElement {
 
@@ -86,4 +89,4 @@ export class PiTablePaginator extends LitElement {
     
 }
 
-if(!customElements.get('pi-table-paginator')) { customElements.define('pi-table-paginator', PiTablePaginator); }
+// if(!customElements.get('pi-table-paginator')) { customElements.define('pi-table-paginator', PiTablePaginator); }

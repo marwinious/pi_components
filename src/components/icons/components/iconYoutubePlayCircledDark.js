@@ -35,4 +35,4 @@ export class PiIconYoutubePlayCircledDark extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconYoutubePlayCircledDark); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconYoutubePlayCircledDark); }

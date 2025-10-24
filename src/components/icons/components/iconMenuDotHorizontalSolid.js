@@ -39,4 +39,4 @@ export class PiIconMenuDotHorizontalSolid extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMenuDotHorizontalSolid); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconMenuDotHorizontalSolid); }

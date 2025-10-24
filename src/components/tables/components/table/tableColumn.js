@@ -1,6 +1,9 @@
 import { LitElement, css, html } from 'lit'
+import { register } from '../../../../registerWebComp';
 import { classMap } from 'lit/directives/class-map.js';
 import { PiTableSortIcon } from './tableSortIcon';
+
+register('pi-table-sort-icon', PiTableSortIcon)
 
 export class PiTableColumn extends LitElement {
 
@@ -124,4 +127,4 @@ export class PiTableColumn extends LitElement {
     
 }
 
-if(!customElements.get('pi-table-column')) { customElements.define('pi-table-column', PiTableColumn); }
+// if(!customElements.get('pi-table-column')) { customElements.define('pi-table-column', PiTableColumn); }

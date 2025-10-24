@@ -35,4 +35,4 @@ export class PiIconFacebookThumbsUpCircledLight extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconFacebookThumbsUpCircledLight); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconFacebookThumbsUpCircledLight); }

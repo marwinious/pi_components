@@ -35,7 +35,7 @@ export class PiHeaderBar extends LitElement {
                         class="nav_icon"
                         @click=${this.handleNavIconClick}
                         >
-                            <pi-icon-handler icon="menu-hamburger-rounded"></pi-icon-handler>
+                            <slot name="menuIcon"></slot>
                         </div>
                     ` : null}
                 </slot>
@@ -105,13 +105,9 @@ export class PiHeaderBar extends LitElement {
                 flex-grow: 1;
                 color: var(--pi-header-bar-content-text-color, #333);
             }
-
-            .append_container {
-                /* margin-left: auto; */
-            }
         `
     ]
     
 }
 
-if(!customElements.get('pi-header-bar')) { customElements.define('pi-header-bar', PiHeaderBar); }
+// if(!customElements.get('pi-header-bar')) { customElements.define('pi-header-bar', PiHeaderBar); }

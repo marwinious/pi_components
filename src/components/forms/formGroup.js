@@ -1,5 +1,4 @@
 import { LitElement, css, html } from 'lit'
-import { PiBaseFormElement } from '../inputs/base/baseFormElement';
 
 export class PiFormGroup extends LitElement {
 
@@ -28,4 +27,4 @@ export class PiFormGroup extends LitElement {
     
 }
 
-if(!customElements.get('pi-form-group')) { customElements.define('pi-form-group', PiFormGroup); }
+// if(!customElements.get('pi-form-group')) { customElements.define('pi-form-group', PiFormGroup); }

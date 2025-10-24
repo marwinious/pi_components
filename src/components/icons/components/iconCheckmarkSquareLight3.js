@@ -35,4 +35,4 @@ export class PiIconCheckmarkSquareLight3 extends LitElement {
     ]
 }
 
-if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCheckmarkSquareLight3); }
+// if(!customElements.get(iconData.iconLabel)) { customElements.define(iconData.iconLabel, PiIconCheckmarkSquareLight3); }
