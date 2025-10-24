@@ -1,8 +1,12 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { action } from '@storybook/addon-actions'
 import { ifDefined } from "lit/directives/if-defined.js";
 import '../../components/icons/index'
 import { PiTextInput } from "../../main";
+
+
+register('pi-text-input', PiTextInput)
 
 export default {
     title: 'Components/Inputs/Text',
