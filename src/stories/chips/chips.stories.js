@@ -1,6 +1,9 @@
 import { html } from "lit";
+import { register } from "../../registerWebComp";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { PiChip } from "../../components/chips/components/chip";
+
+register('pi-chip', PiChip)
 
 export default {
     title: 'Components/Chips',
