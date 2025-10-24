@@ -13,6 +13,7 @@ import { PiTextAreaInput } from "../../main";
 import { PiSelectInput } from "../../main";
 import { PiCheckboxInput } from "../../main";
 import { PiRadioInput } from "../../main";
+import { PiRadioInputGroup } from "../../main";
 import { PiToggleSwitch } from "../../main";
 import { PiButton } from "../../main";
 
@@ -26,6 +27,7 @@ register('pi-textarea-input', PiTextAreaInput);
 register('pi-select-input', PiSelectInput);
 register('pi-checkbox-input', PiCheckboxInput);
 register('pi-radio-input', PiRadioInput);
+register('pi-radio-input-group', PiRadioInputGroup);
 register('pi-toggle-switch', PiToggleSwitch);
 register('pi-button', PiButton);
 
