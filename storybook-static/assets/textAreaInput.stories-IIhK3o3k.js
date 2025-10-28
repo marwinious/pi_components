@@ -1,9 +1,9 @@
-import{x as c}from"./lit-element-Rv6HkL07.js";import{r as m}from"./registerWebComp-xWpx6Xkx.js";import{a as f}from"./index-Br0BFi8U.js";import{o as r}from"./if-defined-CT_LCv84.js";import"./iconXLogo-wd1NX9XZ.js";import{P as b}from"./textAreaInput-CIlRUaP7.js";import"./v4-CtRu48qb.js";import"./directive-CJw_OlP2.js";import"./defaultCss-BUBpELKw.js";import"./label-B4rynypE.js";m("pi-text-area-input",b);const I={title:"Components/Inputs/Textarea",component:"pi-text-area-input",tags:["autodocs"],argTypes:{label:{control:"text",name:"label (optional)",description:"Label for the text field",table:{type:{summary:"string"},defaultValue:{summary:""}}},placeholder:{control:"text",name:"placeholder (optional)",description:"Hint for input",table:{type:{summary:"string"},defaultValue:{summary:""}}},value:{control:"text",name:"value (optional)",description:"Initial value for field",table:{type:{summary:"string"},defaultValue:{summary:""}}},disabled:{control:"boolean",name:"disabled (optional)",description:"Disables the field",table:{type:{summary:"string"},defaultValue:{summary:""}}}},args:{label:"",placeholder:"",value:"",disabled:!1}},i=({label:d,placeholder:o,value:s,disabled:p})=>c`
+import{x as c}from"./lit-element-Rv6HkL07.js";import{r as m}from"./registerWebComp-xWpx6Xkx.js";import{a as f}from"./index-Br0BFi8U.js";import{o as d}from"./if-defined-CT_LCv84.js";import{P as b}from"./textAreaInput-CIlRUaP7.js";import"./v4-CtRu48qb.js";import"./defaultCss-BUBpELKw.js";import"./label-B4rynypE.js";m("pi-text-area-input",b);const A={title:"Components/Inputs/Textarea",component:"pi-text-area-input",tags:["autodocs"],argTypes:{label:{control:"text",name:"label (optional)",description:"Label for the text field",table:{type:{summary:"string"},defaultValue:{summary:""}}},placeholder:{control:"text",name:"placeholder (optional)",description:"Hint for input",table:{type:{summary:"string"},defaultValue:{summary:""}}},value:{control:"text",name:"value (optional)",description:"Initial value for field",table:{type:{summary:"string"},defaultValue:{summary:""}}},disabled:{control:"boolean",name:"disabled (optional)",description:"Disables the field",table:{type:{summary:"string"},defaultValue:{summary:""}}}},args:{label:"",placeholder:"",value:"",disabled:!1}},i=({label:r,placeholder:o,value:s,disabled:p})=>c`
     <pi-text-area-input
     name="piTextArea"
-    label=${r(d!=""?d:void 0)}
-    placeholder=${r(o!=""?o:void 0)}
-    value=${r(s!=""?s:void 0)}
+    label=${d(r!=""?r:void 0)}
+    placeholder=${d(o!=""?o:void 0)}
+    value=${d(s!=""?s:void 0)}
     ?disabled=${p}
     @change=${u=>f("Text changed")(u.detail)}
     ></pi-text-area-input>
@@ -77,4 +77,4 @@ import{x as c}from"./lit-element-Rv6HkL07.js";import{r as m}from"./registerWebCo
     ?disabled=\${disabled}
     @change=\${e => action('Text changed')(e.detail)}
     ></pi-text-area-input>
-\``,...t.parameters?.docs?.source}}};const V=["Default","Label","Placeholder","Value","Disabled"];export{e as Default,t as Disabled,a as Label,n as Placeholder,l as Value,V as __namedExportsOrder,I as default};
+\``,...t.parameters?.docs?.source}}};const S=["Default","Label","Placeholder","Value","Disabled"];export{e as Default,t as Disabled,a as Label,n as Placeholder,l as Value,S as __namedExportsOrder,A as default};

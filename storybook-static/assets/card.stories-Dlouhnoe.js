@@ -1,4 +1,4 @@
-import{x as u}from"./lit-element-Rv6HkL07.js";import{r as c}from"./registerWebComp-xWpx6Xkx.js";import{o as d}from"./iconXLogo-wd1NX9XZ.js";import{P as m}from"./card-yLocHZea.js";import"./directive-CJw_OlP2.js";import"./defaultCss-BUBpELKw.js";c("pi-card",m);const p=`
+import{x as u}from"./lit-element-Rv6HkL07.js";import{r as c}from"./registerWebComp-xWpx6Xkx.js";import{o as d}from"./unsafe-html-DxF_RYnM.js";import{P as m}from"./card-yLocHZea.js";import"./directive-CJw_OlP2.js";import"./defaultCss-BUBpELKw.js";c("pi-card",m);const p=`
 <div slot="header" style="background-color: #eee;">
     This is the header area of a card. By default, it has no padding and is intended to be full filled with a background color or image. Text will work too of course. If using an image without text, add the <code>slot="header"</code> attritbute directly to the img tag for better control. The background-color on this demo was added as an example and is not there by default.
 </div>
