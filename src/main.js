@@ -19,7 +19,6 @@ import './components/icons/base/iconImports' */
 
 // import { ComponentsPreview } from "./components/samples/componentsPreview";
 
-export * from './components/icons/index'
 export * from './components/labels/index'
 export * from './components/badges/index'
 export * from './components/buttons/index'
