@@ -2,7 +2,6 @@ import { html } from "lit";
 import { register } from "../../registerWebComp";
 import { action } from '@storybook/addon-actions'
 import { ifDefined } from "lit/directives/if-defined.js";
-import '../../components/icons/index'
 import { PiHeaderBar } from "../../components/headerBar";
 import { PiIconHandler } from "pi_icons/iconHandler";
 import { PiIconMenuHamburgerRounded } from "pi_icons/iconMenuHamburgerRounded";
