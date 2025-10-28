@@ -175,7 +175,7 @@ export class PiButton extends LitElement {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                width: 0;
+                width: var(--pi-button-icon-width, 15px);
                 height: var(--pi-button-icon-height, 15px);
                 fill: var(--pi-button-icon-fill-color, #FFF);
             }
