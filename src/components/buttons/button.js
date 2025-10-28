@@ -173,6 +173,7 @@ export class PiButton extends LitElement {
 
             .button_icon_container {
                 display: inline-flex;
+                gap: var(--pi-button-icon-gap, 5px);
                 align-items: center;
                 justify-content: center;
                 width: var(--pi-button-icon-width, 15px);
