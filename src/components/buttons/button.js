@@ -153,14 +153,14 @@ export class PiButton extends LitElement {
             .button_content_container {
                 display: flex;
                 align-items: center;
-                gap: 0;
+                gap: var(--pi-button-content-gap, 5px);
                 padding: var(--pi-button-padding, 7px 12px);
                 justify-content: center;
             }
 
             :host([icon]:not([variant="iconOnly"])) .button_content_container,
             :host([badge]:not([variant="iconOnly"])) .button_content_container {
-                gap: 5px;
+                gap: var(--pi-button-content-gap, 5px);
             }
 
             :host([icon][variant="iconOnly"]) .button_content_container {
@@ -173,7 +173,6 @@ export class PiButton extends LitElement {
 
             .button_icon_container {
                 display: inline-flex;
-                gap: var(--pi-button-icon-gap, 5px);
                 align-items: center;
                 justify-content: center;
                 width: var(--pi-button-icon-width, 15px);
