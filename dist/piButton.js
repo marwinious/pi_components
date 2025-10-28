@@ -1,4 +1,4 @@
-import{LitElement as e,html as o,unsafeCSS as i,css as n}from"lit";import r from"./src/css/common.css.js";import{classMap as a}from"lit/directives/class-map.js";import s from"./src/components/buttons/css/buttonSeverityCss.js";import l from"./src/components/buttons/css/buttonVariantCss.js";import d from"./src/components/buttons/css/buttonIconsCss.js";import c from"./src/components/buttons/css/buttonBadgeCss.js";import{PiBadge as b}from"./piBadge.js";import{register as p}from"./src/registerWebComp.js";p("pi-badge",b);class C extends e{static get properties(){return{disabled:{type:Boolean},icon:{type:String},severity:{type:String},raised:{type:Boolean},rounded:{type:Boolean},squared:{type:Boolean},variant:{type:String},badge:{type:String},type:{type:String}}}constructor(){super(),this.disabled=!1,this.icon="",this.severity="",this.raised=!1,this.rounded=!1,this.squared=!1,this.variant=!1,this.badge=null,this.type="button"}render(){const t={[`btn_severity_${this.severity}`]:!0,[`btn_variant_${this.variant}`]:!0,raised:this.raised===!0,rounded:this.rounded===!0,squared:this.squared===!0};return o`
+import{LitElement as e,html as o,unsafeCSS as i,css as n}from"lit";import r from"./src/css/common.css.js";import{classMap as a}from"lit/directives/class-map.js";import s from"./src/components/buttons/css/buttonSeverityCss.js";import d from"./src/components/buttons/css/buttonVariantCss.js";import l from"./src/components/buttons/css/buttonIconsCss.js";import c from"./src/components/buttons/css/buttonBadgeCss.js";import{PiBadge as b}from"./piBadge.js";import{register as p}from"./src/registerWebComp.js";p("pi-badge",b);class w extends e{static get properties(){return{disabled:{type:Boolean},icon:{type:String},severity:{type:String},raised:{type:Boolean},rounded:{type:Boolean},squared:{type:Boolean},variant:{type:String},badge:{type:String},type:{type:String}}}constructor(){super(),this.disabled=!1,this.icon="",this.severity="",this.raised=!1,this.rounded=!1,this.squared=!1,this.variant=!1,this.badge=null,this.type="button"}render(){const t={[`btn_severity_${this.severity}`]:!0,[`btn_variant_${this.variant}`]:!0,raised:this.raised===!0,rounded:this.rounded===!0,squared:this.squared===!0};return o`
             <button 
             type="${this.type}"
             class=${a(t)}
@@ -23,7 +23,7 @@ import{LitElement as e,html as o,unsafeCSS as i,css as n}from"lit";import r from
                 </span>
                 
             </button>
-        `}_handleClick(t){t.stopPropagation(),this.type!=="submit"?this.dispatchEvent(new CustomEvent("click",{detail:t})):this.dispatchEvent(new CustomEvent("pi-submit",{detail:t,composed:!0,bubbles:!0}))}static styles=[s,l,d,c,i(r),n`
+        `}_handleClick(t){t.stopPropagation(),this.type!=="submit"?this.dispatchEvent(new CustomEvent("click",{detail:t})):this.dispatchEvent(new CustomEvent("pi-submit",{detail:t,composed:!0,bubbles:!0}))}static styles=[s,d,l,c,i(r),n`
             :host {
                 display: inline-flex;
                 align-items: flex-start;
@@ -95,7 +95,7 @@ import{LitElement as e,html as o,unsafeCSS as i,css as n}from"lit";import r from
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                width: 0;
+                width: var(--pi-button-icon-width, 15px);
                 height: var(--pi-button-icon-height, 15px);
                 fill: var(--pi-button-icon-fill-color, #FFF);
             }
@@ -112,5 +112,5 @@ import{LitElement as e,html as o,unsafeCSS as i,css as n}from"lit";import r from
                 display: inline-flex;
             }
 
-        `]}export{C as PiButton};
+        `]}export{w as PiButton};
 //# sourceMappingURL=piButton.js.map
