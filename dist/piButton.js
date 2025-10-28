@@ -1,4 +1,4 @@
-import{LitElement as i,html as o,unsafeCSS as n,css as e}from"lit";import r from"./src/css/common.css.js";import{classMap as a}from"lit/directives/class-map.js";import s from"./src/components/buttons/css/buttonSeverityCss.js";import d from"./src/components/buttons/css/buttonVariantCss.js";import l from"./src/components/buttons/css/buttonIconsCss.js";import c from"./src/components/buttons/css/buttonBadgeCss.js";import{PiBadge as p}from"./piBadge.js";import{register as b}from"./src/registerWebComp.js";b("pi-badge",p);class w extends i{static get properties(){return{disabled:{type:Boolean},icon:{type:String},severity:{type:String},raised:{type:Boolean},rounded:{type:Boolean},squared:{type:Boolean},variant:{type:String},badge:{type:String},type:{type:String}}}constructor(){super(),this.disabled=!1,this.icon="",this.severity="",this.raised=!1,this.rounded=!1,this.squared=!1,this.variant=!1,this.badge=null,this.type="button"}render(){const t={[`btn_severity_${this.severity}`]:!0,[`btn_variant_${this.variant}`]:!0,raised:this.raised===!0,rounded:this.rounded===!0,squared:this.squared===!0};return o`
+import{LitElement as n,html as o,unsafeCSS as e,css as i}from"lit";import r from"./src/css/common.css.js";import{classMap as a}from"lit/directives/class-map.js";import s from"./src/components/buttons/css/buttonSeverityCss.js";import c from"./src/components/buttons/css/buttonVariantCss.js";import d from"./src/components/buttons/css/buttonIconsCss.js";import l from"./src/components/buttons/css/buttonBadgeCss.js";import{PiBadge as p}from"./piBadge.js";import{register as b}from"./src/registerWebComp.js";b("pi-badge",p);class w extends n{static get properties(){return{disabled:{type:Boolean},icon:{type:String},severity:{type:String},raised:{type:Boolean},rounded:{type:Boolean},squared:{type:Boolean},variant:{type:String},badge:{type:String},type:{type:String}}}constructor(){super(),this.disabled=!1,this.icon="",this.severity="",this.raised=!1,this.rounded=!1,this.squared=!1,this.variant=!1,this.badge=null,this.type="button"}render(){const t={[`btn_severity_${this.severity}`]:!0,[`btn_variant_${this.variant}`]:!0,raised:this.raised===!0,rounded:this.rounded===!0,squared:this.squared===!0};return o`
             <button 
             type="${this.type}"
             class=${a(t)}
@@ -23,7 +23,7 @@ import{LitElement as i,html as o,unsafeCSS as n,css as e}from"lit";import r from
                 </span>
                 
             </button>
-        `}_handleClick(t){t.stopPropagation(),this.type!=="submit"?this.dispatchEvent(new CustomEvent("click",{detail:t})):this.dispatchEvent(new CustomEvent("pi-submit",{detail:t,composed:!0,bubbles:!0}))}static styles=[s,d,l,c,n(r),e`
+        `}_handleClick(t){t.stopPropagation(),this.type!=="submit"?this.dispatchEvent(new CustomEvent("click",{detail:t})):this.dispatchEvent(new CustomEvent("pi-submit",{detail:t,composed:!0,bubbles:!0}))}static styles=[s,c,d,l,e(r),i`
             :host {
                 display: inline-flex;
                 align-items: flex-start;
@@ -73,14 +73,14 @@ import{LitElement as i,html as o,unsafeCSS as n,css as e}from"lit";import r from
             .button_content_container {
                 display: flex;
                 align-items: center;
-                gap: 0;
+                gap: var(--pi-button-content-gap, 5px);
                 padding: var(--pi-button-padding, 7px 12px);
                 justify-content: center;
             }
 
             :host([icon]:not([variant="iconOnly"])) .button_content_container,
             :host([badge]:not([variant="iconOnly"])) .button_content_container {
-                gap: 5px;
+                gap: var(--pi-button-content-gap, 5px);
             }
 
             :host([icon][variant="iconOnly"]) .button_content_container {
@@ -93,7 +93,6 @@ import{LitElement as i,html as o,unsafeCSS as n,css as e}from"lit";import r from
 
             .button_icon_container {
                 display: inline-flex;
-                gap: var(--pi-button-icon-gap, 5px);
                 align-items: center;
                 justify-content: center;
                 width: var(--pi-button-icon-width, 15px);
