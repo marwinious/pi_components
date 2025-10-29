@@ -2,7 +2,6 @@ import { html } from "lit";
 import { register } from "../../registerWebComp";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import '../../components/icons/index'
 import { PiGrid } from "../../components/grid/components/gridContainer";
 import { PiGridColumn } from "../../components/grid/components/gridColumn";
 import { PiGridRow } from "../../components/grid/components/gridRow";

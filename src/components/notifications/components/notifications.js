@@ -1,14 +1,14 @@
 import { LitElement, css, html } from 'lit'
 import { register } from '../../../registerWebComp';
 import { PiNotificationCenter } from './notificationCenter';
-import { PiIconHandler } from 'pi_icons/components/components/icons/base/iconHandler';
-import { PiIconFlagWavyDark } from 'pi_icons/components/components/icons/components/flags/iconFlagWavyDark';
-import { PiIconStarDark } from 'pi_icons/components/components/icons/components/stars/iconStarDark';
-import { PiIconThumbsUpDark } from 'pi_icons/components/components/icons/components/ratings/iconThumbsUpDark';
-import { PiIconInfoSimpleDark } from 'pi_icons/components/components/icons/components/info/iconInfoSimpleDark';
-import { PiIconAlertTriangleDark } from 'pi_icons/components/components/icons/components/alerts/iconAlertTriangleDark';
-import { PiIconGlobeDark } from 'pi_icons/components/components/icons/components/globes/iconGlobeDark';
-import { PiIconStopExDark } from 'pi_icons/components/components/icons/components/actions/iconStopExDark';
+import { PiIconHandler } from 'pi_icons/iconHandler';
+import { PiIconFlagWavyDark } from 'pi_icons/iconFlagWavyDark';
+import { PiIconStarDark } from 'pi_icons/iconStarDark';
+import { PiIconThumbsUpDark } from 'pi_icons/iconThumbsUpDark';
+import { PiIconInfoSimpleDark } from 'pi_icons/iconInfoSimpleDark';
+import { PiIconAlertTriangleDark } from 'pi_icons/iconAlertTriangleDark';
+import { PiIconGlobeDark } from 'pi_icons/iconGlobeDark';
+import { PiIconStopExDark } from 'pi_icons/iconStopExDark';
 
 register('pi-notification-center', PiNotificationCenter)
 register('pi-icon-handler', PiIconHandler);

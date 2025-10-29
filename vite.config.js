@@ -1,5 +1,33 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { peerDependencies } from './package.json'
+import path from 'path';
+import glob from 'fast-glob';
+
+// Externalize all packages listed in peerDependencies
+const externalPackages = [
+    ...Object.keys(peerDependencies || {}),
+    /^lit\/.*/ // Keep this for deep Lit imports
+];
+
+// Utility function to dynamically generate entry points from the components directory
+const generateComponentEntries = () => {
+    const componentDir = resolve(__dirname, 'src/components');
+    const files = glob.sync(componentDir + '/**/*.{js,jsx,ts,tsx}', {
+        // Ignore index files as they are often meant for re-exporting, not direct entry
+        ignore: ['**/index.*', '**/main.*']
+    });
+
+    return files.reduce((entries, absolutePath) => {
+        // NEW LOGIC: Use ONLY the filename (without extension) as the Rollup input key.
+        // This is the cleanest way to flatten the structure.
+        const baseName = path.basename(absolutePath, path.extname(absolutePath));
+        
+        // Example: entries['iconGearSolid'] = '.../iconGearSolid.js'
+        entries[baseName] = absolutePath;
+        return entries;
+    }, {});
+};
 
 export default defineConfig({
     plugins: [
@@ -24,8 +52,9 @@ export default defineConfig({
             input: {
                 // 'index' is for the main package entry
                 index: resolve(__dirname, 'src/main.js'), 
+                ...generateComponentEntries()
                 // Add an entry for *each* component
-                'piBadge': resolve(__dirname, 'src/components/badges/badge.js'),
+                /* 'piBadge': resolve(__dirname, 'src/components/badges/badge.js'),
                 'piButton': resolve(__dirname, 'src/components/buttons/button.js'),
                 'piCard': resolve(__dirname, 'src/components/cards/components/card.js'),
                 'piChip': resolve(__dirname, 'src/components/chips/components/chip.js'),
@@ -58,25 +87,40 @@ export default defineConfig({
                 'piTabList': resolve(__dirname, 'src/components/tabs/tabList.js'),
                 'piTabPanel': resolve(__dirname, 'src/components/tabs/tabPanel.js'),
                 'piTabPanels': resolve(__dirname, 'src/components/tabs/tabPanels.js'),
-                'piTabs': resolve(__dirname, 'src/components/tabs/tabs.js'),
+                'piTabs': resolve(__dirname, 'src/components/tabs/tabs.js'), */
             },
             
             // Keep external configuration for Lit dependencies
-            external: [
-                /^lit\/.*/,
-                'lit',
-                'lit-html',
-                'lit-element',
-            ],
+            external: externalPackages,
             
             output: {
                 // **CRITICAL FIX 1: preserveModules MUST be in the output block**
                 preserveModules: true,
                 
-                // **CRITICAL FIX 2: Simplify naming when using preserveModules**
-                // This pattern ensures the output file path is just the name (e.g., piInputSelect.js) 
-                // and Rollup handles the folder structure relative to the 'dist' folder.
-                entryFileNames: `[name].js`,
+                // CRITICAL FIX: Use a function to manually prepend the 'components' folder.
+                entryFileNames: (chunkInfo) => {
+                    // List utility files that should be hidden
+                    const utilityFiles = ['registerWebComp'];
+                    
+                    // 1. Get the final filename (without path or extension)
+                    const fileName = path.basename(chunkInfo.name);
+                    const baseName = path.basename(chunkInfo.name, '.js'); 
+                    
+                    // 2. Check if this module is one of our hidden utility files.
+                    if (utilityFiles.includes(baseName)) {
+                        // Put utility files into a hidden 'utils' folder to declutter 'components/'
+                        return `utils/${fileName}.js`; 
+                    }
+
+                    // 3. Check if this is a primary source module (has a facadeModuleId).
+                    if (chunkInfo.facadeModuleId) {
+                        // All remaining files are public components. Flatten them to components/filename.js
+                        return `components/${fileName}.js`; 
+                    }
+                    
+                    // Fallback for Rollup chunks
+                    return '[name].js';
+                },
                 
                 // Name for any shared code-split chunks (e.g., utilities)
                 chunkFileNames: `chunks/[name].js`, 

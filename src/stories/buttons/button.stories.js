@@ -1,10 +1,10 @@
 import { html } from "lit";
 import { register } from "../../registerWebComp";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { PiIconHandler } from "pi_icons/components/components/icons/base/iconHandler";
-import { PiIconAlertTriangleLight } from "pi_icons/components/components/icons/components/alerts/iconAlertTriangleLight"
-import { PiIconGearSolid } from "pi_icons/components/components/icons/components/gears/iconGearSolid";
-import { PiIconInfoFilled } from "pi_icons/components/components/icons/components/info/iconInfoFilled";
+import { PiIconHandler } from "pi_icons/iconHandler";
+import { PiIconAlertTriangleLight } from "pi_icons/iconAlertTriangleLight"
+import { PiIconGearSolid } from "pi_icons/iconGearSolid";
+import { PiIconInfoFilled } from "pi_icons/iconInfoFilled";
 import { PiButton } from '../../components/buttons/button'
 
 register('pi-icon-handler', PiIconHandler)
