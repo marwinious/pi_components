@@ -8,13 +8,13 @@
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "sideEffects": true,
+  "sideEffects": false,
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.js"
+      "import": "./dist/components/index.js"
     },
     "./*": {
       "import": "./dist/components/*.js"
