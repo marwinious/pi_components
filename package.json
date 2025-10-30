@@ -19,6 +19,9 @@
     "./*": {
       "import": "./dist/components/*.js"
     },
+    "./utils": {
+      "import": "./dist/utils/*.js"
+    },
     "./styles.css": "./dist/styles/styles.css"
   },
   "scripts": {
