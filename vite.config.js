@@ -3,6 +3,7 @@ import { resolve } from 'path';
 import { peerDependencies } from './package.json'
 import path from 'path';
 import glob from 'fast-glob';
+import Sonda from 'sonda/vite'; 
 
 // Externalize all packages listed in peerDependencies
 const externalPackages = [
@@ -31,7 +32,9 @@ const generateComponentEntries = () => {
 
 export default defineConfig({
     plugins: [
-        /* ... your plugins ... */
+        Sonda({
+            open: false
+        })
     ],
     build: {
         outDir: 'dist',
