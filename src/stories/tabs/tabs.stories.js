@@ -1,11 +1,11 @@
 import { html } from "lit";
 import { register } from "../../registerWebComp";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { PiTab } from "../../components/tabs/tab";
-import { PiTabList } from "../../components/tabs/tabList";
-import { PiTabs } from "../../components/tabs/tabs";
-import { PiTabPanels } from "../../components/tabs/tabPanels";
-import { PiTabPanel } from "../../components/tabs/tabPanel";
+import { PiTab } from "../../components/tabs/components/tab";
+import { PiTabList } from "../../components/tabs/components/tabList";
+import { PiTabs } from "../../components/tabs/components/tabs";
+import { PiTabPanels } from "../../components/tabs/components/tabPanels";
+import { PiTabPanel } from "../../components/tabs/components/tabPanel";
 
 register('pi-tab', PiTab)
 register('pi-tab-list', PiTabList)

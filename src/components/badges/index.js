@@ -1,1 +1,1 @@
-export * from './badge'
+export * from './components/badge'

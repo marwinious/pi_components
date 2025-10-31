@@ -2,8 +2,8 @@ import { html } from "lit";
 import { register } from "../../registerWebComp";
 import { action } from '@storybook/addon-actions'
 import { ifDefined } from "lit/directives/if-defined.js";
-import { PiForm } from "../../components/forms/form";
-import { PiFormGroup } from "../../components/forms/formGroup";
+import { PiForm } from "../../main";
+import { PiFormGroup } from "../../main";
 import { PiGrid } from "../../components/grid/components/gridContainer";
 import { PiGridColumn } from "../../components/grid/components/gridColumn";
 import { PiGridRow } from "../../components/grid/components/gridRow";

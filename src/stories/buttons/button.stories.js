@@ -5,7 +5,7 @@ import { PiIconHandler } from "pi_icons/iconHandler";
 import { PiIconAlertTriangleLight } from "pi_icons/iconAlertTriangleLight"
 import { PiIconGearSolid } from "pi_icons/iconGearSolid";
 import { PiIconInfoFilled } from "pi_icons/iconInfoFilled";
-import { PiButton } from '../../components/buttons/button'
+import { PiButton } from '../../components/buttons/components/button'
 
 register('pi-icon-handler', PiIconHandler)
 register('pi-button', PiButton)
@@ -127,10 +127,8 @@ const Template = ({ slotContent, variant, severity, raised, rounded, squared, ba
     >
         ${slotContent}
 
-        ${icon != '' ? html`
-            
-                <pi-icon-handler icon="${icon}" slot="icon"></pi-icon-handler>
-            
+        ${icon ? html`
+            <pi-icon-handler icon="${icon}" slot="icon"></pi-icon-handler>
         ` : null}
     </pi-button>
 `;

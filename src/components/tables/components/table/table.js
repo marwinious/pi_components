@@ -128,7 +128,7 @@ export class PiTable extends LitElement {
         }
 
         if (!this.rows || this.rows.length === 0) {
-            return html`<div class="empty-table-message">No data to display.</div>`;
+            return html`<div class="empty_table_message">No data to display.</div>`;
         }
 
         return html`
@@ -179,15 +179,6 @@ export class PiTable extends LitElement {
         css`
             :host {
                 display: block;
-                /* font-family: 'Inter', sans-serif;
-                --table-border-color: #e0e0e0;
-                --table-header-bg: #f5f5f5;
-                --table-row-hover-bg: #f9f9f9;
-                --table-stripe-bg: #f2f2f2;
-                --table-text-color: #333;
-                --table-header-text-color: #555;
-                --table-cell-padding: 12px;
-                --table-compact-cell-padding: 8px; */
             }
 
             table {
@@ -216,41 +207,16 @@ export class PiTable extends LitElement {
                 --pi-table-cell-border-left: var(--pi-table-cell-border-top, 1px solid #ddd);
             }
 
-            th, td {
-                border: 1px solid var(--table-border-color);
-                padding: var(--table-cell-padding);
-                text-align: left;
-            }
-
-            /* Compact styling */
-            :host([compact]) th,
-            :host([compact]) td {
-                padding: var(--table-compact-cell-padding);
-            }
-
-            thead {
-                background-color: var(--table-header-bg);
-            }
-
-            th {
-                font-weight: 600;
-                color: var(--table-header-text-color);
-                text-transform: uppercase;
-                font-size: 0.85em;
-            }
-
-            tbody tr:hover {
-                background-color: var(--table-row-hover-bg);
-                transition: background-color 0.2s ease-in-out;
-            }
-
-            /* Striped rows styling */
-            :host([striped]) tbody tr:nth-child(even) {
-                background-color: var(--table-stripe-bg);
+            pi-table-row,
+            pi-table-row.striped,
+            pi-table-row.gridlines {
+                &:hover {
+                    background: var(--pi-table-row-bg-color-hover, #eee);
+                }
             }
 
             /* For empty state */
-            .empty-table-message {
+            .empty_table_message {
                 text-align: center;
                 padding: 40px;
                 color: #666;

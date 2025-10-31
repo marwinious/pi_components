@@ -1,23 +1,23 @@
-import{LitElement as i,html as a,css as d}from"lit";import{register as l}from"../utils/registerWebComp.js";import{classMap as n}from"lit/directives/class-map.js";import{repeat as s}from"lit/directives/repeat.js";import{PiTableRow as p}from"./tableRow.js";import{PiTableColumn as c}from"./tableColumn.js";import{PiTablePaginator as h}from"./tablePaginator.js";import b from"./defaultCss.js";import{sortArrayOfObjects as u}from"./sorters.js";l("pi-table-row",p);l("pi-table-column",c);l("pi-table-paginator",h);class C extends i{static get properties(){return{rows:{type:Array},sortedRows:{type:Array},activeRows:{type:Array},columns:{type:Array},striped:{type:Boolean},compact:{type:Boolean},gridlines:{type:Boolean},defaultSortKey:{type:String},defaultSortDirection:{type:String},paginate:{type:Boolean},rowsPerPage:{type:Number|String}}}connectedCallback(){super.connectedCallback(),this.initTable(),this.addEventListener("sortRequested",t=>this.handleSortRequest(t.detail.key,t.detail.newSortDirection))}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("sortRequested",t=>this.handleSortRequest(t.detail.key,t.detail.newSortDirection))}firstUpdated(){this.handleDefaultSort()}constructor(){super(),this.rows=[],this.sortedRows=[],this.activeRows=[],this.columns=void 0,this.striped=!1,this.compact=!1,this.gridlines=!1,this.defaultSortKey=null,this.defaultSortDirection=null,this.paginate=!1,this.rowsPerPage=5}initTable(){this.activeRows=[...this.rows],this.sortedRows=[...this.rows]}resolveColumns(){return this.columns&&this.columns.length>0?this.columns:this.rows&&this.rows.length>0?Object.keys(this.rows[0]).map(t=>({key:t,header:t.charAt(0).toUpperCase()+t.slice(1).replace(/([A-Z])/g," $1")})):[]}handleSortRequest(t,r){this.sortedRows=u(this.rows,t,r),this.updateColumnSorters(t,r),this.paginate||(this.activeRows=[...this.sortedRows])}handleDefaultSort(){this.defaultSortKey!=null&&this.defaultSortDirection!=null&&this.handleSortRequest(this.defaultSortKey,this.defaultSortDirection)}updateColumnSorters(t,r){this.shadowRoot.querySelectorAll("pi-table-column").forEach(o=>{o.dispatchEvent(new CustomEvent("updateSorter",{detail:{sortKey:t,sortDirection:r},bubbles:!0,composed:!0}))})}handleUpdatedPageRows(t){this.activeRows=[...t]}render(){const t=this.resolveColumns(),r={striped:this.striped,gridlines:this.gridlines};return!this.rows||this.rows.length===0?a`<div class="empty-table-message">No data to display.</div>`:a`
+import{LitElement as l,html as s,css as d}from"lit";import{register as a}from"../utils/registerWebComp.js";import{classMap as n}from"lit/directives/class-map.js";import{repeat as i}from"lit/directives/repeat.js";import{PiTableRow as p}from"./tableRow.js";import{PiTableColumn as h}from"./tableColumn.js";import{PiTablePaginator as c}from"./tablePaginator.js";import b from"./defaultCss.js";import{sortArrayOfObjects as u}from"./sorters.js";a("pi-table-row",p);a("pi-table-column",h);a("pi-table-paginator",c);class C extends l{static get properties(){return{rows:{type:Array},sortedRows:{type:Array},activeRows:{type:Array},columns:{type:Array},striped:{type:Boolean},compact:{type:Boolean},gridlines:{type:Boolean},defaultSortKey:{type:String},defaultSortDirection:{type:String},paginate:{type:Boolean},rowsPerPage:{type:Number|String}}}connectedCallback(){super.connectedCallback(),this.initTable(),this.addEventListener("sortRequested",e=>this.handleSortRequest(e.detail.key,e.detail.newSortDirection))}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("sortRequested",e=>this.handleSortRequest(e.detail.key,e.detail.newSortDirection))}firstUpdated(){this.handleDefaultSort()}constructor(){super(),this.rows=[],this.sortedRows=[],this.activeRows=[],this.columns=void 0,this.striped=!1,this.compact=!1,this.gridlines=!1,this.defaultSortKey=null,this.defaultSortDirection=null,this.paginate=!1,this.rowsPerPage=5}initTable(){this.activeRows=[...this.rows],this.sortedRows=[...this.rows]}resolveColumns(){return this.columns&&this.columns.length>0?this.columns:this.rows&&this.rows.length>0?Object.keys(this.rows[0]).map(e=>({key:e,header:e.charAt(0).toUpperCase()+e.slice(1).replace(/([A-Z])/g," $1")})):[]}handleSortRequest(e,r){this.sortedRows=u(this.rows,e,r),this.updateColumnSorters(e,r),this.paginate||(this.activeRows=[...this.sortedRows])}handleDefaultSort(){this.defaultSortKey!=null&&this.defaultSortDirection!=null&&this.handleSortRequest(this.defaultSortKey,this.defaultSortDirection)}updateColumnSorters(e,r){this.shadowRoot.querySelectorAll("pi-table-column").forEach(o=>{o.dispatchEvent(new CustomEvent("updateSorter",{detail:{sortKey:e,sortDirection:r},bubbles:!0,composed:!0}))})}handleUpdatedPageRows(e){this.activeRows=[...e]}render(){const e=this.resolveColumns(),r={striped:this.striped,gridlines:this.gridlines};return!this.rows||this.rows.length===0?s`<div class="empty_table_message">No data to display.</div>`:s`
             <table role="table" aria-label="Customizable Data Table">
                 <thead role="rowgroup">
                     <tr role="row">
-                        ${s(t,e=>e.key,e=>a`
+                        ${i(e,t=>t.key,t=>s`
                             <pi-table-column
-                            ?sortable=${e.sortable&&e.sortKey}
-                            .label=${e.header}
-                            .key=${e.key}
-                            .sortKey=${e.sortKey}
-                            >${e.header}</pi-table-column>
+                            ?sortable=${t.sortable&&t.sortKey}
+                            .label=${t.header}
+                            .key=${t.key}
+                            .sortKey=${t.sortKey}
+                            >${t.header}</pi-table-column>
                         `)}
                     </tr>
                 </thead>
                 <tbody role="rowgroup">
-                    ${s(this.activeRows,(e,o)=>e.id||o,(e,o)=>a`
+                    ${i(this.activeRows,(t,o)=>t.id||o,(t,o)=>s`
                         <pi-table-row
                         class=${n(r)}
-                        .item=${e}
-                        .columns=${t}
+                        .item=${t}
+                        .columns=${e}
                         .rowIndex=${o}
                         ></pi-table-row>
                     `)}
@@ -31,25 +31,16 @@ import{LitElement as i,html as a,css as d}from"lit";import{register as l}from"..
                 </tfoot>
             </table>
 
-            ${this.paginate?a`
+            ${this.paginate?s`
                 <pi-table-paginator
                 .rows=${this.sortedRows}
                 .rowsPerPage=${this.rowsPerPage}
-                @updatedPageRows=${e=>this.handleUpdatedPageRows(e.detail.rows)}
+                @updatedPageRows=${t=>this.handleUpdatedPageRows(t.detail.rows)}
                 ></pi-table-paginator>
             `:null}
         `}static styles=[b,d`
             :host {
                 display: block;
-                /* font-family: 'Inter', sans-serif;
-                --table-border-color: #e0e0e0;
-                --table-header-bg: #f5f5f5;
-                --table-row-hover-bg: #f9f9f9;
-                --table-stripe-bg: #f2f2f2;
-                --table-text-color: #333;
-                --table-header-text-color: #555;
-                --table-cell-padding: 12px;
-                --table-compact-cell-padding: 8px; */
             }
 
             table {
@@ -78,41 +69,16 @@ import{LitElement as i,html as a,css as d}from"lit";import{register as l}from"..
                 --pi-table-cell-border-left: var(--pi-table-cell-border-top, 1px solid #ddd);
             }
 
-            th, td {
-                border: 1px solid var(--table-border-color);
-                padding: var(--table-cell-padding);
-                text-align: left;
-            }
-
-            /* Compact styling */
-            :host([compact]) th,
-            :host([compact]) td {
-                padding: var(--table-compact-cell-padding);
-            }
-
-            thead {
-                background-color: var(--table-header-bg);
-            }
-
-            th {
-                font-weight: 600;
-                color: var(--table-header-text-color);
-                text-transform: uppercase;
-                font-size: 0.85em;
-            }
-
-            tbody tr:hover {
-                background-color: var(--table-row-hover-bg);
-                transition: background-color 0.2s ease-in-out;
-            }
-
-            /* Striped rows styling */
-            :host([striped]) tbody tr:nth-child(even) {
-                background-color: var(--table-stripe-bg);
+            pi-table-row,
+            pi-table-row.striped,
+            pi-table-row.gridlines {
+                &:hover {
+                    background: var(--pi-table-row-bg-color-hover, #eee);
+                }
             }
 
             /* For empty state */
-            .empty-table-message {
+            .empty_table_message {
                 text-align: center;
                 padding: 40px;
                 color: #666;
