@@ -127,10 +127,8 @@ const Template = ({ slotContent, variant, severity, raised, rounded, squared, ba
     >
         ${slotContent}
 
-        ${icon != '' ? html`
-            
-                <pi-icon-handler icon="${icon}" slot="icon"></pi-icon-handler>
-            
+        ${icon ? html`
+            <pi-icon-handler icon="${icon}" slot="icon"></pi-icon-handler>
         ` : null}
     </pi-button>
 `;
