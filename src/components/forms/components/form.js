@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
-import { register } from '../../registerWebComp';
-import { PiBaseFormElement } from '../inputs/base/baseFormElement';
+import { register } from '../../../registerWebComp';
+import { PiBaseFormElement } from '../../inputs/base/baseFormElement';
 
 register('pi-base-form-element', PiBaseFormElement)
 

@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import defaultCss from '../../css/defaultCss';
+import defaultCss from '../../../css/defaultCss';
 /*
 Main component for this feature
 */

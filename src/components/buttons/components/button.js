@@ -1,12 +1,12 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
-import commonCss from '../../css/common.css?inline'
+import commonCss from '../../../css/common.css?inline'
 import { classMap } from 'lit/directives/class-map.js';
-import severityCss from './css/buttonSeverityCss'
-import variantCss from './css/buttonVariantCss'
-import iconsCss from './css/buttonIconsCss'
-import badgeCss from './css/buttonBadgeCss'
-import { PiBadge } from '../badges/badge';
-import { register } from '../../registerWebComp';
+import severityCss from '../css/buttonSeverityCss'
+import variantCss from '../css/buttonVariantCss'
+import iconsCss from '../css/buttonIconsCss'
+import badgeCss from '../css/buttonBadgeCss'
+import { PiBadge } from '../../badges/components/badge';
+import { register } from '../../../registerWebComp';
 
 register('pi-badge', PiBadge);
 

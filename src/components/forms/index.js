@@ -1,2 +1,2 @@
-export * from './form'
-export * from './formGroup'
+export * from './components/form'
+export * from './components/formGroup'
