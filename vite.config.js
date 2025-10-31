@@ -31,6 +31,9 @@ const generateComponentEntries = () => {
 };
 
 export default defineConfig({
+    optimizeDeps: {
+        exclude: ['lit'] 
+    },
     plugins: [
         Sonda({
             open: false
