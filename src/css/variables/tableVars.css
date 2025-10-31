@@ -10,6 +10,7 @@
     /* Table Rows (TR) */
     --pi-table-row-bg-color-striped-even: #f8f8f8;
     --pi-table-row-bg-color-striped-odd: #fff;
+    --pi-table-row-bg-color-hover: #eee;
 
     /* Table Column (TH) */
     --pi-table-th-font-weight: bold;
