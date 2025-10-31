@@ -207,6 +207,14 @@ export class PiTable extends LitElement {
                 --pi-table-cell-border-left: var(--pi-table-cell-border-top, 1px solid #ddd);
             }
 
+            pi-table-row,
+            pi-table-row.striped,
+            pi-table-row.gridlines {
+                &:hover {
+                    background: var(--pi-table-row-bg-color-hover, #eee);
+                }
+            }
+
             /* For empty state */
             .empty_table_message {
                 text-align: center;
