@@ -30,7 +30,7 @@ export class PiBadge extends LitElement {
                 border-radius: var(--pi-badge-border-radius, 50%);
                 background: var(--pi-badge-background-color, rgba(0,0,0,0.25));
                 padding: var(--pi-badge-padding, 0.27rem);
-                color: #FFF;
+                color: var(--pi-badge-text-color, #FFF);
             }
         `
     ]
