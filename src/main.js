@@ -1,5 +1,5 @@
 /* CSS Imports */
-import './index.css'
+export * from './index.css'
 
 /* DEV MODE ONLY */
 /* if (import.meta.env.MODE === 'development') {
