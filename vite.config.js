@@ -58,7 +58,7 @@ export default defineConfig({
             input: {
                 // 'index' is for the main package entry
                 index: resolve(__dirname, 'src/main.js'), 
-                ...generateComponentEntries()
+                // ...generateComponentEntries()
             },
             
             // Keep external configuration for Lit dependencies

@@ -1,13 +1,13 @@
 {
   "name": "pi_components",
   "private": true,
-  "version": "0.5.3",
+  "version": "0.6.0",
   "type": "module",
   "directories": {
     "test": "tests"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/components/index.js",
+  "module": "dist/components/index.js",
   "sideEffects": false,
   "files": [
     "dist"
@@ -22,6 +22,7 @@
     "./utils": {
       "import": "./dist/utils/*.js"
     },
+    "./package.json": "./package.json",
     "./styles.css": "./dist/styles/styles.css"
   },
   "scripts": {
