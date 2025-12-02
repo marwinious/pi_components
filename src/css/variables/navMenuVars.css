@@ -1,0 +1,8 @@
+:root {
+
+    /* General */
+    --pi-nav-menu-bg-color: #fff;
+    --pi-nav-menu-box-shadow: 1px 1px 2px #666;
+    --pi-nav-menu-padding: 0.2rem 0.4rem;
+    --pi-nav-menu-close-color: #333;;
+}
