@@ -8,45 +8,11 @@ export class PiNavMenu extends LitElement {
         return {
             items: { type: Array },
             vertical: { type: Boolean },
-            depth: { type: Number },
         }
     }
 
     connectedCallback() {
         super.connectedCallback();
-        
-        if (!this.hasAttribute('depth')) {
-             this.setAttribute('depth', this.depth);
-        }
-    }
-
-    firstUpdated() {
-        // This runs once after the component has rendered for the first time
-        if (this.depth === 0) {
-            const style = document.createElement('style');
-            const tagName = this.tagName.toLowerCase();
-            
-            style.textContent = /*css*/`
-                .nav_menu > .menu_item:hover > ${tagName}[depth],
-                .sub_nav_menu .menu_item:hover > ${tagName}[depth] {
-                    visibility: visible !important;
-                    opacity: 1 !important;
-                }
-
-                /* ${tagName}[depth] {
-                    position: absolute;
-                    top: 1rem;
-                } */
-
-                /* Vertical sub-menu alignment (Depth 2, 3, etc.) */
-                .sub_nav_menu .menu_item:hover > ${tagName}[depth] {
-                    top: 0 !important; 
-                    left: 100% !important;
-                }
-            `;
-            // Append the dynamic style to the Shadow Root
-            this.shadowRoot.appendChild(style); 
-        }
     }
 
     constructor() {
@@ -54,44 +20,38 @@ export class PiNavMenu extends LitElement {
 
         this.items = [];
         this.vertical = false;
-        this.depth = 0;
     }
 
-    // Helper function to create the recursive element imperatively
-    renderRecursive(item) {
-        if (!item.children) {
-            return '';
-        }
+    createSubnav() {
 
-        // 1. Get the actual tag name used to instantiate THIS component
-        const RecursiveTag = this.tagName.toLowerCase(); 
-
-        // 2. Create the element using standard DOM API
-        const subMenu = document.createElement(RecursiveTag);
-        
-        // 3. Set the required properties imperatively
-        subMenu.items = item.children; 
-        subMenu.depth = this.depth + 1;
-        subMenu.vertical = true;
-
-        // Explicitly set the depth ATTRIBUTE so the CSS selector can match immediately.
-        subMenu.setAttribute('depth', subMenu.depth);
-        
-        // 4. Return the element instance for Lit to insert
-        return subMenu;
     }
 
     render() {
-        // Define the CSS class for the main menu based on the direction prop
-        const menuClass = this.depth === 0 ? `nav_menu ${this.vertical ? `vertical` : `horizontal`}` : 'sub_nav_menu';
-
         return html`
-            <ul class="${menuClass}">
+            <ul class="nav_menu ${this.vertical ? `vertical` : `horizontal`}">
                 ${repeat(this.items, (item) => item.label, (item) => html`
                     <li class="menu_item">
                         <a href=${item.href}>${item.label}</a>
-                        
-                        ${this.renderRecursive(item)}
+
+                        ${item.children ? html`
+                            <ul class="sub_nav_menu">
+                                ${repeat(item.children, (item2) => item2.label, (item2) => html`
+                                    <li class="menu_item">
+                                        <a href=${item2.href}>${item2.label}</a>
+
+                                        ${item2.children ? html`
+                                            <ul class="sub_nav_menu">
+                                                ${repeat(item2.children, (item3) => item3.label, (item3) => html`
+                                                    <li class="menu_item">
+                                                        <a href=${item3.href}>${item3.label}</a>
+                                                    </li>
+                                                `)}
+                                            </ul>
+                                        ` : null}
+                                    </li>
+                                `)}
+                            </ul>
+                        ` : null}
                     </li>
                 `)}
             </ul>
@@ -103,18 +63,7 @@ export class PiNavMenu extends LitElement {
         css`
             :host {
                 display: block;
-            }
 
-            /* Sub-menu positioning and hiding (applied to the host element) */
-            :host([depth]:not([depth="0"])) {
-                /* Apply to any instance where depth > 0 */
-                position: absolute;
-                top: 100%;
-                left: 0;
-                z-index: 10;
-                visibility: hidden;
-                opacity: 0;
-                transition: all 0.5s; /* Optional smooth transition */
             }
 
             .nav_menu {
@@ -123,43 +72,69 @@ export class PiNavMenu extends LitElement {
                 margin: 0;
             }
 
-            /* --- HORIZONTAL ROOT MENU --- */
+            /* HORIZONTAL ROOT MENU */
             .nav_menu.horizontal {
                 display: flex; /* Lays out top-level items side-by-side */
             }
 
-            .nav_menu > .menu_item {
+            .menu_item {
                 position: relative;
-                padding: 10px 15px;
             }
 
-            /* --- sub_nav_menu (Default Vertical) --- */
-            .sub_nav_menu {
-                position: absolute; /* Allows it to 'fly out' over content */
-                top: 100%; /* Positions it right below the parent item */
-                left: 0;
-                background: #f9f9f9;
-                border: 1px solid #ccc;
-                min-width: 150px;
-                z-index: 10;
+            .nav_menu > .menu_item {
+                position: relative;
+                display: block;
             }
-            
-            /* .nav_menu.horizontal > .menu_item:hover > pi-nav-menu[depth] {
+
+            .nav_menu > .menu_item a {
+                padding: var(--pi-nav-menu-item-padding, 10px 15px);
+                background: var(--pi-nav-menu-item-background, transparent);
+                color: var(--pi-nav-menu-item-text-color, blue);
+                display: block;
+                text-decoration: var(--pi-nav-menu-item-text-decoration, none);
+            }
+
+            .nav_menu > .menu_item a:hover {
+                background: var(--pi-nav-menu-item-hover-background, #ddd);
+                color: var(--pi-nav-menu-item-text-hover-color, inherit);
+            }
+
+            /* GLOBAL SUB NAV MENU */
+            .sub_nav_menu {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                visibility: hidden;
+                opacity: 0;
+                position: absolute; /* Allows it to 'fly out' over content */
+                top: var(--pi-nav-menu-sub-nav-top, 100%); /* Positions it right below the parent item */
+                left: var(--pi-nav-menu-sub-nav-left, 0);
+                background: var(--pi-nav-menu-sub-nav-background, #f9f9f9);
+                border: var(--pi-nav-menu-sub-nav-border, 1px solid #ccc);
+                min-width: var(--pi-nav-menu-sub-nav-min-width, 150px);
+                z-index: var(--pi-nav-menu-sub-nav-z-index, 10);
+                transition: var(--pi-nav-menu-sub-nav-transition, opacity 0.5s);
+            }
+
+            .menu_item:hover > .sub_nav_menu {
                 visibility: visible;
                 opacity: 1;
-            } */
-            
-            /* --- VERTICAL sub_nav_menu OVERRIDE --- */
-            .sub_nav_menu .menu_item {
-                display: block;
-                padding: 8px 15px;
-                white-space: nowrap;
             }
-            
-            /* Handle flyout for subsequent levels */
-            .sub_nav_menu .menu_item:hover > .sub_nav_menu {
-                top: 0; /* Align with parent sub-item */
-                left: 100%; /* Fly out to the right */
+
+            .sub_nav_menu > .menu_item:hover > .sub_nav_menu {
+                top: var(--pi-nav-menu-sub-sub-nav-top, 0);
+                left: var(--pi-nav-menu-sub-sub-nav-left, 100%);
+            }
+
+            /* VERTICAL MENU */
+            .nav_menu.vertical,
+            .nav_menu.vertical > .menu_item a {
+                display: inline-block;
+            }
+
+            .nav_menu.vertical .menu_item:hover > .sub_nav_menu {
+                top: var(--pi-nav-menu-vertical-sub-nav-top, 0); /* Align with parent sub-item */
+                left: var(--pi-nav-menu-vertical-sub-nav-left, 100%); /* Fly out to the right */
             }
         `
     ]
