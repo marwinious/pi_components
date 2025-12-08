@@ -7,29 +7,32 @@ import { PiNavMenu } from "../../components/nav/components/navMenu";
 register('pi-nav-menu-test', PiNavMenu)
 
 const menuData = [
-  {
-    label: 'Home',
-    href: '/',
-  },
-  {
-    label: 'Products',
-    href: '/products',
-    children: [ // Sub-level 1
-      { label: 'Software', href: '/products/software' },
-      { label: 'Hardware', href: '/products/hardware',
-        children: [ // Sub-level 2
-          { label: 'Drivers', href: '/drivers' },
-          { label: 'Documentation', href: '/docs' }
-        ]
-      },
-      { label: 'Misc', href: '/products/misc' },
-    ]
-  },
-  {
-    label: 'Contact',
-    href: '/contact',
-  }
-];
+    {
+        label: "Home",
+        href: "/",
+    },
+    {
+        label: "Products",
+        href: "/products",
+        children: [
+            // Sub-level 1
+            { label: "Software", href: "/products/software" },
+            {
+                label: "Hardware",
+                href: "/products/hardware",
+                children: [
+                    // Sub-level 2
+                    { label: "Drivers", href: "/drivers" },
+                    { label: "Documentation", href: "/docs" },
+                ],
+            },
+        ],
+    },
+    {
+        label: "Contact",
+        href: "/contact",
+    },
+]
 
 export default {
     title: 'Components/Navigation/Nav Menu',
