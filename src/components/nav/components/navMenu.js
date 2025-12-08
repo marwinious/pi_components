@@ -26,15 +26,22 @@ export class PiNavMenu extends LitElement {
             const style = document.createElement('style');
             const tagName = this.tagName.toLowerCase();
             
-            style.textContent = `
-                .nav_menu.horizontal > .menu_item:hover > ${tagName}[depth] {
+            style.textContent = /*css*/`
+                .nav_menu > .menu_item:hover > ${tagName}[depth],
+                .sub_nav_menu .menu_item:hover > ${tagName}[depth] {
                     visibility: visible !important;
                     opacity: 1 !important;
                 }
 
-                ${tagName}[depth] {
+                /* ${tagName}[depth] {
                     position: absolute;
                     top: 1rem;
+                } */
+
+                /* Vertical sub-menu alignment (Depth 2, 3, etc.) */
+                .sub_nav_menu .menu_item:hover > ${tagName}[depth] {
+                    top: 0 !important; 
+                    left: 100% !important;
                 }
             `;
             // Append the dynamic style to the Shadow Root
@@ -121,7 +128,7 @@ export class PiNavMenu extends LitElement {
                 display: flex; /* Lays out top-level items side-by-side */
             }
 
-            .nav_menu.horizontal > .menu_item {
+            .nav_menu > .menu_item {
                 position: relative;
                 padding: 10px 15px;
             }
