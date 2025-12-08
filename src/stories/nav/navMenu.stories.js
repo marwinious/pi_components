@@ -21,7 +21,8 @@ const menuData = [
           { label: 'Drivers', href: '/drivers' },
           { label: 'Documentation', href: '/docs' }
         ]
-      }
+      },
+      { label: 'Misc', href: '/products/misc' },
     ]
   },
   {
