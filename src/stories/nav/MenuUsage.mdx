@@ -1,0 +1,25 @@
+import { Canvas, Meta, Story, Markdown } from '@storybook/addon-docs';
+
+import * as PiNavMenuStories from './navMenu.stories';
+
+<Meta of={PiNavMenuStories}  />
+
+# Basic usage example for Nav Menu
+
+```html
+<pi-nav-menu
+.items=${menuData}
+?vertical=${vertical}
+></pi-nav-menu>
+```
+
+# Props
+
+## Items
+This should be a JSON or Javascript array of menu items. See the JSON example for Nav Menu for reference.
+
+## Vertical
+This attribute should only be added if you want a vertical menu. Otherwise, omit this attribute entirely.
+
+# Notes
+The nav menu currently supports a main/top level list of nav items, a sub-nav level to the main/top items, and a sub-nav level for the first sib-nav level. Any additional children of that third level will be ignored.
