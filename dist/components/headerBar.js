@@ -1,4 +1,4 @@
-import{LitElement as o,html as e,css as a}from"lit";import r from"./defaultCss.js";class l extends o{static get properties(){return{sticky:{type:Boolean},showNavIcon:{type:Boolean},title:{type:String}}}constructor(){super(),this.sticky=!1,this.showNavIcon=!1,this.title=""}connectedCallback(){super.connectedCallback()}disconnectedCallback(){super.disconnectedCallback()}render(){return e`
+import{LitElement as r,html as e,css as t}from"lit";import o from"./defaultCss.js";class d extends r{static get properties(){return{sticky:{type:Boolean},showNavIcon:{type:Boolean},title:{type:String}}}constructor(){super(),this.sticky=!1,this.showNavIcon=!1,this.title=""}connectedCallback(){super.connectedCallback()}disconnectedCallback(){super.disconnectedCallback()}render(){return e`
             <div class="prepend_container">
                 <slot name="prepend">
                     ${this.showNavIcon?e`
@@ -23,7 +23,7 @@ import{LitElement as o,html as e,css as a}from"lit";import r from"./defaultCss.j
             <div class="append_container">
                 <slot name="append"></slot>
             </div>
-        `}handleNavIconClick(){const t=new CustomEvent("navIconClick",{detail:!1,bubbles:!0,composed:!0});this.dispatchEvent(t)}static styles=[r,a`
+        `}handleNavIconClick(){const a=new CustomEvent("navIconClick",{detail:!1,bubbles:!0,composed:!0});this.dispatchEvent(a)}static styles=[o,t`
             :host {
                 box-sizing: border-box;
                 display: flex;
@@ -31,7 +31,7 @@ import{LitElement as o,html as e,css as a}from"lit";import r from"./defaultCss.j
                 /* border: solid 1px blue; */
                 padding: var(--pi-header-bar-padding, 0.8rem);
                 box-shadow: var(--pi-header-bar-box-shadow, 0px 1px 2px #666);
-                gap: 1.2rem;
+                gap: var(--pi-header-bar-gap, 1.2rem);
                 background-color: var(--pi-header-bar-background-color, #fff);
                 width: 100%;
                 z-index: 9999;
@@ -44,13 +44,14 @@ import{LitElement as o,html as e,css as a}from"lit";import r from"./defaultCss.j
             }
 
             .nav_icon {
-                width: 25px;
-                height: 25px;
-                cursor: pointer;
-                border-radius: 50%;
-                padding: 5px;
-                transition: all 0.25s ease-in-out;
+                width: var(--pi-header-bar-nav-icon-width, 25px);
+                height: var(--pi-header-bar-nav-icon-height, 25px);
+                cursor: var(--pi-header-bar-nav-icon-cursor, pointer);
+                border-radius: var(--pi-header-bar-nav-icon-border-radius, 50%);
+                padding: var(--pi-header-bar-nav-icon-padding, 5px);
+                transition: var(--pi-header-bar-nav-icon-transition, all 0.25s ease-in-out);
                 fill: var(--pi-header-bar-nav-icon-color, #333);
+                color: var(--pi-header-bar-nav-icon-color, #333);
 
                 &:hover {
                     background: var(--pi-header-bar-nav-icon-hover-bg-color, rgba(0,0,0,0.1));
@@ -59,9 +60,28 @@ import{LitElement as o,html as e,css as a}from"lit";import r from"./defaultCss.j
             }
 
             .header_content {
-                font-size: var(--pi-header-bar-content-font-size, 1.4rem);
+                display: flex;
+                flex-direction: row;
+                gap: var(--pi-header-bar-content-gap, 1rem);
                 flex-grow: 1;
-                color: var(--pi-header-bar-content-text-color, #333);
+                align-items: var(--pi-header-bar-content-align-items, center);
             }
-        `]}export{l as PiHeaderBar};
+
+            .header_title,
+            slot[name="headerContent"] {
+                flex-shrink: 0;
+            }
+
+            .header_title {
+                font-size: var(--pi-header-bar-title-font-size, 1.4rem);
+                color: var(--pi-header-bar-title-text-color, #333);
+                font-weight: var(--pi-header-bar-title-font-weight, normal);
+            }
+
+            slot[name="headerContent"] {
+                color: var(--pi-header-bar-content-text-color, #333);
+                font-size: var(--pi-header-bar-content-font-size, 1.0rem);
+                font-weight: var(--pi-header-bar-content-font-weight, normal);
+            }
+        `]}export{d as PiHeaderBar};
 //# sourceMappingURL=headerBar.js.map
