@@ -1,0 +1,27 @@
+:root {
+
+    /* Nav Items */
+    --pi-nav-menu-item-padding: 10px 15px;
+    --pi-nav-menu-item-background: transparent;
+    --pi-nav-menu-item-text-color: blue;
+    --pi-nav-menu-item-text-decoration: none;
+    --pi-nav-menu-item-hover-background: #ddd;
+    --pi-nav-menu-item-text-hover-color: inherit;
+
+    /* Sub-nav Menus */
+    --pi-nav-menu-sub-nav-top: 100%;
+    --pi-nav-menu-sub-nav-left: 0;
+    --pi-nav-menu-sub-nav-background: #f9f9f9;
+    --pi-nav-menu-sub-nav-border: 1px solid #ccc;
+    --pi-nav-menu-sub-nav-min-width: 150px;
+    --pi-nav-menu-sub-nav-z-index: 10;
+    --pi-nav-menu-sub-nav-transition: opacity 0.5s;
+
+    /* Sub-nav of Sub-nav Menus */
+    --pi-nav-menu-sub-sub-nav-top: 0;
+    --pi-nav-menu-sub-sub-nav-left: 100%;
+
+    /* Vertical Sub-nav Menus */
+    --pi-nav-menu-vertical-sub-nav-top: 0;
+    --pi-nav-menu-vertical-sub-nav-left: 100%;
+}

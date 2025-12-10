@@ -1,0 +1,44 @@
+import { Canvas, Meta, Story, Markdown } from '@storybook/addon-docs';
+
+import * as PiNavMenuStories from './navMenu.stories';
+
+<Meta of={PiNavMenuStories}  />
+
+# JSON Structure for Nav Menu
+
+```javascript
+[
+    {
+        "label": "Home",
+        "href": "/"
+    },
+    {
+        "label": "Products",
+        "href": "/products",
+        "children": [
+            {
+                "label": "Software",
+                "href": "/products/software"
+            },
+            {
+                "label": "Hardware",
+                "href": "/products/hardware",
+                "children": [
+                    {
+                        "label": "Drivers",
+                        "href": "/drivers"
+                    },
+                    {
+                        "label": "Documentation",
+                        "href": "/docs"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "Contact",
+        "href": "/contact"
+    }
+]
+```

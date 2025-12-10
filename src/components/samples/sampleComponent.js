@@ -26,4 +26,4 @@ export class SampleComponent extends LitElement {
     
 }
 
-if(!customElements.get('sample-component')) { customElements.define('sample-component', SampleComponent); }
+// if(!customElements.get('sample-component')) { customElements.define('sample-component', SampleComponent); }
