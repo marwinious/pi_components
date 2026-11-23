@@ -57,6 +57,8 @@ const Template = ({ title, sticky, showNavIcon }) => html`
     ?showNavIcon=${showNavIcon}
     >
         <pi-icon-handler icon="menu-hamburger-rounded" slot="menuIcon"></pi-icon-handler>
+
+        <div slot="headerContent">Testing header content</div>
     </pi-header-bar>
 `;
 
